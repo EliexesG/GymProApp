@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Clases\Administrador.cs" />
     <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\Ejercicio.cs" />
     <Compile Include="Clases\Instructor.cs" />
+    <Compile Include="Clases\TipoEjercicio.cs" />
     <Compile Include="Enumeraciones\TipoUsuario.cs" />
     <Compile Include="ExcepcionesCustom\ValorNoAsignadoException.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
