@@ -18,17 +18,17 @@ namespace GymPro.Capa.Entidades.Clases
         public string Contrasenna { get; set; }
         #endregion
 
-        #region Atributos Cliente
-        private string Correo;
-        private int Telefono;
-        private DateTime FechaNacimiento;
-        #endregion
-
         #region Propiedades de Estado de Cliente
         public float Peso { get; set; }
         public float Altura { get; set; }
         public float IMC { get; set; }
         public float MetabolismoBasal { get; set; }
+        #endregion
+
+        #region Atributos Cliente
+        private string Correo;
+        private int Telefono;
+        private DateTime FechaNacimiento;
         #endregion
 
         #region Asignacion Atributos
