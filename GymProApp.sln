@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.UI", "GymPro.Capa.UI\GymPro.Capa.UI.csproj", "{73B92E94-D8E1-4065-B4A4-B417433DCB52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.Entidades", "GymPro.Capa.Entidades\GymPro.Capa.Entidades.csproj", "{2896C8D1-B937-4355-8249-C2F6E9083435}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73B92E94-D8E1-4065-B4A4-B417433DCB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B92E94-D8E1-4065-B4A4-B417433DCB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B92E94-D8E1-4065-B4A4-B417433DCB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B92E94-D8E1-4065-B4A4-B417433DCB52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2896C8D1-B937-4355-8249-C2F6E9083435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2896C8D1-B937-4355-8249-C2F6E9083435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2896C8D1-B937-4355-8249-C2F6E9083435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2896C8D1-B937-4355-8249-C2F6E9083435}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7941E78-97B1-4D1B-B89F-A2F187EC3F94}
+	EndGlobalSection
+EndGlobal
