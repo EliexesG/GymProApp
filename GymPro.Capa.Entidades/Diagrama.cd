@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="GymPro.Capa.Entidades.Clases.Ejercicio">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAgAABAAAAABAAAAAACAAAAAg=</HashCode>
+      <FileName>Clases\Ejercicio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymPro.Capa.Entidades.Clases.Administrador" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgAAAEAAAAgAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Administrador.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GymPro.Capa.Entidades.Clases.Cliente" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAgAABEAFgACAEAAAQgAAAAIAAAAAggAAAAgAAEAE=</HashCode>
+      <FileName>Clases\Cliente.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GymPro.Capa.Entidades.Clases.Instructor" BaseTypeListCollapsed="true">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgAAAEAAAAgAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Instructor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GymPro.Capa.Entidades.Clases.TipoEjercicio">
+    <Position X="12" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\TipoEjercicio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GymPro.Capa.Entidades.ExcepcionesCustom.ValorNoAsignadoException">
+    <Position X="15" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ExcepcionesCustom\ValorNoAsignadoException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GymPro.Capa.Entidades.Interfaces.IEstadoCliente">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAFAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IEstadoCliente.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GymPro.Capa.Entidades.Interfaces.IUsuario">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgAAAEAAAAgAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="TipoUsuario">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAABAAA=</HashCode>
+      <FileName>Enumeraciones\TipoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
