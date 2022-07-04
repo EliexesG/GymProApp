@@ -10,6 +10,8 @@ namespace GymPro.Capa.Entidades.Clases
 {
     class Cliente : IUsuario, IEstadoCliente
     {
+        public List<Entrenamiento> Entrenamientos { get; }
+
         #region Propiedades de Usuario
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
@@ -31,6 +33,12 @@ namespace GymPro.Capa.Entidades.Clases
         private DateTime FechaNacimiento;
         private char Genero;
         #endregion
+
+        //Constructor
+        public Cliente()
+        {
+            Entrenamientos = new List<Entrenamiento>();
+        }
 
         #region Asignacion Atributos
         public void AsignarCorreo(string correo)
@@ -87,7 +95,7 @@ namespace GymPro.Capa.Entidades.Clases
 
         public char ObtenerGenero()
         {
-            if (char.Equals(''))
+            if (Genero.ToString() == String.Empty)
             {
                 throw new ValorNoAsignadoException("La fecha de nacimiento no ha sido asignada aún");
             }
@@ -95,5 +103,17 @@ namespace GymPro.Capa.Entidades.Clases
             return Genero;
         }
         #endregion
+
+        public void AgregarEntrenamiento(Entrenamiento entrenamiento)
+        {
+            try
+            {
+                Entrenamientos.Add(entrenamiento);
+            }
+            catch (NullReferenceException)
+            {
+                throw new NullReferenceException("No se ha inicializado la Lista de Entrenamientos");
+            }
+        }
     }
 }
