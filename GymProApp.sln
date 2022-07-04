@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.UI", "GymPro.Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.Entidades", "GymPro.Capa.Entidades\GymPro.Capa.Entidades.csproj", "{2896C8D1-B937-4355-8249-C2F6E9083435}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.Datos", "GymPro.Capa.Datos\GymPro.Capa.Datos.csproj", "{92649DF8-465A-43FB-99D9-BFA6923C21D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2896C8D1-B937-4355-8249-C2F6E9083435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2896C8D1-B937-4355-8249-C2F6E9083435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2896C8D1-B937-4355-8249-C2F6E9083435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92649DF8-465A-43FB-99D9-BFA6923C21D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92649DF8-465A-43FB-99D9-BFA6923C21D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92649DF8-465A-43FB-99D9-BFA6923C21D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92649DF8-465A-43FB-99D9-BFA6923C21D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

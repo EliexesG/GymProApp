@@ -29,6 +29,7 @@ namespace GymPro.Capa.Entidades.Clases
         private string Correo;
         private int Telefono;
         private DateTime FechaNacimiento;
+        private char Genero;
         #endregion
 
         #region Asignacion Atributos
@@ -45,6 +46,11 @@ namespace GymPro.Capa.Entidades.Clases
         public void AsignarFechaNacimiento(DateTime fecha)
         {
             FechaNacimiento = fecha;
+        }
+
+        public void AsignarGenero(char genero)
+        {
+            Genero = genero;
         }
         #endregion
 
@@ -77,6 +83,16 @@ namespace GymPro.Capa.Entidades.Clases
             }
 
             return FechaNacimiento;
+        }
+
+        public char ObtenerGenero()
+        {
+            if (char.Equals(''))
+            {
+                throw new ValorNoAsignadoException("La fecha de nacimiento no ha sido asignada aún");
+            }
+
+            return Genero;
         }
         #endregion
     }
