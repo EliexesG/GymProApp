@@ -41,7 +41,7 @@ namespace GymPro.Capa.Datos
         /// </summary>
         /// <param name="idEntrenamiento"></param>
         /// <returns></returns>
-        public List<EjercicioEnEntrenamiento> ObtenerEjercicioPorEntrenamiento(int idEntrenamiento)
+        public List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosPorEntrenamiento(int idEntrenamiento)
         {
             return default;
         }
