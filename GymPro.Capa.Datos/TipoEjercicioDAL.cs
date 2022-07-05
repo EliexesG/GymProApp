@@ -6,72 +6,71 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos
-{/// <summary>
-/// Todas las operaciones para manejar los ejercicios a nivel de persitencia
-/// </summary>
-    public class EjercicioDAL
+{
+    class TipoEjercicioDAL
     {
 
-        private static EjercicioDAL Instancia;
+        private static TipoEjercicioDAL Instancia;
 
         /// <summary>
-        /// Retorna instancia de tipo EjercicioDAL
+        /// Retorna instancia de tipo TipoEjercicioDAL
         /// </summary>
         /// <returns></returns>
-        public static EjercicioDAL GetInstance()
+        public static TipoEjercicioDAL GetInstance()
         {
-            if(Instancia == null)
+            if (Instancia == null)
             {
-                Instancia = new EjercicioDAL();
+                Instancia = new TipoEjercicioDAL();
             }
 
             return Instancia;
         }
 
         /// <summary>
-        /// Inserta un Ejercicio en la base de datos
+        /// Inserta un Tipo de Ejercicio en la base de datos
         /// </summary>
-        /// <param name="pEjercicio"></param>
-        public void InsertarEjercicio(Ejercicio pEjercicio)
-        {
-         
-        }
-        /// <summary>
-        /// Actualiza un Ejercicio en la base de datos
-        /// </summary>
-        /// <param name="pEjercicio"></param>
-        public void ActualizarEjercicio(Ejercicio pEjercicio)
+        /// <param name="pTipoEjercicio"></param>
+        public void InsertarTipoEjercicio(TipoEjercicio pTipoEjercicio)
         {
 
         }
+
         /// <summary>
-        /// Retorna todos los Ejercicios en la base de datos
+        /// Actualiza un Tipo de Ejercicio en la base de datos
+        /// </summary>
+        /// <param name="pTipoEjercicio"></param>
+        public void ActualizarTipoEjercicio(TipoEjercicio pTipoEjercicio)
+        {
+
+        }
+
+        /// <summary>
+        /// Retorna todos los Tipos de Ejercicio en la base de datos
         /// </summary>
         /// <returns></returns>
-        public IList<Ejercicio> SeleccionarTodosEjercicios()
+        public IList<TipoEjercicio> SeleccionarTodosTiposEjercicio()
         {
             return null;
             // Seleccione todos los que tengan el campo estado en true
         }
 
         /// <summary>
-        /// Retorna un Ejercicio de la base por id
+        /// Retorna un Tipo de Ejercicio de la base por id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Ejercicio SeleccionarEjercicioPorId(int id)
+        public Ejercicio SeleccionarTipoEjercicioPorId(int id)
         {
             return default;
         }
 
         /// <summary>
-        /// Elimina un Ejercicio de la base por id
+        /// Elimina un Tipo de Ejercicio de la base por id
         /// </summary>
         /// <param name="id"></param>
-        public void EliminarEjercicioPorId(int id)
+        public void EliminarTipoEjercicioPorId(int id)
         {
             // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
         }
-
     }
 }
