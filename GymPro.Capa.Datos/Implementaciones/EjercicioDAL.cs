@@ -57,9 +57,9 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Retorna un Ejercicio de la base por id
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="pId"></param>
         /// <returns></returns>
-        public Ejercicio SeleccionarEjercicioPorId(int id)
+        public Ejercicio SeleccionarEjercicioPorId(int pId)
         {
             return default;
         }
@@ -67,8 +67,8 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Elimina un Ejercicio de la base por id
         /// </summary>
-        /// <param name="id"></param>
-        public void EliminarEjercicioPorId(int id)
+        /// <param name="pId"></param>
+        public void EliminarEjercicioPorId(int pId)
         {
             // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
         }

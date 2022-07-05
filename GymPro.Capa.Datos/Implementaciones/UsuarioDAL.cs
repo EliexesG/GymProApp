@@ -30,8 +30,8 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Insertar un usuario a la base de datos
         /// </summary>
-        /// <param name="usuario"></param>
-        public void InsertarUsuario(IUsuario usuario)
+        /// <param name="pUsuario"></param>
+        public void InsertarUsuario(IUsuario pUsuario)
         {
             // Aqui va toda la logica para insertar el usuario a la base de datos
             // Donde se llaman los Stored Procedures que hacen las operaciones de la base de datos
@@ -40,8 +40,8 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Actualiza un usuario de la base de datos
         /// </summary>
-        /// <param name="usuario"></param>
-        public void ActualizarUsuario(IUsuario usuario)
+        /// <param name="pUsuario"></param>
+        public void ActualizarUsuario(IUsuario pUsuario)
         {
             // Aqui va toda la logica para insertar el usuario a la base de datos
             // Donde se llaman los Stored Procedures que hacen las operaciones de la base de datos
@@ -60,7 +60,7 @@ namespace GymPro.Capa.Datos
         /// Retorna un usuario por su identifiacion
         /// </summary>
         /// <returns></returns>
-        public IUsuario SeleccionarUsuarioPorId(string id)
+        public IUsuario SeleccionarUsuarioPorId(string pId)
         {
             return null;
         }
@@ -68,8 +68,8 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Se elimina el usuario por su id
         /// </summary>
-        /// <param name="id"></param>
-        public void EliminarUsuarioPorId(string id)
+        /// <param name="pId"></param>
+        public void EliminarUsuarioPorId(string pId)
         {
 
         }

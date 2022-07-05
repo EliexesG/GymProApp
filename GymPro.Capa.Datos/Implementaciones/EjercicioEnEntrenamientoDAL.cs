@@ -29,9 +29,9 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Se inserta un Ejercicio en Entrenamiento en la base de datos
         /// </summary>
-        /// <param name="idEntrenamiento"></param>
+        /// <param name="pIdEntrenamiento"></param>
         /// <param name="pEjercicio"></param>
-        public void InsertarEjercicioEnEntrenamiento(int idEntrenamiento, EjercicioEnEntrenamiento pEjercicio)
+        public void InsertarEjercicioEnEntrenamiento(int pIdEntrenamiento, EjercicioEnEntrenamiento pEjercicio)
         {
             // Se inserta el registroen la tabla intermida
         }
@@ -39,9 +39,9 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Retorna todos los Ejercicios por Entrenamiento de la base de datos
         /// </summary>
-        /// <param name="idEntrenamiento"></param>
+        /// <param name="pIdEntrenamiento"></param>
         /// <returns></returns>
-        public List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosPorEntrenamiento(int idEntrenamiento)
+        public List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosPorEntrenamiento(int pIdEntrenamiento)
         {
             return default;
         }
@@ -49,9 +49,9 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Actualizar un Ejercicio de un Entrenamiento en la base de datos
         /// </summary>
-        /// <param name="idEntrenamiento"></param>
+        /// <param name="pIdEntrenamiento"></param>
         /// <param name="pEjercicio"></param>
-        public void ActualizarEjercicioEnEntrenamiento(int idEntrenamiento, EjercicioEnEntrenamiento pEjercicio)
+        public void ActualizarEjercicioEnEntrenamiento(int pIdEntrenamiento, EjercicioEnEntrenamiento pEjercicio)
         {
 
         }
@@ -59,9 +59,9 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Elimina un Ejercicio de un Entrenamiento en la base de datos
         /// </summary>
-        /// <param name="idEntrenamiento"></param>
+        /// <param name="pIdEntrenamiento"></param>
         /// <param name="idEjercicio"></param>
-        public void EliminarEjercicioEnEntrenamiento(int idEntrenamiento, int idEjercicio)
+        public void EliminarEjercicioEnEntrenamiento(int pIdEntrenamiento, int idEjercicio)
         {
 
         }
