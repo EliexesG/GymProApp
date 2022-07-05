@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\UsuarioBLL.cs" />
-    <Compile Include="Factory\UsuarioFactory.cs" />
+    <Compile Include="BLL\Interfaces\IUsuarioBLL.cs" />
+    <Compile Include="BLL\Implementaciones\UsuarioBLL.cs" />
+    <Compile Include="Patrones\UsuarioFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

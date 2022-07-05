@@ -1,4 +1,4 @@
-﻿using GymPro.Capa.Entidades.Clases;
+﻿using GymPro.Capa.Entidades.Implementaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos
 {
-    class EjercicioEnEntrenamientoDAL
+    public class EjercicioEnEntrenamientoDAL : IEjercicioEnEntrenamientoDAL
     {
 
         private static EjercicioEnEntrenamientoDAL Instancia;

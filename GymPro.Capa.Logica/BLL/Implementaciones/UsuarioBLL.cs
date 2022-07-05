@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL
 {
-    public class UsuarioBLL
+    public class UsuarioBLL : IUsuarioBLL
     {
         public void InsertarUsuario(IUsuario pUsuario)
         {

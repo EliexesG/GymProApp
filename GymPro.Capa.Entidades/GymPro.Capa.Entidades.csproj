@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Administrador.cs" />
-    <Compile Include="Clases\Cliente.cs" />
-    <Compile Include="Clases\Ejercicio.cs" />
-    <Compile Include="Clases\EjercicioEnEntrenamiento.cs" />
-    <Compile Include="Clases\Entrenamiento.cs" />
-    <Compile Include="Clases\Instructor.cs" />
-    <Compile Include="Clases\TipoEjercicio.cs" />
+    <Compile Include="Implementaciones\Administrador.cs" />
+    <Compile Include="Implementaciones\Cliente.cs" />
+    <Compile Include="Implementaciones\Ejercicio.cs" />
+    <Compile Include="Implementaciones\EjercicioEnEntrenamiento.cs" />
+    <Compile Include="Implementaciones\Entrenamiento.cs" />
+    <Compile Include="Implementaciones\Instructor.cs" />
+    <Compile Include="Implementaciones\TipoEjercicio.cs" />
     <Compile Include="Enumeraciones\Dia.cs" />
     <Compile Include="Enumeraciones\Genero.cs" />
     <Compile Include="Enumeraciones\TipoUsuario.cs" />

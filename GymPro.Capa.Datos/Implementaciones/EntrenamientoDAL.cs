@@ -1,4 +1,4 @@
-﻿using GymPro.Capa.Entidades.Clases;
+﻿using GymPro.Capa.Entidades.Implementaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos
 {
-    class EntrenamientoDAL
+    public class EntrenamientoDAL : IEntrenamientoDAL
     {
 
         private static EntrenamientoDAL Instancia;
@@ -92,7 +92,7 @@ namespace GymPro.Capa.Datos
         /// </summary>
         /// <param name="idEntrenamiento"></param>
         /// <param name="dia"></param>
-        public void EliminarDiaEntrenamiento (int idEntrenamiento, Dia dia)
+        public void EliminarDiaEntrenamiento(int idEntrenamiento, Dia dia)
         {
 
         }

@@ -1,4 +1,4 @@
-﻿using GymPro.Capa.Entidades.Clases;
+﻿using GymPro.Capa.Entidades.Implementaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace GymPro.Capa.Datos
 {/// <summary>
 /// Todas las operaciones para manejar los ejercicios a nivel de persitencia
 /// </summary>
-    public class EjercicioDAL
+    public class EjercicioDAL : IEjercicioDAL
     {
 
         private static EjercicioDAL Instancia;

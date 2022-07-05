@@ -41,12 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EjercicioDAL.cs" />
-    <Compile Include="EjercicioEnEntrenamientoDAL.cs" />
-    <Compile Include="EntrenamientoDAL.cs" />
+    <Compile Include="Implementaciones\EjercicioDAL.cs" />
+    <Compile Include="Implementaciones\EjercicioEnEntrenamientoDAL.cs" />
+    <Compile Include="Implementaciones\EntrenamientoDAL.cs" />
+    <Compile Include="Interfaces\IUsuarioDAL.cs" />
+    <Compile Include="Interfaces\ITipoEjercicioDAL.cs" />
+    <Compile Include="Interfaces\IEntrenamientoDAL.cs" />
+    <Compile Include="Interfaces\IEjercicioEnEntrenamientoDAL.cs" />
+    <Compile Include="Interfaces\IEjercicioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TipoEjercicioDAL.cs" />
-    <Compile Include="UsuarioDAL.cs" />
+    <Compile Include="Implementaciones\TipoEjercicioDAL.cs" />
+    <Compile Include="Implementaciones\UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GymPro.Capa.Entidades\GymPro.Capa.Entidades.csproj">

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos
 {
-    public class UsuarioDAL
+    public class UsuarioDAL : IUsuarioDAL
     {
 
         private static UsuarioDAL Instancia;

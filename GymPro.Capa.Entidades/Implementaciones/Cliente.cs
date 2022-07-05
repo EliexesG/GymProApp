@@ -1,12 +1,11 @@
-﻿using GymPro.Capa.Entidades.ExcepcionesCustom;
-using GymPro.Capa.Entidades.Interfaces;
+﻿using GymPro.Capa.Entidades.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Entidades.Clases
+namespace GymPro.Capa.Entidades.Implementaciones
 {
     public class Cliente : IUsuario, IExpedienteUsuario
     {
