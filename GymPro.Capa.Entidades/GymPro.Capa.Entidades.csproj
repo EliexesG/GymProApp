@@ -48,11 +48,11 @@
     <Compile Include="Clases\Entrenamiento.cs" />
     <Compile Include="Clases\Instructor.cs" />
     <Compile Include="Clases\TipoEjercicio.cs" />
+    <Compile Include="Enumeraciones\Dia.cs" />
+    <Compile Include="Enumeraciones\Genero.cs" />
     <Compile Include="Enumeraciones\TipoUsuario.cs" />
-    <Compile Include="ExcepcionesCustom\ValorNoAsignadoException.cs" />
-    <Compile Include="Factory\UsuarioFactory.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
-    <Compile Include="Interfaces\IEstadoCliente.cs" />
+    <Compile Include="Interfaces\IExpedienteUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

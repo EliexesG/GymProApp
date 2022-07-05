@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Clases
 {
-    class Instructor : IUsuario
+    public class Instructor : IUsuario
     {
         #region Propiedades de Usuario
         public string Identificacion { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Clases
 {
-    class EjercicioEnEntrenamiento
+    public class EjercicioEnEntrenamiento
     {
         public Ejercicio _Ejercicio { get; set; }
         public int Repeticiones { get; set; }

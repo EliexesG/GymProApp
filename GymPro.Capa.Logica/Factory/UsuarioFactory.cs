@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Entidades.Factory
+namespace GymPro.Capa.Logica.Factory
 {
     class UsuarioFactory
     {

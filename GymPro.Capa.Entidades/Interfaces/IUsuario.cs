@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Interfaces
 {
-    interface IUsuario
+   public interface IUsuario
     {
         string Identificacion { get; set; }
         string Nombre { get; set; }
