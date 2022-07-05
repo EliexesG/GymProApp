@@ -18,7 +18,7 @@
   <Class Name="GymPro.Capa.Entidades.Clases.Cliente" BaseTypeListCollapsed="true">
     <Position X="5.25" Y="3.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>GMAAgAABEAFgACAEAAAQgAIAAIAAAAAggIAAAgAAGAE=</HashCode>
+      <HashCode>EAAAgAABAAFgAAAEAAAQgAIAAIAAAAAgAAAAAgAAAAA=</HashCode>
       <FileName>Clases\Cliente.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -38,17 +38,10 @@
       <FileName>Clases\TipoEjercicio.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GymPro.Capa.Entidades.ExcepcionesCustom.ValorNoAsignadoException">
-    <Position X="15" Y="0.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ExcepcionesCustom\ValorNoAsignadoException.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="GymPro.Capa.Entidades.Clases.Entrenamiento">
     <Position X="8" Y="6" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABQgAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Clases\Entrenamiento.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,11 +52,11 @@
       <FileName>Clases\EjercicioEnEntrenamiento.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="GymPro.Capa.Entidades.Interfaces.IEstadoCliente">
+  <Interface Name="GymPro.Capa.Entidades.Interfaces.IExpedienteUsuario">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAFAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IEstadoCliente.cs</FileName>
+      <FileName>Interfaces\IExpedienteUsuario.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GymPro.Capa.Entidades.Interfaces.IUsuario">

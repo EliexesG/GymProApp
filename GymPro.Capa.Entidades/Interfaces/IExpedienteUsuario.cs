@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Interfaces
 {
-    interface IEstadoCliente
+    interface IExpedienteUsuario
     {
         float Peso { get; set; }
         float Altura { get; set; }

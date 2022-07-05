@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Clases
 {
-    class Cliente : IUsuario, IEstadoCliente
+    public class Cliente : IUsuario, IExpedienteUsuario
     {
-        public List<Entrenamiento> Entrenamientos { get; }
-
+        // Entidades (clases con solo propiedades y constructor
+        // Capa Logica BLL // Operaciones calculos maematicos, entre la capa de datos la capa de interfaz de usuario
+        // Capa DATOS // DAL
         #region Propiedades de Usuario
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
@@ -20,7 +21,7 @@ namespace GymPro.Capa.Entidades.Clases
         public string Contrasenna { get; set; }
         #endregion
 
-        #region Propiedades de Estado de Cliente
+        #region Propiedades de Expediente de Cliente
         public float Peso { get; set; }
         public float Altura { get; set; }
         public float IMC { get; set; }
@@ -28,92 +29,11 @@ namespace GymPro.Capa.Entidades.Clases
         #endregion
 
         #region Atributos Cliente
-        private string Correo;
-        private int Telefono;
-        private DateTime FechaNacimiento;
-        private char Genero;
+        private string Correo { get; set; }
+        private string Telefono { get; set; }
+        private DateTime FechaNacimiento { get; set; }
+        private Genero Genero { get; set; }
         #endregion
 
-        //Constructor
-        public Cliente()
-        {
-            Entrenamientos = new List<Entrenamiento>();
-        }
-
-        #region Asignacion Atributos
-        public void AsignarCorreo(string correo)
-        {
-            Correo = correo;
-        }
-
-        public void AsignarTelefono(int telefono)
-        {
-            Telefono = telefono;
-        }
-
-        public void AsignarFechaNacimiento(DateTime fecha)
-        {
-            FechaNacimiento = fecha;
-        }
-
-        public void AsignarGenero(char genero)
-        {
-            Genero = genero;
-        }
-        #endregion
-
-        #region Obtencion de Atributos
-        public string ObtenerCorreo()
-        {
-            if (string.IsNullOrEmpty(Correo))
-            {
-                throw new ValorNoAsignadoException("El correo no ha sido asignado aún");
-            }
-
-            return Correo;
-        }
-
-        public int ObtenerTelefono()
-        {
-            if(Telefono == 0)
-            {
-                throw new ValorNoAsignadoException("El teléfono no ha sido asignado aún");
-            }
-
-            return Telefono;
-        }
-
-        public DateTime ObtenerFechaNacimiento()
-        {
-            if(FechaNacimiento == null)
-            {
-                throw new ValorNoAsignadoException("La fecha de nacimiento no ha sido asignada aún");
-            }
-
-            return FechaNacimiento;
-        }
-
-        public char ObtenerGenero()
-        {
-            if (Genero.ToString() == String.Empty)
-            {
-                throw new ValorNoAsignadoException("La fecha de nacimiento no ha sido asignada aún");
-            }
-
-            return Genero;
-        }
-        #endregion
-
-        public void AgregarEntrenamiento(Entrenamiento entrenamiento)
-        {
-            try
-            {
-                Entrenamientos.Add(entrenamiento);
-            }
-            catch (NullReferenceException)
-            {
-                throw new NullReferenceException("No se ha inicializado la Lista de Entrenamientos");
-            }
-        }
     }
 }
