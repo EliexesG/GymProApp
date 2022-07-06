@@ -1,29 +1,22 @@
-﻿using GymPro.Capa.Entidades.Implementaciones;
+﻿using GymPro.Capa.Datos;
+using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Logica.BLL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Datos
+namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
-    public class EntrenamientoDAL : IEntrenamientoDAL
+    public class EntrenamientoBLL : IEntrenamientoBLL
     {
 
-        private static EntrenamientoDAL Instancia;
+        private IEntrenamientoDAL oEntrenamientoDAL;
 
-        /// <summary>
-        /// Retorna instancia de tipo EntrenamientoDAL
-        /// </summary>
-        /// <returns></returns>
-        public static EntrenamientoDAL GetInstance()
+        public EntrenamientoBLL()
         {
-            if (Instancia == null)
-            {
-                Instancia = new EntrenamientoDAL();
-            }
-
-            return Instancia;
+            oEntrenamientoDAL = EntrenamientoDAL.GetInstance();
         }
 
         /// <summary>
@@ -33,10 +26,14 @@ namespace GymPro.Capa.Datos
         /// <param name="ppId"></param>
         public void InsertarEntrenamientoUsuario(Entrenamiento pEntrenamineto, string ppId)
         {
-            // Cuando hacemos instancias y se dejan de usar hay un mecanismo que se llama Garbage Collector que limpia esas referencias que no se estan usando
-            // Cunado tenemos estatático esas instancias nunca limpian entonces queda en menoria siempre y puede darse un desperdicio. 
-
-            // Aqui va toda logica para insetart el entrenamiento
+            try
+            {
+                oEntrenamientoDAL.InsertarEntrenamientoUsuario(pEntrenamineto, ppId);
+            }
+            catch(Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -45,7 +42,14 @@ namespace GymPro.Capa.Datos
         /// <param name="pEntrenamiento"></param>
         public void ActualizarEntrenamiento(Entrenamiento pEntrenamiento)
         {
-
+            try
+            {
+                oEntrenamientoDAL.ActualizarEntrenamiento(pEntrenamiento);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -54,7 +58,14 @@ namespace GymPro.Capa.Datos
         /// <param name="pId"></param>
         public void EliminarEntrenamientoPorId(int pId)
         {
-
+            try
+            {
+                oEntrenamientoDAL.EliminarEntrenamientoPorId(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -64,7 +75,14 @@ namespace GymPro.Capa.Datos
         /// <returns></returns>
         public List<Entrenamiento> ObtenerTodosEntrenamientosUsuario(string pId)
         {
-            return default;
+            try
+            {
+                return oEntrenamientoDAL.ObtenerTodosEntrenamientosUsuario(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -74,7 +92,14 @@ namespace GymPro.Capa.Datos
         /// <returns></returns>
         public Entrenamiento ObtenerEntrenamientoPorId(int pId)
         {
-            return default;
+            try
+            {
+                return oEntrenamientoDAL.ObtenerEntrenamientoPorId(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -84,7 +109,14 @@ namespace GymPro.Capa.Datos
         /// <param name="dia"></param>
         public void InsertarDiaEntrenamiento(int pIdEntrenamiento, Dia dia)
         {
-            // Se inserta el registroen la tabla Dias entrenamiento
+            try
+            {
+                oEntrenamientoDAL.InsertarDiaEntrenamiento(pIdEntrenamiento, dia);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -94,7 +126,14 @@ namespace GymPro.Capa.Datos
         /// <param name="dia"></param>
         public void EliminarDiaEntrenamiento(int pIdEntrenamiento, Dia dia)
         {
-
+            try
+            {
+                oEntrenamientoDAL.EliminarDiaEntrenamiento(pIdEntrenamiento, dia);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -104,7 +143,14 @@ namespace GymPro.Capa.Datos
         /// <returns></returns>
         public List<Dia> ObtenerDiasEntrenamientoPorId(int pId)
         {
-            return default;
+            try
+            {
+                return oEntrenamientoDAL.ObtenerDiasEntrenamientoPorId(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -114,7 +160,7 @@ namespace GymPro.Capa.Datos
         /// <returns></returns>
         public List<Entrenamiento> ObtenerEntrenamientosPorIdUsuario(string pId)
         {
-            return default;
+            throw new NotImplementedException();
         }
     }
 }
