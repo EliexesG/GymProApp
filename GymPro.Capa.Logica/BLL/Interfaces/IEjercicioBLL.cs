@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Datos
+namespace GymPro.Capa.Logica.BLL.Interfaces
 {
-    public interface IEjercicioDAL
+    interface IEjercicioBLL
     {
         void ActualizarEjercicio(Ejercicio pEjercicio);
         void EliminarEjercicioPorId(int id);

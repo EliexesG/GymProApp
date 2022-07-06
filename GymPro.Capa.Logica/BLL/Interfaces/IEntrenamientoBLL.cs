@@ -1,9 +1,13 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace GymPro.Capa.Datos
+namespace GymPro.Capa.Logica.BLL.Interfaces
 {
-    public interface IEntrenamientoDAL
+    public interface IEntrenamientoBLL
     {
         void ActualizarEntrenamiento(Entrenamiento pEntrenamiento);
         void EliminarDiaEntrenamiento(int idEntrenamiento, Dia dia);

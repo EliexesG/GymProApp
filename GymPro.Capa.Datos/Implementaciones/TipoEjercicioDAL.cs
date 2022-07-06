@@ -59,7 +59,7 @@ namespace GymPro.Capa.Datos
         /// </summary>
         /// <param name="pId"></param>
         /// <returns></returns>
-        public Ejercicio SeleccionarTipoEjercicioPorId(int pId)
+        public TipoEjercicio SeleccionarTipoEjercicioPorId(int pId)
         {
             return default;
         }
@@ -71,6 +71,15 @@ namespace GymPro.Capa.Datos
         public void EliminarTipoEjercicioPorId(int pId)
         {
             // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
+        }
+
+        /// <summary>
+        /// Retorna el tipo de ejercicio relacionado al id de ejercicio
+        /// </summary>
+        /// <returns></returns>
+        public TipoEjercicio SeleccionarTipoEjercicioPorIdEjercicio(int pId)
+        {
+            return default;
         }
     }
 }

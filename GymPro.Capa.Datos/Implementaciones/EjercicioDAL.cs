@@ -36,6 +36,7 @@ namespace GymPro.Capa.Datos
         {
          
         }
+
         /// <summary>
         /// Actualiza un Ejercicio en la base de datos
         /// </summary>
@@ -44,11 +45,12 @@ namespace GymPro.Capa.Datos
         {
 
         }
+
         /// <summary>
         /// Retorna todos los Ejercicios en la base de datos
         /// </summary>
         /// <returns></returns>
-        public IList<Ejercicio> SeleccionarTodosEjercicios()
+        public List<Ejercicio> SeleccionarTodosEjercicios()
         {
             return null;
             // Seleccione todos los que tengan el campo estado en true
