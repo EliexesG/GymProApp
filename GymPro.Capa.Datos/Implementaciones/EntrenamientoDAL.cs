@@ -97,5 +97,14 @@ namespace GymPro.Capa.Datos
 
         }
 
+        /// <summary>
+        /// Retorna los dias ligados al entrenamiento por pId desde la base de datos
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        public List<Dia> ObtenerDiasEntrenamientoPorId(int pId)
+        {
+            return default;
+        }
     }
 }
