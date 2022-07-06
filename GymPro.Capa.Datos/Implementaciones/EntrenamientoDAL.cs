@@ -1,4 +1,4 @@
-﻿using GymPro.Capa.Entidades.Clases;
+﻿using GymPro.Capa.Entidades.Implementaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos
 {
-    class EntrenamientoDAL
+    public class EntrenamientoDAL : IEntrenamientoDAL
     {
 
         private static EntrenamientoDAL Instancia;
@@ -30,8 +30,8 @@ namespace GymPro.Capa.Datos
         /// Insertar Entrenamiento en la base de datos perteneciente a un usuario
         /// </summary>
         /// <param name="pEntrenamineto"></param>
-        /// <param name="id"></param>
-        public void InsertarEntrenamientoUsuario(Entrenamiento pEntrenamineto, string id)
+        /// <param name="ppId"></param>
+        public void InsertarEntrenamientoUsuario(Entrenamiento pEntrenamineto, string ppId)
         {
             // Cuando hacemos instancias y se dejan de usar hay un mecanismo que se llama Garbage Collector que limpia esas referencias que no se estan usando
             // Cunado tenemos estatático esas instancias nunca limpian entonces queda en menoria siempre y puede darse un desperdicio. 
@@ -49,10 +49,10 @@ namespace GymPro.Capa.Datos
         }
 
         /// <summary>
-        /// Eliminar un Entrenamiento por Id en la base de datos
+        /// Eliminar un Entrenamiento por pId en la base de datos
         /// </summary>
-        /// <param name="id"></param>
-        public void EliminarEntrenamientoPorId(int id)
+        /// <param name="pId"></param>
+        public void EliminarEntrenamientoPorId(int pId)
         {
 
         }
@@ -60,19 +60,19 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Retorna una lista con todos los entrenamientos de un usuario en la base de datos
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="pId"></param>
         /// <returns></returns>
-        public List<Entrenamiento> ObtenerTodosEntrenamientosUsuario(string id)
+        public List<Entrenamiento> ObtenerTodosEntrenamientosUsuario(string pId)
         {
             return default;
         }
 
         /// <summary>
-        /// Retorna entrenamiento por id de la base de datos
+        /// Retorna entrenamiento por pId de la base de datos
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="pId"></param>
         /// <returns></returns>
-        public Entrenamiento ObtenerEntrenamientoPorId(int id)
+        public Entrenamiento ObtenerEntrenamientoPorId(int pId)
         {
             return default;
         }
@@ -80,9 +80,9 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Insertar dia de entrenamiento a un Entrenamiento en la base de datos
         /// </summary>
-        /// <param name="idEntrenamiento"></param>
+        /// <param name="pIdEntrenamiento"></param>
         /// <param name="dia"></param>
-        public void InsertarDiaEntrenamiento(int idEntrenamiento, Dia dia)
+        public void InsertarDiaEntrenamiento(int pIdEntrenamiento, Dia dia)
         {
             // Se inserta el registroen la tabla Dias entrenamiento
         }
@@ -90,9 +90,9 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Eliminar dia de entrenamiento de un Entrenamiento en la base de datos
         /// </summary>
-        /// <param name="idEntrenamiento"></param>
+        /// <param name="pIdEntrenamiento"></param>
         /// <param name="dia"></param>
-        public void EliminarDiaEntrenamiento (int idEntrenamiento, Dia dia)
+        public void EliminarDiaEntrenamiento(int pIdEntrenamiento, Dia dia)
         {
 
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Entidades.Clases
+namespace GymPro.Capa.Entidades.Implementaciones
 {
     public class Entrenamiento
     {

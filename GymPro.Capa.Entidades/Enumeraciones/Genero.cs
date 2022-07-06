@@ -1,5 +1,5 @@
 ﻿public enum Genero
 {
     Femenino = 1,
-    Masculino 2
+    Masculino = 2
 }

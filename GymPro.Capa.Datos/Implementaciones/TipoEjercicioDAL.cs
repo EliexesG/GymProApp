@@ -1,4 +1,4 @@
-﻿using GymPro.Capa.Entidades.Clases;
+﻿using GymPro.Capa.Entidades.Implementaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos
 {
-    class TipoEjercicioDAL
+    public class TipoEjercicioDAL : ITipoEjercicioDAL
     {
 
         private static TipoEjercicioDAL Instancia;
@@ -57,9 +57,9 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Retorna un Tipo de Ejercicio de la base por id
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="pId"></param>
         /// <returns></returns>
-        public Ejercicio SeleccionarTipoEjercicioPorId(int id)
+        public Ejercicio SeleccionarTipoEjercicioPorId(int pId)
         {
             return default;
         }
@@ -67,8 +67,8 @@ namespace GymPro.Capa.Datos
         /// <summary>
         /// Elimina un Tipo de Ejercicio de la base por id
         /// </summary>
-        /// <param name="id"></param>
-        public void EliminarTipoEjercicioPorId(int id)
+        /// <param name="pId"></param>
+        public void EliminarTipoEjercicioPorId(int pId)
         {
             // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
         }
