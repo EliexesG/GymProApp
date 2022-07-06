@@ -12,5 +12,6 @@ namespace GymPro.Capa.Datos
         void InsertarEntrenamientoUsuario(Entrenamiento pEntrenamineto, string id);
         Entrenamiento ObtenerEntrenamientoPorId(int id);
         List<Entrenamiento> ObtenerTodosEntrenamientosUsuario(string id);
+        List<Dia> ObtenerDiasEntrenamientoPorId(int pId)
     }
 }
