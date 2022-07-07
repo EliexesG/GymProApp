@@ -1,14 +1,14 @@
-﻿using GymPro.Capa.Entidades.Implementaciones;
+﻿using GymPro.Capa.Datos.Interfaces;
+using GymPro.Capa.Entidades.Implementaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Datos
-{/// <summary>
-/// Todas las operaciones para manejar los ejercicios a nivel de persitencia
-/// </summary>
+namespace GymPro.Capa.Datos.Implementaciones
+{
+
     public class EjercicioDAL : IEjercicioDAL
     {
 
@@ -20,7 +20,7 @@ namespace GymPro.Capa.Datos
         /// <returns></returns>
         public static EjercicioDAL GetInstance()
         {
-            if(Instancia == null)
+            if (Instancia == null)
             {
                 Instancia = new EjercicioDAL();
             }
@@ -34,7 +34,16 @@ namespace GymPro.Capa.Datos
         /// <param name="pEjercicio"></param>
         public void InsertarEjercicio(Ejercicio pEjercicio)
         {
-         
+
+        }
+
+        /// <summary>
+        /// Elimina un Ejercicio de la base por id
+        /// </summary>
+        /// <param name="pId"></param>
+        public void EliminarEjercicioPorId(int pId)
+        {
+
         }
 
         /// <summary>
@@ -53,7 +62,6 @@ namespace GymPro.Capa.Datos
         public List<Ejercicio> SeleccionarTodosEjercicios()
         {
             return null;
-            // Seleccione todos los que tengan el campo estado en true
         }
 
         /// <summary>
@@ -64,15 +72,6 @@ namespace GymPro.Capa.Datos
         public Ejercicio SeleccionarEjercicioPorId(int pId)
         {
             return default;
-        }
-
-        /// <summary>
-        /// Elimina un Ejercicio de la base por id
-        /// </summary>
-        /// <param name="pId"></param>
-        public void EliminarEjercicioPorId(int pId)
-        {
-            // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
         }
 
     }

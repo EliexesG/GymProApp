@@ -1,11 +1,12 @@
-﻿using GymPro.Capa.Entidades.Implementaciones;
+﻿using GymPro.Capa.Datos.Interfaces;
+using GymPro.Capa.Entidades.Implementaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Datos
+namespace GymPro.Capa.Datos.Implementaciones
 {
     public class EjercicioEnEntrenamientoDAL : IEjercicioEnEntrenamientoDAL
     {
@@ -31,29 +32,9 @@ namespace GymPro.Capa.Datos
         /// </summary>
         /// <param name="pIdEntrenamiento"></param>
         /// <param name="pEjercicio"></param>
-        public void InsertarEjercicioEnEntrenamiento(int pIdEntrenamiento, EjercicioEnEntrenamiento pEjercicio)
+        public void InsertarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicio)
         {
             // Se inserta el registroen la tabla intermida
-        }
-
-        /// <summary>
-        /// Retorna todos los Ejercicios por Entrenamiento de la base de datos
-        /// </summary>
-        /// <param name="pIdEntrenamiento"></param>
-        /// <returns></returns>
-        public List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosPorEntrenamiento(int pIdEntrenamiento)
-        {
-            return default;
-        }
-
-        /// <summary>
-        /// Actualizar un Ejercicio de un Entrenamiento en la base de datos
-        /// </summary>
-        /// <param name="pIdEntrenamiento"></param>
-        /// <param name="pEjercicio"></param>
-        public void ActualizarEjercicioEnEntrenamiento(int pIdEntrenamiento, EjercicioEnEntrenamiento pEjercicio)
-        {
-
         }
 
         /// <summary>
@@ -65,5 +46,36 @@ namespace GymPro.Capa.Datos
         {
 
         }
+
+        /// <summary>
+        /// Actualizar un Ejercicio de un Entrenamiento en la base de datos
+        /// </summary>
+        /// <param name="pIdEntrenamiento"></param>
+        /// <param name="pEjercicio"></param>
+        public void ActualizarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicio)
+        {
+
+        }
+
+        /// <summary>
+        /// Retorna todos los Ejercicios en entrenamientos de la base de datos
+        /// </summary>
+        /// <param name="pIdEntrenamiento"></param>
+        /// <returns></returns>
+        public List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosDeEntrenamientos()
+        {
+            return default;
+        }
+
+        /// <summary>
+        /// Retorna todos los ejercicios de un entrenamiento en especifico por su Id de la base de datos
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        public List<EjercicioEnEntrenamiento> ObtenerEjerciciosEnEntrenamientosPorIDEntrenamiento(int pId)
+        {
+            return default;
+        }
+
     }
 }

@@ -41,16 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Implementaciones\DiaEntrenamientoBLL.cs" />
     <Compile Include="BLL\Implementaciones\EjercicioBLL.cs" />
     <Compile Include="BLL\Implementaciones\EjercicioEnEntrenamientoBLL.cs" />
     <Compile Include="BLL\Implementaciones\EntrenamientoBLL.cs" />
-    <Compile Include="BLL\Implementaciones\TipoEjercicioBLL.cs" />
-    <Compile Include="BLL\Interfaces\IEjercicioBLL.cs" />
-    <Compile Include="BLL\Interfaces\IEjercicioEnEntrenamientoBLL.cs" />
-    <Compile Include="BLL\Interfaces\IEntrenamientoBLL.cs" />
-    <Compile Include="BLL\Interfaces\ITipoEjercicioBLL.cs" />
+    <Compile Include="BLL\Implementaciones\ExpedienteUsuarioBLL.cs" />
     <Compile Include="BLL\Interfaces\IUsuarioBLL.cs" />
     <Compile Include="BLL\Implementaciones\UsuarioBLL.cs" />
+    <Compile Include="BLL\Interfaces\ITipoEjercicioBLL.cs" />
+    <Compile Include="BLL\Implementaciones\TipoEjercicioBLL.cs" />
+    <Compile Include="BLL\Interfaces\IExpedienteUsuarioBLL.cs" />
+    <Compile Include="BLL\Interfaces\IEntrenamientoBLL.cs" />
+    <Compile Include="BLL\Interfaces\IEjercicioEnEntrenamientoBLL.cs" />
+    <Compile Include="BLL\Interfaces\IEjercicioBLL.cs" />
+    <Compile Include="BLL\Interfaces\IDiaEntrenamientoBLL.cs" />
     <Compile Include="Patrones\UsuarioFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,5 +68,6 @@
       <Name>GymPro.Capa.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using GymPro.Capa.Datos;
+﻿using GymPro.Capa.Datos.Implementaciones;
+using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
 using System;
@@ -11,7 +12,8 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
     class EjercicioBLL : IEjercicioBLL
     {
-        private EjercicioDAL oEjercicioDAL;
+
+        private IEjercicioDAL oEjercicioDAL;
 
         public EjercicioBLL()
         {
@@ -24,15 +26,17 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pEjercicio"></param>
         public void InsertarEjercicio(Ejercicio pEjercicio)
         {
-            try
-            {
-                oEjercicioDAL.InsertarEjercicio(pEjercicio);
-            }
-            catch(Exception er)
-            {
-                throw er;
-            }
-        } 
+
+        }
+
+        /// <summary>
+        /// Elimina un Ejercicio de la base por id
+        /// </summary>
+        /// <param name="pId"></param>
+        public void EliminarEjercicioPorId(int pId)
+        {
+
+        }
 
         /// <summary>
         /// Actualiza un Ejercicio en la base de datos
@@ -40,14 +44,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pEjercicio"></param>
         public void ActualizarEjercicio(Ejercicio pEjercicio)
         {
-            try
-            {
-                oEjercicioDAL.ActualizarEjercicio(pEjercicio);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
+
         }
 
         /// <summary>
@@ -56,14 +53,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<Ejercicio> SeleccionarTodosEjercicios()
         {
-            try
-            {
-                return oEjercicioDAL.SeleccionarTodosEjercicios();
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
+            return null;
         }
 
         /// <summary>
@@ -73,30 +63,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public Ejercicio SeleccionarEjercicioPorId(int pId)
         {
-            try
-            {
-                return SeleccionarEjercicioPorId(pId);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Elimina un Ejercicio de la base por id
-        /// </summary>
-        /// <param name="pId"></param>
-        public void EliminarEjercicioPorId(int pId)
-        {
-            try
-            {
-                oEjercicioDAL.EliminarEjercicioPorId(pId);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
+            return default;
         }
 
     }

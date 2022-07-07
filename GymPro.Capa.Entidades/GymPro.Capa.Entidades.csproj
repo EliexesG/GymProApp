@@ -43,16 +43,17 @@
   <ItemGroup>
     <Compile Include="Implementaciones\Administrador.cs" />
     <Compile Include="Implementaciones\Cliente.cs" />
+    <Compile Include="Implementaciones\DiaEntrenamiento.cs" />
     <Compile Include="Implementaciones\Ejercicio.cs" />
     <Compile Include="Implementaciones\EjercicioEnEntrenamiento.cs" />
     <Compile Include="Implementaciones\Entrenamiento.cs" />
+    <Compile Include="Implementaciones\ExpedienteUsuario.cs" />
     <Compile Include="Implementaciones\Instructor.cs" />
     <Compile Include="Implementaciones\TipoEjercicio.cs" />
     <Compile Include="Enumeraciones\Dia.cs" />
     <Compile Include="Enumeraciones\Genero.cs" />
     <Compile Include="Enumeraciones\TipoUsuario.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
-    <Compile Include="Interfaces\IExpedienteUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

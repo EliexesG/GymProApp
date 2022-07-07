@@ -1,13 +1,14 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using System.Collections.Generic;
 
-namespace GymPro.Capa.Datos
+namespace GymPro.Capa.Datos.Interfaces
 {
     public interface IEjercicioEnEntrenamientoDAL
     {
-        void ActualizarEjercicioEnEntrenamiento(int idEntrenamiento, EjercicioEnEntrenamiento pEjercicio);
-        void EliminarEjercicioEnEntrenamientoID(int idEntrenamiento, int idEjercicio);
-        void InsertarEjercicioEnEntrenamiento(int idEntrenamiento, EjercicioEnEntrenamiento pEjercicio);
-        List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosPorEntrenamiento(int idEntrenamiento);
+        void ActualizarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicio);
+        void EliminarEjercicioEnEntrenamientoID(int pIdEntrenamiento, int idEjercicio);
+        void InsertarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicio);
+        List<EjercicioEnEntrenamiento> ObtenerEjerciciosEnEntrenamientosPorIDEntrenamiento(int pId);
+        List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosDeEntrenamientos();
     }
 }
