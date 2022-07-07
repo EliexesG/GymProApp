@@ -41,17 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementaciones\DiaEntrenamientoDAL.cs" />
     <Compile Include="Implementaciones\EjercicioDAL.cs" />
     <Compile Include="Implementaciones\EjercicioEnEntrenamientoDAL.cs" />
     <Compile Include="Implementaciones\EntrenamientoDAL.cs" />
-    <Compile Include="Interfaces\IUsuarioDAL.cs" />
-    <Compile Include="Interfaces\ITipoEjercicioDAL.cs" />
-    <Compile Include="Interfaces\IEntrenamientoDAL.cs" />
+    <Compile Include="Implementaciones\ExpedienteUsuarioDAL.cs" />
     <Compile Include="Interfaces\IEjercicioEnEntrenamientoDAL.cs" />
+    <Compile Include="Interfaces\IDiaEntrenamientoDAL.cs" />
+    <Compile Include="Interfaces\IEntrenamientoDAL.cs" />
     <Compile Include="Interfaces\IEjercicioDAL.cs" />
+    <Compile Include="Interfaces\ITipoEjercicioDAL.cs" />
+    <Compile Include="Interfaces\IUsuarioDAL.cs" />
+    <Compile Include="Implementaciones\UsuarioDAL.cs" />
+    <Compile Include="Interfaces\IExpedienteUsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementaciones\TipoEjercicioDAL.cs" />
-    <Compile Include="Implementaciones\UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GymPro.Capa.Entidades\GymPro.Capa.Entidades.csproj">
@@ -59,5 +63,6 @@
       <Name>GymPro.Capa.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

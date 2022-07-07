@@ -1,16 +1,14 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using System.Collections.Generic;
 
-namespace GymPro.Capa.Datos
+namespace GymPro.Capa.Datos.Interfaces
 {
     public interface ITipoEjercicioDAL
     {
         void ActualizarTipoEjercicio(TipoEjercicio pTipoEjercicio);
-        void EliminarTipoEjercicioPorId(int id);
+        void EliminarTipoEjercicioPorID(int pId);
         void InsertarTipoEjercicio(TipoEjercicio pTipoEjercicio);
-        TipoEjercicio SeleccionarTipoEjercicioPorId(int id);
+        TipoEjercicio SeleccionarTipoEjercicioPorID(int pId);
         IList<TipoEjercicio> SeleccionarTodosTiposEjercicio();
-        TipoEjercicio SeleccionarTipoEjercicioPorIdEjercicio(int pId);
-
     }
 }

@@ -1,11 +1,12 @@
-﻿using GymPro.Capa.Entidades.Implementaciones;
+﻿using GymPro.Capa.Datos.Interfaces;
+using GymPro.Capa.Entidades.Implementaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Datos
+namespace GymPro.Capa.Datos.Implementaciones
 {
     public class TipoEjercicioDAL : ITipoEjercicioDAL
     {
@@ -36,6 +37,15 @@ namespace GymPro.Capa.Datos
         }
 
         /// <summary>
+        /// Elimina un Tipo de Ejercicio de la base por id
+        /// </summary>
+        /// <param name="pId"></param>
+        public void EliminarTipoEjercicioPorID(int pId)
+        {
+            // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
+        }
+
+        /// <summary>
         /// Actualiza un Tipo de Ejercicio en la base de datos
         /// </summary>
         /// <param name="pTipoEjercicio"></param>
@@ -51,7 +61,6 @@ namespace GymPro.Capa.Datos
         public IList<TipoEjercicio> SeleccionarTodosTiposEjercicio()
         {
             return null;
-            // Seleccione todos los que tengan el campo estado en true
         }
 
         /// <summary>
@@ -59,25 +68,7 @@ namespace GymPro.Capa.Datos
         /// </summary>
         /// <param name="pId"></param>
         /// <returns></returns>
-        public TipoEjercicio SeleccionarTipoEjercicioPorId(int pId)
-        {
-            return default;
-        }
-
-        /// <summary>
-        /// Elimina un Tipo de Ejercicio de la base por id
-        /// </summary>
-        /// <param name="pId"></param>
-        public void EliminarTipoEjercicioPorId(int pId)
-        {
-            // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
-        }
-
-        /// <summary>
-        /// Retorna el tipo de ejercicio relacionado al id de ejercicio
-        /// </summary>
-        /// <returns></returns>
-        public TipoEjercicio SeleccionarTipoEjercicioPorIdEjercicio(int pId)
+        public TipoEjercicio SeleccionarTipoEjercicioPorID(int pId)
         {
             return default;
         }

@@ -1,4 +1,5 @@
-﻿using GymPro.Capa.Datos;
+﻿using GymPro.Capa.Datos.Implementaciones;
+using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
 using System;
@@ -9,13 +10,33 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
-    public class TipoEjercicioBLL : ITipoEjercicioBLL
+    class TipoEjercicioBLL : ITipoEjercicioBLL
     {
-        private ITipoEjercicioDAL oTipoEjercicioDAL;
+
+        private ITipoEjercicioDAL oTipoEjercicio;
 
         public TipoEjercicioBLL()
         {
-            oTipoEjercicioDAL = TipoEjercicioDAL.GetInstance();
+            oTipoEjercicio = TipoEjercicioDAL.GetInstance();
+        }
+
+
+        /// <summary>
+        /// Inserta un Tipo de Ejercicio en la base de datos
+        /// </summary>
+        /// <param name="pTipoEjercicio"></param>
+        public void InsertarTipoEjercicio(TipoEjercicio pTipoEjercicio)
+        {
+
+        }
+
+        /// <summary>
+        /// Elimina un Tipo de Ejercicio de la base por id
+        /// </summary>
+        /// <param name="pId"></param>
+        public void EliminarTipoEjercicioPorID(int pId)
+        {
+            // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
         }
 
         /// <summary>
@@ -24,79 +45,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pTipoEjercicio"></param>
         public void ActualizarTipoEjercicio(TipoEjercicio pTipoEjercicio)
         {
-            try
-            {
-                oTipoEjercicioDAL.ActualizarTipoEjercicio(pTipoEjercicio);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
-        }
 
-        /// <summary>
-        /// Elimina un Tipo de Ejercicio de la base por id
-        /// </summary>
-        /// <param name="pId"></param>
-        public void EliminarTipoEjercicioPorId(int id)
-        {
-            try
-            {
-                oTipoEjercicioDAL.EliminarTipoEjercicioPorId(id);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Inserta un Tipo de Ejercicio en la base de datos
-        /// </summary>
-        /// <param name="pTipoEjercicio"></param>
-        public void InsertarTipoEjercicio(TipoEjercicio pTipoEjercicio)
-        {
-            try
-            {
-                oTipoEjercicioDAL.InsertarTipoEjercicio(pTipoEjercicio);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Retorna un Tipo de Ejercicio de la base por id
-        /// </summary>
-        /// <param name="pId"></param>
-        /// <returns></returns>
-        public TipoEjercicio SeleccionarTipoEjercicioPorId(int id)
-        {
-            try
-            {
-                return oTipoEjercicioDAL.SeleccionarTipoEjercicioPorId(id);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Retorna el tipo de ejercicio relacionado al id de ejercicio
-        /// </summary>
-        /// <returns></returns>
-        public TipoEjercicio SeleccionarTipoEjercicioPorIdEjercicio(int pId)
-        {
-            try
-            {
-                return oTipoEjercicioDAL.SeleccionarTipoEjercicioPorIdEjercicio(pId);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
         }
 
         /// <summary>
@@ -105,14 +54,18 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public IList<TipoEjercicio> SeleccionarTodosTiposEjercicio()
         {
-            try
-            {
-                return oTipoEjercicioDAL.SeleccionarTodosTiposEjercicio();
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
+            return null;
         }
+
+        /// <summary>
+        /// Retorna un Tipo de Ejercicio de la base por id
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        public TipoEjercicio SeleccionarTipoEjercicioPorID(int pId)
+        {
+            return default;
+        }
+
     }
 }

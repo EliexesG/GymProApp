@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
-    public class EjercicioEnEntrenamiento
+    public class DiaEntrenamiento
     {
         public int CodigoEntrenamiento { get; set; }
-        public int CodigoEjercicio { get; set; }
-        public int Repeticiones { get; set; }
-        public int[] Series { get; set; }
-        public int Tiempo { get; set; }
+        public int NumeroDia { get; set; }
     }
 }

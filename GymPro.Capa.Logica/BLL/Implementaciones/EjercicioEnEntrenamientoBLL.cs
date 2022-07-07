@@ -1,4 +1,5 @@
-﻿using GymPro.Capa.Datos;
+﻿using GymPro.Capa.Datos.Implementaciones;
+using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
 using System;
@@ -24,50 +25,9 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// </summary>
         /// <param name="pIdEntrenamiento"></param>
         /// <param name="pEjercicio"></param>
-        public void InsertarEjercicioEnEntrenamiento(int pIdEntrenamiento, EjercicioEnEntrenamiento pEjercicio)
+        public void InsertarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicio)
         {
-            try
-            {
-                oEjercicioEnEntrenamientoDAL.InsertarEjercicioEnEntrenamiento(pIdEntrenamiento, pEjercicio);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Retorna todos los Ejercicios por Entrenamiento de la base de datos
-        /// </summary>
-        /// <param name="pIdEntrenamiento"></param>
-        /// <returns></returns>
-        public List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosPorEntrenamiento(int pIdEntrenamiento)
-        {
-            try
-            {
-                return oEjercicioEnEntrenamientoDAL.ObtenerTodosEjerciciosPorEntrenamiento(pIdEntrenamiento);
-            }
-            catch(Exception er)
-            {
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Actualizar un Ejercicio de un Entrenamiento en la base de datos
-        /// </summary>
-        /// <param name="pIdEntrenamiento"></param>
-        /// <param name="pEjercicio"></param>
-        public void ActualizarEjercicioEnEntrenamiento(int pIdEntrenamiento, EjercicioEnEntrenamiento pEjercicio)
-        {
-            try
-            {
-                oEjercicioEnEntrenamientoDAL.ActualizarEjercicioEnEntrenamiento(pIdEntrenamiento, pEjercicio);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
+            // Se inserta el registroen la tabla intermida
         }
 
         /// <summary>
@@ -77,14 +37,38 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="idEjercicio"></param>
         public void EliminarEjercicioEnEntrenamientoID(int pIdEntrenamiento, int idEjercicio)
         {
-            try
-            {
-                oEjercicioEnEntrenamientoDAL.EliminarEjercicioEnEntrenamientoID(pIdEntrenamiento, idEjercicio);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
+
         }
+
+        /// <summary>
+        /// Actualizar un Ejercicio de un Entrenamiento en la base de datos
+        /// </summary>
+        /// <param name="pIdEntrenamiento"></param>
+        /// <param name="pEjercicio"></param>
+        public void ActualizarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicio)
+        {
+
+        }
+
+        /// <summary>
+        /// Retorna todos los Ejercicios en entrenamientos de la base de datos
+        /// </summary>
+        /// <param name="pIdEntrenamiento"></param>
+        /// <returns></returns>
+        public List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosDeEntrenamientos()
+        {
+            return default;
+        }
+
+        /// <summary>
+        /// Retorna todos los ejercicios de un entrenamiento en especifico por su Id de la base de datos
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        public List<EjercicioEnEntrenamiento> ObtenerEjerciciosEnEntrenamientosPorIDEntrenamiento(int pId)
+        {
+            return default;
+        }
+
     }
 }

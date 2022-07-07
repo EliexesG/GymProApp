@@ -1,15 +1,14 @@
 ﻿using GymPro.Capa.Entidades.Interfaces;
 using System.Collections.Generic;
 
-namespace GymPro.Capa.Logica.BLL
+namespace GymPro.Capa.Logica.BLL.Interfaces
 {
-    public interface IUsuarioBLL
+    interface IUsuarioBLL
     {
-        void InsertarUsuario(IUsuario pUsuario);
         void ActualizarUsuario(IUsuario pUsuario);
+        void EliminarUsuarioPorID(string pId);
+        void InsertarUsuario(IUsuario pUsuario);
         List<IUsuario> SeleccionarTodosUsuarios();
-        IUsuario SeleccionarUsuarioPorId(string pId);
-        void EliminarUsuarioPorId(string pId);
-
+        IUsuario SeleccionarUsuarioPorID(string pId);
     }
 }
