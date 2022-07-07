@@ -10,5 +10,6 @@ namespace GymPro.Capa.Entidades.Implementaciones
     {
         public int CodigoEntrenamiento { get; set; }
         public int NumeroDia { get; set; }
+        public string Nombre { get => Enum.GetName(typeof(Dia), NumeroDia); }
     }
 }
