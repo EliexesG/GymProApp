@@ -75,11 +75,11 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// </summary>
         /// <param name="pIdEntrenamiento"></param>
         /// <param name="idEjercicio"></param>
-        public void EliminarEjercicioEnEntrenamiento(int pIdEntrenamiento, int idEjercicio)
+        public void EliminarEjercicioEnEntrenamientoID(int pIdEntrenamiento, int idEjercicio)
         {
             try
             {
-                oEjercicioEnEntrenamientoDAL.EliminarEjercicioEnEntrenamiento(pIdEntrenamiento, idEjercicio);
+                oEjercicioEnEntrenamientoDAL.EliminarEjercicioEnEntrenamientoID(pIdEntrenamiento, idEjercicio);
             }
             catch (Exception er)
             {

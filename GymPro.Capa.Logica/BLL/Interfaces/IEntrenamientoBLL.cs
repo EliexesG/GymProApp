@@ -9,14 +9,14 @@ namespace GymPro.Capa.Logica.BLL.Interfaces
 {
     public interface IEntrenamientoBLL
     {
+        void InsertarEntrenamientoDeUsuario(string pId, Entrenamiento pEntrenamiento);
+        void EliminarEntrenamientoPorID(int pId);
         void ActualizarEntrenamiento(Entrenamiento pEntrenamiento);
-        void EliminarDiaEntrenamiento(int idEntrenamiento, Dia dia);
-        void EliminarEntrenamientoPorId(int id);
-        void InsertarDiaEntrenamiento(int idEntrenamiento, Dia dia);
-        void InsertarEntrenamientoUsuario(Entrenamiento pEntrenamineto, string id);
-        Entrenamiento ObtenerEntrenamientoPorId(int id);
-        List<Entrenamiento> ObtenerTodosEntrenamientosUsuario(string id);
-        List<Dia> ObtenerDiasEntrenamientoPorId(int pId);
-        List<Entrenamiento> ObtenerEntrenamientosPorIdUsuario(string pId);
+        Entrenamiento ObtenerEntrenamientoPorID(int pId);
+        List<Entrenamiento> ObtenerTodosEntrenamientos();
+        List<Entrenamiento> ObtenerEntrenamientosIdUsuario(string pId);
+        void InsertarDiaEnEntrenamiento(int pId, Dia pDia);
+        void EliminarDiaDeEntrenamiento(int pId, Dia pDia);
+        List<Dia> ObtenerDiasDeEntrenamientoPorID(int pId);
     }
 }

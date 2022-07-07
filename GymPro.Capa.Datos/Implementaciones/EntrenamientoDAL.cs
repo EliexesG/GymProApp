@@ -27,94 +27,90 @@ namespace GymPro.Capa.Datos
         }
 
         /// <summary>
-        /// Insertar Entrenamiento en la base de datos perteneciente a un usuario
-        /// </summary>
-        /// <param name="pEntrenamineto"></param>
-        /// <param name="ppId"></param>
-        public void InsertarEntrenamientoUsuario(Entrenamiento pEntrenamineto, string ppId)
-        {
-            // Cuando hacemos instancias y se dejan de usar hay un mecanismo que se llama Garbage Collector que limpia esas referencias que no se estan usando
-            // Cunado tenemos estatático esas instancias nunca limpian entonces queda en menoria siempre y puede darse un desperdicio. 
-
-            // Aqui va toda logica para insetart el entrenamiento
-        }
-
-        /// <summary>
-        /// Actualizar un Entrenamiento en la base de datos
+        /// Actualizar el entrenamiento en la base de datos
         /// </summary>
         /// <param name="pEntrenamiento"></param>
         public void ActualizarEntrenamiento(Entrenamiento pEntrenamiento)
         {
-
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Eliminar un Entrenamiento por pId en la base de datos
+        /// Eliminar un dia del entrenamiento en la base de datos
         /// </summary>
         /// <param name="pId"></param>
-        public void EliminarEntrenamientoPorId(int pId)
+        /// <param name="pDia"></param>
+        public void EliminarDiaDeEntrenamiento(int pId, Dia pDia)
         {
-
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Retorna una lista con todos los entrenamientos de un usuario en la base de datos
+        /// Eliminar un entrenamiento por id de la base de datos
         /// </summary>
         /// <param name="pId"></param>
-        /// <returns></returns>
-        public List<Entrenamiento> ObtenerTodosEntrenamientosUsuario(string pId)
+        public void EliminarEntrenamientoPorID(int pId)
         {
-            return default;
+            throw new NotImplementedException();
         }
-
+        
         /// <summary>
-        /// Retorna entrenamiento por pId de la base de datos
+        /// Insertar un dia en el entrenamiento en la base de datos
         /// </summary>
         /// <param name="pId"></param>
-        /// <returns></returns>
-        public Entrenamiento ObtenerEntrenamientoPorId(int pId)
+        /// <param name="pDia"></param>
+        public void InsertarDiaEnEntrenamiento(int pId, Dia pDia)
         {
-            return default;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Insertar dia de entrenamiento a un Entrenamiento en la base de datos
+        /// Insertar un entrenamiento perteneciente a un usuario en la base de datos
         /// </summary>
-        /// <param name="pIdEntrenamiento"></param>
-        /// <param name="dia"></param>
-        public void InsertarDiaEntrenamiento(int pIdEntrenamiento, Dia dia)
+        /// <param name="pId"></param>
+        /// <param name="pEntrenamiento"></param>
+        public void InsertarEntrenamientoDeUsuario(string pId, Entrenamiento pEntrenamiento)
         {
-            // Se inserta el registroen la tabla Dias entrenamiento
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Eliminar dia de entrenamiento de un Entrenamiento en la base de datos
-        /// </summary>
-        /// <param name="pIdEntrenamiento"></param>
-        /// <param name="dia"></param>
-        public void EliminarDiaEntrenamiento(int pIdEntrenamiento, Dia dia)
-        {
-
-        }
-
-        /// <summary>
-        /// Retorna los dias ligados al entrenamiento por pId desde la base de datos
+        /// Obtener los dias de entrenamiento de un entrenamiento en la base de datos
         /// </summary>
         /// <param name="pId"></param>
         /// <returns></returns>
-        public List<Dia> ObtenerDiasEntrenamientoPorId(int pId)
+        public List<Dia> ObtenerDiasDeEntrenamientoPorID(int pId)
         {
-            return default;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Retorna todos los entrenamientos relacionados a un usuario
+        /// Obtener un entrenamiento por su id de la base de datos
         /// </summary>
         /// <param name="pId"></param>
         /// <returns></returns>
-        public List<Entrenamiento> ObtenerEntrenamientosPorIdUsuario(string pId)
+        public Entrenamiento ObtenerEntrenamientoPorID(int pId)
         {
-            return default;
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Obtener todos los entrenamientos pertenecientes a un usuario de la base de datos
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        public List<Entrenamiento> ObtenerEntrenamientosIdUsuario(string pId)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Obtener todos los entrenamientos existentes
+        /// </summary>
+        /// <returns></returns>
+        public List<Entrenamiento> ObtenerTodosEntrenamientos()
+        {
+            throw new NotImplementedException();
         }
     }
 }

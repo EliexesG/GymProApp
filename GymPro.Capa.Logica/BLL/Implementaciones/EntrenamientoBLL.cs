@@ -20,24 +20,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         /// <summary>
-        /// Insertar Entrenamiento en la base de datos perteneciente a un usuario
-        /// </summary>
-        /// <param name="pEntrenamineto"></param>
-        /// <param name="ppId"></param>
-        public void InsertarEntrenamientoUsuario(Entrenamiento pEntrenamineto, string ppId)
-        {
-            try
-            {
-                oEntrenamientoDAL.InsertarEntrenamientoUsuario(pEntrenamineto, ppId);
-            }
-            catch(Exception er)
-            {
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Actualizar un Entrenamiento en la base de datos
+        /// Actualizar el entrenamiento en la base de datos
         /// </summary>
         /// <param name="pEntrenamiento"></param>
         public void ActualizarEntrenamiento(Entrenamiento pEntrenamiento)
@@ -46,21 +29,22 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             {
                 oEntrenamientoDAL.ActualizarEntrenamiento(pEntrenamiento);
             }
-            catch (Exception er)
+            catch(Exception er)
             {
                 throw er;
             }
         }
 
         /// <summary>
-        /// Eliminar un Entrenamiento por pId en la base de datos
+        /// Eliminar un dia del entrenamiento en la base de datos
         /// </summary>
         /// <param name="pId"></param>
-        public void EliminarEntrenamientoPorId(int pId)
+        /// <param name="pDia"></param>
+        public void EliminarDiaDeEntrenamiento(int pId, Dia pDia)
         {
             try
             {
-                oEntrenamientoDAL.EliminarEntrenamientoPorId(pId);
+                oEntrenamientoDAL.EliminarDiaDeEntrenamiento(pId, pDia);
             }
             catch (Exception er)
             {
@@ -69,15 +53,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         /// <summary>
-        /// Retorna una lista con todos los entrenamientos de un usuario en la base de datos
+        /// Eliminar un entrenamiento por id de la base de datos
         /// </summary>
         /// <param name="pId"></param>
-        /// <returns></returns>
-        public List<Entrenamiento> ObtenerTodosEntrenamientosUsuario(string pId)
+        public void EliminarEntrenamientoPorID(int pId)
         {
             try
             {
-                return oEntrenamientoDAL.ObtenerTodosEntrenamientosUsuario(pId);
+                oEntrenamientoDAL.EliminarEntrenamientoPorID(pId);
             }
             catch (Exception er)
             {
@@ -86,15 +69,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         /// <summary>
-        /// Retorna entrenamiento por pId de la base de datos
+        /// Insertar un dia en el entrenamiento en la base de datos
         /// </summary>
         /// <param name="pId"></param>
-        /// <returns></returns>
-        public Entrenamiento ObtenerEntrenamientoPorId(int pId)
+        /// <param name="pDia"></param>
+        public void InsertarDiaEnEntrenamiento(int pId, Dia pDia)
         {
             try
             {
-                return oEntrenamientoDAL.ObtenerEntrenamientoPorId(pId);
+                oEntrenamientoDAL.InsertarDiaEnEntrenamiento(pId, pDia);
             }
             catch (Exception er)
             {
@@ -103,15 +86,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         /// <summary>
-        /// Insertar dia de entrenamiento a un Entrenamiento en la base de datos
+        /// Insertar un entrenamiento perteneciente a un usuario en la base de datos
         /// </summary>
-        /// <param name="pIdEntrenamiento"></param>
-        /// <param name="dia"></param>
-        public void InsertarDiaEntrenamiento(int pIdEntrenamiento, Dia dia)
+        /// <param name="pId"></param>
+        /// <param name="pEntrenamiento"></param>
+        public void InsertarEntrenamientoDeUsuario(string pId, Entrenamiento pEntrenamiento)
         {
             try
             {
-                oEntrenamientoDAL.InsertarDiaEntrenamiento(pIdEntrenamiento, dia);
+                oEntrenamientoDAL.InsertarEntrenamientoDeUsuario(pId, pEntrenamiento);
             }
             catch (Exception er)
             {
@@ -120,32 +103,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         /// <summary>
-        /// Eliminar dia de entrenamiento de un Entrenamiento en la base de datos
-        /// </summary>
-        /// <param name="pIdEntrenamiento"></param>
-        /// <param name="dia"></param>
-        public void EliminarDiaEntrenamiento(int pIdEntrenamiento, Dia dia)
-        {
-            try
-            {
-                oEntrenamientoDAL.EliminarDiaEntrenamiento(pIdEntrenamiento, dia);
-            }
-            catch (Exception er)
-            {
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Retorna los dias ligados al entrenamiento por pId desde la base de datos
+        /// Obtener los dias de entrenamiento de un entrenamiento en la base de datos
         /// </summary>
         /// <param name="pId"></param>
         /// <returns></returns>
-        public List<Dia> ObtenerDiasEntrenamientoPorId(int pId)
+        public List<Dia> ObtenerDiasDeEntrenamientoPorID(int pId)
         {
             try
             {
-                return oEntrenamientoDAL.ObtenerDiasEntrenamientoPorId(pId);
+                return oEntrenamientoDAL.ObtenerDiasDeEntrenamientoPorID(pId);
             }
             catch (Exception er)
             {
@@ -154,13 +120,53 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         /// <summary>
-        /// Retorna todos los entrenamientos relacionados a un usuario
+        /// Obtener un entrenamiento por su id de la base de datos
         /// </summary>
         /// <param name="pId"></param>
         /// <returns></returns>
-        public List<Entrenamiento> ObtenerEntrenamientosPorIdUsuario(string pId)
+        public Entrenamiento ObtenerEntrenamientoPorID(int pId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return oEntrenamientoDAL.ObtenerEntrenamientoPorID(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Obtener todos los entrenamientos pertenecientes a un usuario de la base de datos
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        public List<Entrenamiento> ObtenerEntrenamientosIdUsuario(string pId)
+        {
+            try
+            {
+                return oEntrenamientoDAL.ObtenerEntrenamientosIdUsuario(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Obtener todos los entrenamientos existentes
+        /// </summary>
+        /// <returns></returns>
+        public List<Entrenamiento> ObtenerTodosEntrenamientos()
+        {
+            try
+            {
+                return oEntrenamientoDAL.ObtenerTodosEntrenamientos();
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
     }
 }

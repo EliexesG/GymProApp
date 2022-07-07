@@ -61,7 +61,7 @@ namespace GymPro.Capa.Datos
         /// </summary>
         /// <param name="pIdEntrenamiento"></param>
         /// <param name="idEjercicio"></param>
-        public void EliminarEjercicioEnEntrenamiento(int pIdEntrenamiento, int idEjercicio)
+        public void EliminarEjercicioEnEntrenamientoID(int pIdEntrenamiento, int idEjercicio)
         {
 
         }
