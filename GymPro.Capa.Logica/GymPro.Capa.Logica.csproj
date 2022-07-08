@@ -46,6 +46,8 @@
     <Compile Include="BLL\Implementaciones\EjercicioEnEntrenamientoBLL.cs" />
     <Compile Include="BLL\Implementaciones\EntrenamientoBLL.cs" />
     <Compile Include="BLL\Implementaciones\ExpedienteUsuarioBLL.cs" />
+    <Compile Include="BLL\Interfaces\IServicioBACBLL.cs" />
+    <Compile Include="BLL\Implementaciones\ServicioBACBLL.cs" />
     <Compile Include="BLL\Interfaces\IUsuarioBLL.cs" />
     <Compile Include="BLL\Implementaciones\UsuarioBLL.cs" />
     <Compile Include="BLL\Interfaces\ITipoEjercicioBLL.cs" />
