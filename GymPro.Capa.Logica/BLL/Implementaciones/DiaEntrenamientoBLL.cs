@@ -20,6 +20,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oDiaEntrenamientoDAL = DiaEntrenamientoDAL.GetInstance();
         }
 
+        #region Acceso a datos
         /// <summary>
         /// Insertar un dia de entrenamiento en la base de datos
         /// </summary>
@@ -27,7 +28,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pDia"></param>
         public void InsertarDiaEnEntrenamiento(DiaEntrenamiento pDia)
         {
-            throw new NotImplementedException();
+            try
+            {
+                oDiaEntrenamientoDAL.InsertarDiaEnEntrenamiento(pDia);
+            }
+            catch(Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -37,7 +45,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pDia"></param>
         public void EliminarDiaDeEntrenamiento(DiaEntrenamiento pDia)
         {
-            throw new NotImplementedException();
+            try
+            {
+                oDiaEntrenamientoDAL.EliminarDiaDeEntrenamiento(pDia);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -46,7 +61,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<DiaEntrenamiento> SeleccionarTodosDiasDeEntrenamiento()
         {
-            return default;
+            try
+            {
+                return oDiaEntrenamientoDAL.SeleccionarTodosDiasDeEntrenamiento();
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -56,7 +78,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<DiaEntrenamiento> SeleccionarDiasDeEntrenamientoPorID(int pId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return oDiaEntrenamientoDAL.SeleccionarDiasDeEntrenamientoPorID(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
+        #endregion
     }
 }

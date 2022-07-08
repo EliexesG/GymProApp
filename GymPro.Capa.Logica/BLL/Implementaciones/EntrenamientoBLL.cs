@@ -19,13 +19,21 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oEntrenamientoDAL = EntrenamientoDAL.GetInstance();
         }
 
+        #region Acceso a datos
         /// <summary>
         /// Inserta un entrenamiento en la base de datos
         /// </summary>
         /// <param name="pEntrenamiento"></param>
         public void InsertarEntrenamiento(Entrenamiento pEntrenamiento)
         {
-
+            try
+            {
+                oEntrenamientoDAL.InsertarEntrenamiento(pEntrenamiento);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -34,7 +42,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pId"></param>
         public void EliminarEntrenamientoPorID(int pId)
         {
-
+            try
+            {
+                oEntrenamientoDAL.EliminarEntrenamientoPorID(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -43,7 +58,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pEntrenamiento"></param>
         public void ActualizarEntrenamiento(Entrenamiento pEntrenamiento)
         {
-
+            try
+            {
+                oEntrenamientoDAL.ActualizarEntrenamiento(pEntrenamiento);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -52,7 +74,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<Entrenamiento> SeleccionarTodosEntrenamientos()
         {
-            return default;
+            try
+            {
+                return oEntrenamientoDAL.SeleccionarTodosEntrenamientos();
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -62,7 +91,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public Entrenamiento SeleccionarEntrenamientoPorID(int pId)
         {
-            return default;
+            try
+            {
+                return oEntrenamientoDAL.SeleccionarEntrenamientoPorID(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -72,7 +108,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<Entrenamiento> SeleccionarEntrenamientosPorIDUsuario(string pIdUsuario)
         {
-            return default;
+            try
+            {
+                return oEntrenamientoDAL.SeleccionarEntrenamientosPorIDUsuario(pIdUsuario);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
+        #endregion
     }
 }

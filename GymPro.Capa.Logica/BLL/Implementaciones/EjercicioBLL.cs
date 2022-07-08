@@ -15,18 +15,27 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
 
         private IEjercicioDAL oEjercicioDAL;
 
+        
         public EjercicioBLL()
         {
             oEjercicioDAL = EjercicioDAL.GetInstance();
         }
 
+        #region Acceso a datos
         /// <summary>
         /// Inserta un Ejercicio en la base de datos
         /// </summary>
         /// <param name="pEjercicio"></param>
         public void InsertarEjercicio(Ejercicio pEjercicio)
         {
-
+            try
+            {
+                oEjercicioDAL.InsertarEjercicio(pEjercicio);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -35,7 +44,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pId"></param>
         public void EliminarEjercicioPorId(int pId)
         {
-
+            try
+            {
+                oEjercicioDAL.EliminarEjercicioPorId(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -44,7 +60,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pEjercicio"></param>
         public void ActualizarEjercicio(Ejercicio pEjercicio)
         {
-
+            try
+            {
+                oEjercicioDAL.ActualizarEjercicio(pEjercicio);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -53,7 +76,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<Ejercicio> SeleccionarTodosEjercicios()
         {
-            return null;
+            try
+            {
+                return oEjercicioDAL.SeleccionarTodosEjercicios();
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -63,8 +93,16 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public Ejercicio SeleccionarEjercicioPorId(int pId)
         {
-            return default;
+            try
+            {
+                return oEjercicioDAL.SeleccionarEjercicioPorId(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
+        #endregion
     }
 }

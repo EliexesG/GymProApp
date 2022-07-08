@@ -20,13 +20,21 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oExpedienteUsuarioDAL = ExpedienteUsuarioDAL.GetInstance();
         }
 
+        #region Acceso a datos
         /// <summary>
         /// Inserta un expediente de usuario en la base de datos
         /// </summary>
         /// <param name="pExpediente"></param>
         public void InsertarExpedienteUsuario(ExpedienteUsuario pExpediente)
         {
-
+            try
+            {
+                oExpedienteUsuarioDAL.InsertarExpedienteUsuario(pExpediente);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -35,7 +43,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pIdUsuario"></param>
         public void EliminarExpedienteUsuarioPorID(string pIdUsuario)
         {
-
+            try
+            {
+                oExpedienteUsuarioDAL.EliminarExpedienteUsuarioPorID(pIdUsuario);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -44,7 +59,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pExpediente"></param>
         public void ActualizarExpedienteUsuario(ExpedienteUsuario pExpediente)
         {
-
+            try
+            {
+                oExpedienteUsuarioDAL.ActualizarExpedienteUsuario(pExpediente);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -53,7 +75,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<ExpedienteUsuario> SeleccionarTodosExpedientesUsuarios()
         {
-            return default;
+            try
+            {
+                return oExpedienteUsuarioDAL.SeleccionarTodosExpedientesUsuarios();
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -63,7 +92,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public ExpedienteUsuario SeleccionarExpedienteUsuarioPorID(string pIdUsuario)
         {
-            return default;
+            try
+            {
+                return oExpedienteUsuarioDAL.SeleccionarExpedienteUsuarioPorID(pIdUsuario);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
+        #endregion
     }
 }
