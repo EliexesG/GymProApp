@@ -46,6 +46,8 @@
     <Compile Include="Implementaciones\EjercicioEnEntrenamientoDAL.cs" />
     <Compile Include="Implementaciones\EntrenamientoDAL.cs" />
     <Compile Include="Implementaciones\ExpedienteUsuarioDAL.cs" />
+    <Compile Include="Interfaces\IServicioBACDAL.cs" />
+    <Compile Include="Implementaciones\ServicioBACDAL.cs" />
     <Compile Include="Interfaces\IEjercicioEnEntrenamientoDAL.cs" />
     <Compile Include="Interfaces\IDiaEntrenamientoDAL.cs" />
     <Compile Include="Interfaces\IEntrenamientoDAL.cs" />

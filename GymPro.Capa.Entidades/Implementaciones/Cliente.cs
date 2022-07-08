@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
-    class Cliente : IUsuario
+    public class Cliente : IUsuario
     {
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
