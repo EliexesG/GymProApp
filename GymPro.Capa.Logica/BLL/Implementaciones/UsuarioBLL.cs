@@ -20,13 +20,21 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oUsuarioDAL = UsuarioDAL.GetInstance();
         }
 
+        #region Acceso a datos
         /// <summary>
         /// Insertar usuario en la base de datos
         /// </summary>
         /// <param name="pUsuario"></param>
         public void InsertarUsuario(IUsuario pUsuario)
         {
-
+            try
+            {
+                oUsuarioDAL.InsertarUsuario(pUsuario);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -35,7 +43,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pId"></param>
         public void EliminarUsuarioPorID(string pId)
         {
-
+            try
+            {
+                oUsuarioDAL.EliminarUsuarioPorID(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -44,7 +59,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pUsuario"></param>
         public void ActualizarUsuario(IUsuario pUsuario)
         {
-
+            try
+            {
+                oUsuarioDAL.ActualizarUsuario(pUsuario);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -53,7 +75,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<IUsuario> SeleccionarTodosUsuarios()
         {
-            return default;
+            try
+            {
+                return oUsuarioDAL.SeleccionarTodosUsuarios();
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -63,7 +92,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public IUsuario SeleccionarUsuarioPorID(string pId)
         {
-            return default;
+            try
+            {
+                return oUsuarioDAL.SeleccionarUsuarioPorID(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
+        #endregion
     }
 }

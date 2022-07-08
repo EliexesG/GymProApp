@@ -20,14 +20,21 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oTipoEjercicio = TipoEjercicioDAL.GetInstance();
         }
 
-
+        #region Acceso a datos
         /// <summary>
         /// Inserta un Tipo de Ejercicio en la base de datos
         /// </summary>
         /// <param name="pTipoEjercicio"></param>
         public void InsertarTipoEjercicio(TipoEjercicio pTipoEjercicio)
         {
-
+            try
+            {
+                oTipoEjercicio.InsertarTipoEjercicio(pTipoEjercicio);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -36,7 +43,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pId"></param>
         public void EliminarTipoEjercicioPorID(int pId)
         {
-            // No va a hacer un delete sino que va a hacer un UPDATE al campo Activo
+            try
+            {
+                oTipoEjercicio.EliminarTipoEjercicioPorID(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -45,7 +59,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pTipoEjercicio"></param>
         public void ActualizarTipoEjercicio(TipoEjercicio pTipoEjercicio)
         {
-
+            try
+            {
+                oTipoEjercicio.ActualizarTipoEjercicio(pTipoEjercicio);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -54,7 +75,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public IList<TipoEjercicio> SeleccionarTodosTiposEjercicio()
         {
-            return null;
+            try
+            {
+                return oTipoEjercicio.SeleccionarTodosTiposEjercicio();
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -64,8 +92,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public TipoEjercicio SeleccionarTipoEjercicioPorID(int pId)
         {
-            return default;
+            try
+            {
+                return oTipoEjercicio.SeleccionarTipoEjercicioPorID(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
-
+        #endregion
     }
 }

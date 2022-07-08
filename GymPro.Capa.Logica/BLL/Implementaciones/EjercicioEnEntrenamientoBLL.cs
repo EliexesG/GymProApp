@@ -20,6 +20,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oEjercicioEnEntrenamientoDAL = EjercicioEnEntrenamientoDAL.GetInstance();
         }
 
+        #region Acceso a datos
         /// <summary>
         /// Se inserta un Ejercicio en Entrenamiento en la base de datos
         /// </summary>
@@ -27,7 +28,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pEjercicio"></param>
         public void InsertarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicio)
         {
-            // Se inserta el registroen la tabla intermida
+            try
+            {
+                oEjercicioEnEntrenamientoDAL.InsertarEjercicioEnEntrenamiento(pEjercicio);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -37,7 +45,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="idEjercicio"></param>
         public void EliminarEjercicioEnEntrenamientoID(int pIdEntrenamiento, int idEjercicio)
         {
-
+            try
+            {
+                oEjercicioEnEntrenamientoDAL.EliminarEjercicioEnEntrenamientoID(pIdEntrenamiento, idEjercicio);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -47,7 +62,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <param name="pEjercicio"></param>
         public void ActualizarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicio)
         {
-
+            try
+            {
+                oEjercicioEnEntrenamientoDAL.ActualizarEjercicioEnEntrenamiento(pEjercicio);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -57,7 +79,14 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<EjercicioEnEntrenamiento> ObtenerTodosEjerciciosDeEntrenamientos()
         {
-            return default;
+            try
+            {
+                return oEjercicioEnEntrenamientoDAL.ObtenerTodosEjerciciosDeEntrenamientos();
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
 
         /// <summary>
@@ -67,8 +96,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         /// <returns></returns>
         public List<EjercicioEnEntrenamiento> ObtenerEjerciciosEnEntrenamientosPorIDEntrenamiento(int pId)
         {
-            return default;
+            try
+            {
+                return oEjercicioEnEntrenamientoDAL.ObtenerEjerciciosEnEntrenamientosPorIDEntrenamiento(pId);
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
         }
-
+        #endregion
     }
 }
