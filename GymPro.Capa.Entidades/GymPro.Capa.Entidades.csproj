@@ -48,7 +48,10 @@
     <Compile Include="Implementaciones\EjercicioEnEntrenamiento.cs" />
     <Compile Include="Implementaciones\Entrenamiento.cs" />
     <Compile Include="Implementaciones\ExpedienteUsuario.cs" />
+    <Compile Include="Implementaciones\FacturaDetalle.cs" />
+    <Compile Include="Implementaciones\FacturaEncabezado.cs" />
     <Compile Include="Implementaciones\Instructor.cs" />
+    <Compile Include="Implementaciones\Producto.cs" />
     <Compile Include="Implementaciones\TipoEjercicio.cs" />
     <Compile Include="Enumeraciones\Dia.cs" />
     <Compile Include="Enumeraciones\Genero.cs" />

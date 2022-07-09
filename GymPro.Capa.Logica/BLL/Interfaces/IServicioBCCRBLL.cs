@@ -1,6 +1,6 @@
 ﻿namespace GymPro.Capa.Logica.BLL.Interfaces
 {
-    public interface IServicioBACBLL
+    public interface IServicioBCCRBLL
     {
         float ObtenerPrecioVentaDolar();
     }

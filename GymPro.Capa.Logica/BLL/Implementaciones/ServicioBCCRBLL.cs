@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
-    class ServicioBACBLL : IServicioBACBLL
+    class ServicioBCCRBLL : IServicioBCCRBLL
     {
-        private IServicioBACDAL oServicioBACDAL;
+        private IServicioBCCRDAL oServicioBACDAL;
 
-        public ServicioBACBLL()
+        public ServicioBCCRBLL()
         {
-            oServicioBACDAL = ServicioBACDAL.GetInstance();
+            oServicioBACDAL = ServicioBCCRDAL.GetInstance();
         }
 
         #region Acceso a datos

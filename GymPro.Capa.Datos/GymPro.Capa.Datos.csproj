@@ -46,8 +46,14 @@
     <Compile Include="Implementaciones\EjercicioEnEntrenamientoDAL.cs" />
     <Compile Include="Implementaciones\EntrenamientoDAL.cs" />
     <Compile Include="Implementaciones\ExpedienteUsuarioDAL.cs" />
-    <Compile Include="Interfaces\IServicioBACDAL.cs" />
-    <Compile Include="Implementaciones\ServicioBACDAL.cs" />
+    <Compile Include="Implementaciones\FacturaDetalleDAL.cs" />
+    <Compile Include="Implementaciones\FacturaEncabezadoDAL.cs" />
+    <Compile Include="Interfaces\IFacturaDetalleDAL.cs" />
+    <Compile Include="Interfaces\IFacturaEncabezadoDAL.cs" />
+    <Compile Include="Interfaces\IProductoDAL.cs" />
+    <Compile Include="Implementaciones\ProductoDAL.cs" />
+    <Compile Include="Interfaces\IServicioBCCRDAL.cs" />
+    <Compile Include="Implementaciones\ServicioBCCRDAL.cs" />
     <Compile Include="Interfaces\IEjercicioEnEntrenamientoDAL.cs" />
     <Compile Include="Interfaces\IDiaEntrenamientoDAL.cs" />
     <Compile Include="Interfaces\IEntrenamientoDAL.cs" />
