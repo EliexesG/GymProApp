@@ -18,6 +18,6 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public DateTime FechaNacimiento { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
-        public int Genero { get; set; }
+        public Genero Genero { get; set; }
     }
 }

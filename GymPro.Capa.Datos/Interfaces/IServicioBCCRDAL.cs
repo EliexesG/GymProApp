@@ -1,6 +1,6 @@
 ﻿namespace GymPro.Capa.Datos.Interfaces
 {
-    public interface IServicioBACDAL
+    public interface IServicioBCCRDAL
     {
         float ObtenerPrecioVentaDolar();
     }

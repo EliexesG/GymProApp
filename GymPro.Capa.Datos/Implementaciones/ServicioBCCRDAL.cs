@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Implementaciones
 {
-    public class ServicioBACDAL : IServicioBACDAL
+    public class ServicioBCCRDAL : IServicioBCCRDAL
     {
-        private static ServicioBACDAL Instancia;
+        private static ServicioBCCRDAL Instancia;
 
         /// <summary>
-        /// Retorna instancia de tipo SesrvicioBACDAL
+        /// Retorna instancia de tipo SesrvicioBCCRDAL
         /// </summary>
         /// <returns></returns>
-        public static ServicioBACDAL GetInstance()
+        public static ServicioBCCRDAL GetInstance()
         {
             if (Instancia == null)
             {
-                Instancia = new ServicioBACDAL();
+                Instancia = new ServicioBCCRDAL();
             }
 
             return Instancia;
