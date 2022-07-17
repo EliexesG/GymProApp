@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.Logica", "GymPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.Util", "GymPro.Capa.Util\GymPro.Capa.Util.csproj", "{C0EC9E24-0F4B-4EAB-81F1-C1FE54EE9A85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.Factories", "GymPro.Capa.Factories\GymPro.Capa.Factories.csproj", "{389F19CF-7F07-47A6-A9AA-5161070C05ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C0EC9E24-0F4B-4EAB-81F1-C1FE54EE9A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0EC9E24-0F4B-4EAB-81F1-C1FE54EE9A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0EC9E24-0F4B-4EAB-81F1-C1FE54EE9A85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389F19CF-7F07-47A6-A9AA-5161070C05ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389F19CF-7F07-47A6-A9AA-5161070C05ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389F19CF-7F07-47A6-A9AA-5161070C05ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389F19CF-7F07-47A6-A9AA-5161070C05ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

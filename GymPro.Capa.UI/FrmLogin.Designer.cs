@@ -143,7 +143,7 @@ namespace GymPro.Capa.UI
             // FrmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(438, 547);
+            this.ClientSize = new System.Drawing.Size(456, 594);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialDivider1);
@@ -156,6 +156,7 @@ namespace GymPro.Capa.UI
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GymPro Login";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

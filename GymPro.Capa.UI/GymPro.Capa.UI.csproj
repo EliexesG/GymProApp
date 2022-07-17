@@ -93,6 +93,10 @@
       <Project>{426477a9-711a-461e-b50c-36ab1905135f}</Project>
       <Name>GymPro.Capa.Logica</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GymPro.Capa.Util\GymPro.Capa.Util.csproj">
+      <Project>{C0EC9E24-0F4B-4EAB-81F1-C1FE54EE9A85}</Project>
+      <Name>GymPro.Capa.Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
