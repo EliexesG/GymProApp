@@ -9,6 +9,7 @@ namespace GymPro.Capa.Entidades.Implementaciones
     public class ExpedienteUsuario
     {
         #region Propiedades de Expediente de Cliente
+        public DateTime Fecha { get; set; }
         public string IdentificacionUsuario { get; set; }
         public float Peso { get; set; }
         public float Altura { get; set; }

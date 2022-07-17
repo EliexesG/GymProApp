@@ -24,7 +24,6 @@ namespace GymPro.Capa.UI
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.Orange700, MaterialSkin.Primary.Orange300, MaterialSkin.Accent.Orange100, MaterialSkin.TextShade.BLACK);
-            
         }
     }
 }

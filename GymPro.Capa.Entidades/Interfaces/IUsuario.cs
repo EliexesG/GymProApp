@@ -10,8 +10,10 @@ namespace GymPro.Capa.Entidades.Interfaces
     {
         string Identificacion { get; set; }
         string Nombre { get; set; }
-        string Apellidos { get; set; }
+        string Apellido1 { get; set; }
+        string Apellido2 { get; set; }
         byte[] Fotografia { get; set; }
+        int CodigoTipoUsuario { get; set; }
         string Contrasenna { get; set; }
     }
 }

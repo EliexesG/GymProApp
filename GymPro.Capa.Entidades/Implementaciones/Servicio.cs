@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
-    public class Producto
+    public class Servicio
     {
         public int Codigo { get; set; }
         public string Descripcion { get; set; }

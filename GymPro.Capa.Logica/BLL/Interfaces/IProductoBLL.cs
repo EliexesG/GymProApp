@@ -5,7 +5,7 @@ namespace GymPro.Capa.Logica.BLL.Interfaces
 {
     public interface IProductoBLL
     {
-        Producto SeleccionarProductoPorID(int pId);
-        List<Producto> SeleccionarTodosProductos();
+        Servicio SeleccionarProductoPorID(int pId);
+        List<Servicio> SeleccionarTodosProductos();
     }
 }

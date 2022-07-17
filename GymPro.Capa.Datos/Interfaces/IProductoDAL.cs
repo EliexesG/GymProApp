@@ -5,7 +5,7 @@ namespace GymPro.Capa.Datos.Interfaces
 {
     public interface IProductoDAL
     {
-        Producto SeleccionarProductoPorID(int pId);
-        List<Producto> SeleccionarTodosProductos();
+        Servicio SeleccionarProductoPorID(int pId);
+        List<Servicio> SeleccionarTodosProductos();
     }
 }

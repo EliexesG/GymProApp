@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Implementaciones\Administrador.cs" />
     <Compile Include="Implementaciones\Cliente.cs" />
+    <Compile Include="Implementaciones\ControlIngresoEgreso.cs" />
     <Compile Include="Implementaciones\DiaEntrenamiento.cs" />
     <Compile Include="Implementaciones\Ejercicio.cs" />
     <Compile Include="Implementaciones\EjercicioEnEntrenamiento.cs" />
@@ -51,11 +52,12 @@
     <Compile Include="Implementaciones\FacturaDetalle.cs" />
     <Compile Include="Implementaciones\FacturaEncabezado.cs" />
     <Compile Include="Implementaciones\Instructor.cs" />
-    <Compile Include="Implementaciones\Producto.cs" />
+    <Compile Include="Implementaciones\Servicio.cs" />
     <Compile Include="Implementaciones\TipoEjercicio.cs" />
     <Compile Include="Enumeraciones\Dia.cs" />
     <Compile Include="Enumeraciones\Genero.cs" />
     <Compile Include="Enumeraciones\TipoUsuario.cs" />
+    <Compile Include="Implementaciones\TipoUsuario.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

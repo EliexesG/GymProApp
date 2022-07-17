@@ -10,6 +10,7 @@ namespace GymPro.Capa.Entidades.Implementaciones
     {
         public int Codigo { get; set; }
         public string IdentificacionUsuario { get; set; }
+        public byte[] CodigoQR { get; set; }
         public DateTime FechaPago { get; set; }
         public DateTime FechaProximoPago { get; set; }
         public float MontoTotal { get; set; }
