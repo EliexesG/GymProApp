@@ -1,14 +1,19 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Interfaces
 {
-    interface IExpedienteUsuarioBLL
+    public interface IExpedienteUsuarioBLL
     {
-        void ActualizarExpedienteUsuario(ExpedienteUsuario pExpediente);
-        void EliminarExpedienteUsuarioPorID(string pIdUsuario);
         void InsertarExpedienteUsuario(ExpedienteUsuario pExpediente);
-        ExpedienteUsuario SeleccionarExpedienteUsuarioPorID(string pIdUsuario);
-        List<ExpedienteUsuario> SeleccionarTodosExpedientesUsuarios();
+        void ModificarExpedienteUsuario(ExpedienteUsuario pExpediente);
+        void EliminarExpedienteUsuario(DateTime pFecha, string pIdentificacionUsuario);
+        List<ExpedienteUsuario> ObtenerExpedienteUsuarioTodos();
+        ExpedienteUsuario ObtenerExpedienteUsuarioId(DateTime pFecha, string pIdentificacionUsuario);
+        List<ExpedienteUsuario> ObtenerExpedienteUsuarioIdentificacionUsuario(string pIdentificacionUsuario);
     }
 }

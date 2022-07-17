@@ -4,13 +4,14 @@ using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
-    class ExpedienteUsuarioBLL : IExpedienteUsuarioBLL
+    public class ExpedienteUsuarioBLL : IExpedienteUsuarioBLL
     {
 
         private IExpedienteUsuarioDAL oExpedienteUsuarioDAL;
@@ -20,84 +21,125 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oExpedienteUsuarioDAL = ExpedienteUsuarioDAL.GetInstance();
         }
 
+
+
         #region Acceso a datos
-        /// <summary>
-        /// Inserta un expediente de usuario en la base de datos
-        /// </summary>
-        /// <param name="pExpediente"></param>
+        public void EliminarExpedienteUsuario(DateTime pFecha, string pIdentificacionUsuario)
+        {
+            try
+            {
+
+                oExpedienteUsuarioDAL.EliminarExpedienteUsuario(pFecha, pIdentificacionUsuario);
+
+            }
+            catch (SqlException sqlError)
+            {
+
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+
+                throw er;
+            }
+        }
+
         public void InsertarExpedienteUsuario(ExpedienteUsuario pExpediente)
         {
             try
             {
+
                 oExpedienteUsuarioDAL.InsertarExpedienteUsuario(pExpediente);
+
+            }
+            catch (SqlException sqlError)
+            {
+
+                throw sqlError;
             }
             catch (Exception er)
             {
+
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Elimina un expediente de usuario por Id de la base de datos
-        /// </summary>
-        /// <param name="pIdUsuario"></param>
-        public void EliminarExpedienteUsuarioPorID(string pIdUsuario)
+        public void ModificarExpedienteUsuario(ExpedienteUsuario pExpediente)
         {
             try
             {
-                oExpedienteUsuarioDAL.EliminarExpedienteUsuarioPorID(pIdUsuario);
+
+                oExpedienteUsuarioDAL.ModificarExpedienteUsuario(pExpediente);
+
+            }
+            catch (SqlException sqlError)
+            {
+
+                throw sqlError;
             }
             catch (Exception er)
             {
+
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Actualiza un expediente de usuario de la base de datos
-        /// </summary>
-        /// <param name="pExpediente"></param>
-        public void ActualizarExpedienteUsuario(ExpedienteUsuario pExpediente)
+        public ExpedienteUsuario ObtenerExpedienteUsuarioId(DateTime pFecha, string pIdentificacionUsuario)
         {
             try
             {
-                oExpedienteUsuarioDAL.ActualizarExpedienteUsuario(pExpediente);
+
+                return oExpedienteUsuarioDAL.ObtenerExpedienteUsuarioId(pFecha, pIdentificacionUsuario);
+
+            }
+            catch (SqlException sqlError)
+            {
+
+                throw sqlError;
             }
             catch (Exception er)
             {
+
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Retorna una lista con todos los expedientes de usuario de la base de datos
-        /// </summary>
-        /// <returns></returns>
-        public List<ExpedienteUsuario> SeleccionarTodosExpedientesUsuarios()
+        public List<ExpedienteUsuario> ObtenerExpedienteUsuarioIdentificacionUsuario(string pIdentificacionUsuario)
         {
             try
             {
-                return oExpedienteUsuarioDAL.SeleccionarTodosExpedientesUsuarios();
+
+                return oExpedienteUsuarioDAL.ObtenerExpedienteUsuarioIdentificacionUsuario(pIdentificacionUsuario);
+
+            }
+            catch (SqlException sqlError)
+            {
+
+                throw sqlError;
             }
             catch (Exception er)
             {
+
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Retorna un expediente de usuario por su Id de la base de datos
-        /// </summary>
-        /// <param name="pIdUsuario"></param>
-        /// <returns></returns>
-        public ExpedienteUsuario SeleccionarExpedienteUsuarioPorID(string pIdUsuario)
+        public List<ExpedienteUsuario> ObtenerExpedienteUsuarioTodos()
         {
             try
             {
-                return oExpedienteUsuarioDAL.SeleccionarExpedienteUsuarioPorID(pIdUsuario);
+
+                return oExpedienteUsuarioDAL.ObtenerExpedienteUsuarioTodos();
+
+            }
+            catch (SqlException sqlError)
+            {
+
+                throw sqlError;
             }
             catch (Exception er)
             {
+
                 throw er;
             }
         }
