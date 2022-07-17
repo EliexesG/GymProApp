@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Logica.Factory
+namespace GymPro.Capa.Factories
 {
-    class UsuarioFactory
+    public class FactoryUsuario
     {
         public static IUsuario CrearUsuario(TipoUsuario tipoUsuario)
         {

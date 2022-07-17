@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -46,9 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementaciones\ExpedienteUsuarioDAL.cs" />
+    <Compile Include="Implementaciones\FacturaEncabezadoDAL.cs" />
+    <Compile Include="Implementaciones\UsuarioDAL.cs" />
+    <Compile Include="Interfaces\IFacturaEncabezadoDAL.cs" />
     <Compile Include="Interfaces\IServicioBCCRDAL.cs" />
     <Compile Include="Implementaciones\ServicioBCCRDAL.cs" />
     <Compile Include="Interfaces\IExpedienteUsuarioDAL.cs" />
+    <Compile Include="Interfaces\IUsuarioDAL.cs" />
     <Compile Include="Persistencia\DataBase.cs" />
     <Compile Include="Persistencia\FactoryConexion.cs" />
     <Compile Include="Persistencia\FactoryDataBase.cs" />
@@ -60,13 +61,14 @@
       <Project>{2896c8d1-b937-4355-8249-c2f6e9083435}</Project>
       <Name>GymPro.Capa.Entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GymPro.Capa.Factories\GymPro.Capa.Factories.csproj">
+      <Project>{389f19cf-7f07-47a6-a9aa-5161070c05ed}</Project>
+      <Name>GymPro.Capa.Factories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GymPro.Capa.Util\GymPro.Capa.Util.csproj">
       <Project>{c0ec9e24-0f4b-4eab-81f1-c1fe54ee9a85}</Project>
       <Name>GymPro.Capa.Util</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{426477A9-711A-461E-B50C-36AB1905135F}</ProjectGuid>
+    <ProjectGuid>{389F19CF-7F07-47A6-A9AA-5161070C05ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GymPro.Capa.Logica</RootNamespace>
-    <AssemblyName>GymPro.Capa.Logica</AssemblyName>
+    <RootNamespace>GymPro.Capa.Factories</RootNamespace>
+    <AssemblyName>GymPro.Capa.Factories</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,24 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Implementaciones\ExpedienteUsuarioBLL.cs" />
-    <Compile Include="BLL\Implementaciones\FacturaEncabezadoBLL.cs" />
-    <Compile Include="BLL\Interfaces\IFacturaEncabezadoBLL.cs" />
-    <Compile Include="BLL\Interfaces\IUsuarioBLL.cs" />
-    <Compile Include="BLL\Implementaciones\UsuarioBLL.cs" />
-    <Compile Include="BLL\Interfaces\IExpedienteUsuarioBLL.cs" />
+    <Compile Include="FactoryUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GymPro.Capa.Datos\GymPro.Capa.Datos.csproj">
-      <Project>{92649df8-465a-43fb-99d9-bfa6923c21d1}</Project>
-      <Name>GymPro.Capa.Datos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GymPro.Capa.Entidades\GymPro.Capa.Entidades.csproj">
       <Project>{2896c8d1-b937-4355-8249-c2f6e9083435}</Project>
       <Name>GymPro.Capa.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
