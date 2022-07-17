@@ -41,28 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Implementaciones\DiaEntrenamientoBLL.cs" />
-    <Compile Include="BLL\Implementaciones\EjercicioBLL.cs" />
-    <Compile Include="BLL\Implementaciones\EjercicioEnEntrenamientoBLL.cs" />
-    <Compile Include="BLL\Implementaciones\EntrenamientoBLL.cs" />
     <Compile Include="BLL\Implementaciones\ExpedienteUsuarioBLL.cs" />
-    <Compile Include="BLL\Implementaciones\FacturaDetalleBLL.cs" />
-    <Compile Include="BLL\Implementaciones\FacturaEncabezadoBLL.cs" />
-    <Compile Include="BLL\Interfaces\IFacturaDetalleBLL.cs" />
-    <Compile Include="BLL\Interfaces\IFacturaEncabezadoBLL.cs" />
-    <Compile Include="BLL\Interfaces\IProductoBLL.cs" />
-    <Compile Include="BLL\Implementaciones\ProductoBLL.cs" />
-    <Compile Include="BLL\Interfaces\IServicioBCCRBLL.cs" />
-    <Compile Include="BLL\Implementaciones\ServicioBCCRBLL.cs" />
-    <Compile Include="BLL\Interfaces\IUsuarioBLL.cs" />
-    <Compile Include="BLL\Implementaciones\UsuarioBLL.cs" />
-    <Compile Include="BLL\Interfaces\ITipoEjercicioBLL.cs" />
-    <Compile Include="BLL\Implementaciones\TipoEjercicioBLL.cs" />
     <Compile Include="BLL\Interfaces\IExpedienteUsuarioBLL.cs" />
-    <Compile Include="BLL\Interfaces\IEntrenamientoBLL.cs" />
-    <Compile Include="BLL\Interfaces\IEjercicioEnEntrenamientoBLL.cs" />
-    <Compile Include="BLL\Interfaces\IEjercicioBLL.cs" />
-    <Compile Include="BLL\Interfaces\IDiaEntrenamientoBLL.cs" />
     <Compile Include="Patrones\UsuarioFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
