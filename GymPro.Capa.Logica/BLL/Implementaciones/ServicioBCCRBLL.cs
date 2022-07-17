@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
-    class ServicioBCCRBLL : IServicioBCCRBLL
+    public class ServicioBCCRBLL : IServicioBCCRBLL
     {
         private IServicioBCCRDAL oServicioBACDAL;
 

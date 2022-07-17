@@ -11,8 +11,10 @@ namespace GymPro.Capa.Entidades.Implementaciones
     {
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
-        public string Apellidos { get; set; }
+        public string Apellido1 { get; set; }
+        public string Apellido2 { get; set; }
         public byte[] Fotografia { get; set; }
+        public int CodigoTipoUsuario { get; set; }
         public string Contrasenna { get; set; }
 
         public DateTime FechaNacimiento { get; set; }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
-    public class FacturaDetalle
+    class TipoUsuario
     {
-        public int CodigoFactura { get; set; }
-        public int CodigoServicio { get; set; }
+        public int Codigo { get; set; }
+        public string Descripcion { get; set; }
     }
 }

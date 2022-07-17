@@ -30,7 +30,7 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// Retorna una lista con todos los productos que ofrece el gimnacio de la base de datos
         /// </summary>
         /// <returns></returns>
-        public List<Producto> SeleccionarTodosProductos()
+        public List<Servicio> SeleccionarTodosProductos()
         {
             return default;
         }
@@ -40,7 +40,7 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// </summary>
         /// <param name="pId"></param>
         /// <returns></returns>
-        public Producto SeleccionarProductoPorID(int pId)
+        public Servicio SeleccionarProductoPorID(int pId)
         {
             return default;
         }
