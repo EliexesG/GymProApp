@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Implementaciones\DiaEntrenamientoBLL.cs" />
+    <Compile Include="BLL\Implementaciones\EjercicioEnEntrenamientoBLL.cs" />
     <Compile Include="BLL\Implementaciones\EntrenamientoBLL.cs" />
     <Compile Include="BLL\Implementaciones\ExpedienteUsuarioBLL.cs" />
     <Compile Include="BLL\Implementaciones\FacturaDetalleBLL.cs" />
     <Compile Include="BLL\Implementaciones\FacturaEncabezadoBLL.cs" />
+    <Compile Include="BLL\Interfaces\IEjercicioEnEntrenamientoBLL.cs" />
+    <Compile Include="BLL\Interfaces\IDiaEntrenamientoBLL.cs" />
     <Compile Include="BLL\Interfaces\IEntrenamientoBLL.cs" />
     <Compile Include="BLL\Interfaces\IServicioBLL.cs" />
     <Compile Include="BLL\Implementaciones\ServicioBLL.cs" />
