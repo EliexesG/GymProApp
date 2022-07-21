@@ -10,5 +10,7 @@ namespace GymPro.Capa.Entidades.Implementaciones
     {
         public int CodigoFactura { get; set; }
         public int CodigoServicio { get; set; }
+
+        public Servicio _Servicio { get; set; }
     }
 }

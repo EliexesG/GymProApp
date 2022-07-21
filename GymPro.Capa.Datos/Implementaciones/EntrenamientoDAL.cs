@@ -186,6 +186,11 @@ namespace GymPro.Capa.Datos.Implementaciones
                             IdentificacionEntrenador = reader["IdentificacionEntrenador"].ToString(),
                             Nombre = reader["Nombre"].ToString()
                         };
+
+                        entrenamiento.EjerciciosEnEntrenamiento = EjercicioEnEntrenamientoDAL.GetInstance().
+                            ObtenerEjercicioEnEntrenamientoCodigoEntrenamiento(entrenamiento.Codigo);
+                        entrenamiento.DiasEntrenamiento = DiaEntrenamientoDAL.
+                            GetInstance().ObtenerDiaEntrenamientoCodigoEntrenamiento(entrenamiento.Codigo);
                     }
 
                     return entrenamiento;
@@ -242,6 +247,11 @@ namespace GymPro.Capa.Datos.Implementaciones
                             IdentificacionEntrenador = dr["IdentificacionEntrenador"].ToString(),
                             Nombre = dr["Nombre"].ToString()
                         };
+
+                        entrenamiento.EjerciciosEnEntrenamiento = EjercicioEnEntrenamientoDAL.GetInstance().
+                            ObtenerEjercicioEnEntrenamientoCodigoEntrenamiento(entrenamiento.Codigo);
+                        entrenamiento.DiasEntrenamiento = DiaEntrenamientoDAL.
+                            GetInstance().ObtenerDiaEntrenamientoCodigoEntrenamiento(entrenamiento.Codigo);
 
                         lista.Add(entrenamiento);
                     }
@@ -301,6 +311,11 @@ namespace GymPro.Capa.Datos.Implementaciones
                             Nombre = dr["Nombre"].ToString()
                         };
 
+                        entrenamiento.EjerciciosEnEntrenamiento = EjercicioEnEntrenamientoDAL.GetInstance().
+                            ObtenerEjercicioEnEntrenamientoCodigoEntrenamiento(entrenamiento.Codigo);
+                        entrenamiento.DiasEntrenamiento = DiaEntrenamientoDAL.
+                            GetInstance().ObtenerDiaEntrenamientoCodigoEntrenamiento(entrenamiento.Codigo);
+
                         lista.Add(entrenamiento);
                     }
 
@@ -356,6 +371,11 @@ namespace GymPro.Capa.Datos.Implementaciones
                             IdentificacionEntrenador = dr["IdentificacionEntrenador"].ToString(),
                             Nombre = dr["Nombre"].ToString()
                         };
+
+                        entrenamiento.EjerciciosEnEntrenamiento = EjercicioEnEntrenamientoDAL.GetInstance().
+                            ObtenerEjercicioEnEntrenamientoCodigoEntrenamiento(entrenamiento.Codigo);
+                        entrenamiento.DiasEntrenamiento = DiaEntrenamientoDAL.
+                            GetInstance().ObtenerDiaEntrenamientoCodigoEntrenamiento(entrenamiento.Codigo);
 
                         lista.Add(entrenamiento);
                     }

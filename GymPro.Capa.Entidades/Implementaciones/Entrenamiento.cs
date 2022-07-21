@@ -12,5 +12,8 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public string IdentificacionCliente { get; set; }
         public string IdentificacionEntrenador { get; set; }
         public string Nombre { get; set; }
+
+        public List<EjercicioEnEntrenamiento> EjerciciosEnEntrenamiento { get; set; }
+        public List<DiaEntrenamiento> DiasEntrenamiento { get; set; }
     }
 }

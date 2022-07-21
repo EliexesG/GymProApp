@@ -17,6 +17,9 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public byte[] Fotografia { get; set; }
         public int CodigoTipoUsuario { get; set; }
         public string Contrasenna { get; set; }
+        public TipoUsuario _TipoUsuario { get; set; }
+
+        public List<Entrenamiento> Entrenamientos { get; set; }
         #endregion
     }
 }

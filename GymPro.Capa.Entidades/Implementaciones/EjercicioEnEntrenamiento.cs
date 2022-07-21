@@ -13,5 +13,7 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public int Repeticiones { get; set; }
         public string Series { get; set; }
         public int Tiempo { get; set; }
+
+        public Ejercicio _Ejercicio { get; set; }
     }
 }

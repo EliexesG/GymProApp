@@ -15,5 +15,7 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public DateTime FechaProximoPago { get; set; }
         public float MontoTotal { get; set; }
         public float MontoMulta { get; set; }
+
+        public List<FacturaDetalle> FacturasDetalle { get; set; }
     }
 }

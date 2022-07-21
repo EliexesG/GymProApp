@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymPro.Capa.Entidades.Implementaciones;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,6 @@ namespace GymPro.Capa.Entidades.Interfaces
         byte[] Fotografia { get; set; }
         int CodigoTipoUsuario { get; set; }
         string Contrasenna { get; set; }
+        TipoUsuario _TipoUsuario { get; set; }
     }
 }
