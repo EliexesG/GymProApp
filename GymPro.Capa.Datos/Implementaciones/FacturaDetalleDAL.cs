@@ -99,6 +99,8 @@ namespace GymPro.Capa.Datos.Implementaciones
                             CodigoServicio = int.Parse(dr["CodigoServicio"].ToString())
                         };
 
+                        facturaDetalle._Servicio = ServicioDAL.GetInstance().ObtenerServicioId(facturaDetalle.CodigoServicio);
+
                         lista.Add(facturaDetalle);
                     }
                 }
@@ -149,6 +151,8 @@ namespace GymPro.Capa.Datos.Implementaciones
                             CodigoFactura = int.Parse(dr["CodigoFactura"].ToString()),
                             CodigoServicio = int.Parse(dr["CodigoServicio"].ToString())
                         };
+
+                        facturaDetalle._Servicio = ServicioDAL.GetInstance().ObtenerServicioId(facturaDetalle.CodigoServicio);
 
                         lista.Add(facturaDetalle);
                     }

@@ -11,33 +11,33 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Implementaciones
 {
-    public class FacturaEncabezadoDAL : IFacturaEncabezadoDAL
+    public class EjercicioDAL : IEjercicioDAL
     {
-        private static FacturaEncabezadoDAL Instancia;
+        private static EjercicioDAL Instancia;
 
         /// <summary>
-        /// Retorna una instancia de tipo FacturaEncabezadoDAL unica por medio del patrón Singleton
+        /// Retorna una instancia de tipo EjercicioDAL unica por medio del patrón Singleton
         /// </summary>
         /// <returns></returns>
-        public static FacturaEncabezadoDAL GetInstance()
+        public static EjercicioDAL GetInstance()
         {
             if (Instancia == null)
             {
-                Instancia = new FacturaEncabezadoDAL();
+                Instancia = new EjercicioDAL();
             }
 
             return Instancia;
         }
 
         /// <summary>
-        /// Elimina un Encabezado de Factura de la base de datos por Id
+        /// Elimina un Ejercicio por su Id de la base de datos
         /// </summary>
-        /// <param name="pCodigo"> Codigo del Encabezado de Factura a eliminar</param>
-        public void EliminarFacturaEncabezado(int pCodigo)
+        /// <param name="pCodigo">Codigo del Ejercicio a eliminar</param>
+        public void EliminarEjercicio(int pCodigo)
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Eliminar_FacturaEncabezado";
+            comando.CommandText = "SP_Eliminar_Ejercicio";
             comando.Parameters.AddWithValue("@Codigo", pCodigo);
 
             try
@@ -45,7 +45,9 @@ namespace GymPro.Capa.Datos.Implementaciones
 
                 using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
                 {
+
                     db.ExecuteNonQuery(comando);
+
                 }
 
             }
@@ -68,71 +70,28 @@ namespace GymPro.Capa.Datos.Implementaciones
         }
 
         /// <summary>
-        /// Inserta un Encabezado de Factura en la base de datos
+        /// Inserta un Ejercicio en la base de datos
         /// </summary>
-        /// <param name="pFacturaEncabezado"> Encabezado de Factura a insertar </param>
-        public void InsertarFacturaEncabezado(FacturaEncabezado pFacturaEncabezado)
+        /// <param name="pEjercicio">Ejercicio a insertar</param>
+        public void InsertarEjercicio(Ejercicio pEjercicio)
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Insertar_FacturaEncabezado";
-            comando.Parameters.AddWithValue("@IdentificacionUsuario", pFacturaEncabezado.IdentificacionUsuario);
-            comando.Parameters.AddWithValue("@CodigoQR", pFacturaEncabezado.CodigoQR);
-            comando.Parameters.AddWithValue("@FechaPago", pFacturaEncabezado.FechaPago.Date);
-            comando.Parameters.AddWithValue("@FechaProximoPago", pFacturaEncabezado.FechaProximoPago.Date);
-            comando.Parameters.AddWithValue("@MontoTotal", pFacturaEncabezado.MontoTotal);
-            comando.Parameters.AddWithValue("@MontoMulta", pFacturaEncabezado.MontoMulta);
-
-            try
-            {
-
-                using(IDataBase db = FactoryDataBase.CreateDefaultDataBase())
-                {
-                    db.ExecuteNonQuery(comando);
-                }
-
-            }
-            catch (SqlException sqlError)
-            {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
-
-                throw sqlError;
-            }
-            catch (Exception er)
-            {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
-
-                throw er;
-            }
-        }
-
-        /// <summary>
-        /// Modifica un Encabezado de Factura en la base de datos
-        /// </summary>
-        /// <param name="pFacturaEncabezado"> Encabezado de Factura a modificar </param>
-        public void ModificarFacturaEncabezado(FacturaEncabezado pFacturaEncabezado)
-        {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Modificar_FacturaEncabezado";
-            comando.Parameters.AddWithValue("@Codigo", pFacturaEncabezado.Codigo);
-            comando.Parameters.AddWithValue("@IdentificacionUsuario", pFacturaEncabezado.IdentificacionUsuario);
-            comando.Parameters.AddWithValue("@CodigoQR", pFacturaEncabezado.CodigoQR);
-            comando.Parameters.AddWithValue("@FechaPago", pFacturaEncabezado.FechaPago.Date);
-            comando.Parameters.AddWithValue("@FechaProximoPago", pFacturaEncabezado.FechaProximoPago.Date);
-            comando.Parameters.AddWithValue("@MontoTotal", pFacturaEncabezado.MontoTotal);
-            comando.Parameters.AddWithValue("@MontoMulta", pFacturaEncabezado.MontoMulta);
+            comando.CommandText = "SP_Insertar_Ejercicio";
+            comando.Parameters.AddWithValue("@Nombre", pEjercicio.Nombre);
+            comando.Parameters.AddWithValue("@Descripcion", pEjercicio.Descripcion);
+            comando.Parameters.AddWithValue("@CodigoTipo", pEjercicio.CodigoTipo);
+            comando.Parameters.AddWithValue("@Imagen", pEjercicio.Imagen);
+            comando.Parameters.AddWithValue("@Videa", pEjercicio.Video);
 
             try
             {
 
                 using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
                 {
+
                     db.ExecuteNonQuery(comando);
+
                 }
 
             }
@@ -155,46 +114,30 @@ namespace GymPro.Capa.Datos.Implementaciones
         }
 
         /// <summary>
-        /// Obtiene un Encabezado de Factura por su Id
+        /// Modifica un Ejercicio en la base de datos
         /// </summary>
-        /// <param name="pCodigo"> Codigo de Encabezado de Factura a buscar </param>
-        /// <returns></returns>
-        public FacturaEncabezado ObtenerFacturaEncabezadoId(int pCodigo)
+        /// <param name="pEjercicio">Ejercicio a modificar</param>
+        public void ModificarEjercicio(Ejercicio pEjercicio)
         {
-            FacturaEncabezado facturaEncabezado = null;
-
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_FacturaEncabezado_Id";
-            comando.Parameters.AddWithValue("@Codigo", pCodigo);
+            comando.CommandText = "SP_Modificar_Ejercicio";
+            comando.Parameters.AddWithValue("@Codigo", pEjercicio.Codigo);
+            comando.Parameters.AddWithValue("@Nombre", pEjercicio.Nombre);
+            comando.Parameters.AddWithValue("@Descripcion", pEjercicio.Descripcion);
+            comando.Parameters.AddWithValue("@CodigoTipo", pEjercicio.CodigoTipo);
+            comando.Parameters.AddWithValue("@Imagen", pEjercicio.Imagen);
+            comando.Parameters.AddWithValue("@Videa", pEjercicio.Video);
 
             try
             {
 
                 using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
                 {
-                    IDataReader reader = db.ExecuteReader(comando);
 
-                    while(reader.Read())
-                    {
-                        facturaEncabezado = new FacturaEncabezado()
-                        {
-                            Codigo = int.Parse(reader["Codigo"].ToString()),
-                            IdentificacionUsuario = reader["IdentificacionUsuario"].ToString(),
-                            CodigoQR = (byte[])reader["CodigoQR"],
-                            FechaPago = DateTime.Parse(reader["FechaPago"].ToString()),
-                            FechaProximoPago = DateTime.Parse(reader["FechaProximoPago"].ToString()),
-                            MontoTotal = float.Parse(reader["MontoTotal"].ToString()),
-                            MontoMulta = float.Parse(reader["MontoMulta"].ToString())
-                        };
-
-                        facturaEncabezado.FacturasDetalle = FacturaDetalleDAL.GetInstance().ObtenerFacturaDetalleCodigoFactura(facturaEncabezado.Codigo);
-
-                    }
+                    db.ExecuteNonQuery(comando);
 
                 }
-
-                return facturaEncabezado;
 
             }
             catch (SqlException sqlError)
@@ -216,43 +159,43 @@ namespace GymPro.Capa.Datos.Implementaciones
         }
 
         /// <summary>
-        /// Obtiene una lista de Encabezados de Facturas relacionados a la Identificacion de un Usuario de la base de datos
+        /// Obtiene una lista de Ejercicios por Codigo del Tipo de Ejercicio de la base de datos
         /// </summary>
-        /// <param name="pIdentificacionUsuario"> Identificacion del Usuario relacionado a los Encabezados de Factura a buscar </param>
-        /// <returns>Lista de entidades de tipo FacturaEncabezado</returns>
-        public List<FacturaEncabezado> ObtenerFacturaEncabezadoIdentificacionUsuario(string pIdentificacionUsuario)
+        /// <param name="pCodigoTipo">Codigo del Tipo de Ejercicio de los Ejercicios a buscar</param>
+        /// <returns>Lista de Entidades de tipo Ejercicio</returns>
+        public List<Ejercicio> ObtenerEjercicioCodigoTipo(int pCodigoTipo)
         {
-            List<FacturaEncabezado> lista = new List<FacturaEncabezado>();
+
+            List<Ejercicio> lista = new List<Ejercicio>();
 
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_FacturaEncabezado_IdentificacionUsuario";
-            comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario)
+            comando.CommandText = "SP_Obtener_Ejercicio_CodigoTipo";
+            comando.Parameters.AddWithValue("@CodigoTipo", pCodigoTipo);
 
             try
             {
 
                 using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
                 {
+
                     DataSet ds = db.ExecuteDataSet(comando);
 
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        FacturaEncabezado facturaEncabezado = new FacturaEncabezado()
+                        Ejercicio ejercicio = new Ejercicio()
                         {
                             Codigo = int.Parse(dr["Codigo"].ToString()),
-                            IdentificacionUsuario = dr["IdentificacionUsuario"].ToString(),
-                            CodigoQR = (byte[])dr["CodigoQR"],
-                            FechaPago = DateTime.Parse(dr["FechaPago"].ToString()),
-                            FechaProximoPago = DateTime.Parse(dr["FechaProximoPago"].ToString()),
-                            MontoTotal = float.Parse(dr["MontoTotal"].ToString()),
-                            MontoMulta = float.Parse(dr["MontoMulta"].ToString())
+                            Nombre = dr["Nombre"].ToString(),
+                            Descripcion = dr["Descripcion"].ToString(),
+                            CodigoTipo = int.Parse(dr["CodigoTipo"].ToString()),
+                            Imagen = (byte[])dr["Imagen"],
+                            Video = (byte[])dr["Video"]
                         };
 
-                        facturaEncabezado.FacturasDetalle = FacturaDetalleDAL.GetInstance().ObtenerFacturaDetalleCodigoFactura(facturaEncabezado.Codigo);
+                        ejercicio._TipoEjercicio = TipoEjercicioDAL.GetInstance().ObtenerTipoEjercicioId(ejercicio.CodigoTipo);
 
-                        lista.Add(facturaEncabezado);
-
+                        lista.Add(ejercicio);
                     }
 
                 }
@@ -279,40 +222,102 @@ namespace GymPro.Capa.Datos.Implementaciones
         }
 
         /// <summary>
-        /// Obtiene una lista de todos los Encabezados de Factura en la base de datos
+        /// Obtiene un Ejercicio por su Id de la base de datos
         /// </summary>
-        /// <returns>Lista de entidades de tipo FacturaEncabezado</returns>
-        public List<FacturaEncabezado> ObtenerFacturaEncabezadoTodas()
+        /// <param name="pCodigo">Codigo del Ejercicio a buscar</param>
+        /// <returns>Entidad de tipo Ejercicio</returns>
+        public Ejercicio ObtenerEjercicioId(int pCodigo)
         {
-            List<FacturaEncabezado> lista = new List<FacturaEncabezado>();
+
+            Ejercicio ejercicio = null;
 
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_FacturaEncabezado_Todas";
+            comando.CommandText = "SP_Obtener_Ejercicio_Id";
+            comando.Parameters.AddWithValue("@Codigo", pCodigo);
 
             try
             {
 
                 using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
                 {
-                    DataSet ds = db.ExecuteDataSet(comando);
 
-                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    IDataReader reader = db.ExecuteReader(comando);
+
+                    while (reader.Read())
                     {
-                        FacturaEncabezado facturaEncabezado = new FacturaEncabezado() {
-                            Codigo = int.Parse(dr["Codigo"].ToString()),
-                            IdentificacionUsuario = dr["IdentificacionUsuario"].ToString(),
-                            CodigoQR = (byte[])dr["CodigoQR"],
-                            FechaPago = DateTime.Parse(dr["FechaPago"].ToString()),
-                            FechaProximoPago = DateTime.Parse(dr["FechaProximoPago"].ToString()),
-                            MontoTotal = float.Parse(dr["MontoTotal"].ToString()),
-                            MontoMulta = float.Parse(dr["MontoMulta"].ToString())
+                        ejercicio = new Ejercicio()
+                        {
+                            Codigo = int.Parse(reader["Codigo"].ToString()),
+                            Nombre = reader["Nombre"].ToString(),
+                            Descripcion = reader["Descripcion"].ToString(),
+                            CodigoTipo = int.Parse(reader["CodigoTipo"].ToString()),
+                            Imagen = (byte[])reader["Imagen"],
+                            Video = (byte[])reader["Video"]
                         };
 
-                        facturaEncabezado.FacturasDetalle = FacturaDetalleDAL.GetInstance().ObtenerFacturaDetalleCodigoFactura(facturaEncabezado.Codigo);
+                        ejercicio._TipoEjercicio = TipoEjercicioDAL.GetInstance().ObtenerTipoEjercicioId(ejercicio.CodigoTipo);
+                    }
 
-                        lista.Add(facturaEncabezado);
+                }
 
+                return ejercicio;
+
+            }
+            catch (SqlException sqlError)
+            {
+                //StringBuilder msg = new StringBuilder();
+                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                //StringBuilder msg = new StringBuilder();
+                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Obtiene una lista de todos los Ejercicios en la base de datos
+        /// </summary>
+        /// <returns>Lista de entidades de tipo Ejercicio</returns>
+        public List<Ejercicio> ObtenerEjercicioTodos()
+        {
+
+            List<Ejercicio> lista = new List<Ejercicio>();
+
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "SP_Obtener_Ejercicio_Todos";
+
+            try
+            {
+
+                using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
+                {
+
+                    DataSet ds = db.ExecuteDataSet(comando);
+
+                    foreach(DataRow dr in ds.Tables[0].Rows)
+                    {
+                        Ejercicio ejercicio = new Ejercicio()
+                        {
+                            Codigo = int.Parse(dr["Codigo"].ToString()),
+                            Nombre = dr["Nombre"].ToString(),
+                            Descripcion = dr["Descripcion"].ToString(),
+                            CodigoTipo = int.Parse(dr["CodigoTipo"].ToString()),
+                            Imagen = (byte[])dr["Imagen"],
+                            Video = (byte[])dr["Video"]
+                        };
+
+                        ejercicio._TipoEjercicio = TipoEjercicioDAL.GetInstance().ObtenerTipoEjercicioId(ejercicio.CodigoTipo);
+
+                        lista.Add(ejercicio);
                     }
 
                 }

@@ -195,6 +195,8 @@ namespace GymPro.Capa.Datos.Implementaciones
                             Tiempo = int.Parse(dr["Tiempo"].ToString())
                         };
 
+                        ejercicioEnEntrenamiento._Ejercicio = EjercicioDAL.GetInstance().ObtenerEjercicioId(ejercicioEnEntrenamiento.CodigoEjercicio);
+
                         lista.Add(ejercicioEnEntrenamiento);
 
                     }
@@ -257,6 +259,8 @@ namespace GymPro.Capa.Datos.Implementaciones
                             Series = reader["Series"].ToString(),
                             Tiempo = int.Parse(reader["Tiempo"].ToString())
                         };
+
+                        ejercicioEnEntrenamiento._Ejercicio = EjercicioDAL.GetInstance().ObtenerEjercicioId(ejercicioEnEntrenamiento.CodigoEjercicio);
                     }
 
                 }
@@ -313,6 +317,8 @@ namespace GymPro.Capa.Datos.Implementaciones
                             Series = dr["Series"].ToString(),
                             Tiempo = int.Parse(dr["Tiempo"].ToString())
                         };
+
+                        ejercicioEnEntrenamiento._Ejercicio = EjercicioDAL.GetInstance().ObtenerEjercicioId(ejercicioEnEntrenamiento.CodigoEjercicio);
 
                         lista.Add(ejercicioEnEntrenamiento);
 

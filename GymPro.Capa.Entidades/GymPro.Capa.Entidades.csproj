@@ -56,7 +56,7 @@
     <Compile Include="Implementaciones\TipoEjercicio.cs" />
     <Compile Include="Enumeraciones\Dia.cs" />
     <Compile Include="Enumeraciones\Genero.cs" />
-    <Compile Include="Enumeraciones\TipoUsuario.cs" />
+    <Compile Include="Enumeraciones\TipoUsuarioEnum.cs" />
     <Compile Include="Implementaciones\TipoUsuario.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

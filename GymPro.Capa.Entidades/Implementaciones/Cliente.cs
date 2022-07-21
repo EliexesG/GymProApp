@@ -17,9 +17,15 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public int CodigoTipoUsuario { get; set; }
         public string Contrasenna { get; set; }
 
+        public TipoUsuario _TipoUsuario { get; set; }
+
         public DateTime FechaNacimiento { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
         public Genero Genero { get; set; }
+
+        public List<Entrenamiento> Entrenamientos { get; set; }
+        public List<ExpedienteUsuario> HistorialExpedientesUsuario { get; set; }
+        public List<FacturaEncabezado> HistorialFacturasEncabezado { get; set; }
     }
 }

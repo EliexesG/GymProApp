@@ -10,19 +10,19 @@ namespace GymPro.Capa.Factories
 {
     public class FactoryUsuario
     {
-        public static IUsuario CrearUsuario(TipoUsuario tipoUsuario)
+        public static IUsuario CrearUsuario(TipoUsuarioEnum tipoUsuario)
         {
             IUsuario usuario = null;
 
             switch (tipoUsuario)
             {
-                case TipoUsuario.Cliente:
+                case TipoUsuarioEnum.Cliente:
                     usuario = new Cliente();
                     break;
-                case TipoUsuario.Instructor:
+                case TipoUsuarioEnum.Instructor:
                     usuario = new Instructor();
                     break;
-                case TipoUsuario.Administrador:
+                case TipoUsuarioEnum.Administrador:
                     usuario = new Administrador();
                     break;
                 default:

@@ -224,7 +224,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                     while(reader.Read())
                     {
 
-                        TipoUsuario tipo = (TipoUsuario)int.Parse(reader["CodigoTipoUsuario"].ToString());
+                        TipoUsuarioEnum tipo = (TipoUsuarioEnum)int.Parse(reader["CodigoTipoUsuario"].ToString());
 
                         usuario = Factories.FactoryUsuario.CrearUsuario(tipo);
 
@@ -235,6 +235,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                         usuario.Fotografia = (byte[])reader["Fotografia"];
                         usuario.CodigoTipoUsuario = int.Parse(reader["CodigoTipoUsuario"].ToString());
                         usuario.Contrasenna = Encriptacion.DesencriptarContrasenna((byte[])reader["Contrasenna"]);
+                        usuario._TipoUsuario = TipoUsuarioDAL.GetInstance().ObtenerTipoUsuarioId(usuario.CodigoTipoUsuario);
 
                         if (usuario is Cliente)
                         {
@@ -242,6 +243,13 @@ namespace GymPro.Capa.Datos.Implementaciones
                             ((Cliente)usuario).Correo = reader["Correo"].ToString();
                             ((Cliente)usuario).Telefono = reader["Telefono"].ToString();
                             ((Cliente)usuario).Genero = (Genero)int.Parse(reader["Genero"].ToString());
+                            ((Cliente)usuario).Entrenamientos = EntrenamientoDAL.GetInstance().ObtenerEntrenamientoIdentificacionUsuarioCliente(usuario.Identificacion);
+                            ((Cliente)usuario).HistorialExpedientesUsuario = ExpedienteUsuarioDAL.GetInstance().ObtenerExpedienteUsuarioIdentificacionUsuario(usuario.Identificacion);
+                            ((Cliente)usuario).HistorialFacturasEncabezado = FacturaEncabezadoDAL.GetInstance().ObtenerFacturaEncabezadoIdentificacionUsuario(usuario.Identificacion);
+                        }
+                        else if(usuario is Instructor)
+                        {
+                            ((Instructor)usuario).Entrenamientos = EntrenamientoDAL.GetInstance().ObtenerEntrenamientoIdentificacionUsuarioEntrenador(usuario.Identificacion);
                         }
                     }
 
@@ -291,7 +299,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                     foreach(DataRow dr in ds.Tables[0].Rows)
                     {
 
-                        TipoUsuario tipo = (TipoUsuario)int.Parse(dr["CodigoTipoUsuario"].ToString());
+                        TipoUsuarioEnum tipo = (TipoUsuarioEnum)int.Parse(dr["CodigoTipoUsuario"].ToString());
 
                         IUsuario usuario = Factories.FactoryUsuario.CrearUsuario(tipo);
 
@@ -302,13 +310,21 @@ namespace GymPro.Capa.Datos.Implementaciones
                         usuario.Fotografia = (byte[])dr["Fotografia"];
                         usuario.CodigoTipoUsuario = int.Parse(dr["CodigoTipoUsuario"].ToString());
                         usuario.Contrasenna = Encriptacion.DesencriptarContrasenna((byte[])dr["Contrasenna"]);
-                        
-                        if(usuario is Cliente)
+                        usuario._TipoUsuario = TipoUsuarioDAL.GetInstance().ObtenerTipoUsuarioId(usuario.CodigoTipoUsuario);
+
+                        if (usuario is Cliente)
                         {
                             ((Cliente)usuario).FechaNacimiento = DateTime.Parse(dr["FechaNacimiento"].ToString());
                             ((Cliente)usuario).Correo = dr["Correo"].ToString();
                             ((Cliente)usuario).Telefono = dr["Telefono"].ToString();
                             ((Cliente)usuario).Genero = (Genero)int.Parse(dr["Genero"].ToString());
+                            ((Cliente)usuario).Entrenamientos = EntrenamientoDAL.GetInstance().ObtenerEntrenamientoIdentificacionUsuarioCliente(usuario.Identificacion);
+                            ((Cliente)usuario).HistorialExpedientesUsuario = ExpedienteUsuarioDAL.GetInstance().ObtenerExpedienteUsuarioIdentificacionUsuario(usuario.Identificacion);
+                            ((Cliente)usuario).HistorialFacturasEncabezado = FacturaEncabezadoDAL.GetInstance().ObtenerFacturaEncabezadoIdentificacionUsuario(usuario.Identificacion);
+                        }
+                        else if (usuario is Instructor)
+                        {
+                            ((Instructor)usuario).Entrenamientos = EntrenamientoDAL.GetInstance().ObtenerEntrenamientoIdentificacionUsuarioEntrenador(usuario.Identificacion);
                         }
 
                         lista.Add(usuario);
