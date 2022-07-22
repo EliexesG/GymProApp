@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
-    class ControlIngresoEgreso
+    public class ControlIngresoEgreso
     {
         public string IdentificacionUsuario { get; set; }
         public DateTime Fecha { get; set; }

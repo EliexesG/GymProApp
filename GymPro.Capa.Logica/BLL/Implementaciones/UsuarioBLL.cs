@@ -116,15 +116,59 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         /// <summary>
-        /// Obtiene una lista de todos los Usuarios de la base de datos
+        /// Obtiene una lista de todos los Usuarios activos de la base de datos
         /// </summary>
         /// <returns>Lista de entidades de tipo Usuario</returns>
-        public List<IUsuario> ObtenerUsuarioTodos()
+        public List<IUsuario> ObtenerUsuarioActivoTodos()
         {
             try
             {
 
-                return oUsuarioDAL.ObtenerUsuarioTodos();
+                return oUsuarioDAL.ObtenerUsuarioActivoTodos();
+
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Obtiene una lista de todos los Usuarios inactivos de la base de datos
+        /// </summary>
+        /// <returns>Lista de entidades de tipo Usuario</returns>
+        public List<IUsuario> ObtenerUsuarioInactivoTodos()
+        {
+            try
+            {
+
+                return oUsuarioDAL.ObtenerUsuarioInactivoTodos();
+
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Activa un Usuario por su Identificacion en la base de datos
+        /// </summary>
+        /// <param name="pIdentificacionUsuario">Identificacion del Usuario a activar</param>
+        public void ActivarUsuario(string pIdentificacionUsuario)
+        {
+            try
+            {
+
+                oUsuarioDAL.ActivarUsuario(pIdentificacionUsuario);
 
             }
             catch (SqlException sqlError)
