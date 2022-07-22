@@ -227,7 +227,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "SP_Obtener_FacturaEncabezado_IdentificacionUsuario";
-            comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario)
+            comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario);
 
             try
             {
