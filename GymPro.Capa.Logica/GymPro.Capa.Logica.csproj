@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Implementaciones\ControlIngresoEgresoBLL.cs" />
     <Compile Include="BLL\Implementaciones\DiaEntrenamientoBLL.cs" />
     <Compile Include="BLL\Implementaciones\EjercicioBLL.cs" />
     <Compile Include="BLL\Implementaciones\EjercicioEnEntrenamientoBLL.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="BLL\Implementaciones\ExpedienteUsuarioBLL.cs" />
     <Compile Include="BLL\Implementaciones\FacturaDetalleBLL.cs" />
     <Compile Include="BLL\Implementaciones\FacturaEncabezadoBLL.cs" />
+    <Compile Include="BLL\Interfaces\IControlIngresoEgresoBLL.cs" />
     <Compile Include="BLL\Interfaces\ITipoUsuarioBLL.cs" />
     <Compile Include="BLL\Implementaciones\TipoUsuarioBLL.cs" />
     <Compile Include="BLL\Interfaces\ITipoEjercicioBLL.cs" />

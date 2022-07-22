@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementaciones\ControlIngresoEgresoDAL.cs" />
     <Compile Include="Implementaciones\DiaEntrenamientoDAL.cs" />
     <Compile Include="Implementaciones\EjercicioDAL.cs" />
     <Compile Include="Implementaciones\EjercicioEnEntrenamientoDAL.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Implementaciones\TipoEjercicioDAL.cs" />
     <Compile Include="Implementaciones\TipoUsuarioDAL.cs" />
     <Compile Include="Implementaciones\UsuarioDAL.cs" />
+    <Compile Include="Interfaces\IControlIngresoEgresoDAL.cs" />
     <Compile Include="Interfaces\IEjercicioDAL.cs" />
     <Compile Include="Interfaces\IDiaEntrenamientoDAL.cs" />
     <Compile Include="Interfaces\IEjercicioEnEntrenamientoDAL.cs" />

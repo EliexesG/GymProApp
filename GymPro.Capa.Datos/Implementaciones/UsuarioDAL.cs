@@ -277,16 +277,16 @@ namespace GymPro.Capa.Datos.Implementaciones
         }
 
         /// <summary>
-        /// Obtiene una lista de todos los Usuarios de la base de datos
+        /// Obtiene una lista de todos los Usuarios activos de la base de datos
         /// </summary>
         /// <returns>Lista de entidades de tipo Usuario</returns>
-        public List<IUsuario> ObtenerUsuarioTodos()
+        public List<IUsuario> ObtenerUsuarioActivoTodos()
         {
             List<IUsuario> lista = new List<IUsuario>();
 
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_Usuario_Todos";
+            comando.CommandText = "SP_Obtener_Usuario_Activo_Todos";
 
 
             try
@@ -333,6 +333,121 @@ namespace GymPro.Capa.Datos.Implementaciones
                 }
 
                 return lista;
+
+            }
+            catch (SqlException sqlError)
+            {
+                //StringBuilder msg = new StringBuilder();
+                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                //StringBuilder msg = new StringBuilder();
+                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Obtiene una lista de todos los Usuarios inactivos de la base de datos
+        /// </summary>
+        /// <returns>Lista de entidades de tipo Usuario</returns>
+        public List<IUsuario> ObtenerUsuarioInactivoTodos()
+        {
+            List<IUsuario> lista = new List<IUsuario>();
+
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "SP_Obtener_Usuario_Inactivo_Todos";
+
+
+            try
+            {
+
+                using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
+                {
+                    DataSet ds = db.ExecuteDataSet(comando);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+
+                        TipoUsuarioEnum tipo = (TipoUsuarioEnum)int.Parse(dr["CodigoTipoUsuario"].ToString());
+
+                        IUsuario usuario = Factories.FactoryUsuario.CrearUsuario(tipo);
+
+                        usuario.Identificacion = dr["Identificacion"].ToString();
+                        usuario.Nombre = dr["Nombre"].ToString();
+                        usuario.Apellido1 = dr["Apellido1"].ToString();
+                        usuario.Apellido2 = dr["Apellido2"].ToString();
+                        usuario.Fotografia = (byte[])dr["Fotografia"];
+                        usuario.CodigoTipoUsuario = int.Parse(dr["CodigoTipoUsuario"].ToString());
+                        usuario.Contrasenna = Encriptacion.DesencriptarContrasenna((byte[])dr["Contrasenna"]);
+                        usuario._TipoUsuario = TipoUsuarioDAL.GetInstance().ObtenerTipoUsuarioId(usuario.CodigoTipoUsuario);
+
+                        if (usuario is Cliente)
+                        {
+                            ((Cliente)usuario).FechaNacimiento = DateTime.Parse(dr["FechaNacimiento"].ToString());
+                            ((Cliente)usuario).Correo = dr["Correo"].ToString();
+                            ((Cliente)usuario).Telefono = dr["Telefono"].ToString();
+                            ((Cliente)usuario).Genero = (Genero)int.Parse(dr["Genero"].ToString());
+                            ((Cliente)usuario).Entrenamientos = EntrenamientoDAL.GetInstance().ObtenerEntrenamientoIdentificacionUsuarioCliente(usuario.Identificacion);
+                            ((Cliente)usuario).HistorialExpedientesUsuario = ExpedienteUsuarioDAL.GetInstance().ObtenerExpedienteUsuarioIdentificacionUsuario(usuario.Identificacion);
+                            ((Cliente)usuario).HistorialFacturasEncabezado = FacturaEncabezadoDAL.GetInstance().ObtenerFacturaEncabezadoIdentificacionUsuario(usuario.Identificacion);
+                        }
+                        else if (usuario is Instructor)
+                        {
+                            ((Instructor)usuario).Entrenamientos = EntrenamientoDAL.GetInstance().ObtenerEntrenamientoIdentificacionUsuarioEntrenador(usuario.Identificacion);
+                        }
+
+                        lista.Add(usuario);
+                    }
+
+                }
+
+                return lista;
+
+            }
+            catch (SqlException sqlError)
+            {
+                //StringBuilder msg = new StringBuilder();
+                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                //StringBuilder msg = new StringBuilder();
+                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Activa un Usuario por su Identificacion en la base de datos
+        /// </summary>
+        /// <param name="pIdentificacionUsuario">Identificacion del Usuario a activar</param>
+        public void ActivarUsuario(string pIdentificacionUsuario)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "SP_Activar_Usuario";
+            comando.Parameters.AddWithValue("@Identificacion", pIdentificacionUsuario);
+
+            try
+            {
+
+                using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
+                {
+                    db.ExecuteNonQuery(comando);
+                }
 
             }
             catch (SqlException sqlError)

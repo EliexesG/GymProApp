@@ -12,7 +12,9 @@ namespace GymPro.Capa.Datos.Interfaces
         void InsertarUsuario(IUsuario pUsuario);
         void ModificarUsuario(IUsuario pUsuario);
         void EliminarUsuario(string pIdentificacionUsuario);
-        List<IUsuario> ObtenerUsuarioTodos();
+        void ActivarUsuario(string pIdentificacionUsuario);
+        List<IUsuario> ObtenerUsuarioActivoTodos();
+        List<IUsuario> ObtenerUsuarioInactivoTodos();
         IUsuario ObtenerUsuarioIdentificacion(string pIdentificacionUsuario);
 
     }
