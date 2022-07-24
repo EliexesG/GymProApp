@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
-    class UsuarioBLL : IUsuarioBLL
+    public class UsuarioBLL : IUsuarioBLL
     {
 
         private IUsuarioDAL oUsuarioDAL;
