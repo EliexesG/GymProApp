@@ -34,7 +34,14 @@ namespace GymPro.Capa.UI.InicioSesion
 
         private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FrmLogIn(this));
+            try
+            {
+                AbrirFormEnPanel(new FrmLogIn(this));
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

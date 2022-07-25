@@ -58,6 +58,18 @@
     <Compile Include="DashBoard\FrmDashBoard.Designer.cs">
       <DependentUpon>FrmDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.Designer.cs">
+      <DependentUpon>FrmMantenimientoTiposEjercicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.Designer.cs">
+      <DependentUpon>FrmMenuMantenimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioSesion\FrmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,12 @@
     <EmbeddedResource Include="DashBoard\FrmDashBoard.resx">
       <DependentUpon>FrmDashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.resx">
+      <DependentUpon>FrmMantenimientoTiposEjercicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.resx">
+      <DependentUpon>FrmMenuMantenimientos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,73 +110,23 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\icns\add_comment.icns" />
-    <None Include="Resources\icns\add_image.icns" />
-    <None Include="Resources\icns\add_pages.icns" />
-    <None Include="Resources\icns\add_printer.icns" />
-    <None Include="Resources\icns\attach_image.icns" />
-    <None Include="Resources\icns\cloud_comment.icns" />
-    <None Include="Resources\icns\copy_paste.icns" />
-    <None Include="Resources\icns\delete_comment.icns" />
-    <None Include="Resources\icns\delete_image.icns" />
-    <None Include="Resources\icns\download.icns" />
-    <None Include="Resources\icns\download_image.icns" />
-    <None Include="Resources\icns\equalizer.icns" />
-    <None Include="Resources\icns\favorite_film.icns" />
-    <None Include="Resources\icns\film.icns" />
-    <None Include="Resources\icns\globe.icns" />
-    <None Include="Resources\icns\globe_download.icns" />
-    <None Include="Resources\icns\globe_process.icns" />
-    <None Include="Resources\icns\globe_warning.icns" />
-    <None Include="Resources\icns\id_card.icns" />
-    <None Include="Resources\icns\image.icns" />
-    <None Include="Resources\icns\image_accept.icns" />
-    <None Include="Resources\icns\light_bulb.icns" />
-    <None Include="Resources\icns\note.icns" />
-    <None Include="Resources\icns\note_accept.icns" />
-    <None Include="Resources\icns\note_book.icns" />
-    <None Include="Resources\icns\old_clock.icns" />
-    <None Include="Resources\icns\pages.icns" />
-    <None Include="Resources\icns\pages_warning.icns" />
-    <None Include="Resources\icns\photo_camera.icns" />
-    <None Include="Resources\icns\photo_camera_accept.icns" />
-    <None Include="Resources\icns\pin.icns" />
-    <None Include="Resources\icns\printer.icns" />
-    <None Include="Resources\icns\printer_accept.icns" />
-    <None Include="Resources\icns\printer_warning.icns" />
-    <None Include="Resources\icns\prize_winner.icns" />
-    <None Include="Resources\icns\process_accept.icns" />
-    <None Include="Resources\icns\process_info.icns" />
-    <None Include="Resources\icns\process_warning.icns" />
-    <None Include="Resources\icns\puzzle.icns" />
-    <None Include="Resources\icns\recycle.icns" />
-    <None Include="Resources\icns\report.icns" />
-    <None Include="Resources\icns\search_globe.icns" />
-    <None Include="Resources\icns\search_image.icns" />
-    <None Include="Resources\icns\search_printer.icns" />
-    <None Include="Resources\icns\television.icns" />
-    <None Include="Resources\icns\tools.icns" />
-    <None Include="Resources\icns\trash_can.icns" />
-    <None Include="Resources\icns\up.icns" />
-    <None Include="Resources\icns\users_comments.icns" />
-    <None Include="Resources\icns\user_comment.icns" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -178,361 +146,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DashBoard\Mantenimientos\" />
     <Folder Include="DashBoard\Procesos\" />
     <Folder Include="DashBoard\Reportes\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\ico\add_comment.ico" />
-    <Content Include="Resources\ico\add_image.ico" />
-    <Content Include="Resources\ico\add_pages.ico" />
-    <Content Include="Resources\ico\add_printer.ico" />
-    <Content Include="Resources\ico\attach_image.ico" />
-    <Content Include="Resources\ico\cloud_comment.ico" />
-    <Content Include="Resources\ico\copy_paste.ico" />
-    <Content Include="Resources\ico\delete_comment.ico" />
-    <Content Include="Resources\ico\delete_image.ico" />
-    <Content Include="Resources\ico\download.ico" />
-    <Content Include="Resources\ico\download_image.ico" />
-    <Content Include="Resources\ico\equalizer.ico" />
-    <Content Include="Resources\ico\favorite_film.ico" />
-    <Content Include="Resources\ico\film.ico" />
-    <Content Include="Resources\ico\globe.ico" />
-    <Content Include="Resources\ico\globe_download.ico" />
-    <Content Include="Resources\ico\globe_process.ico" />
-    <Content Include="Resources\ico\globe_warning.ico" />
-    <Content Include="Resources\ico\id_card.ico" />
-    <Content Include="Resources\ico\image.ico" />
-    <Content Include="Resources\ico\image_accept.ico" />
-    <Content Include="Resources\ico\light_bulb.ico" />
-    <Content Include="Resources\ico\note.ico" />
-    <Content Include="Resources\ico\note_accept.ico" />
-    <Content Include="Resources\ico\note_book.ico" />
-    <Content Include="Resources\ico\old_clock.ico" />
-    <Content Include="Resources\ico\pages.ico" />
-    <Content Include="Resources\ico\pages_warning.ico" />
-    <Content Include="Resources\ico\photo_camera.ico" />
-    <Content Include="Resources\ico\photo_camera_accept.ico" />
-    <Content Include="Resources\ico\pin.ico" />
-    <Content Include="Resources\ico\printer.ico" />
-    <Content Include="Resources\ico\printer_accept.ico" />
-    <Content Include="Resources\ico\printer_warning.ico" />
-    <Content Include="Resources\ico\prize_winner.ico" />
-    <Content Include="Resources\ico\process_accept.ico" />
-    <Content Include="Resources\ico\process_info.ico" />
-    <Content Include="Resources\ico\process_warning.ico" />
-    <Content Include="Resources\ico\puzzle.ico" />
-    <Content Include="Resources\ico\recycle.ico" />
-    <Content Include="Resources\ico\report.ico" />
-    <Content Include="Resources\ico\search_globe.ico" />
-    <Content Include="Resources\ico\search_image.ico" />
-    <Content Include="Resources\ico\search_printer.ico" />
-    <Content Include="Resources\ico\television.ico" />
-    <Content Include="Resources\ico\tools.ico" />
-    <Content Include="Resources\ico\trash_can.ico" />
-    <Content Include="Resources\ico\up.ico" />
-    <Content Include="Resources\ico\users_comments.ico" />
-    <Content Include="Resources\ico\user_comment.ico" />
-    <Content Include="Resources\png\128x128\add_comment.png" />
-    <Content Include="Resources\png\128x128\add_image.png" />
-    <Content Include="Resources\png\128x128\add_pages.png" />
-    <Content Include="Resources\png\128x128\add_printer.png" />
-    <Content Include="Resources\png\128x128\attach_image.png" />
-    <Content Include="Resources\png\128x128\cloud_comment.png" />
-    <Content Include="Resources\png\128x128\copy_paste.png" />
-    <Content Include="Resources\png\128x128\delete_comment.png" />
-    <Content Include="Resources\png\128x128\delete_image.png" />
-    <Content Include="Resources\png\128x128\download.png" />
-    <Content Include="Resources\png\128x128\download_image.png" />
-    <Content Include="Resources\png\128x128\equalizer.png" />
-    <Content Include="Resources\png\128x128\favorite_film.png" />
-    <Content Include="Resources\png\128x128\film.png" />
-    <Content Include="Resources\png\128x128\globe.png" />
-    <Content Include="Resources\png\128x128\globe_download.png" />
-    <Content Include="Resources\png\128x128\globe_process.png" />
-    <Content Include="Resources\png\128x128\globe_warning.png" />
-    <Content Include="Resources\png\128x128\id_card.png" />
-    <Content Include="Resources\png\128x128\image.png" />
-    <Content Include="Resources\png\128x128\image_accept.png" />
-    <Content Include="Resources\png\128x128\light_bulb.png" />
-    <Content Include="Resources\png\128x128\note.png" />
-    <Content Include="Resources\png\128x128\note_accept.png" />
-    <Content Include="Resources\png\128x128\note_book.png" />
-    <Content Include="Resources\png\128x128\old_clock.png" />
-    <Content Include="Resources\png\128x128\pages.png" />
-    <Content Include="Resources\png\128x128\pages_warning.png" />
-    <Content Include="Resources\png\128x128\photo_camera.png" />
-    <Content Include="Resources\png\128x128\photo_camera_accept.png" />
-    <Content Include="Resources\png\128x128\pin.png" />
-    <Content Include="Resources\png\128x128\printer.png" />
-    <Content Include="Resources\png\128x128\printer_accept.png" />
-    <Content Include="Resources\png\128x128\printer_warning.png" />
-    <Content Include="Resources\png\128x128\prize_winner.png" />
-    <Content Include="Resources\png\128x128\process_accept.png" />
-    <Content Include="Resources\png\128x128\process_info.png" />
-    <Content Include="Resources\png\128x128\process_warning.png" />
-    <Content Include="Resources\png\128x128\puzzle.png" />
-    <Content Include="Resources\png\128x128\recycle.png" />
-    <Content Include="Resources\png\128x128\report.png" />
-    <Content Include="Resources\png\128x128\search_globe.png" />
-    <Content Include="Resources\png\128x128\search_image.png" />
-    <Content Include="Resources\png\128x128\search_printer.png" />
-    <Content Include="Resources\png\128x128\television.png" />
-    <Content Include="Resources\png\128x128\tools.png" />
-    <Content Include="Resources\png\128x128\trash_can.png" />
-    <Content Include="Resources\png\128x128\up.png" />
-    <Content Include="Resources\png\128x128\users_comments.png" />
-    <Content Include="Resources\png\128x128\user_comment.png" />
-    <Content Include="Resources\png\16x16\add_comment.png" />
-    <Content Include="Resources\png\16x16\add_image.png" />
-    <Content Include="Resources\png\16x16\add_pages.png" />
-    <Content Include="Resources\png\16x16\add_printer.png" />
-    <Content Include="Resources\png\16x16\attach_image.png" />
-    <Content Include="Resources\png\16x16\cloud_comment.png" />
-    <Content Include="Resources\png\16x16\copy_paste.png" />
-    <Content Include="Resources\png\16x16\delete_comment.png" />
-    <Content Include="Resources\png\16x16\delete_image.png" />
-    <Content Include="Resources\png\16x16\download.png" />
-    <Content Include="Resources\png\16x16\download_image.png" />
-    <Content Include="Resources\png\16x16\equalizer.png" />
-    <Content Include="Resources\png\16x16\favorite_film.png" />
-    <Content Include="Resources\png\16x16\film.png" />
-    <Content Include="Resources\png\16x16\globe.png" />
-    <Content Include="Resources\png\16x16\globe_download.png" />
-    <Content Include="Resources\png\16x16\globe_process.png" />
-    <Content Include="Resources\png\16x16\globe_warning.png" />
-    <Content Include="Resources\png\16x16\id_card.png" />
-    <Content Include="Resources\png\16x16\image.png" />
-    <Content Include="Resources\png\16x16\image_accept.png" />
-    <Content Include="Resources\png\16x16\light_bulb.png" />
-    <Content Include="Resources\png\16x16\note.png" />
-    <Content Include="Resources\png\16x16\note_accept.png" />
-    <Content Include="Resources\png\16x16\note_book.png" />
-    <Content Include="Resources\png\16x16\old_clock.png" />
-    <Content Include="Resources\png\16x16\pages.png" />
-    <Content Include="Resources\png\16x16\pages_warning.png" />
-    <Content Include="Resources\png\16x16\photo_camera.png" />
-    <Content Include="Resources\png\16x16\photo_camera_accept.png" />
-    <Content Include="Resources\png\16x16\pin.png" />
-    <Content Include="Resources\png\16x16\printer.png" />
-    <Content Include="Resources\png\16x16\printer_accept.png" />
-    <Content Include="Resources\png\16x16\printer_warning.png" />
-    <Content Include="Resources\png\16x16\prize_winner.png" />
-    <Content Include="Resources\png\16x16\process_accept.png" />
-    <Content Include="Resources\png\16x16\process_info.png" />
-    <Content Include="Resources\png\16x16\process_warning.png" />
-    <Content Include="Resources\png\16x16\puzzle.png" />
-    <Content Include="Resources\png\16x16\recycle.png" />
-    <Content Include="Resources\png\16x16\report.png" />
-    <Content Include="Resources\png\16x16\search_globe.png" />
-    <Content Include="Resources\png\16x16\search_image.png" />
-    <Content Include="Resources\png\16x16\search_printer.png" />
-    <Content Include="Resources\png\16x16\television.png" />
-    <Content Include="Resources\png\16x16\tools.png" />
-    <Content Include="Resources\png\16x16\trash_can.png" />
-    <Content Include="Resources\png\16x16\up.png" />
-    <Content Include="Resources\png\16x16\users_comments.png" />
-    <Content Include="Resources\png\16x16\user_comment.png" />
-    <Content Include="Resources\png\24x24\add_comment.png" />
-    <Content Include="Resources\png\24x24\add_image.png" />
-    <Content Include="Resources\png\24x24\add_pages.png" />
-    <Content Include="Resources\png\24x24\add_printer.png" />
-    <Content Include="Resources\png\24x24\attach_image.png" />
-    <Content Include="Resources\png\24x24\cloud_comment.png" />
-    <Content Include="Resources\png\24x24\copy_paste.png" />
-    <Content Include="Resources\png\24x24\delete_comment.png" />
-    <Content Include="Resources\png\24x24\delete_image.png" />
-    <Content Include="Resources\png\24x24\download.png" />
-    <Content Include="Resources\png\24x24\download_image.png" />
-    <Content Include="Resources\png\24x24\equalizer.png" />
-    <Content Include="Resources\png\24x24\favorite_film.png" />
-    <Content Include="Resources\png\24x24\film.png" />
-    <Content Include="Resources\png\24x24\globe.png" />
-    <Content Include="Resources\png\24x24\globe_download.png" />
-    <Content Include="Resources\png\24x24\globe_process.png" />
-    <Content Include="Resources\png\24x24\globe_warning.png" />
-    <Content Include="Resources\png\24x24\id_card.png" />
-    <Content Include="Resources\png\24x24\image.png" />
-    <Content Include="Resources\png\24x24\image_accept.png" />
-    <Content Include="Resources\png\24x24\light_bulb.png" />
-    <Content Include="Resources\png\24x24\note.png" />
-    <Content Include="Resources\png\24x24\note_accept.png" />
-    <Content Include="Resources\png\24x24\note_book.png" />
-    <Content Include="Resources\png\24x24\old_clock.png" />
-    <Content Include="Resources\png\24x24\pages.png" />
-    <Content Include="Resources\png\24x24\pages_warning.png" />
-    <Content Include="Resources\png\24x24\photo_camera.png" />
-    <Content Include="Resources\png\24x24\photo_camera_accept.png" />
-    <Content Include="Resources\png\24x24\pin.png" />
-    <Content Include="Resources\png\24x24\printer.png" />
-    <Content Include="Resources\png\24x24\printer_accept.png" />
-    <Content Include="Resources\png\24x24\printer_warning.png" />
-    <Content Include="Resources\png\24x24\prize_winner.png" />
-    <Content Include="Resources\png\24x24\process_accept.png" />
-    <Content Include="Resources\png\24x24\process_info.png" />
-    <Content Include="Resources\png\24x24\process_warning.png" />
-    <Content Include="Resources\png\24x24\puzzle.png" />
-    <Content Include="Resources\png\24x24\recycle.png" />
-    <Content Include="Resources\png\24x24\report.png" />
-    <Content Include="Resources\png\24x24\search_globe.png" />
-    <Content Include="Resources\png\24x24\search_image.png" />
-    <Content Include="Resources\png\24x24\search_printer.png" />
-    <Content Include="Resources\png\24x24\television.png" />
-    <Content Include="Resources\png\24x24\tools.png" />
-    <Content Include="Resources\png\24x24\trash_can.png" />
-    <Content Include="Resources\png\24x24\up.png" />
-    <Content Include="Resources\png\24x24\users_comments.png" />
-    <Content Include="Resources\png\24x24\user_comment.png" />
-    <Content Include="Resources\png\32x32\add_comment.png" />
-    <Content Include="Resources\png\32x32\add_image.png" />
-    <Content Include="Resources\png\32x32\add_pages.png" />
-    <Content Include="Resources\png\32x32\add_printer.png" />
-    <Content Include="Resources\png\32x32\attach_image.png" />
-    <Content Include="Resources\png\32x32\cloud_comment.png" />
-    <Content Include="Resources\png\32x32\copy_paste.png" />
-    <Content Include="Resources\png\32x32\delete_comment.png" />
-    <Content Include="Resources\png\32x32\delete_image.png" />
-    <Content Include="Resources\png\32x32\download.png" />
-    <Content Include="Resources\png\32x32\download_image.png" />
-    <Content Include="Resources\png\32x32\equalizer.png" />
-    <Content Include="Resources\png\32x32\favorite_film.png" />
-    <Content Include="Resources\png\32x32\film.png" />
-    <Content Include="Resources\png\32x32\globe.png" />
-    <Content Include="Resources\png\32x32\globe_download.png" />
-    <Content Include="Resources\png\32x32\globe_process.png" />
-    <Content Include="Resources\png\32x32\globe_warning.png" />
-    <Content Include="Resources\png\32x32\id_card.png" />
-    <Content Include="Resources\png\32x32\image.png" />
-    <Content Include="Resources\png\32x32\image_accept.png" />
-    <Content Include="Resources\png\32x32\light_bulb.png" />
-    <Content Include="Resources\png\32x32\note.png" />
-    <Content Include="Resources\png\32x32\note_accept.png" />
-    <Content Include="Resources\png\32x32\note_book.png" />
-    <Content Include="Resources\png\32x32\old_clock.png" />
-    <Content Include="Resources\png\32x32\pages.png" />
-    <Content Include="Resources\png\32x32\pages_warning.png" />
-    <Content Include="Resources\png\32x32\photo_camera.png" />
-    <Content Include="Resources\png\32x32\photo_camera_accept.png" />
-    <Content Include="Resources\png\32x32\pin.png" />
-    <Content Include="Resources\png\32x32\printer.png" />
-    <Content Include="Resources\png\32x32\printer_accept.png" />
-    <Content Include="Resources\png\32x32\printer_warning.png" />
-    <Content Include="Resources\png\32x32\prize_winner.png" />
-    <Content Include="Resources\png\32x32\process_accept.png" />
-    <Content Include="Resources\png\32x32\process_info.png" />
-    <Content Include="Resources\png\32x32\process_warning.png" />
-    <Content Include="Resources\png\32x32\puzzle.png" />
-    <Content Include="Resources\png\32x32\recycle.png" />
-    <Content Include="Resources\png\32x32\report.png" />
-    <Content Include="Resources\png\32x32\search_globe.png" />
-    <Content Include="Resources\png\32x32\search_image.png" />
-    <Content Include="Resources\png\32x32\search_printer.png" />
-    <Content Include="Resources\png\32x32\television.png" />
-    <Content Include="Resources\png\32x32\tools.png" />
-    <Content Include="Resources\png\32x32\trash_can.png" />
-    <Content Include="Resources\png\32x32\up.png" />
-    <Content Include="Resources\png\32x32\users_comments.png" />
-    <Content Include="Resources\png\32x32\user_comment.png" />
-    <Content Include="Resources\png\48x48\add_comment.png" />
-    <Content Include="Resources\png\48x48\add_image.png" />
-    <Content Include="Resources\png\48x48\add_pages.png" />
-    <Content Include="Resources\png\48x48\add_printer.png" />
-    <Content Include="Resources\png\48x48\attach_image.png" />
-    <Content Include="Resources\png\48x48\cloud_comment.png" />
-    <Content Include="Resources\png\48x48\copy_paste.png" />
-    <Content Include="Resources\png\48x48\delete_comment.png" />
-    <Content Include="Resources\png\48x48\delete_image.png" />
-    <Content Include="Resources\png\48x48\download.png" />
-    <Content Include="Resources\png\48x48\download_image.png" />
-    <Content Include="Resources\png\48x48\equalizer.png" />
-    <Content Include="Resources\png\48x48\favorite_film.png" />
-    <Content Include="Resources\png\48x48\film.png" />
-    <Content Include="Resources\png\48x48\globe.png" />
-    <Content Include="Resources\png\48x48\globe_download.png" />
-    <Content Include="Resources\png\48x48\globe_process.png" />
-    <Content Include="Resources\png\48x48\globe_warning.png" />
-    <Content Include="Resources\png\48x48\id_card.png" />
-    <Content Include="Resources\png\48x48\image.png" />
-    <Content Include="Resources\png\48x48\image_accept.png" />
-    <Content Include="Resources\png\48x48\light_bulb.png" />
-    <Content Include="Resources\png\48x48\note.png" />
-    <Content Include="Resources\png\48x48\note_accept.png" />
-    <Content Include="Resources\png\48x48\note_book.png" />
-    <Content Include="Resources\png\48x48\old_clock.png" />
-    <Content Include="Resources\png\48x48\pages.png" />
-    <Content Include="Resources\png\48x48\pages_warning.png" />
-    <Content Include="Resources\png\48x48\photo_camera.png" />
-    <Content Include="Resources\png\48x48\photo_camera_accept.png" />
-    <Content Include="Resources\png\48x48\pin.png" />
-    <Content Include="Resources\png\48x48\printer.png" />
-    <Content Include="Resources\png\48x48\printer_accept.png" />
-    <Content Include="Resources\png\48x48\printer_warning.png" />
-    <Content Include="Resources\png\48x48\prize_winner.png" />
-    <Content Include="Resources\png\48x48\process_accept.png" />
-    <Content Include="Resources\png\48x48\process_info.png" />
-    <Content Include="Resources\png\48x48\process_warning.png" />
-    <Content Include="Resources\png\48x48\puzzle.png" />
-    <Content Include="Resources\png\48x48\recycle.png" />
-    <Content Include="Resources\png\48x48\report.png" />
-    <Content Include="Resources\png\48x48\search_globe.png" />
-    <Content Include="Resources\png\48x48\search_image.png" />
-    <Content Include="Resources\png\48x48\search_printer.png" />
-    <Content Include="Resources\png\48x48\television.png" />
-    <Content Include="Resources\png\48x48\tools.png" />
-    <Content Include="Resources\png\48x48\trash_can.png" />
-    <Content Include="Resources\png\48x48\up.png" />
-    <Content Include="Resources\png\48x48\users_comments.png" />
-    <Content Include="Resources\png\48x48\user_comment.png" />
-    <Content Include="Resources\png\64x64\add_comment.png" />
-    <Content Include="Resources\png\64x64\add_image.png" />
-    <Content Include="Resources\png\64x64\add_pages.png" />
-    <Content Include="Resources\png\64x64\add_printer.png" />
-    <Content Include="Resources\png\64x64\attach_image.png" />
-    <Content Include="Resources\png\64x64\cloud_comment.png" />
-    <Content Include="Resources\png\64x64\copy_paste.png" />
-    <Content Include="Resources\png\64x64\delete_comment.png" />
-    <Content Include="Resources\png\64x64\delete_image.png" />
-    <Content Include="Resources\png\64x64\download.png" />
-    <Content Include="Resources\png\64x64\download_image.png" />
-    <Content Include="Resources\png\64x64\equalizer.png" />
-    <Content Include="Resources\png\64x64\favorite_film.png" />
-    <Content Include="Resources\png\64x64\film.png" />
-    <Content Include="Resources\png\64x64\globe.png" />
-    <Content Include="Resources\png\64x64\globe_download.png" />
-    <Content Include="Resources\png\64x64\globe_process.png" />
-    <Content Include="Resources\png\64x64\globe_warning.png" />
-    <Content Include="Resources\png\64x64\id_card.png" />
-    <Content Include="Resources\png\64x64\image.png" />
-    <Content Include="Resources\png\64x64\image_accept.png" />
-    <Content Include="Resources\png\64x64\light_bulb.png" />
-    <Content Include="Resources\png\64x64\note.png" />
-    <Content Include="Resources\png\64x64\note_accept.png" />
-    <Content Include="Resources\png\64x64\note_book.png" />
-    <Content Include="Resources\png\64x64\old_clock.png" />
-    <Content Include="Resources\png\64x64\pages.png" />
-    <Content Include="Resources\png\64x64\pages_warning.png" />
-    <Content Include="Resources\png\64x64\photo_camera.png" />
-    <Content Include="Resources\png\64x64\photo_camera_accept.png" />
-    <Content Include="Resources\png\64x64\pin.png" />
-    <Content Include="Resources\png\64x64\printer.png" />
-    <Content Include="Resources\png\64x64\printer_accept.png" />
-    <Content Include="Resources\png\64x64\printer_warning.png" />
-    <Content Include="Resources\png\64x64\prize_winner.png" />
-    <Content Include="Resources\png\64x64\process_accept.png" />
-    <Content Include="Resources\png\64x64\process_info.png" />
-    <Content Include="Resources\png\64x64\process_warning.png" />
-    <Content Include="Resources\png\64x64\puzzle.png" />
-    <Content Include="Resources\png\64x64\recycle.png" />
-    <Content Include="Resources\png\64x64\report.png" />
-    <Content Include="Resources\png\64x64\search_globe.png" />
-    <Content Include="Resources\png\64x64\search_image.png" />
-    <Content Include="Resources\png\64x64\search_printer.png" />
-    <Content Include="Resources\png\64x64\television.png" />
-    <Content Include="Resources\png\64x64\tools.png" />
-    <Content Include="Resources\png\64x64\trash_can.png" />
-    <Content Include="Resources\png\64x64\up.png" />
-    <Content Include="Resources\png\64x64\users_comments.png" />
-    <Content Include="Resources\png\64x64\user_comment.png" />
+    <Content Include="Resources\MantenimientoIcons\Cancelar.png" />
+    <Content Include="Resources\MantenimientoIcons\Editar.png" />
+    <Content Include="Resources\MantenimientoIcons\Ejercicio.png" />
+    <Content Include="Resources\MantenimientoIcons\Eliminar.png" />
+    <Content Include="Resources\MantenimientoIcons\Entrenamiento.png" />
+    <Content Include="Resources\MantenimientoIcons\Guardar.png" />
+    <Content Include="Resources\MantenimientoIcons\TipoEjercicio.png" />
+    <Content Include="Resources\MantenimientoIcons\Usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
