@@ -1,4 +1,5 @@
 ﻿using GymPro.Capa.Entidades.Interfaces;
+using GymPro.Capa.UI.DashBoard.Mantenimientos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,6 +53,18 @@ namespace GymPro.Capa.UI.DashBoard
             this.pnlDisplay.Tag = fh;
             fh.Show();
 
+        }
+
+        private void btnMantenimientos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.AbrirFormEnPanel(new FrmMenuMantenimientos());
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
         }
     }
 }

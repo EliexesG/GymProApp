@@ -63,9 +63,9 @@ namespace GymPro.Capa.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_image {
+        internal static System.Drawing.Bitmap Cancelar {
             get {
-                object obj = ResourceManager.GetObject("add_image", resourceCulture);
+                object obj = ResourceManager.GetObject("Cancelar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace GymPro.Capa.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image {
+        internal static System.Drawing.Bitmap Editar {
             get {
-                object obj = ResourceManager.GetObject("image", resourceCulture);
+                object obj = ResourceManager.GetObject("Editar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace GymPro.Capa.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image1 {
+        internal static System.Drawing.Bitmap Ejercicio {
             get {
-                object obj = ResourceManager.GetObject("image1", resourceCulture);
+                object obj = ResourceManager.GetObject("Ejercicio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,49 @@ namespace GymPro.Capa.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image2 {
+        internal static System.Drawing.Bitmap Eliminar {
             get {
-                object obj = ResourceManager.GetObject("image2", resourceCulture);
+                object obj = ResourceManager.GetObject("Eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Entrenamiento {
+            get {
+                object obj = ResourceManager.GetObject("Entrenamiento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Guardar {
+            get {
+                object obj = ResourceManager.GetObject("Guardar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TipoEjercicio {
+            get {
+                object obj = ResourceManager.GetObject("TipoEjercicio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Usuario {
+            get {
+                object obj = ResourceManager.GetObject("Usuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
