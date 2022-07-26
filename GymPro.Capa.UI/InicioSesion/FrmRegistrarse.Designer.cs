@@ -42,7 +42,6 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCorreo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.dtpFechaNacimiento = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtContrasenna = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -57,9 +56,12 @@ namespace GymPro.Capa.UI.InicioSesion
             this.ofdBuscadorImagenes = new System.Windows.Forms.OpenFileDialog();
             this.Errores = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtApellido2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dtpFechaNacimiento = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnIrAtras
@@ -71,10 +73,11 @@ namespace GymPro.Capa.UI.InicioSesion
             this.btnIrAtras.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.btnIrAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnIrAtras.HoverState.Parent = this.btnIrAtras;
-            this.btnIrAtras.Location = new System.Drawing.Point(20, 12);
+            this.btnIrAtras.Location = new System.Drawing.Point(15, 10);
+            this.btnIrAtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIrAtras.Name = "btnIrAtras";
             this.btnIrAtras.ShadowDecoration.Parent = this.btnIrAtras;
-            this.btnIrAtras.Size = new System.Drawing.Size(117, 31);
+            this.btnIrAtras.Size = new System.Drawing.Size(88, 25);
             this.btnIrAtras.TabIndex = 1;
             this.btnIrAtras.Text = "Ir Atrás";
             this.btnIrAtras.Click += new System.EventHandler(this.btnIrAtras_Click);
@@ -86,12 +89,13 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel2);
             this.guna2ShadowPanel1.Controls.Add(this.pbFotografia);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(12, 58);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(9, 47);
+            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 10;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(235, 176);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(176, 143);
             this.guna2ShadowPanel1.TabIndex = 2;
             // 
             // btnAsignarFotografia
@@ -103,10 +107,11 @@ namespace GymPro.Capa.UI.InicioSesion
             this.btnAsignarFotografia.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.btnAsignarFotografia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAsignarFotografia.HoverState.Parent = this.btnAsignarFotografia;
-            this.btnAsignarFotografia.Location = new System.Drawing.Point(34, 120);
+            this.btnAsignarFotografia.Location = new System.Drawing.Point(26, 98);
+            this.btnAsignarFotografia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAsignarFotografia.Name = "btnAsignarFotografia";
             this.btnAsignarFotografia.ShadowDecoration.Parent = this.btnAsignarFotografia;
-            this.btnAsignarFotografia.Size = new System.Drawing.Size(166, 31);
+            this.btnAsignarFotografia.Size = new System.Drawing.Size(124, 25);
             this.btnAsignarFotografia.TabIndex = 14;
             this.btnAsignarFotografia.Text = "Asignar Fotografía";
             this.btnAsignarFotografia.Click += new System.EventHandler(this.btnAsignarFotografia_Click);
@@ -119,7 +124,8 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(45, 9);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(34, 7);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(0, 0);
             this.guna2HtmlLabel2.TabIndex = 15;
@@ -128,10 +134,11 @@ namespace GymPro.Capa.UI.InicioSesion
             // pbFotografia
             // 
             this.pbFotografia.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbFotografia.Location = new System.Drawing.Point(34, 15);
+            this.pbFotografia.Location = new System.Drawing.Point(26, 12);
+            this.pbFotografia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbFotografia.Name = "pbFotografia";
             this.pbFotografia.ShadowDecoration.Parent = this.pbFotografia;
-            this.pbFotografia.Size = new System.Drawing.Size(166, 99);
+            this.pbFotografia.Size = new System.Drawing.Size(124, 80);
             this.pbFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFotografia.TabIndex = 14;
             this.pbFotografia.TabStop = false;
@@ -145,10 +152,11 @@ namespace GymPro.Capa.UI.InicioSesion
             this.btnRegistrarse.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.btnRegistrarse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRegistrarse.HoverState.Parent = this.btnRegistrarse;
-            this.btnRegistrarse.Location = new System.Drawing.Point(584, 269);
+            this.btnRegistrarse.Location = new System.Drawing.Point(438, 219);
+            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.ShadowDecoration.Parent = this.btnRegistrarse;
-            this.btnRegistrarse.Size = new System.Drawing.Size(166, 36);
+            this.btnRegistrarse.Size = new System.Drawing.Size(124, 29);
             this.btnRegistrarse.TabIndex = 55;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
@@ -161,9 +169,10 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel10.AutoSize = false;
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(564, 148);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(423, 120);
+            this.guna2HtmlLabel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(75, 23);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(56, 19);
             this.guna2HtmlLabel10.TabIndex = 54;
             this.guna2HtmlLabel10.Text = "Género";
             // 
@@ -181,10 +190,11 @@ namespace GymPro.Capa.UI.InicioSesion
             this.cmbGenero.HoverState.Parent = this.cmbGenero;
             this.cmbGenero.ItemHeight = 30;
             this.cmbGenero.ItemsAppearance.Parent = this.cmbGenero;
-            this.cmbGenero.Location = new System.Drawing.Point(557, 177);
+            this.cmbGenero.Location = new System.Drawing.Point(418, 144);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.ShadowDecoration.Parent = this.cmbGenero;
-            this.cmbGenero.Size = new System.Drawing.Size(222, 36);
+            this.cmbGenero.Size = new System.Drawing.Size(168, 36);
             this.cmbGenero.TabIndex = 53;
             // 
             // txtTelefono
@@ -201,14 +211,13 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtTelefono.FocusedState.Parent = this.txtTelefono;
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefono.HoverState.Parent = this.txtTelefono;
-            this.txtTelefono.Location = new System.Drawing.Point(557, 88);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Location = new System.Drawing.Point(418, 72);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
             this.txtTelefono.PlaceholderText = "0000-0000";
             this.txtTelefono.SelectedText = "";
             this.txtTelefono.ShadowDecoration.Parent = this.txtTelefono;
-            this.txtTelefono.Size = new System.Drawing.Size(222, 35);
+            this.txtTelefono.Size = new System.Drawing.Size(166, 28);
             this.txtTelefono.TabIndex = 52;
             // 
             // guna2HtmlLabel4
@@ -219,9 +228,10 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel4.AutoSize = false;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(564, 58);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(423, 47);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(75, 23);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(56, 19);
             this.guna2HtmlLabel4.TabIndex = 51;
             this.guna2HtmlLabel4.Text = "Teléfono";
             // 
@@ -239,14 +249,13 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtCorreo.FocusedState.Parent = this.txtCorreo;
             this.txtCorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCorreo.HoverState.Parent = this.txtCorreo;
-            this.txtCorreo.Location = new System.Drawing.Point(300, 360);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCorreo.Location = new System.Drawing.Point(225, 292);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PasswordChar = '\0';
             this.txtCorreo.PlaceholderText = "ejemplo@gmail.com";
             this.txtCorreo.SelectedText = "";
             this.txtCorreo.ShadowDecoration.Parent = this.txtCorreo;
-            this.txtCorreo.Size = new System.Drawing.Size(216, 35);
+            this.txtCorreo.Size = new System.Drawing.Size(162, 28);
             this.txtCorreo.TabIndex = 50;
             // 
             // guna2HtmlLabel9
@@ -257,26 +266,12 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel9.AutoSize = false;
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(307, 330);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(230, 268);
+            this.guna2HtmlLabel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(73, 23);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(55, 19);
             this.guna2HtmlLabel9.TabIndex = 49;
             this.guna2HtmlLabel9.Text = "Correo";
-            // 
-            // dtpFechaNacimiento
-            // 
-            this.dtpFechaNacimiento.BorderRadius = 10;
-            this.dtpFechaNacimiento.CheckedState.Parent = this.dtpFechaNacimiento;
-            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpFechaNacimiento.HoverState.Parent = this.dtpFechaNacimiento;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(300, 269);
-            this.dtpFechaNacimiento.MaxDate = new System.DateTime(2022, 7, 22, 0, 0, 0, 0);
-            this.dtpFechaNacimiento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.ShadowDecoration.Parent = this.dtpFechaNacimiento;
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(216, 36);
-            this.dtpFechaNacimiento.TabIndex = 48;
-            this.dtpFechaNacimiento.Value = new System.DateTime(2022, 7, 22, 0, 0, 0, 0);
             // 
             // guna2HtmlLabel8
             // 
@@ -286,9 +281,10 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel8.AutoSize = false;
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(311, 240);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(5, 13);
+            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(178, 23);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(145, 21);
             this.guna2HtmlLabel8.TabIndex = 47;
             this.guna2HtmlLabel8.Text = "Fecha de Nacimiento";
             // 
@@ -306,14 +302,13 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtContrasenna.FocusedState.Parent = this.txtContrasenna;
             this.txtContrasenna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtContrasenna.HoverState.Parent = this.txtContrasenna;
-            this.txtContrasenna.Location = new System.Drawing.Point(300, 178);
-            this.txtContrasenna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasenna.Location = new System.Drawing.Point(225, 145);
             this.txtContrasenna.Name = "txtContrasenna";
             this.txtContrasenna.PasswordChar = '●';
             this.txtContrasenna.PlaceholderText = "contraseña";
             this.txtContrasenna.SelectedText = "";
             this.txtContrasenna.ShadowDecoration.Parent = this.txtContrasenna;
-            this.txtContrasenna.Size = new System.Drawing.Size(212, 35);
+            this.txtContrasenna.Size = new System.Drawing.Size(159, 28);
             this.txtContrasenna.TabIndex = 46;
             // 
             // guna2HtmlLabel7
@@ -324,24 +319,27 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel7.AutoSize = false;
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(307, 148);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(230, 120);
+            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(102, 23);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(76, 19);
             this.guna2HtmlLabel7.TabIndex = 45;
             this.guna2HtmlLabel7.Text = "Contraseña";
             // 
             // guna2VSeparator2
             // 
-            this.guna2VSeparator2.Location = new System.Drawing.Point(533, 50);
+            this.guna2VSeparator2.Location = new System.Drawing.Point(400, 41);
+            this.guna2VSeparator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2VSeparator2.Name = "guna2VSeparator2";
-            this.guna2VSeparator2.Size = new System.Drawing.Size(12, 349);
+            this.guna2VSeparator2.Size = new System.Drawing.Size(9, 284);
             this.guna2VSeparator2.TabIndex = 44;
             // 
             // guna2VSeparator1
             // 
-            this.guna2VSeparator1.Location = new System.Drawing.Point(272, 50);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(204, 41);
+            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 349);
+            this.guna2VSeparator1.Size = new System.Drawing.Size(8, 284);
             this.guna2VSeparator1.TabIndex = 43;
             // 
             // txtApellido1
@@ -358,14 +356,13 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtApellido1.FocusedState.Parent = this.txtApellido1;
             this.txtApellido1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido1.HoverState.Parent = this.txtApellido1;
-            this.txtApellido1.Location = new System.Drawing.Point(300, 88);
-            this.txtApellido1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido1.Location = new System.Drawing.Point(225, 72);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.PasswordChar = '\0';
             this.txtApellido1.PlaceholderText = "González";
             this.txtApellido1.SelectedText = "";
             this.txtApellido1.ShadowDecoration.Parent = this.txtApellido1;
-            this.txtApellido1.Size = new System.Drawing.Size(99, 35);
+            this.txtApellido1.Size = new System.Drawing.Size(74, 28);
             this.txtApellido1.TabIndex = 42;
             // 
             // guna2HtmlLabel6
@@ -376,9 +373,10 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel6.AutoSize = false;
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(307, 58);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(230, 47);
+            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(85, 23);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(64, 19);
             this.guna2HtmlLabel6.TabIndex = 41;
             this.guna2HtmlLabel6.Text = "Apellidos";
             // 
@@ -396,14 +394,13 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtNombre.FocusedState.Parent = this.txtNombre;
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
-            this.txtNombre.Location = new System.Drawing.Point(13, 360);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Location = new System.Drawing.Point(10, 292);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderText = "Elias";
             this.txtNombre.SelectedText = "";
             this.txtNombre.ShadowDecoration.Parent = this.txtNombre;
-            this.txtNombre.Size = new System.Drawing.Size(234, 35);
+            this.txtNombre.Size = new System.Drawing.Size(176, 28);
             this.txtNombre.TabIndex = 40;
             // 
             // guna2HtmlLabel5
@@ -414,9 +411,10 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel5.AutoSize = false;
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(20, 330);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(15, 268);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(75, 23);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(56, 19);
             this.guna2HtmlLabel5.TabIndex = 39;
             this.guna2HtmlLabel5.Text = "Nombre";
             // 
@@ -434,14 +432,13 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtIdentificacion.FocusedState.Parent = this.txtIdentificacion;
             this.txtIdentificacion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIdentificacion.HoverState.Parent = this.txtIdentificacion;
-            this.txtIdentificacion.Location = new System.Drawing.Point(13, 281);
-            this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdentificacion.Location = new System.Drawing.Point(10, 228);
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.PasswordChar = '\0';
             this.txtIdentificacion.PlaceholderText = "000000000";
             this.txtIdentificacion.SelectedText = "";
             this.txtIdentificacion.ShadowDecoration.Parent = this.txtIdentificacion;
-            this.txtIdentificacion.Size = new System.Drawing.Size(234, 35);
+            this.txtIdentificacion.Size = new System.Drawing.Size(176, 28);
             this.txtIdentificacion.TabIndex = 38;
             // 
             // guna2HtmlLabel3
@@ -452,9 +449,10 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(20, 251);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(15, 204);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(124, 23);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(93, 19);
             this.guna2HtmlLabel3.TabIndex = 37;
             this.guna2HtmlLabel3.Text = "Identificación";
             // 
@@ -482,22 +480,48 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtApellido2.FocusedState.Parent = this.txtApellido2;
             this.txtApellido2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido2.HoverState.Parent = this.txtApellido2;
-            this.txtApellido2.Location = new System.Drawing.Point(407, 88);
-            this.txtApellido2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido2.Location = new System.Drawing.Point(305, 72);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.PasswordChar = '\0';
             this.txtApellido2.PlaceholderText = "Lara";
             this.txtApellido2.SelectedText = "";
             this.txtApellido2.ShadowDecoration.Parent = this.txtApellido2;
-            this.txtApellido2.Size = new System.Drawing.Size(105, 35);
+            this.txtApellido2.Size = new System.Drawing.Size(79, 28);
             this.txtApellido2.TabIndex = 56;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.dtpFechaNacimiento);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel8);
+            this.guna2Panel1.Location = new System.Drawing.Point(225, 176);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(170, 88);
+            this.guna2Panel1.TabIndex = 57;
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.BorderRadius = 10;
+            this.dtpFechaNacimiento.CheckedState.Parent = this.dtpFechaNacimiento;
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpFechaNacimiento.HoverState.Parent = this.dtpFechaNacimiento;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(0, 39);
+            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaNacimiento.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFechaNacimiento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.ShadowDecoration.Parent = this.dtpFechaNacimiento;
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(170, 41);
+            this.dtpFechaNacimiento.TabIndex = 48;
+            this.dtpFechaNacimiento.Value = new System.DateTime(2022, 7, 26, 8, 22, 26, 640);
             // 
             // FrmRegistrarse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 415);
-            this.Controls.Add(this.dtpFechaNacimiento);
+            this.ClientSize = new System.Drawing.Size(600, 337);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.txtApellido2);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.guna2HtmlLabel10);
@@ -506,7 +530,6 @@ namespace GymPro.Capa.UI.InicioSesion
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.guna2HtmlLabel9);
-            this.Controls.Add(this.guna2HtmlLabel8);
             this.Controls.Add(this.txtContrasenna);
             this.Controls.Add(this.guna2HtmlLabel7);
             this.Controls.Add(this.guna2VSeparator2);
@@ -520,12 +543,14 @@ namespace GymPro.Capa.UI.InicioSesion
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.btnIrAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmRegistrarse";
             this.Text = "Registrarse";
             this.Load += new System.EventHandler(this.FrmRegistrarse_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -543,7 +568,6 @@ namespace GymPro.Capa.UI.InicioSesion
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2TextBox txtCorreo;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaNacimiento;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2TextBox txtContrasenna;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
@@ -558,5 +582,7 @@ namespace GymPro.Capa.UI.InicioSesion
         private System.Windows.Forms.OpenFileDialog ofdBuscadorImagenes;
         private System.Windows.Forms.ErrorProvider Errores;
         private Guna.UI2.WinForms.Guna2TextBox txtApellido2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaNacimiento;
     }
 }

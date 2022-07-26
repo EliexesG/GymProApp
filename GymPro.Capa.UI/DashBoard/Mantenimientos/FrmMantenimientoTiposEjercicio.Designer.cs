@@ -30,9 +30,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCodigo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -40,10 +40,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtDescripcion = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvTiposEjercicio = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.Errores = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposEjercicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).BeginInit();
@@ -57,7 +57,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(227, 118);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(236, 94);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(81, 23);
             this.guna2HtmlLabel2.TabIndex = 22;
@@ -71,7 +71,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(403, 118);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(412, 94);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(103, 23);
             this.guna2HtmlLabel1.TabIndex = 23;
@@ -92,7 +92,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtCodigo.FocusedState.Parent = this.txtCodigo;
             this.txtCodigo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCodigo.HoverState.Parent = this.txtCodigo;
-            this.txtCodigo.Location = new System.Drawing.Point(227, 148);
+            this.txtCodigo.Location = new System.Drawing.Point(236, 124);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -116,7 +116,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtNombre.FocusedState.Parent = this.txtNombre;
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
-            this.txtNombre.Location = new System.Drawing.Point(403, 148);
+            this.txtNombre.Location = new System.Drawing.Point(412, 124);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -140,7 +140,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtDescripcion.FocusedState.Parent = this.txtDescripcion;
             this.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcion.HoverState.Parent = this.txtDescripcion;
-            this.txtDescripcion.Location = new System.Drawing.Point(227, 244);
+            this.txtDescripcion.Location = new System.Drawing.Point(236, 220);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.PasswordChar = '\0';
@@ -158,7 +158,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(227, 214);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(236, 190);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(127, 23);
             this.guna2HtmlLabel3.TabIndex = 26;
@@ -168,33 +168,33 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             // 
             this.dgvTiposEjercicio.AllowUserToAddRows = false;
             this.dgvTiposEjercicio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            this.dgvTiposEjercicio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.dgvTiposEjercicio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTiposEjercicio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTiposEjercicio.BackgroundColor = System.Drawing.Color.White;
             this.dgvTiposEjercicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTiposEjercicio.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTiposEjercicio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTiposEjercicio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTiposEjercicio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTiposEjercicio.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTiposEjercicio.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTiposEjercicio.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvTiposEjercicio.EnableHeadersVisualStyles = false;
             this.dgvTiposEjercicio.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.dgvTiposEjercicio.Location = new System.Drawing.Point(128, 326);
+            this.dgvTiposEjercicio.Location = new System.Drawing.Point(137, 302);
             this.dgvTiposEjercicio.MultiSelect = false;
             this.dgvTiposEjercicio.Name = "dgvTiposEjercicio";
             this.dgvTiposEjercicio.ReadOnly = true;
@@ -202,7 +202,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.dgvTiposEjercicio.RowHeadersWidth = 51;
             this.dgvTiposEjercicio.RowTemplate.Height = 24;
             this.dgvTiposEjercicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTiposEjercicio.Size = new System.Drawing.Size(612, 205);
+            this.dgvTiposEjercicio.Size = new System.Drawing.Size(612, 249);
             this.dgvTiposEjercicio.TabIndex = 28;
             this.dgvTiposEjercicio.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
             this.dgvTiposEjercicio.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
@@ -228,26 +228,6 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.dgvTiposEjercicio.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvTiposEjercicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiposEjercicio_CellContentClick);
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.BorderRadius = 10;
-            this.btnEliminar.CheckedState.Parent = this.btnEliminar;
-            this.btnEliminar.CustomImages.Parent = this.btnEliminar;
-            this.btnEliminar.FillColor = System.Drawing.Color.Lime;
-            this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnEliminar.ForeColor = System.Drawing.Color.Teal;
-            this.btnEliminar.HoverState.Parent = this.btnEliminar;
-            this.btnEliminar.Image = global::GymPro.Capa.UI.Properties.Resources.Eliminar;
-            this.btnEliminar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnEliminar.Location = new System.Drawing.Point(447, 39);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
-            this.btnEliminar.Size = new System.Drawing.Size(180, 45);
-            this.btnEliminar.TabIndex = 20;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // Errores
             // 
             this.Errores.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -265,7 +245,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnCancelar.HoverState.Parent = this.btnCancelar;
             this.btnCancelar.Image = global::GymPro.Capa.UI.Properties.Resources.Cancelar;
             this.btnCancelar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnCancelar.Location = new System.Drawing.Point(661, 39);
+            this.btnCancelar.Location = new System.Drawing.Point(660, 12);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.ShadowDecoration.Parent = this.btnCancelar;
             this.btnCancelar.Size = new System.Drawing.Size(180, 45);
@@ -285,13 +265,33 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnModificar.HoverState.Parent = this.btnModificar;
             this.btnModificar.Image = global::GymPro.Capa.UI.Properties.Resources.Editar;
             this.btnModificar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnModificar.Location = new System.Drawing.Point(233, 39);
+            this.btnModificar.Location = new System.Drawing.Point(228, 12);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.ShadowDecoration.Parent = this.btnModificar;
             this.btnModificar.Size = new System.Drawing.Size(180, 45);
             this.btnModificar.TabIndex = 21;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.BorderRadius = 10;
+            this.btnEliminar.CheckedState.Parent = this.btnEliminar;
+            this.btnEliminar.CustomImages.Parent = this.btnEliminar;
+            this.btnEliminar.FillColor = System.Drawing.Color.Lime;
+            this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.Teal;
+            this.btnEliminar.HoverState.Parent = this.btnEliminar;
+            this.btnEliminar.Image = global::GymPro.Capa.UI.Properties.Resources.Eliminar;
+            this.btnEliminar.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnEliminar.Location = new System.Drawing.Point(444, 12);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
+            this.btnEliminar.Size = new System.Drawing.Size(180, 45);
+            this.btnEliminar.TabIndex = 20;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
@@ -305,7 +305,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnGuardar.HoverState.Parent = this.btnGuardar;
             this.btnGuardar.Image = global::GymPro.Capa.UI.Properties.Resources.Guardar;
             this.btnGuardar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnGuardar.Location = new System.Drawing.Point(19, 39);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 12);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.ShadowDecoration.Parent = this.btnGuardar;
             this.btnGuardar.Size = new System.Drawing.Size(180, 45);

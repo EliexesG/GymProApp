@@ -84,6 +84,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pEjercicioEnEntrenamiento.CodigoEntrenamiento);
             comando.Parameters.AddWithValue("@CodigoEjercicio", pEjercicioEnEntrenamiento.CodigoEjercicio);
             comando.Parameters.AddWithValue("@Repeticiones", pEjercicioEnEntrenamiento.Repeticiones);
+            comando.Parameters.AddWithValue("@Peso", pEjercicioEnEntrenamiento.Peso);
             comando.Parameters.AddWithValue("@Series", pEjercicioEnEntrenamiento.Series);
             comando.Parameters.AddWithValue("@Tiempo", pEjercicioEnEntrenamiento.Tiempo);
 
@@ -129,6 +130,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pEjercicioEnEntrenamiento.CodigoEntrenamiento);
             comando.Parameters.AddWithValue("@CodigoEjercicio", pEjercicioEnEntrenamiento.CodigoEjercicio);
             comando.Parameters.AddWithValue("@Repeticiones", pEjercicioEnEntrenamiento.Repeticiones);
+            comando.Parameters.AddWithValue("@Peso", pEjercicioEnEntrenamiento.Peso);
             comando.Parameters.AddWithValue("@Series", pEjercicioEnEntrenamiento.Series);
             comando.Parameters.AddWithValue("@Tiempo", pEjercicioEnEntrenamiento.Tiempo);
 
@@ -191,6 +193,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                             CodigoEntrenamiento = int.Parse(dr["CodigoEntrenamiento"].ToString()),
                             CodigoEjercicio = int.Parse(dr["CodigoEjercicio"].ToString()),
                             Repeticiones = int.Parse(dr["Repeticiones"].ToString()),
+                            Peso = float.Parse(dr["Peso"].ToString()),
                             Series = dr["Series"].ToString(),
                             Tiempo = int.Parse(dr["Tiempo"].ToString())
                         };
@@ -256,6 +259,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                             CodigoEntrenamiento = int.Parse(reader["CodigoEntrenamiento"].ToString()),
                             CodigoEjercicio = int.Parse(reader["CodigoEjercicio"].ToString()),
                             Repeticiones = int.Parse(reader["Repeticiones"].ToString()),
+                            Peso = float.Parse(reader["Peso"].ToString()),
                             Series = reader["Series"].ToString(),
                             Tiempo = int.Parse(reader["Tiempo"].ToString())
                         };
@@ -314,6 +318,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                             CodigoEntrenamiento = int.Parse(dr["CodigoEntrenamiento"].ToString()),
                             CodigoEjercicio = int.Parse(dr["CodigoEjercicio"].ToString()),
                             Repeticiones = int.Parse(dr["Repeticiones"].ToString()),
+                            Peso = float.Parse(dr["Peso"].ToString()),
                             Series = dr["Series"].ToString(),
                             Tiempo = int.Parse(dr["Tiempo"].ToString())
                         };

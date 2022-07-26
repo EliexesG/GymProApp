@@ -161,6 +161,29 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
                 throw er;
             }
         }
+
+        /// <summary>
+        /// Retorna una lista de todos los Ejercicios en Entrenamiento de la base de datos pertenecientes a ese codigo de Ejercicio
+        /// </summary>
+        /// <param name="pCodigoEjercicio">Codigo de Ejercicio de los Ejercicios en Entrenamientos a buscar</param>
+        /// <returns>Lista de entidades de tipo EjercicioEnEntrenamiento</returns>
+        public List<EjercicioEnEntrenamiento> ObtenerEjercicioEnEntrenamientoCodigoEjercicio(int pCodigoEjercicio)
+        {
+            try
+            {
+
+                return this.ObtenerEjercicioEnEntrenamientoTodos().FindAll(ejercicio => ejercicio.CodigoEjercicio == pCodigoEjercicio).ToList();
+
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
         #endregion
     }
 }

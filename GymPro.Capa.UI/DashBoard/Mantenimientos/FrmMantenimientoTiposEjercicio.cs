@@ -18,12 +18,12 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
     {
 
 
-        ITipoEjercicioBLL logica;
+        ITipoEjercicioBLL Logica;
 
         public FrmMantenimientoTiposEjercicio()
         {
             InitializeComponent();
-            logica = new TipoEjercicioBLL();
+            Logica = new TipoEjercicioBLL();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     return;
                 }
 
-                logica.InsertarTipoEjercicio(new TipoEjercicio() { Nombre = nombre, Descripcion = descripcion });
+                Logica.InsertarTipoEjercicio(new TipoEjercicio() { Nombre = nombre, Descripcion = descripcion });
 
                 Refrescar();
 
@@ -84,7 +84,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         {
             try
             {
-                dgvTiposEjercicio.DataSource = logica.ObtenerTipoEjercicioTodos();
+                dgvTiposEjercicio.DataSource = Logica.ObtenerTipoEjercicioTodos();
                 dgvTiposEjercicio.ClearSelection();
                 txtCodigo.Text = "";
                 txtDescripcion.Text = "";
@@ -147,11 +147,20 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     return;
                 }
 
-                TipoEjercicio tipoEjercicio = (TipoEjercicio)dgvTiposEjercicio.CurrentRow.DataBoundItem;
+                if(new EjercicioBLL().ObtenerEjercicioCodigoTipo(int.Parse(txtCodigo.Text)).Count > 0)
+                {
+                    MessageBox.Show("No se puede eliminar Tipo de Ejercicio debido a que Ejercicios creados dependen de el");
+                    return;
+                }
 
-                logica.EliminarTipoEjercicio(tipoEjercicio.Codigo);
+                if(MessageBox.Show("¿Está seguro de eliminar?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    TipoEjercicio tipoEjercicio = (TipoEjercicio)dgvTiposEjercicio.CurrentRow.DataBoundItem;
 
-                Refrescar();
+                    Logica.EliminarTipoEjercicio(tipoEjercicio.Codigo);
+
+                    Refrescar();
+                }
 
             }
             catch (SqlException sqlError)
@@ -206,7 +215,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     return;
                 }
 
-                logica.ModificarTipoEjercicio(new TipoEjercicio() { Codigo = codigo, Nombre = nombre, Descripcion = descripcion });
+                Logica.ModificarTipoEjercicio(new TipoEjercicio() { Codigo = codigo, Nombre = nombre, Descripcion = descripcion });
                 Refrescar();
 
             }
