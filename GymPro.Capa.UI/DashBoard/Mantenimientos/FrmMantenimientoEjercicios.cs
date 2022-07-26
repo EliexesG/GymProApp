@@ -1,0 +1,364 @@
+﻿using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Logica.BLL.Implementaciones;
+using GymPro.Capa.Logica.BLL.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GymPro.Capa.UI.DashBoard.Mantenimientos
+{
+    public partial class FrmMantenimientoEjercicios : Form
+    {
+
+        IEjercicioBLL Logica;
+
+        public FrmMantenimientoEjercicios()
+        {
+            InitializeComponent();
+            Logica = new EjercicioBLL();
+        }
+
+        private void FrmMantenimientoEjercicios_Load(object sender, EventArgs e)
+        {
+            Refrescar();
+        }
+
+        private void Refrescar()
+        {
+            try
+            {
+                cmdTipoEjercicio.DataSource = new TipoEjercicioBLL().ObtenerTipoEjercicioTodos();
+                cmdTipoEjercicio.DisplayMember = "Nombre";
+                cmdTipoEjercicio.ValueMember = "Codigo";
+                cmdTipoEjercicio.SelectedIndex = -1;
+
+                dgvEjercicios.DataSource = Logica.ObtenerEjercicioTodos();
+                dgvEjercicios.ClearSelection();
+
+                txtCodigo.Text = "";
+                txtNombre.Text = "";
+                txtDescripcion.Text = "";
+                pbVideo.Image = null;
+                pbImagen.Image = null;
+
+                Errores.Clear();
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Errores.Clear();
+                bool hayErrores = false;
+
+                string nombre = "";
+                string descripcion = "";
+                int codigoTipoEjercicio = 0;
+                byte[] video = null;
+                byte[] imagen = null;
+
+                if (!(string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count >= 1)
+                {
+                    MessageBox.Show("Previamente se ha seleccionado un Tipo de Ejercicio, presione Modificar o Eliminar");
+                    return;
+                }
+
+
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    Errores.SetError(txtNombre, "Debe digitar el nombre perteneciente al Ejercicio");
+                    hayErrores = true;
+                }
+                else
+                {
+                    nombre = txtNombre.Text;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                {
+                    Errores.SetError(txtDescripcion, "Debe digitar la descripción perteneciente al Ejercicio");
+                    hayErrores = true;
+                }
+                else
+                {
+                    descripcion = txtDescripcion.Text;
+                }
+
+                if(cmdTipoEjercicio.SelectedIndex == -1)
+                {
+                    Errores.SetError(cmdTipoEjercicio, "Debe seleccionar el Tipo de Ejercicio relacionado al Ejercicio");
+                    hayErrores = true;
+                }
+                else
+                {
+                    codigoTipoEjercicio = int.Parse(cmdTipoEjercicio.SelectedValue.ToString());
+                }
+
+                if (pbVideo.Image == null)
+                {
+                    Errores.SetError(pbVideo, "Debe seleccionar un video o gif a guardar");
+                    hayErrores = true;
+                }
+                else
+                {
+                    ImageConverter _imageConverter = new ImageConverter();
+                    video = (byte[])_imageConverter.ConvertTo(pbVideo.Image, typeof(byte[]));
+                }
+
+                if (pbImagen.Image == null)
+                {
+                    Errores.SetError(pbImagen, "Debe seleccionar una imagen a guardar");
+                    hayErrores = true;
+                }
+                else
+                {
+                    ImageConverter _imageConverter = new ImageConverter();
+                    imagen = (byte[])_imageConverter.ConvertTo(pbImagen.Image, typeof(byte[]));
+                }
+
+                if (hayErrores)
+                {
+                    return;
+                }
+
+                Logica.InsertarEjercicio(new Ejercicio() { Nombre = nombre, Descripcion = descripcion, CodigoTipo = codigoTipoEjercicio, Video = video, Imagen = imagen});
+                Refrescar();
+
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+
+        }
+
+        private void btnAsignarVideo_Click(object sender, EventArgs e)
+        {
+            if (ofdBuscadorVideos.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pbVideo.Image = new Bitmap(ofdBuscadorVideos.FileName);
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Error: " + er.Message, "Error");
+                }
+            }
+        }
+
+        private void btnAsignarFotografia_Click(object sender, EventArgs e)
+        {
+            if (ofdBuscadorImagenes.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pbImagen.Image = new Bitmap(ofdBuscadorImagenes.FileName);
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Error: " + er.Message, "Error");
+                }
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Errores.Clear();
+                bool hayErrores = false;
+
+                int codigo;
+                string nombre = "";
+                string descripcion = "";
+                int codigoTipoEjercicio = 0;
+                byte[] video = null;
+                byte[] imagen = null;
+
+                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count <= 1)
+                {
+                    MessageBox.Show("Debe seleccionar el Ejercicio a modificar");
+                    return;
+                }
+                else
+                {
+                    codigo = int.Parse(txtCodigo.Text);
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    Errores.SetError(txtNombre, "Debe digitar el nombre perteneciente al Ejercicio");
+                    hayErrores = true;
+                }
+                else
+                {
+                    nombre = txtNombre.Text;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                {
+                    Errores.SetError(txtDescripcion, "Debe digitar la descripción perteneciente al Ejercicio");
+                    hayErrores = true;
+                }
+                else
+                {
+                    descripcion = txtDescripcion.Text;
+                }
+
+                if (cmdTipoEjercicio.SelectedIndex == -1)
+                {
+                    Errores.SetError(cmdTipoEjercicio, "Debe seleccionar el Tipo de Ejercicio relacionado al Ejercicio");
+                    hayErrores = true;
+                }
+                else
+                {
+                    codigoTipoEjercicio = int.Parse(cmdTipoEjercicio.SelectedValue.ToString());
+                }
+
+                if (pbVideo.Image == null)
+                {
+                    Errores.SetError(pbVideo, "Debe seleccionar un video o gif a guardar");
+                    hayErrores = true;
+                }
+                else
+                {
+                    ImageConverter _imageConverter = new ImageConverter();
+                    video = (byte[])_imageConverter.ConvertTo(pbVideo.Image, typeof(byte[]));
+                }
+
+                if (pbImagen.Image == null)
+                {
+                    Errores.SetError(pbImagen, "Debe seleccionar una imagen a guardar");
+                    hayErrores = true;
+                }
+                else
+                {
+                    ImageConverter _imageConverter = new ImageConverter();
+                    imagen = (byte[])_imageConverter.ConvertTo(pbImagen.Image, typeof(byte[]));
+                }
+
+                if (hayErrores)
+                {
+                    return;
+                }
+
+                Logica.ModificarEjercicio(new Ejercicio() { Codigo = codigo, Nombre = nombre, Descripcion = descripcion, CodigoTipo = codigoTipoEjercicio, Video = video, Imagen = imagen });
+                Refrescar();
+
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Refrescar();
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+        }
+
+        private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Ejercicio ejercicio = (Ejercicio)dgvEjercicios.CurrentRow.DataBoundItem;
+
+                txtCodigo.Text = ejercicio.Codigo.ToString();
+                txtNombre.Text = ejercicio.Nombre;
+                txtDescripcion.Text = ejercicio.Descripcion;
+                cmdTipoEjercicio.SelectedValue = ejercicio.CodigoTipo;
+                pbVideo.Image = new Bitmap(new MemoryStream(ejercicio.Video));
+                pbImagen.Image = new Bitmap(new MemoryStream(ejercicio.Imagen));
+
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count <= 1)
+                {
+                    MessageBox.Show("Debe seleccionar el Ejercicio a eliminar");
+                    return;
+                }
+
+                if (new EjercicioEnEntrenamientoBLL().ObtenerEjercicioEnEntrenamientoCodigoEjercicio(int.Parse(txtCodigo.Text)).Count > 0)
+                {
+                    MessageBox.Show("No se puede eliminar el Ejercicio debido a que Entrenamientos creados dependen de el");
+                    return;
+                }
+
+                if (MessageBox.Show("¿Está seguro de eliminar?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Ejercicio ejercicio = (Ejercicio)dgvEjercicios.CurrentRow.DataBoundItem;
+
+                    Logica.EliminarEjercicio(ejercicio.Codigo);
+
+                    Refrescar();
+                }
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+
+        }
+    }
+}

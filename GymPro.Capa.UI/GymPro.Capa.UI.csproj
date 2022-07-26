@@ -58,6 +58,12 @@
     <Compile Include="DashBoard\FrmDashBoard.Designer.cs">
       <DependentUpon>FrmDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoEjercicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoEjercicios.Designer.cs">
+      <DependentUpon>FrmMantenimientoEjercicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DashBoard\FrmDashBoard.resx">
       <DependentUpon>FrmDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoEjercicios.resx">
+      <DependentUpon>FrmMantenimientoEjercicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.resx">
       <DependentUpon>FrmMantenimientoTiposEjercicio.cs</DependentUpon>

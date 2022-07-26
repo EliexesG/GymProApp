@@ -82,7 +82,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             comando.Parameters.AddWithValue("@Descripcion", pEjercicio.Descripcion);
             comando.Parameters.AddWithValue("@CodigoTipo", pEjercicio.CodigoTipo);
             comando.Parameters.AddWithValue("@Imagen", pEjercicio.Imagen);
-            comando.Parameters.AddWithValue("@Videa", pEjercicio.Video);
+            comando.Parameters.AddWithValue("@Video", pEjercicio.Video);
 
             try
             {
@@ -127,7 +127,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             comando.Parameters.AddWithValue("@Descripcion", pEjercicio.Descripcion);
             comando.Parameters.AddWithValue("@CodigoTipo", pEjercicio.CodigoTipo);
             comando.Parameters.AddWithValue("@Imagen", pEjercicio.Imagen);
-            comando.Parameters.AddWithValue("@Videa", pEjercicio.Video);
+            comando.Parameters.AddWithValue("@Video", pEjercicio.Video);
 
             try
             {
