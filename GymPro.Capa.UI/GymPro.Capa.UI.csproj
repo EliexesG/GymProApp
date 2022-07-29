@@ -58,6 +58,12 @@
     <Compile Include="DashBoard\FrmDashBoard.Designer.cs">
       <DependentUpon>FrmDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmActivarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmActivarUsuarios.Designer.cs">
+      <DependentUpon>FrmActivarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoEjercicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.Designer.cs">
       <DependentUpon>FrmMantenimientoTiposEjercicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoUsuarios.Designer.cs">
+      <DependentUpon>FrmMantenimientoUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.cs">
       <SubType>Form</SubType>
@@ -99,11 +111,17 @@
     <EmbeddedResource Include="DashBoard\FrmDashBoard.resx">
       <DependentUpon>FrmDashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Mantenimientos\FrmActivarUsuarios.resx">
+      <DependentUpon>FrmActivarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoEjercicios.resx">
       <DependentUpon>FrmMantenimientoEjercicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.resx">
       <DependentUpon>FrmMantenimientoTiposEjercicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoUsuarios.resx">
+      <DependentUpon>FrmMantenimientoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.resx">
       <DependentUpon>FrmMenuMantenimientos.cs</DependentUpon>
@@ -145,6 +163,10 @@
       <Project>{2896c8d1-b937-4355-8249-c2f6e9083435}</Project>
       <Name>GymPro.Capa.Entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GymPro.Capa.Factories\GymPro.Capa.Factories.csproj">
+      <Project>{389F19CF-7F07-47A6-A9AA-5161070C05ED}</Project>
+      <Name>GymPro.Capa.Factories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GymPro.Capa.Logica\GymPro.Capa.Logica.csproj">
       <Project>{426477a9-711a-461e-b50c-36ab1905135f}</Project>
       <Name>GymPro.Capa.Logica</Name>
@@ -160,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\MantenimientoIcons\Cancelar.png" />
+    <Content Include="Resources\MantenimientoIcons\Consultar.png" />
     <Content Include="Resources\MantenimientoIcons\Editar.png" />
     <Content Include="Resources\MantenimientoIcons\Ejercicio.png" />
     <Content Include="Resources\MantenimientoIcons\Eliminar.png" />

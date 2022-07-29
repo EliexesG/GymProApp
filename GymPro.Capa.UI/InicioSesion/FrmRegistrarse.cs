@@ -90,7 +90,7 @@ namespace GymPro.Capa.UI.InicioSesion
                     imagen = (byte[])_imageConverter.ConvertTo(pbFotografia.Image, typeof(byte[]));
                 }
 
-                if(!int.TryParse(txtIdentificacion.Text, out int resultado))
+                if(!long.TryParse(txtIdentificacion.Text, out long resultado))
                 {
                     Errores.SetError(txtIdentificacion, "La identificación del usuario debe contener solamente digitos");
                     hayErrores = true;
@@ -98,6 +98,11 @@ namespace GymPro.Capa.UI.InicioSesion
                 else if(resultado.ToString().Length < 9 || resultado.ToString().Length > 15)
                 {
                     Errores.SetError(txtIdentificacion, "La identificación del usuario debe contener de entre 9 a 15 dígitos");
+                    hayErrores = true;
+                }
+                else if(int.Parse(txtIdentificacion.Text[0].ToString()) == 0)
+                {
+                    Errores.SetError(txtIdentificacion, "La identificación del usuario no puede iniciar en 0");
                     hayErrores = true;
                 }
                 else
