@@ -24,11 +24,44 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         {
             InitializeComponent();
             Logica = new EjercicioBLL();
+            dgvEjercicios.AutoGenerateColumns = false;
         }
 
         private void FrmMantenimientoEjercicios_Load(object sender, EventArgs e)
         {
             Refrescar();
+        }
+
+        private void LlenarDgvEjercicios()
+        {
+            try
+            {
+
+                dgvEjercicios.Rows.Clear();
+
+                dgvEjercicios.ColumnCount = 4;
+                dgvEjercicios.Columns[0].Name = "Codigo";
+                dgvEjercicios.Columns[1].Name = "Nombre";
+                dgvEjercicios.Columns[2].Name = "Descripción";
+                dgvEjercicios.Columns[3].Name = "Tipo de Ejercicio";
+
+
+                foreach (Ejercicio ejercicio in Logica.ObtenerEjercicioTodos())
+                {
+                    Object[] row = { ejercicio.Codigo, ejercicio.Nombre, ejercicio.Descripcion, ejercicio._TipoEjercicio.Nombre };
+                    dgvEjercicios.Rows.Add(row.ToArray());
+                }
+
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
         }
 
         private void Refrescar()
@@ -40,7 +73,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 cmdTipoEjercicio.ValueMember = "Codigo";
                 cmdTipoEjercicio.SelectedIndex = -1;
 
-                dgvEjercicios.DataSource = Logica.ObtenerEjercicioTodos();
+                LlenarDgvEjercicios();
                 dgvEjercicios.ClearSelection();
 
                 txtCodigo.Text = "";
@@ -126,7 +159,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
                 if (pbImagen.Image == null)
                 {
-                    Errores.SetError(pbImagen, "Debe seleccionar una imagen a guardar");
+                    Errores.SetError(pbImagen, "Debe seleccionar una imagen a guardar"); 
                     hayErrores = true;
                 }
                 else
@@ -303,7 +336,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         {
             try
             {
-                Ejercicio ejercicio = (Ejercicio)dgvEjercicios.CurrentRow.DataBoundItem;
+
+                int codigo = int.Parse(dgvEjercicios.SelectedCells[0].Value.ToString());
+
+                Ejercicio ejercicio = Logica.ObtenerEjercicioId(codigo);
 
                 txtCodigo.Text = ejercicio.Codigo.ToString();
                 txtNombre.Text = ejercicio.Nombre;
@@ -342,9 +378,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
                 if (MessageBox.Show("¿Está seguro de eliminar?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    Ejercicio ejercicio = (Ejercicio)dgvEjercicios.CurrentRow.DataBoundItem;
 
-                    Logica.EliminarEjercicio(ejercicio.Codigo);
+                    int codigo = int.Parse(dgvEjercicios.SelectedCells[0].Value.ToString());
+
+                    Logica.EliminarEjercicio(codigo);
 
                     Refrescar();
                 }

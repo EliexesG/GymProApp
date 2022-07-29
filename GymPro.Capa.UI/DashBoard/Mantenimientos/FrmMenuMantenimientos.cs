@@ -43,11 +43,23 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnEjercicios_Click(object sender, EventArgs e)
         {
             try
             {
                 this.AbrirFormEnPanel(new FrmMantenimientoEjercicios());
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void btnMantenimientos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.AbrirFormEnPanel(new FrmMantenimientoUsuarios());
             }
             catch (Exception er)
             {

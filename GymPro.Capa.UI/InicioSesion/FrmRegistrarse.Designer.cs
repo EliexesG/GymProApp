@@ -212,6 +212,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefono.HoverState.Parent = this.txtTelefono;
             this.txtTelefono.Location = new System.Drawing.Point(418, 72);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
             this.txtTelefono.PlaceholderText = "0000-0000";
@@ -250,6 +251,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtCorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCorreo.HoverState.Parent = this.txtCorreo;
             this.txtCorreo.Location = new System.Drawing.Point(225, 292);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PasswordChar = '\0';
             this.txtCorreo.PlaceholderText = "ejemplo@gmail.com";
@@ -303,6 +305,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtContrasenna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtContrasenna.HoverState.Parent = this.txtContrasenna;
             this.txtContrasenna.Location = new System.Drawing.Point(225, 145);
+            this.txtContrasenna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContrasenna.Name = "txtContrasenna";
             this.txtContrasenna.PasswordChar = '●';
             this.txtContrasenna.PlaceholderText = "contraseña";
@@ -357,6 +360,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtApellido1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido1.HoverState.Parent = this.txtApellido1;
             this.txtApellido1.Location = new System.Drawing.Point(225, 72);
+            this.txtApellido1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.PasswordChar = '\0';
             this.txtApellido1.PlaceholderText = "González";
@@ -395,6 +399,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
             this.txtNombre.Location = new System.Drawing.Point(10, 292);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderText = "Elias";
@@ -433,6 +438,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtIdentificacion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIdentificacion.HoverState.Parent = this.txtIdentificacion;
             this.txtIdentificacion.Location = new System.Drawing.Point(10, 228);
+            this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.PasswordChar = '\0';
             this.txtIdentificacion.PlaceholderText = "000000000";
@@ -481,6 +487,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.txtApellido2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido2.HoverState.Parent = this.txtApellido2;
             this.txtApellido2.Location = new System.Drawing.Point(305, 72);
+            this.txtApellido2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.PasswordChar = '\0';
             this.txtApellido2.PlaceholderText = "Lara";
@@ -512,7 +519,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.dtpFechaNacimiento.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.ShadowDecoration.Parent = this.dtpFechaNacimiento;
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(170, 41);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(170, 33);
             this.dtpFechaNacimiento.TabIndex = 48;
             this.dtpFechaNacimiento.Value = new System.DateTime(2022, 7, 26, 8, 22, 26, 640);
             // 
