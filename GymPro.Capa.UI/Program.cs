@@ -1,7 +1,4 @@
-﻿using GymPro.Capa.Entidades.Implementaciones;
-using GymPro.Capa.Logica.BLL.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
-using GymPro.Capa.UI.InicioSesion;
+﻿using GymPro.Capa.UI.InicioSesion;
 using System;
 using System.Collections.Generic;
 using System.Linq;

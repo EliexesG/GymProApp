@@ -191,10 +191,10 @@ namespace GymPro.Capa.Datos.Implementaciones
                         {
                             Fecha = DateTime.Parse(reader["Fecha"].ToString()),
                             IdentificacionUsuario = reader["IdentificacionUsuario"].ToString(),
-                            Peso = float.Parse(reader["Peso"].ToString()),
-                            Altura = float.Parse(reader["Altura"].ToString()),
-                            IMC = float.Parse(reader["IMC"].ToString()),
-                            MetabolismoBasal = float.Parse(reader["MetabolismoBasal"].ToString())
+                            Peso = double.Parse(reader["Peso"].ToString()),
+                            Altura = double.Parse(reader["Altura"].ToString()),
+                            IMC = double.Parse(reader["IMC"].ToString()),
+                            MetabolismoBasal = double.Parse(reader["MetabolismoBasal"].ToString())
                         };
                     }
 
@@ -248,10 +248,10 @@ namespace GymPro.Capa.Datos.Implementaciones
                         {
                             Fecha = DateTime.Parse(dr["Fecha"].ToString()),
                             IdentificacionUsuario = dr["IdentificacionUsuario"].ToString(),
-                            Peso = float.Parse(dr["Peso"].ToString()),
-                            Altura = float.Parse(dr["Altura"].ToString()),
-                            IMC = float.Parse(dr["IMC"].ToString()),
-                            MetabolismoBasal = float.Parse(dr["MetabolismoBasal"].ToString())
+                            Peso = double.Parse(dr["Peso"].ToString()),
+                            Altura = double.Parse(dr["Altura"].ToString()),
+                            IMC = double.Parse(dr["IMC"].ToString()),
+                            MetabolismoBasal = double.Parse(dr["MetabolismoBasal"].ToString())
                         };
 
                         lista.Add(expediente);
@@ -305,10 +305,10 @@ namespace GymPro.Capa.Datos.Implementaciones
                         {
                             Fecha = DateTime.Parse(dr["Fecha"].ToString()),
                             IdentificacionUsuario = dr["IdentificacionUsuario"].ToString(),
-                            Peso = float.Parse(dr["Peso"].ToString()),
-                            Altura = float.Parse(dr["Altura"].ToString()),
-                            IMC = float.Parse(dr["IMC"].ToString()),
-                            MetabolismoBasal = float.Parse(dr["MetabolismoBasal"].ToString())
+                            Peso = double.Parse(dr["Peso"].ToString()),
+                            Altura = double.Parse(dr["Altura"].ToString()),
+                            IMC = double.Parse(dr["IMC"].ToString()),
+                            MetabolismoBasal = double.Parse(dr["MetabolismoBasal"].ToString())
                         };
 
                         lista.Add(expediente);

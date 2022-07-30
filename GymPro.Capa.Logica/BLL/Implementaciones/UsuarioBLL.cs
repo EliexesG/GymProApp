@@ -21,6 +21,24 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oUsuarioDAL = UsuarioDAL.GetInstance();
         }
 
+        #region Logica
+        public int CalcularEdadUsuario(DateTime pFechaNacimiento)
+        {
+            try
+            {
+
+                DateTime fechaActual = DateTime.Now;
+
+                return DateTime.Today.AddTicks(-pFechaNacimiento.Ticks).Year - 1; ;
+
+            }
+            catch(Exception er)
+            {
+                throw er;
+            }
+        }
+        #endregion
+
         #region Acceso a datos
         /// <summary>
         /// Elimina un usuario de la base de datos por su Identificacion

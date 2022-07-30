@@ -21,7 +21,28 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oExpedienteUsuarioDAL = ExpedienteUsuarioDAL.GetInstance();
         }
 
+        #region Logica
+        public double CalcularIMC(ExpedienteUsuario pExpedienteUsuario)
+        {
+            try
+            {
 
+                return Math.Round(pExpedienteUsuario.Peso / (Math.Pow(pExpedienteUsuario.Altura / 100f, 2)));
+
+            }
+            catch(DivideByZeroException)
+            {
+                throw new DivideByZeroException("No se puede sacar el IMC, división entre 0");
+            }
+            
+        }
+
+        public double CalcularMetabolismoBasal(ExpedienteUsuario pExpedienteUsuario, int pEdad, Genero pGenero)
+        {
+            return (10 * pExpedienteUsuario.Peso) + (6.25 * pExpedienteUsuario.Altura) 
+                - (5 * pEdad) + (pGenero == Genero.Masculino ? 5 : -161);
+        }
+        #endregion
 
         #region Acceso a datos
         /// <summary>

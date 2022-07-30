@@ -65,6 +65,8 @@
     <Compile Include="BLL\Interfaces\IUsuarioBLL.cs" />
     <Compile Include="BLL\Implementaciones\UsuarioBLL.cs" />
     <Compile Include="BLL\Interfaces\IExpedienteUsuarioBLL.cs" />
+    <Compile Include="BLL\Interfaces\IServicioVentaDolarBLL.cs" />
+    <Compile Include="BLL\Servicios\ServicioVentaDolarBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
