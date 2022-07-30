@@ -443,7 +443,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         {
             try
             {
-                if ((string.IsNullOrEmpty(txtContrasenna.Text)) && dgvUsuarios.SelectedRows.Count <= 1)
+                if ((string.IsNullOrEmpty(txtContrasenna.Text)) && dgvUsuarios.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Debe seleccionar el Usuario a modificar");
                     return;
@@ -625,7 +625,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         {
             try
             {
-                if ((string.IsNullOrEmpty(txtIdentificacion.Text)) && dgvUsuarios.SelectedRows.Count <= 1)
+                if ((string.IsNullOrEmpty(txtIdentificacion.Text)) && dgvUsuarios.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Debe seleccionar el Usuario a desactivar");
                     return;

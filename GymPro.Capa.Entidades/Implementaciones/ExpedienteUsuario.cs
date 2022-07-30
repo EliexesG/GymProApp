@@ -11,10 +11,10 @@ namespace GymPro.Capa.Entidades.Implementaciones
         #region Propiedades de Expediente de Cliente
         public DateTime Fecha { get; set; }
         public string IdentificacionUsuario { get; set; }
-        public float Peso { get; set; }
-        public float Altura { get; set; }
-        public float IMC { get; set; }
-        public float MetabolismoBasal { get; set; }
+        public double Peso { get; set; }
+        public double Altura { get; set; }
+        public double IMC { get; set; }
+        public double MetabolismoBasal { get; set; }
         #endregion
     }
 }

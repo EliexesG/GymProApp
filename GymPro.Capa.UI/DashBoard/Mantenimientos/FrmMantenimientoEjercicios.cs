@@ -233,7 +233,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 byte[] video = null;
                 byte[] imagen = null;
 
-                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count <= 1)
+                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Debe seleccionar el Ejercicio a modificar");
                     return;
@@ -364,7 +364,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         {
             try
             {
-                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count <= 1)
+                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Debe seleccionar el Ejercicio a eliminar");
                     return;

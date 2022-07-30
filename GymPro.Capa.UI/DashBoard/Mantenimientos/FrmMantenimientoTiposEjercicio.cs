@@ -141,7 +141,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             try
             {
 
-                if((string.IsNullOrEmpty(txtCodigo.Text)) && dgvTiposEjercicio.SelectedRows.Count <= 1)
+                if((string.IsNullOrEmpty(txtCodigo.Text)) && dgvTiposEjercicio.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Debe seleccionar el Tipo de Ejercicio a eliminar");
                     return;
@@ -186,7 +186,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 string nombre = "";
                 string descripcion = "";
 
-                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvTiposEjercicio.SelectedRows.Count <= 1)
+                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvTiposEjercicio.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Debe seleccionar el Tipo de Ejercicio a modificar");
                     return;

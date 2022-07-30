@@ -15,5 +15,7 @@ namespace GymPro.Capa.Logica.BLL.Interfaces
         List<ExpedienteUsuario> ObtenerExpedienteUsuarioTodos();
         ExpedienteUsuario ObtenerExpedienteUsuarioId(DateTime pFecha, string pIdentificacionUsuario);
         List<ExpedienteUsuario> ObtenerExpedienteUsuarioIdentificacionUsuario(string pIdentificacionUsuario);
+        double CalcularIMC(ExpedienteUsuario pExpedienteUsuario);
+        double CalcularMetabolismoBasal(ExpedienteUsuario pExpedienteUsuario, int pEdad, Genero pGenero);
     }
 }
