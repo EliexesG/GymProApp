@@ -121,7 +121,8 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oFacturaEncabezadoDAL.ObtenerFacturaEncabezadoIdentificacionUsuario(pIdentificacionUsuario);
+                return oFacturaEncabezadoDAL.ObtenerFacturaEncabezadoIdentificacionUsuario(pIdentificacionUsuario).
+                    OrderBy(factura => factura.FechaPago).ToList();
 
             }
             catch (SqlException sqlError)
@@ -143,7 +144,8 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oFacturaEncabezadoDAL.ObtenerFacturaEncabezadoTodas();
+                return oFacturaEncabezadoDAL.ObtenerFacturaEncabezadoTodas().
+                    OrderBy(factura => factura.FechaPago).ToList();
 
             }
             catch (SqlException sqlError)

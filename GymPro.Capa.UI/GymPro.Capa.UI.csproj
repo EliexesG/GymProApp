@@ -70,6 +70,12 @@
     <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoEjercicios.Designer.cs">
       <DependentUpon>FrmMantenimientoEjercicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoExpediente.Designer.cs">
+      <DependentUpon>FrmMantenimientoExpediente.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.Designer.cs">
       <DependentUpon>FrmMenuMantenimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmMenuProcesos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmMenuProcesos.Designer.cs">
+      <DependentUpon>FrmMenuProcesos.cs</DependentUpon>
     </Compile>
     <Compile Include="InicioSesion\FrmInicioSesion.cs">
       <SubType>Form</SubType>
@@ -117,6 +129,9 @@
     <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoEjercicios.resx">
       <DependentUpon>FrmMantenimientoEjercicios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoExpediente.resx">
+      <DependentUpon>FrmMantenimientoExpediente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMantenimientoTiposEjercicio.resx">
       <DependentUpon>FrmMantenimientoTiposEjercicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.resx">
       <DependentUpon>FrmMenuMantenimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Procesos\FrmMenuProcesos.resx">
+      <DependentUpon>FrmMenuProcesos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
@@ -177,16 +195,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DashBoard\Procesos\" />
     <Folder Include="DashBoard\Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\MantenimientoIcons\Cancelar.png" />
     <Content Include="Resources\MantenimientoIcons\Consultar.png" />
+    <Content Include="Resources\MantenimientoIcons\ControlIngresoEgreso.png" />
     <Content Include="Resources\MantenimientoIcons\Editar.png" />
     <Content Include="Resources\MantenimientoIcons\Ejercicio.png" />
     <Content Include="Resources\MantenimientoIcons\Eliminar.png" />
     <Content Include="Resources\MantenimientoIcons\Entrenamiento.png" />
+    <Content Include="Resources\MantenimientoIcons\Facturacion.png" />
     <Content Include="Resources\MantenimientoIcons\Guardar.png" />
     <Content Include="Resources\MantenimientoIcons\TipoEjercicio.png" />
     <Content Include="Resources\MantenimientoIcons\Usuario.png" />

@@ -36,6 +36,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnAsignarFotografia = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pbFotografia = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtIdentificacion = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,15 +63,14 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.Errores = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnInactivos = new Guna.UI2.WinForms.Guna2Button();
             this.btnExpediente = new Guna.UI2.WinForms.Guna2Button();
-            this.pbFotografia = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnDesactivar = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ShadowPanel1
@@ -122,6 +122,18 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.guna2HtmlLabel2.TabIndex = 15;
             this.guna2HtmlLabel2.Text = "Fotografía";
             // 
+            // pbFotografia
+            // 
+            this.pbFotografia.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbFotografia.Location = new System.Drawing.Point(35, 9);
+            this.pbFotografia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbFotografia.Name = "pbFotografia";
+            this.pbFotografia.ShadowDecoration.Parent = this.pbFotografia;
+            this.pbFotografia.Size = new System.Drawing.Size(165, 134);
+            this.pbFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFotografia.TabIndex = 14;
+            this.pbFotografia.TabStop = false;
+            // 
             // txtNombre
             // 
             this.txtNombre.BorderRadius = 10;
@@ -137,7 +149,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
             this.txtNombre.Location = new System.Drawing.Point(257, 197);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderText = "Elias";
@@ -176,7 +188,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtIdentificacion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIdentificacion.HoverState.Parent = this.txtIdentificacion;
             this.txtIdentificacion.Location = new System.Drawing.Point(257, 119);
-            this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(5);
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.PasswordChar = '\0';
             this.txtIdentificacion.PlaceholderText = "000000000";
@@ -215,7 +227,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtApellido2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido2.HoverState.Parent = this.txtApellido2;
             this.txtApellido2.Location = new System.Drawing.Point(519, 119);
-            this.txtApellido2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtApellido2.Margin = new System.Windows.Forms.Padding(5);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.PasswordChar = '\0';
             this.txtApellido2.PlaceholderText = "Lara";
@@ -239,7 +251,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtApellido1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido1.HoverState.Parent = this.txtApellido1;
             this.txtApellido1.Location = new System.Drawing.Point(412, 119);
-            this.txtApellido1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtApellido1.Margin = new System.Windows.Forms.Padding(5);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.PasswordChar = '\0';
             this.txtApellido1.PlaceholderText = "González";
@@ -309,7 +321,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtCorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCorreo.HoverState.Parent = this.txtCorreo;
             this.txtCorreo.Location = new System.Drawing.Point(412, 198);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(5);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PasswordChar = '\0';
             this.txtCorreo.PlaceholderText = "ejemplo@gmail.com";
@@ -384,7 +396,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefono.HoverState.Parent = this.txtTelefono;
             this.txtTelefono.Location = new System.Drawing.Point(257, 274);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(5);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
             this.txtTelefono.PlaceholderText = "0000-0000";
@@ -541,7 +553,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtContrasenna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtContrasenna.HoverState.Parent = this.txtContrasenna;
             this.txtContrasenna.Location = new System.Drawing.Point(648, 277);
-            this.txtContrasenna.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtContrasenna.Margin = new System.Windows.Forms.Padding(5);
             this.txtContrasenna.Name = "txtContrasenna";
             this.txtContrasenna.PasswordChar = '●';
             this.txtContrasenna.PlaceholderText = "contraseña";
@@ -567,7 +579,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             // 
             // ofdBuscadorImagenes
             // 
-            this.ofdBuscadorImagenes.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            this.ofdBuscadorImagenes.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
             this.ofdBuscadorImagenes.InitialDirectory = "C:\\";
             // 
             // Errores
@@ -590,6 +602,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnInactivos.Location = new System.Drawing.Point(648, 399);
             this.btnInactivos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInactivos.Name = "btnInactivos";
+            this.btnInactivos.Padding = new System.Windows.Forms.Padding(5);
             this.btnInactivos.ShadowDecoration.Parent = this.btnInactivos;
             this.btnInactivos.Size = new System.Drawing.Size(192, 46);
             this.btnInactivos.TabIndex = 75;
@@ -615,18 +628,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnExpediente.Size = new System.Drawing.Size(192, 46);
             this.btnExpediente.TabIndex = 74;
             this.btnExpediente.Text = "Ver Expediente";
-            // 
-            // pbFotografia
-            // 
-            this.pbFotografia.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbFotografia.Location = new System.Drawing.Point(35, 9);
-            this.pbFotografia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbFotografia.Name = "pbFotografia";
-            this.pbFotografia.ShadowDecoration.Parent = this.pbFotografia;
-            this.pbFotografia.Size = new System.Drawing.Size(165, 134);
-            this.pbFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFotografia.TabIndex = 14;
-            this.pbFotografia.TabStop = false;
+            this.btnExpediente.Click += new System.EventHandler(this.btnExpediente_Click);
             // 
             // btnCancelar
             // 
@@ -752,9 +754,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.Text = "FrmMantenimientoUsuarios";
             this.Load += new System.EventHandler(this.FrmMantenimientoUsuarios_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).EndInit();
             this.ResumeLayout(false);
 
         }

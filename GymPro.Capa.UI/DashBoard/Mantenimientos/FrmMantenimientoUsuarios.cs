@@ -167,6 +167,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                         txtCorreo.Enabled = false;
                         cmbGenero.Enabled = false;
                         dtpFechaNacimiento.Enabled = false;
+                        btnExpediente.Enabled = false;
                     }
                     else if (((int)cmbTipoUsuario.SelectedValue) == ((int)TipoUsuarioEnum.Cliente))
                     {
@@ -174,6 +175,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                         txtCorreo.Enabled = true;
                         cmbGenero.Enabled = true;
                         dtpFechaNacimiento.Enabled = true;
+                        btnExpediente.Enabled = true;
                     }
                 }
                 
@@ -660,6 +662,29 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 ventana.ShowDialog();
 
                 Refrescar();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+        }
+
+        private void btnExpediente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if ((string.IsNullOrEmpty(txtContrasenna.Text)) && dgvUsuarios.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("Debe seleccionar un Usuario para ver su expediente (Solo clientes)");
+                    return;
+                }
+
+                string identificacion = dgvUsuarios.SelectedCells[0].Value.ToString();
+
+                FrmMantenimientoExpediente ventana = new FrmMantenimientoExpediente((Cliente)Logica.ObtenerUsuarioIdentificacion(identificacion));
+                ventana.ShowDialog();
             }
             catch (Exception er)
             {

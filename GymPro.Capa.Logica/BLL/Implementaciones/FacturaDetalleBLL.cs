@@ -52,7 +52,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
 
             try
             {
-                return oFacturaDetalleDAL.ObtenerFacturaDetalleCodigoFactura(pCodigoFactura);
+                return oFacturaDetalleDAL.ObtenerFacturaDetalleCodigoFactura(pCodigoFactura).OrderBy(detalle => detalle._Servicio.Descripcion).ToList();
             }
             catch (SqlException sqlError)
             {
@@ -72,7 +72,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         {
             try
             {
-                return oFacturaDetalleDAL.ObtenerFacturaDetalleTodas();
+                return oFacturaDetalleDAL.ObtenerFacturaDetalleTodas().OrderBy(detalle => detalle.CodigoFactura).ThenBy(detalle => detalle._Servicio.Descripcion).ToList();
             }
             catch (SqlException sqlError)
             {

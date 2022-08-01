@@ -83,6 +83,16 @@ namespace GymPro.Capa.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ControlIngresoEgreso {
+            get {
+                object obj = ResourceManager.GetObject("ControlIngresoEgreso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Editar {
             get {
                 object obj = ResourceManager.GetObject("Editar", resourceCulture);
@@ -116,6 +126,16 @@ namespace GymPro.Capa.UI.Properties {
         internal static System.Drawing.Bitmap Entrenamiento {
             get {
                 object obj = ResourceManager.GetObject("Entrenamiento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Facturacion {
+            get {
+                object obj = ResourceManager.GetObject("Facturacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

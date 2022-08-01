@@ -97,7 +97,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oEjercicioDAL.ObtenerEjercicioCodigoTipo(pCodigoTipo);
+                return oEjercicioDAL.ObtenerEjercicioCodigoTipo(pCodigoTipo).OrderBy(ejercicio => ejercicio.CodigoTipo).ThenBy(ejercicio => ejercicio.Nombre).ToList(); ;
 
             }
             catch (SqlException sqlError)
@@ -142,7 +142,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oEjercicioDAL.ObtenerEjercicioTodos();
+                return oEjercicioDAL.ObtenerEjercicioTodos().OrderBy(ejercicio => ejercicio.CodigoTipo).ThenBy(ejercicio => ejercicio.Nombre).ToList();
 
             }
             catch (SqlException sqlError)

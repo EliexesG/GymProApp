@@ -53,7 +53,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oServicioDAL.ObtenerServicioTodos();
+                return oServicioDAL.ObtenerServicioTodos().OrderBy(servicio => servicio.Descripcion).ToList();
 
             }
             catch (SqlException sqlError)

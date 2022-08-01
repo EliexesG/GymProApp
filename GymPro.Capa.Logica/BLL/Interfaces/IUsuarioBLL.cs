@@ -1,4 +1,5 @@
 ﻿using GymPro.Capa.Entidades.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace GymPro.Capa.Logica.BLL.Interfaces
@@ -12,5 +13,6 @@ namespace GymPro.Capa.Logica.BLL.Interfaces
         List<IUsuario> ObtenerUsuarioActivoTodos();
         List<IUsuario> ObtenerUsuarioInactivoTodos();
         IUsuario ObtenerUsuarioIdentificacion(string pIdentificacionUsuario);
+        int CalcularEdadUsuario(DateTime pFechaNacimiento);
     }
 }
