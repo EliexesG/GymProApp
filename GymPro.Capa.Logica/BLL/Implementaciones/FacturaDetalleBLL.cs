@@ -20,6 +20,29 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             oFacturaDetalleDAL = FacturaDetalleDAL.GetInstance();
         }
 
+        #region Logica
+        public double CalcularMontoServicios(List<Servicio> pServicios)
+        {
+            try
+            {
+                double total = 0D;
+
+                IServicioBLL logicaServicio = new ServicioBLL();
+
+                foreach(Servicio servicio in pServicios)
+                {
+                    total += logicaServicio.CalcularCostoServicio(servicio);
+                }
+
+                return total;
+            }
+            catch(Exception er)
+            {
+                throw er;
+            }
+        }
+        #endregion
+
         #region Acceso a datos
         /// <summary>
         /// Inserta un Detalle de Factura en la base de datos

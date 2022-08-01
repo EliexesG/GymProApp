@@ -2,6 +2,7 @@
 using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.BLL.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -19,6 +20,20 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         {
             oServicioDAL = ServicioDAL.GetInstance();
         }
+
+        #region Logica
+        public double CalcularCostoServicio(Servicio pServicio)
+        {
+            try
+            {
+                return (new ServicioVentaDolarBLL().ObtenerPrecioVentaDolar()) * pServicio.Monto;
+            }
+            catch(Exception er)
+            {
+                throw er;
+            }
+        }
+        #endregion
 
         #region Acceso a datos
         /// <summary>

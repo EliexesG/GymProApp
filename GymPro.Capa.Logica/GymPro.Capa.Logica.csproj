@@ -67,6 +67,8 @@
     <Compile Include="BLL\Interfaces\IExpedienteUsuarioBLL.cs" />
     <Compile Include="BLL\Interfaces\IServicioVentaDolarBLL.cs" />
     <Compile Include="BLL\Servicios\ServicioVentaDolarBLL.cs" />
+    <Compile Include="Patrones\GestorFacturacion.cs" />
+    <Compile Include="Interfaces\IGestorFacturacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +79,10 @@
     <ProjectReference Include="..\GymPro.Capa.Entidades\GymPro.Capa.Entidades.csproj">
       <Project>{2896c8d1-b937-4355-8249-c2f6e9083435}</Project>
       <Name>GymPro.Capa.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GymPro.Capa.Util\GymPro.Capa.Util.csproj">
+      <Project>{C0EC9E24-0F4B-4EAB-81F1-C1FE54EE9A85}</Project>
+      <Name>GymPro.Capa.Util</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -14,12 +14,52 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
     class FacturaEncabezadoBLL : IFacturaEncabezadoBLL
     {
 
+        private const double PorcentajeMulta = 1.17D;
+
         private IFacturaEncabezadoDAL oFacturaEncabezadoDAL;
 
         public FacturaEncabezadoBLL()
         {
             oFacturaEncabezadoDAL = FacturaEncabezadoDAL.GetInstance();
         }
+
+        #region Logica
+        public bool EstaMoroso(DateTime pFechaSiguientePago)
+        {
+            return pFechaSiguientePago >= DateTime.Now;
+        }
+
+        public DateTime SiguientePago(DateTime pFechaPagoActual)
+        {
+            return pFechaPagoActual.AddMonths(1);
+        }
+
+        public double CalcularMulta(double pMontoServicios)
+        {
+            return pMontoServicios * PorcentajeMulta;
+        }
+
+        public double CalcularMontoTotal(double pMontoServicios, double pMontoMulta)
+        {
+            return pMontoServicios + pMontoMulta;
+        }
+
+        public int SiguienteCodigo()
+        {
+            try
+            {
+                return this.ObtenerFacturaEncabezadoTodas().Max(encabezado => encabezado.Codigo) + 1;
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
+        #endregion
 
         #region Acceso a datos
         /// <summary>
