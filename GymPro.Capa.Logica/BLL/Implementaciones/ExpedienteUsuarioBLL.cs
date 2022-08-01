@@ -154,7 +154,8 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oExpedienteUsuarioDAL.ObtenerExpedienteUsuarioIdentificacionUsuario(pIdentificacionUsuario);
+                return oExpedienteUsuarioDAL.ObtenerExpedienteUsuarioIdentificacionUsuario(pIdentificacionUsuario).
+                    OrderBy(expediente => expediente.Fecha).ToList();
 
             }
             catch (SqlException sqlError)

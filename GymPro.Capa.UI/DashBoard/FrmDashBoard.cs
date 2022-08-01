@@ -1,5 +1,6 @@
 ﻿using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.UI.DashBoard.Mantenimientos;
+using GymPro.Capa.UI.DashBoard.Procesos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,6 +63,18 @@ namespace GymPro.Capa.UI.DashBoard
                 this.AbrirFormEnPanel(new FrmMenuMantenimientos());
             }
             catch(Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.AbrirFormEnPanel(new FrmMenuProcesos());
+            }
+            catch (Exception er)
             {
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
             }

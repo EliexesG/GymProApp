@@ -142,7 +142,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oUsuarioDAL.ObtenerUsuarioActivoTodos();
+                return oUsuarioDAL.ObtenerUsuarioActivoTodos().OrderBy(usuario => usuario.Nombre).ThenBy(usuario => usuario.Apellido1).ToList();
 
             }
             catch (SqlException sqlError)
@@ -164,7 +164,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oUsuarioDAL.ObtenerUsuarioInactivoTodos();
+                return oUsuarioDAL.ObtenerUsuarioInactivoTodos().OrderBy(usuario => usuario.Nombre).ThenBy(usuario => usuario.Apellido1).ToList();
 
             }
             catch (SqlException sqlError)

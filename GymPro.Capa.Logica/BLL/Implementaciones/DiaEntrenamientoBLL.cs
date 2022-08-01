@@ -75,7 +75,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oDiaEntrenamientoDAL.ObtenerDiaEntrenamientoCodigoEntrenamiento(pCodigoEntrenamiento);
+                return oDiaEntrenamientoDAL.ObtenerDiaEntrenamientoCodigoEntrenamiento(pCodigoEntrenamiento).OrderBy(dia => dia.Dia).ToList();
 
             }
             catch (SqlException sqlError)
@@ -99,7 +99,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oDiaEntrenamientoDAL.ObtenerDiaEntrenamientoTodos();
+                return oDiaEntrenamientoDAL.ObtenerDiaEntrenamientoTodos().OrderBy(dia => dia.Dia).ToList();
 
             }
             catch (SqlException sqlError)

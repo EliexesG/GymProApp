@@ -120,7 +120,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             try
             {
 
-                return oTipoEjercicioDAL.ObtenerTipoEjercicioTodos();
+                return oTipoEjercicioDAL.ObtenerTipoEjercicioTodos().OrderBy(tipo => tipo.Nombre).ToList();
 
             }
             catch (SqlException sqlError)

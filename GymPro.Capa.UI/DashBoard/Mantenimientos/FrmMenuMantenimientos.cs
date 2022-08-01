@@ -55,7 +55,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
         }
 
-        private void btnMantenimientos_Click(object sender, EventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
             try
             {
