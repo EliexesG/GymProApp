@@ -140,13 +140,20 @@ namespace GymPro.Capa.Datos.Implementaciones
 
                     foreach(DataRow dr in ds.Tables[0].Rows)
                     {
+
+                        TimeSpan? horaSalida = null;
+
+                        if (!string.IsNullOrWhiteSpace(dr["HoraSalida"].ToString()))
+                        {
+                            horaSalida = TimeSpan.Parse(dr["HoraSalida"].ToString());
+                        }
+
                         ControlIngresoEgreso controlIngresoEgreso = new ControlIngresoEgreso()
                         {
                             IdentificacionUsuario = dr["IdentificacionUsuario"].ToString(),
                             Fecha = DateTime.Parse(dr["Fecha"].ToString()),
                             HoraEntrada = TimeSpan.Parse(dr["HoraEntrada"].ToString()),
-                            HoraSalida = TimeSpan.Parse(dr["HoraSalida"].ToString())
-
+                            HoraSalida = horaSalida
                         };
 
                         lista.Add(controlIngresoEgreso);
@@ -198,12 +205,20 @@ namespace GymPro.Capa.Datos.Implementaciones
 
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
+
+                        TimeSpan? horaSalida = null;
+
+                        if (!string.IsNullOrWhiteSpace(dr["HoraSalida"].ToString()))
+                        {
+                            horaSalida = TimeSpan.Parse(dr["HoraSalida"].ToString());
+                        }
+
                         ControlIngresoEgreso controlIngresoEgreso = new ControlIngresoEgreso()
                         {
                             IdentificacionUsuario = dr["IdentificacionUsuario"].ToString(),
                             Fecha = DateTime.Parse(dr["Fecha"].ToString()),
                             HoraEntrada = TimeSpan.Parse(dr["HoraEntrada"].ToString()),
-                            HoraSalida = TimeSpan.Parse(dr["HoraSalida"].ToString())
+                            HoraSalida = horaSalida
 
                         };
 
@@ -257,12 +272,20 @@ namespace GymPro.Capa.Datos.Implementaciones
 
                     while (reader.Read())
                     {
+
+                        TimeSpan? horaSalida = null;
+
+                        if (!string.IsNullOrWhiteSpace(reader["HoraSalida"].ToString()))
+                        {
+                            horaSalida = TimeSpan.Parse(reader["HoraSalida"].ToString());
+                        }
+
                         controlIngresoEgreso = new ControlIngresoEgreso()
                         {
                             IdentificacionUsuario = reader["IdentificacionUsuario"].ToString(),
                             Fecha = DateTime.Parse(reader["Fecha"].ToString()),
                             HoraEntrada = TimeSpan.Parse(reader["HoraEntrada"].ToString()),
-                            HoraSalida = TimeSpan.Parse(reader["HoraSalida"].ToString())
+                            HoraSalida = horaSalida
 
                         };
                     }

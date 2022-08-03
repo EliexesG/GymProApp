@@ -36,7 +36,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnEjercicios = new Guna.UI2.WinForms.Guna2Button();
             this.btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
             this.pnlDisplay = new Guna.UI2.WinForms.Guna2Panel();
+            this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel1.SuspendLayout();
+            this.pnlDisplay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -134,12 +137,28 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             // 
             // pnlDisplay
             // 
+            this.pnlDisplay.Controls.Add(this.pbLogo);
             this.pnlDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlDisplay.Location = new System.Drawing.Point(0, 70);
             this.pnlDisplay.Name = "pnlDisplay";
             this.pnlDisplay.ShadowDecoration.Parent = this.pnlDisplay;
             this.pnlDisplay.Size = new System.Drawing.Size(854, 563);
             this.pnlDisplay.TabIndex = 1;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BorderRadius = 15;
+            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbLogo.Image = global::GymPro.Capa.UI.Properties.Resources._1;
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.ShadowDecoration.Enabled = true;
+            this.pbLogo.ShadowDecoration.Parent = this.pbLogo;
+            this.pbLogo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 3, 5);
+            this.pbLogo.Size = new System.Drawing.Size(854, 563);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 2;
+            this.pbLogo.TabStop = false;
             // 
             // FrmMenuMantenimientos
             // 
@@ -152,6 +171,8 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.Name = "FrmMenuMantenimientos";
             this.Text = "FrmMenuMantenimientos";
             this.guna2GradientPanel1.ResumeLayout(false);
+            this.pnlDisplay.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,5 +186,6 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         private Guna.UI2.WinForms.Guna2Button btnEjercicios;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
+        private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
     }
 }

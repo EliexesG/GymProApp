@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymPro.Capa.Entidades.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 {
     public partial class FrmMenuProcesos : Form
     {
-        public FrmMenuProcesos()
+        IUsuario _Usuario;
+
+        public FrmMenuProcesos(IUsuario pUsuario)
         {
             InitializeComponent();
+            _Usuario = pUsuario;
         }
 
         public void AbrirFormEnPanel(object formhija)
@@ -28,6 +32,23 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.pnlDisplay.Controls.Add(fh);
             this.pnlDisplay.Tag = fh;
             fh.Show();
+
+        }
+
+        private void btnControlIngresoEgreso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AbrirFormEnPanel(new FrmProcesoControlIngresoEgreso(_Usuario));
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
 
         }
     }

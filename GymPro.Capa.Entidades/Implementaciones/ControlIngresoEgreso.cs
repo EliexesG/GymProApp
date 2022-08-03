@@ -11,6 +11,6 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public string IdentificacionUsuario { get; set; }
         public DateTime Fecha { get; set; }
         public TimeSpan HoraEntrada { get; set; }
-        public TimeSpan HoraSalida { get; set; }
+        public TimeSpan? HoraSalida { get; set; }
     }
 }
