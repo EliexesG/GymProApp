@@ -39,7 +39,9 @@ namespace GymPro.Capa.UI.InicioSesion
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Errores = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblMensajeError = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegistrarse
@@ -181,11 +183,26 @@ namespace GymPro.Capa.UI.InicioSesion
             this.lblMensajeError.Text = "Usuario o contraseña incorrectos";
             this.lblMensajeError.Visible = false;
             // 
+            // pbLogo
+            // 
+            this.pbLogo.BorderRadius = 15;
+            this.pbLogo.Image = global::GymPro.Capa.UI.Properties.Resources._1;
+            this.pbLogo.Location = new System.Drawing.Point(12, 12);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.ShadowDecoration.Enabled = true;
+            this.pbLogo.ShadowDecoration.Parent = this.pbLogo;
+            this.pbLogo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 3, 5);
+            this.pbLogo.Size = new System.Drawing.Size(87, 85);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 15;
+            this.pbLogo.TabStop = false;
+            // 
             // FrmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 415);
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lblMensajeError);
             this.Controls.Add(this.lblRegistrarse);
             this.Controls.Add(this.btnIngresar);
@@ -198,6 +215,7 @@ namespace GymPro.Capa.UI.InicioSesion
             this.Name = "FrmLogIn";
             this.Text = "FrmLogIn";
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +232,6 @@ namespace GymPro.Capa.UI.InicioSesion
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.ErrorProvider Errores;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblMensajeError;
+        private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
     }
 }

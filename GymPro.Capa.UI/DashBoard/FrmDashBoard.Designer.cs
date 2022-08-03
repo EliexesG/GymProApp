@@ -42,11 +42,14 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnEditarPerfil = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblTipoUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pbFotoUsuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnlDisplay = new Guna.UI2.WinForms.Guna2Panel();
+            this.pbFotoUsuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
+            this.pnlDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -224,6 +227,16 @@ namespace GymPro.Capa.UI.DashBoard
             this.lblTipoUsuario.Text = "Admin";
             this.lblTipoUsuario.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlDisplay
+            // 
+            this.pnlDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDisplay.Controls.Add(this.pbLogo);
+            this.pnlDisplay.Location = new System.Drawing.Point(280, 41);
+            this.pnlDisplay.Name = "pnlDisplay";
+            this.pnlDisplay.ShadowDecoration.Parent = this.pnlDisplay;
+            this.pnlDisplay.Size = new System.Drawing.Size(854, 633);
+            this.pnlDisplay.TabIndex = 2;
+            // 
             // pbFotoUsuario
             // 
             this.pbFotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -239,13 +252,20 @@ namespace GymPro.Capa.UI.DashBoard
             this.pbFotoUsuario.TabIndex = 0;
             this.pbFotoUsuario.TabStop = false;
             // 
-            // pnlDisplay
+            // pbLogo
             // 
-            this.pnlDisplay.Location = new System.Drawing.Point(280, 41);
-            this.pnlDisplay.Name = "pnlDisplay";
-            this.pnlDisplay.ShadowDecoration.Parent = this.pnlDisplay;
-            this.pnlDisplay.Size = new System.Drawing.Size(854, 633);
-            this.pnlDisplay.TabIndex = 2;
+            this.pbLogo.BorderRadius = 15;
+            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbLogo.Image = global::GymPro.Capa.UI.Properties.Resources._1;
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.ShadowDecoration.Enabled = true;
+            this.pbLogo.ShadowDecoration.Parent = this.pbLogo;
+            this.pbLogo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 3, 5);
+            this.pbLogo.Size = new System.Drawing.Size(854, 633);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 3;
+            this.pbLogo.TabStop = false;
             // 
             // FrmDashBoard
             // 
@@ -262,7 +282,9 @@ namespace GymPro.Capa.UI.DashBoard
             this.Load += new System.EventHandler(this.FrmDashBoard_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
+            this.pnlDisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +305,6 @@ namespace GymPro.Capa.UI.DashBoard
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button btnMantenimientos;
+        private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
     }
 }

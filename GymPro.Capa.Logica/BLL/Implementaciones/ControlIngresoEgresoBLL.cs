@@ -74,7 +74,8 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         {
             try
             {
-                return oControlIngresoEgresoDAL.ObtenerControlIngresoEgresoIdentificacionUsuario(pIdentificacionUsuario).OrderBy(control => control.Fecha).ToList();
+                return oControlIngresoEgresoDAL.ObtenerControlIngresoEgresoIdentificacionUsuario(pIdentificacionUsuario).OrderBy(control => control.Fecha).ToList().
+                    FindAll(control => control.HoraSalida != null);
 
             }
             catch (SqlException sqlError)
@@ -96,7 +97,8 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
 
             try
             {
-                return oControlIngresoEgresoDAL.ObtenerControlIngresoEgresoTodos().OrderBy(control => control.Fecha).ToList();
+                return oControlIngresoEgresoDAL.ObtenerControlIngresoEgresoTodos().OrderBy(control => control.Fecha).ToList().
+                    FindAll(control => control.HoraSalida != null); ;
 
             }
             catch (SqlException sqlError)

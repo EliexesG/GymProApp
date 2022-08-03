@@ -36,11 +36,17 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnFacturacion = new Guna.UI2.WinForms.Guna2Button();
             this.btnControlIngresoEgreso = new Guna.UI2.WinForms.Guna2Button();
             this.btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pnlDisplay.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlDisplay
             // 
+            this.pnlDisplay.Controls.Add(this.guna2Panel1);
             this.pnlDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlDisplay.Location = new System.Drawing.Point(0, 70);
             this.pnlDisplay.Name = "pnlDisplay";
@@ -99,6 +105,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnFacturacion.Size = new System.Drawing.Size(212, 45);
             this.btnFacturacion.TabIndex = 18;
             this.btnFacturacion.Text = "Facturación";
+            this.btnFacturacion.Click += new System.EventHandler(this.btnFacturacion_Click);
             // 
             // btnControlIngresoEgreso
             // 
@@ -118,6 +125,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnControlIngresoEgreso.Size = new System.Drawing.Size(212, 45);
             this.btnControlIngresoEgreso.TabIndex = 16;
             this.btnControlIngresoEgreso.Text = "Control de Ingresos";
+            this.btnControlIngresoEgreso.Click += new System.EventHandler(this.btnControlIngresoEgreso_Click);
             // 
             // btnMantenimientos
             // 
@@ -138,6 +146,31 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnMantenimientos.TabIndex = 15;
             this.btnMantenimientos.Text = "Entrenamiento";
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.pbLogo);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(854, 563);
+            this.guna2Panel1.TabIndex = 2;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BorderRadius = 15;
+            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbLogo.Image = global::GymPro.Capa.UI.Properties.Resources._1;
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.ShadowDecoration.Enabled = true;
+            this.pbLogo.ShadowDecoration.Parent = this.pbLogo;
+            this.pbLogo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 3, 5);
+            this.pbLogo.Size = new System.Drawing.Size(854, 563);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 2;
+            this.pbLogo.TabStop = false;
+            // 
             // FrmMenuProcesos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,7 +181,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMenuProcesos";
             this.Text = "FrmMenuProcesos";
+            this.pnlDisplay.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,5 +198,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
         private Guna.UI2.WinForms.Guna2Button btnControlIngresoEgreso;
         private Guna.UI2.WinForms.Guna2Button btnMantenimientos;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
     }
 }

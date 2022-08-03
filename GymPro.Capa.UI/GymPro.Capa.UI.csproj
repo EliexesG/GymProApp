@@ -100,6 +100,12 @@
     <Compile Include="DashBoard\Procesos\FrmMenuProcesos.Designer.cs">
       <DependentUpon>FrmMenuProcesos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Procesos\FrmProcesoControlIngresoEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmProcesoControlIngresoEgreso.Designer.cs">
+      <DependentUpon>FrmProcesoControlIngresoEgreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioSesion\FrmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Procesos\FrmMenuProcesos.resx">
       <DependentUpon>FrmMenuProcesos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Procesos\FrmProcesoControlIngresoEgreso.resx">
+      <DependentUpon>FrmProcesoControlIngresoEgreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
@@ -198,6 +207,7 @@
     <Folder Include="DashBoard\Reportes\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Logo\1.png" />
     <Content Include="Resources\MantenimientoIcons\Cancelar.png" />
     <Content Include="Resources\MantenimientoIcons\Consultar.png" />
     <Content Include="Resources\MantenimientoIcons\ControlIngresoEgreso.png" />

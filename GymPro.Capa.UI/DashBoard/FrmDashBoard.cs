@@ -72,7 +72,7 @@ namespace GymPro.Capa.UI.DashBoard
         {
             try
             {
-                this.AbrirFormEnPanel(new FrmMenuProcesos());
+                this.AbrirFormEnPanel(new FrmMenuProcesos(_Usuario));
             }
             catch (Exception er)
             {
