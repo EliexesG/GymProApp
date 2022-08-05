@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumeraciones\TipoTarjeta.cs" />
     <Compile Include="Implementaciones\Administrador.cs" />
     <Compile Include="Implementaciones\Cliente.cs" />
     <Compile Include="Implementaciones\ControlIngresoEgreso.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Implementaciones\FacturaEncabezado.cs" />
     <Compile Include="Implementaciones\Instructor.cs" />
     <Compile Include="Implementaciones\Servicio.cs" />
+    <Compile Include="Implementaciones\Tarjeta.cs" />
     <Compile Include="Implementaciones\TipoEjercicio.cs" />
     <Compile Include="Enumeraciones\Dia.cs" />
     <Compile Include="Enumeraciones\Genero.cs" />

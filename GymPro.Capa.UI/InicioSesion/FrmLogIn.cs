@@ -98,9 +98,8 @@ namespace GymPro.Capa.UI.InicioSesion
                     if (usuario.Identificacion.Equals(identificacion) && usuario.Contrasenna.Equals(contrasenna))
                     {
                         FrmDashBoard frmDashBoard = new FrmDashBoard(usuario);
-                        frmDashBoard.ShowDialog();
-                        this.Close();
-                        _FrmInicioSesion.Close();
+                        frmDashBoard.Show();
+                        _FrmInicioSesion.Hide();
                     }
 
                 });

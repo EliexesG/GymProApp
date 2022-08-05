@@ -58,7 +58,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                         {
                             Codigo = int.Parse(reader["Codigo"].ToString()),
                             Descripcion = reader["Descripcion"].ToString(),
-                            Monto = float.Parse(reader["Monto"].ToString())
+                            Monto = double.Parse(reader["Monto"].ToString())
                         };
                     }
 
@@ -111,7 +111,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                         {
                             Codigo = int.Parse(dr["Codigo"].ToString()),
                             Descripcion = dr["Descripcion"].ToString(),
-                            Monto = float.Parse(dr["Monto"].ToString())
+                            Monto = double.Parse(dr["Monto"].ToString())
                         };
 
                         lista.Add(servicio);

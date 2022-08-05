@@ -1,4 +1,8 @@
-﻿using GymPro.Capa.Entidades.Interfaces;
+﻿using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Entidades.Interfaces;
+using GymPro.Capa.Logica.BLL.Implementaciones;
+using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +53,55 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                IFacturaEncabezadoBLLDatos LogicaDatos;
+                IFacturaEncabezadoBLLGestor LogicaGestor;
+
+                FacturaEncabezadoBLL instancia = new FacturaEncabezadoBLL();
+                LogicaDatos = instancia;
+                LogicaGestor = instancia;
+
+                FacturaEncabezado ultimoPago = null;
+
+                try
+                {
+                    ultimoPago = LogicaDatos.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Usuario.Identificacion);
+                }
+                catch { }
+
+                if(ultimoPago != null)
+                {
+                    if (LogicaGestor.YaPagado(ultimoPago.FechaProximoPago))
+                    {
+                        if(MessageBox.Show("Ya se ha pagado la matrícula y la mensualidad por este mes, ¿Está seguro de pagar nuevamente?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes){
+                            AbrirFormEnPanel(new FrmProcesoFacturacion((Cliente)_Usuario));
+                        }
+                    }
+                }
+                else
+                {
+                    AbrirFormEnPanel(new FrmProcesoFacturacion((Cliente)_Usuario));
+                }
+
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void FrmMenuProcesos_Load(object sender, EventArgs e)
+        {
+            if(_Usuario is Cliente)
+            {
+                btnEntrenamiento.Enabled = false;
+            }
+            else if(_Usuario is Instructor || _Usuario is Administrador)
+            {
+                btnFacturacion.Enabled = false;
+            }
         }
     }
 }

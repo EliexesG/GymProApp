@@ -1,6 +1,8 @@
-﻿using GymPro.Capa.Entidades.Interfaces;
+﻿using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.UI.DashBoard.Mantenimientos;
 using GymPro.Capa.UI.DashBoard.Procesos;
+using GymPro.Capa.UI.InicioSesion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +29,16 @@ namespace GymPro.Capa.UI.DashBoard
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            if(MessageBox.Show("¿Desea abrir nueva sesión?", "Cerrar sesión", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                FrmInicioSesion inicioSesion = new FrmInicioSesion();
+                inicioSesion.Show();
+                this.Close();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -40,6 +51,12 @@ namespace GymPro.Capa.UI.DashBoard
             lblTipoUsuario.Text = $"{_Usuario.GetType().Name}";
             lblNombreUsuario.Text = $"{_Usuario.Nombre} {_Usuario.Apellido1}";
             pbFotoUsuario.Image = new Bitmap(new MemoryStream(_Usuario.Fotografia));
+
+            if(_Usuario is Cliente || _Usuario is Instructor)
+            {
+                btnMantenimientos.Enabled = false;
+                btnReportes.Enabled = false;
+            }
         }
 
         public void AbrirFormEnPanel(object formhija)
@@ -68,7 +85,7 @@ namespace GymPro.Capa.UI.DashBoard
             }
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btnProcesos_Click(object sender, EventArgs e)
         {
             try
             {

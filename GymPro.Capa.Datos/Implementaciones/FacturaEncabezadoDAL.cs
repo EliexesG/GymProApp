@@ -184,8 +184,8 @@ namespace GymPro.Capa.Datos.Implementaciones
                             CodigoQR = (byte[])reader["CodigoQR"],
                             FechaPago = DateTime.Parse(reader["FechaPago"].ToString()),
                             FechaProximoPago = DateTime.Parse(reader["FechaProximoPago"].ToString()),
-                            MontoTotal = float.Parse(reader["MontoTotal"].ToString()),
-                            MontoMulta = float.Parse(reader["MontoMulta"].ToString())
+                            MontoTotal = double.Parse(reader["MontoTotal"].ToString()),
+                            MontoMulta = double.Parse(reader["MontoMulta"].ToString())
                         };
 
                         facturaEncabezado.FacturasDetalle = FacturaDetalleDAL.GetInstance().ObtenerFacturaDetalleCodigoFactura(facturaEncabezado.Codigo);
@@ -245,8 +245,8 @@ namespace GymPro.Capa.Datos.Implementaciones
                             CodigoQR = (byte[])dr["CodigoQR"],
                             FechaPago = DateTime.Parse(dr["FechaPago"].ToString()),
                             FechaProximoPago = DateTime.Parse(dr["FechaProximoPago"].ToString()),
-                            MontoTotal = float.Parse(dr["MontoTotal"].ToString()),
-                            MontoMulta = float.Parse(dr["MontoMulta"].ToString())
+                            MontoTotal = double.Parse(dr["MontoTotal"].ToString()),
+                            MontoMulta = double.Parse(dr["MontoMulta"].ToString())
                         };
 
                         facturaEncabezado.FacturasDetalle = FacturaDetalleDAL.GetInstance().ObtenerFacturaDetalleCodigoFactura(facturaEncabezado.Codigo);
@@ -305,8 +305,8 @@ namespace GymPro.Capa.Datos.Implementaciones
                             CodigoQR = (byte[])dr["CodigoQR"],
                             FechaPago = DateTime.Parse(dr["FechaPago"].ToString()),
                             FechaProximoPago = DateTime.Parse(dr["FechaProximoPago"].ToString()),
-                            MontoTotal = float.Parse(dr["MontoTotal"].ToString()),
-                            MontoMulta = float.Parse(dr["MontoMulta"].ToString())
+                            MontoTotal = double.Parse(dr["MontoTotal"].ToString()),
+                            MontoMulta = double.Parse(dr["MontoMulta"].ToString())
                         };
 
                         facturaEncabezado.FacturasDetalle = FacturaDetalleDAL.GetInstance().ObtenerFacturaDetalleCodigoFactura(facturaEncabezado.Codigo);

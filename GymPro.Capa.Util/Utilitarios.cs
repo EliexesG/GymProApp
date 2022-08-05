@@ -18,7 +18,7 @@ namespace GymPro.Capa.Util
             // Colocar Cultura Estandar para Costa Rica
             // esto me permite no tener problemas con (.) de los decimales
             CultureInfo Micultura = new CultureInfo("es-CR", false);
-            Micultura.NumberFormat.CurrencySymbol = "¢";
+            Micultura.NumberFormat.CurrencySymbol = "₡";
             Micultura.NumberFormat.CurrencyDecimalDigits = 2;
             Micultura.NumberFormat.CurrencyDecimalSeparator = ".";
             Micultura.NumberFormat.CurrencyGroupSeparator = ",";
