@@ -10,6 +10,6 @@ namespace GymPro.Capa.Entidades.Implementaciones
     {
         public int Codigo { get; set; }
         public string Descripcion { get; set; }
-        public float Monto { get; set; }
+        public double Monto { get; set; }
     }
 }

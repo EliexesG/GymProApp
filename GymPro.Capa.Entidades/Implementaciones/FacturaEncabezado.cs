@@ -13,8 +13,8 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public byte[] CodigoQR { get; set; }
         public DateTime FechaPago { get; set; }
         public DateTime FechaProximoPago { get; set; }
-        public float MontoTotal { get; set; }
-        public float MontoMulta { get; set; }
+        public double MontoTotal { get; set; }
+        public double MontoMulta { get; set; }
 
         public List<FacturaDetalle> FacturasDetalle { get; set; }
     }

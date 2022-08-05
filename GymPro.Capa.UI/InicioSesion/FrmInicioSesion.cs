@@ -37,6 +37,7 @@ namespace GymPro.Capa.UI.InicioSesion
             try
             {
                 AbrirFormEnPanel(new FrmLogIn(this));
+                Util.Utilitarios.CultureInfo();
             }
             catch(Exception er)
             {
@@ -46,7 +47,7 @@ namespace GymPro.Capa.UI.InicioSesion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)

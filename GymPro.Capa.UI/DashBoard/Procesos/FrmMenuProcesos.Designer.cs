@@ -30,18 +30,18 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
         private void InitializeComponent()
         {
             this.pnlDisplay = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnFacturacion = new Guna.UI2.WinForms.Guna2Button();
             this.btnControlIngresoEgreso = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnEntrenamiento = new Guna.UI2.WinForms.Guna2Button();
             this.pnlDisplay.SuspendLayout();
-            this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDisplay
@@ -53,6 +53,32 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.pnlDisplay.ShadowDecoration.Parent = this.pnlDisplay;
             this.pnlDisplay.Size = new System.Drawing.Size(854, 563);
             this.pnlDisplay.TabIndex = 3;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.pbLogo);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(854, 563);
+            this.guna2Panel1.TabIndex = 2;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.BorderRadius = 15;
+            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbLogo.Image = global::GymPro.Capa.UI.Properties.Resources._1;
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.ShadowDecoration.Enabled = true;
+            this.pbLogo.ShadowDecoration.Parent = this.pbLogo;
+            this.pbLogo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 3, 5);
+            this.pbLogo.Size = new System.Drawing.Size(854, 563);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 2;
+            this.pbLogo.TabStop = false;
             // 
             // guna2VSeparator2
             // 
@@ -77,7 +103,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.guna2GradientPanel1.Controls.Add(this.guna2VSeparator1);
             this.guna2GradientPanel1.Controls.Add(this.btnFacturacion);
             this.guna2GradientPanel1.Controls.Add(this.btnControlIngresoEgreso);
-            this.guna2GradientPanel1.Controls.Add(this.btnMantenimientos);
+            this.guna2GradientPanel1.Controls.Add(this.btnEntrenamiento);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Green;
@@ -127,49 +153,24 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnControlIngresoEgreso.Text = "Control de Ingresos";
             this.btnControlIngresoEgreso.Click += new System.EventHandler(this.btnControlIngresoEgreso_Click);
             // 
-            // btnMantenimientos
+            // btnEntrenamiento
             // 
-            this.btnMantenimientos.BackColor = System.Drawing.Color.Transparent;
-            this.btnMantenimientos.BorderRadius = 10;
-            this.btnMantenimientos.CheckedState.Parent = this.btnMantenimientos;
-            this.btnMantenimientos.CustomImages.Parent = this.btnMantenimientos;
-            this.btnMantenimientos.FillColor = System.Drawing.Color.Lime;
-            this.btnMantenimientos.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnMantenimientos.ForeColor = System.Drawing.Color.Teal;
-            this.btnMantenimientos.HoverState.Parent = this.btnMantenimientos;
-            this.btnMantenimientos.Image = global::GymPro.Capa.UI.Properties.Resources.Entrenamiento;
-            this.btnMantenimientos.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnMantenimientos.Location = new System.Drawing.Point(12, 10);
-            this.btnMantenimientos.Name = "btnMantenimientos";
-            this.btnMantenimientos.ShadowDecoration.Parent = this.btnMantenimientos;
-            this.btnMantenimientos.Size = new System.Drawing.Size(212, 45);
-            this.btnMantenimientos.TabIndex = 15;
-            this.btnMantenimientos.Text = "Entrenamiento";
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.pbLogo);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(854, 563);
-            this.guna2Panel1.TabIndex = 2;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.BorderRadius = 15;
-            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbLogo.Image = global::GymPro.Capa.UI.Properties.Resources._1;
-            this.pbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.ShadowDecoration.Enabled = true;
-            this.pbLogo.ShadowDecoration.Parent = this.pbLogo;
-            this.pbLogo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 3, 5);
-            this.pbLogo.Size = new System.Drawing.Size(854, 563);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 2;
-            this.pbLogo.TabStop = false;
+            this.btnEntrenamiento.BackColor = System.Drawing.Color.Transparent;
+            this.btnEntrenamiento.BorderRadius = 10;
+            this.btnEntrenamiento.CheckedState.Parent = this.btnEntrenamiento;
+            this.btnEntrenamiento.CustomImages.Parent = this.btnEntrenamiento;
+            this.btnEntrenamiento.FillColor = System.Drawing.Color.Lime;
+            this.btnEntrenamiento.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnEntrenamiento.ForeColor = System.Drawing.Color.Teal;
+            this.btnEntrenamiento.HoverState.Parent = this.btnEntrenamiento;
+            this.btnEntrenamiento.Image = global::GymPro.Capa.UI.Properties.Resources.Entrenamiento;
+            this.btnEntrenamiento.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnEntrenamiento.Location = new System.Drawing.Point(12, 10);
+            this.btnEntrenamiento.Name = "btnEntrenamiento";
+            this.btnEntrenamiento.ShadowDecoration.Parent = this.btnEntrenamiento;
+            this.btnEntrenamiento.Size = new System.Drawing.Size(212, 45);
+            this.btnEntrenamiento.TabIndex = 15;
+            this.btnEntrenamiento.Text = "Entrenamiento";
             // 
             // FrmMenuProcesos
             // 
@@ -181,10 +182,11 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMenuProcesos";
             this.Text = "FrmMenuProcesos";
+            this.Load += new System.EventHandler(this.FrmMenuProcesos_Load);
             this.pnlDisplay.ResumeLayout(false);
-            this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.guna2GradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -196,7 +198,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private Guna.UI2.WinForms.Guna2Button btnFacturacion;
         private Guna.UI2.WinForms.Guna2Button btnControlIngresoEgreso;
-        private Guna.UI2.WinForms.Guna2Button btnMantenimientos;
+        private Guna.UI2.WinForms.Guna2Button btnEntrenamiento;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
