@@ -171,6 +171,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnEntrenamiento.Size = new System.Drawing.Size(212, 45);
             this.btnEntrenamiento.TabIndex = 15;
             this.btnEntrenamiento.Text = "Entrenamiento";
+            this.btnEntrenamiento.Click += new System.EventHandler(this.btnEntrenamiento_Click);
             // 
             // FrmMenuProcesos
             // 

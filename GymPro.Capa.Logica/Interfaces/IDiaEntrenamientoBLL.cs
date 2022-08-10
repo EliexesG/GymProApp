@@ -7,6 +7,7 @@ namespace GymPro.Capa.Logica.BLL.Interfaces
     {
         void EliminarDiaEntrenamiento(DiaEntrenamiento pDiaEntrenamiento);
         void InsertarDiaEntrenamiento(DiaEntrenamiento pDiaEntrenamiento);
+        List<Dia> ObtenerDiaDisponibleSobreCodigoEntrenamiento(int pCodigoEntrenamiento);
         List<DiaEntrenamiento> ObtenerDiaEntrenamientoCodigoEntrenamiento(int pCodigoEntrenamiento);
         List<DiaEntrenamiento> ObtenerDiaEntrenamientoTodos();
     }

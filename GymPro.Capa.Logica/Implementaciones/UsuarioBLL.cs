@@ -1,5 +1,6 @@
 ﻿using GymPro.Capa.Datos.Implementaciones;
 using GymPro.Capa.Datos.Interfaces;
+using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.Logica.BLL.Interfaces;
 using System;
@@ -187,6 +188,54 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             {
 
                 oUsuarioDAL.ActivarUsuario(pIdentificacionUsuario);
+
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Obtener la lista de los Clientes en la base de datos
+        /// </summary>
+        /// <returns>Lista de entidades de tipo Cliente</returns>
+        public List<Cliente> ObtenerUsuariosCliente()
+        {
+            try
+            {
+
+                List<IUsuario> listaClientes = ObtenerUsuarioActivoTodos().FindAll(usuario => usuario is Cliente).ToList();
+
+                return listaClientes.ConvertAll(cliente => cliente as Cliente).ToList();
+
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
+
+        /// <summary>
+        /// Obtener la lista de los Entrenadores en la base de datos
+        /// </summary>
+        /// <returns>Lista de entidades de tipo Cliente</returns>
+        public List<Instructor> ObtenerUsuariosInstructor()
+        {
+            try
+            {
+
+                List<IUsuario> listaInstructores = ObtenerUsuarioActivoTodos().FindAll(usuario => usuario is Instructor).ToList();
+
+                return listaInstructores.ConvertAll(cliente => cliente as Instructor).ToList();
 
             }
             catch (SqlException sqlError)

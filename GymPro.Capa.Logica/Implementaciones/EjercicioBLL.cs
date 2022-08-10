@@ -154,6 +154,42 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
                 throw er;
             }
         }
+
+        /// <summary>
+        /// Obtener una lista de Ejercicios que NO estan en el entrenamiento referenciado por codigo de la base de datos
+        /// </summary>
+        /// <param name="pCodigo">Codigo del entrenamiento</param>
+        /// <returns>Lista de entidades de tipo Ejercicio</returns>
+        public List<Ejercicio> ObtenerEjercicioDisponibleCodigoEntrenamiento(int pCodigo)
+        {
+
+            List<Ejercicio> ejercicios = new List<Ejercicio>();
+
+            try
+            {
+                EjercicioEnEntrenamientoBLL logica = new EjercicioEnEntrenamientoBLL();
+                List<EjercicioEnEntrenamiento> ejerciciosDeLEntrenamiento = logica.ObtenerEjercicioEnEntrenamientoCodigoEntrenamiento(pCodigo);
+
+                ObtenerEjercicioTodos().ForEach(ejercicio =>
+                {
+                    if(ejerciciosDeLEntrenamiento.LastOrDefault(buscado => buscado.CodigoEjercicio.Equals(ejercicio.Codigo)) == null)
+                    {
+                        ejercicios.Add(ejercicio);
+                    }
+                });
+
+
+                return ejercicios;
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
         #endregion
     }
 }
