@@ -149,5 +149,10 @@ namespace GymPro.Capa.Util
 
         }
 
+        public static void EnviarCorreo()
+        {
+
+        }
+
     }
 }

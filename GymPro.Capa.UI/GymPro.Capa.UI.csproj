@@ -55,7 +55,9 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
@@ -112,17 +114,37 @@
     <Compile Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.Designer.cs">
       <DependentUpon>FrmMenuMantenimientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Procesos\DSUltimaFactura.cs">
+      <DependentUpon>DSUltimaFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\DSUltimaFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSUltimaFactura.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Procesos\FrmMenuProcesos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DashBoard\Procesos\FrmMenuProcesos.Designer.cs">
       <DependentUpon>FrmMenuProcesos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Procesos\FrmPDFFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmPDFFactura.Designer.cs">
+      <DependentUpon>FrmPDFFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Procesos\FrmProcesoControlIngresoEgreso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DashBoard\Procesos\FrmProcesoControlIngresoEgreso.Designer.cs">
       <DependentUpon>FrmProcesoControlIngresoEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmProcesoEntrenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmProcesoEntrenamiento.Designer.cs">
+      <DependentUpon>FrmProcesoEntrenamiento.cs</DependentUpon>
     </Compile>
     <Compile Include="DashBoard\Procesos\FrmProcesoFacturacion.cs">
       <SubType>Form</SubType>
@@ -175,12 +197,19 @@
     <EmbeddedResource Include="DashBoard\Procesos\FrmMenuProcesos.resx">
       <DependentUpon>FrmMenuProcesos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Procesos\FrmPDFFactura.resx">
+      <DependentUpon>FrmPDFFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Procesos\FrmProcesoControlIngresoEgreso.resx">
       <DependentUpon>FrmProcesoControlIngresoEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Procesos\FrmProcesoEntrenamiento.resx">
+      <DependentUpon>FrmProcesoEntrenamiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Procesos\FrmProcesoFacturacion.resx">
       <DependentUpon>FrmProcesoFacturacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Procesos\ReporteFacturacion.rdlc" />
     <EmbeddedResource Include="InicioSesion\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +224,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DashBoard\Procesos\DSUltimaFactura.xsc">
+      <DependentUpon>DSUltimaFactura.xsd</DependentUpon>
+    </None>
+    <None Include="DashBoard\Procesos\DSUltimaFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSUltimaFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DashBoard\Procesos\DSUltimaFactura.xss">
+      <DependentUpon>DSUltimaFactura.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -244,6 +284,7 @@
     <Content Include="Resources\MantenimientoIcons\Editar.png" />
     <Content Include="Resources\MantenimientoIcons\Ejercicio.png" />
     <Content Include="Resources\MantenimientoIcons\Eliminar.png" />
+    <Content Include="Resources\MantenimientoIcons\Email.png" />
     <Content Include="Resources\MantenimientoIcons\Entrenamiento.png" />
     <Content Include="Resources\MantenimientoIcons\Facturacion.png" />
     <Content Include="Resources\MantenimientoIcons\Guardar.png" />

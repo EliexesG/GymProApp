@@ -179,6 +179,29 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
                 throw er;
             }
         }
+
+        /// <summary>
+        /// Obtiene el ultimo codigo de entrenamiento agregado a la base de datos según el cliente
+        /// </summary>
+        /// <param name="pIdentificacion"></param>
+        /// <returns>Integer con el codigo de entrenamiento</returns>
+        public int UltimoCodigoEntrenamientoAgregadoCliente(string pIdentificacion)
+        {
+            try
+            {
+
+                return ObtenerEntrenamientoIdentificacionUsuarioCliente(pIdentificacion).Max(entrenamiento => entrenamiento.Codigo);
+
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
         #endregion
     }
 }

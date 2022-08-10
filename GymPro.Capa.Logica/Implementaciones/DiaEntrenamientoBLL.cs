@@ -112,6 +112,39 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
+        /// <summary>
+        /// Obtiene los días disponibles que no estén asignados al entrenamiento de la base de datos
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns>Lista de Dias</returns>
+        public List<Dia> ObtenerDiaDisponibleSobreCodigoEntrenamiento(int pCodigoEntrenamiento)
+        {
+            try
+            {
+                List<DiaEntrenamiento> diasEntrenamiento = this.ObtenerDiaEntrenamientoCodigoEntrenamiento(pCodigoEntrenamiento);
+                List<Dia> dias = new List<Dia>();
+
+                foreach (Dia dia in Enum.GetValues(typeof(Dia)))
+                {
+                    if(diasEntrenamiento.FirstOrDefault(diaEntrenamiento => diaEntrenamiento.Dia == (int)dia) == null)
+                    {
+                        dias.Add(dia);
+                    }
+                }
+
+                return dias;
+
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
+
         #endregion
     }
 }

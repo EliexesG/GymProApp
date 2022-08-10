@@ -76,13 +76,13 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                     if (LogicaGestor.YaPagado(ultimoPago.FechaProximoPago))
                     {
                         if(MessageBox.Show("Ya se ha pagado la matrícula y la mensualidad por este mes, ¿Está seguro de pagar nuevamente?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes){
-                            AbrirFormEnPanel(new FrmProcesoFacturacion((Cliente)_Usuario));
+                            AbrirFormEnPanel(new FrmProcesoFacturacion((Cliente)_Usuario, this));
                         }
                     }
                 }
                 else
                 {
-                    AbrirFormEnPanel(new FrmProcesoFacturacion((Cliente)_Usuario));
+                    AbrirFormEnPanel(new FrmProcesoFacturacion((Cliente)_Usuario, this));
                 }
 
             }
@@ -101,6 +101,18 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             else if(_Usuario is Instructor || _Usuario is Administrador)
             {
                 btnFacturacion.Enabled = false;
+            }
+        }
+
+        private void btnEntrenamiento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AbrirFormEnPanel(new FrmProcesoEntrenamiento());
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
             }
         }
     }

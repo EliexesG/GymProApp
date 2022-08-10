@@ -12,5 +12,6 @@ namespace GymPro.Capa.Logica.BLL.Interfaces
         List<Entrenamiento> ObtenerEntrenamientoIdentificacionUsuarioCliente(string pIdentificacionUsuario);
         List<Entrenamiento> ObtenerEntrenamientoIdentificacionUsuarioEntrenador(string pIdentificacionUsuario);
         List<Entrenamiento> ObtenerEntrenamientoTodos();
+        int UltimoCodigoEntrenamientoAgregadoCliente(string pIdentificacion);
     }
 }

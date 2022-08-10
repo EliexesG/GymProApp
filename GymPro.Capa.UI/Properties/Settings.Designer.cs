@@ -33,5 +33,15 @@ namespace GymPro.Capa.UI.Properties {
                 return ((string)(this["Cadena"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=GymPro;User ID=sa;Password=12345678")]
+        public string GymProConnectionString {
+            get {
+                return ((string)(this["GymProConnectionString"]));
+            }
+        }
     }
 }

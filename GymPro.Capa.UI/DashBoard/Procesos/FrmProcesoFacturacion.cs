@@ -23,14 +23,16 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
         private IServicioBLL LogicaServicio;
 
         private Cliente _Cliente;
+        private FrmMenuProcesos MenuProcesos;
 
         private FacturaEncabezado NuevaFacturaEncabezado;
         private List<FacturaDetalle> DetallesFactura;
 
-        public FrmProcesoFacturacion(Cliente pCliente)
+        public FrmProcesoFacturacion(Cliente pCliente, FrmMenuProcesos pMenuProcesos)
         {
             InitializeComponent();
             _Cliente = pCliente;
+            MenuProcesos = pMenuProcesos;
 
             FacturaEncabezadoBLL instancia = new FacturaEncabezadoBLL();
             LogicaDatos = instancia;
@@ -90,6 +92,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 NuevaFacturaEncabezado = new FacturaEncabezado()
                 {
+                    Codigo = codigo,
                     CodigoQR = LogicaGestor.ObtenerCodigoQR(codigo),
                     FechaPago = fecha,
                     FechaProximoPago = proxFecha,
@@ -141,7 +144,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 DetallesFactura.ForEach(detalle => LogicaDetalle.InsertarFacturaDetalle(detalle));
 
-
+                MenuProcesos.AbrirFormEnPanel(new FrmPDFFactura(NuevaFacturaEncabezado.Codigo));
             }
             catch(Exception er)
             {
