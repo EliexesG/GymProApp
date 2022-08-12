@@ -81,8 +81,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             comando.Parameters.AddWithValue("@Nombre", pEjercicio.Nombre);
             comando.Parameters.AddWithValue("@Descripcion", pEjercicio.Descripcion);
             comando.Parameters.AddWithValue("@CodigoTipo", pEjercicio.CodigoTipo);
-            comando.Parameters.AddWithValue("@Imagen", pEjercicio.Imagen);
-            comando.Parameters.AddWithValue("@Video", pEjercicio.Video);
+            comando.Parameters.AddWithValue("@Multimedia", pEjercicio.Multimedia);
 
             try
             {
@@ -126,8 +125,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             comando.Parameters.AddWithValue("@Nombre", pEjercicio.Nombre);
             comando.Parameters.AddWithValue("@Descripcion", pEjercicio.Descripcion);
             comando.Parameters.AddWithValue("@CodigoTipo", pEjercicio.CodigoTipo);
-            comando.Parameters.AddWithValue("@Imagen", pEjercicio.Imagen);
-            comando.Parameters.AddWithValue("@Video", pEjercicio.Video);
+            comando.Parameters.AddWithValue("@Multimedia", pEjercicio.Multimedia);
 
             try
             {
@@ -179,18 +177,17 @@ namespace GymPro.Capa.Datos.Implementaciones
                 using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
                 {
 
-                    DataSet ds = db.ExecuteDataSet(comando);
+                    IDataReader reader = db.ExecuteReader(comando);
 
-                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    while (reader.Read())
                     {
                         Ejercicio ejercicio = new Ejercicio()
                         {
-                            Codigo = int.Parse(dr["Codigo"].ToString()),
-                            Nombre = dr["Nombre"].ToString(),
-                            Descripcion = dr["Descripcion"].ToString(),
-                            CodigoTipo = int.Parse(dr["CodigoTipo"].ToString()),
-                            Imagen = (byte[])dr["Imagen"],
-                            Video = (byte[])dr["Video"]
+                            Codigo = int.Parse(reader["Codigo"].ToString()),
+                            Nombre = reader["Nombre"].ToString(),
+                            Descripcion = reader["Descripcion"].ToString(),
+                            CodigoTipo = int.Parse(reader["CodigoTipo"].ToString()),
+                            Multimedia = (byte[])reader["Multimedia"]
                         };
 
                         ejercicio._TipoEjercicio = TipoEjercicioDAL.GetInstance().ObtenerTipoEjercicioId(ejercicio.CodigoTipo);
@@ -252,8 +249,7 @@ namespace GymPro.Capa.Datos.Implementaciones
                             Nombre = reader["Nombre"].ToString(),
                             Descripcion = reader["Descripcion"].ToString(),
                             CodigoTipo = int.Parse(reader["CodigoTipo"].ToString()),
-                            Imagen = (byte[])reader["Imagen"],
-                            Video = (byte[])reader["Video"]
+                            Multimedia = (byte[])reader["Multimedia"]
                         };
 
                         ejercicio._TipoEjercicio = TipoEjercicioDAL.GetInstance().ObtenerTipoEjercicioId(ejercicio.CodigoTipo);
@@ -301,18 +297,17 @@ namespace GymPro.Capa.Datos.Implementaciones
                 using (IDataBase db = FactoryDataBase.CreateDefaultDataBase())
                 {
 
-                    DataSet ds = db.ExecuteDataSet(comando);
+                    IDataReader reader = db.ExecuteReader(comando);
 
-                    foreach(DataRow dr in ds.Tables[0].Rows)
+                    while(reader.Read())
                     {
                         Ejercicio ejercicio = new Ejercicio()
                         {
-                            Codigo = int.Parse(dr["Codigo"].ToString()),
-                            Nombre = dr["Nombre"].ToString(),
-                            Descripcion = dr["Descripcion"].ToString(),
-                            CodigoTipo = int.Parse(dr["CodigoTipo"].ToString()),
-                            Imagen = (byte[])dr["Imagen"],
-                            Video = (byte[])dr["Video"]
+                            Codigo = int.Parse(reader["Codigo"].ToString()),
+                            Nombre = reader["Nombre"].ToString(),
+                            Descripcion = reader["Descripcion"].ToString(),
+                            CodigoTipo = int.Parse(reader["CodigoTipo"].ToString()),
+                            Multimedia = (byte[])reader["Multimedia"]
                         };
 
                         ejercicio._TipoEjercicio = TipoEjercicioDAL.GetInstance().ObtenerTipoEjercicioId(ejercicio.CodigoTipo);

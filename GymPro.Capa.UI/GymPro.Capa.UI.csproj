@@ -140,6 +140,12 @@
     <Compile Include="DashBoard\Procesos\FrmProcesoControlIngresoEgreso.Designer.cs">
       <DependentUpon>FrmProcesoControlIngresoEgreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Procesos\FrmProcesoEjercicioEnEntrenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmProcesoEjercicioEnEntrenamiento.Designer.cs">
+      <DependentUpon>FrmProcesoEjercicioEnEntrenamiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Procesos\FrmProcesoEntrenamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Procesos\FrmProcesoControlIngresoEgreso.resx">
       <DependentUpon>FrmProcesoControlIngresoEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Procesos\FrmProcesoEjercicioEnEntrenamiento.resx">
+      <DependentUpon>FrmProcesoEjercicioEnEntrenamiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Procesos\FrmProcesoEntrenamiento.resx">
       <DependentUpon>FrmProcesoEntrenamiento.cs</DependentUpon>

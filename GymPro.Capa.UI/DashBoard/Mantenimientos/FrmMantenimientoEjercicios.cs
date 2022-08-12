@@ -79,8 +79,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 txtCodigo.Text = "";
                 txtNombre.Text = "";
                 txtDescripcion.Text = "";
-                pbVideo.Image = null;
-                pbImagen.Image = null;
+                pbMultimedia.Image = null;
 
                 Errores.Clear();
             }
@@ -106,12 +105,11 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 string nombre = "";
                 string descripcion = "";
                 int codigoTipoEjercicio = 0;
-                byte[] video = null;
-                byte[] imagen = null;
+                byte[] multimedia = null;
 
                 if (!(string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count >= 1)
                 {
-                    MessageBox.Show("Previamente se ha seleccionado un Tipo de Ejercicio, presione Modificar o Eliminar");
+                    MessageBox.Show("Previamente se ha seleccionado un Ejercicio, presione Modificar o Eliminar");
                     return;
                 }
 
@@ -146,26 +144,15 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     codigoTipoEjercicio = int.Parse(cmdTipoEjercicio.SelectedValue.ToString());
                 }
 
-                if (pbVideo.Image == null)
+                if (pbMultimedia.Image == null)
                 {
-                    Errores.SetError(pbVideo, "Debe seleccionar un video o gif a guardar");
+                    Errores.SetError(pbMultimedia, "Debe seleccionar una imagen o video a guardar");
                     hayErrores = true;
                 }
                 else
                 {
                     ImageConverter _imageConverter = new ImageConverter();
-                    video = (byte[])_imageConverter.ConvertTo(pbVideo.Image, typeof(byte[]));
-                }
-
-                if (pbImagen.Image == null)
-                {
-                    Errores.SetError(pbImagen, "Debe seleccionar una imagen a guardar"); 
-                    hayErrores = true;
-                }
-                else
-                {
-                    ImageConverter _imageConverter = new ImageConverter();
-                    imagen = (byte[])_imageConverter.ConvertTo(pbImagen.Image, typeof(byte[]));
+                    multimedia = (byte[])_imageConverter.ConvertTo(pbMultimedia.Image, typeof(byte[]));
                 }
 
                 if (hayErrores)
@@ -173,7 +160,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     return;
                 }
 
-                Logica.InsertarEjercicio(new Ejercicio() { Nombre = nombre, Descripcion = descripcion, CodigoTipo = codigoTipoEjercicio, Video = video, Imagen = imagen});
+                Logica.InsertarEjercicio(new Ejercicio() { Nombre = nombre, Descripcion = descripcion, CodigoTipo = codigoTipoEjercicio, Multimedia = multimedia});
                 Refrescar();
 
             }
@@ -189,28 +176,13 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
         }
 
-        private void btnAsignarVideo_Click(object sender, EventArgs e)
+        private void btnAsignarImagenVideo_Click(object sender, EventArgs e)
         {
-            if (ofdBuscadorVideos.ShowDialog() == DialogResult.OK)
+            if (ofdBuscadorMultimedia.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    pbVideo.Image = new Bitmap(ofdBuscadorVideos.FileName);
-                }
-                catch (Exception er)
-                {
-                    MessageBox.Show("Error: " + er.Message, "Error");
-                }
-            }
-        }
-
-        private void btnAsignarFotografia_Click(object sender, EventArgs e)
-        {
-            if (ofdBuscadorImagenes.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    pbImagen.Image = new Bitmap(ofdBuscadorImagenes.FileName);
+                    pbMultimedia.Image = new Bitmap(ofdBuscadorMultimedia.FileName);
                 }
                 catch (Exception er)
                 {
@@ -230,8 +202,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 string nombre = "";
                 string descripcion = "";
                 int codigoTipoEjercicio = 0;
-                byte[] video = null;
-                byte[] imagen = null;
+                byte[] multimedia = null;
 
                 if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEjercicios.SelectedRows.Count < 1)
                 {
@@ -273,26 +244,15 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     codigoTipoEjercicio = int.Parse(cmdTipoEjercicio.SelectedValue.ToString());
                 }
 
-                if (pbVideo.Image == null)
+                if (pbMultimedia.Image == null)
                 {
-                    Errores.SetError(pbVideo, "Debe seleccionar un video o gif a guardar");
+                    Errores.SetError(pbMultimedia, "Debe seleccionar una imagen o video a guardar");
                     hayErrores = true;
                 }
                 else
                 {
                     ImageConverter _imageConverter = new ImageConverter();
-                    video = (byte[])_imageConverter.ConvertTo(pbVideo.Image, typeof(byte[]));
-                }
-
-                if (pbImagen.Image == null)
-                {
-                    Errores.SetError(pbImagen, "Debe seleccionar una imagen a guardar");
-                    hayErrores = true;
-                }
-                else
-                {
-                    ImageConverter _imageConverter = new ImageConverter();
-                    imagen = (byte[])_imageConverter.ConvertTo(pbImagen.Image, typeof(byte[]));
+                    multimedia = (byte[])_imageConverter.ConvertTo(pbMultimedia.Image, typeof(byte[]));
                 }
 
                 if (hayErrores)
@@ -300,7 +260,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     return;
                 }
 
-                Logica.ModificarEjercicio(new Ejercicio() { Codigo = codigo, Nombre = nombre, Descripcion = descripcion, CodigoTipo = codigoTipoEjercicio, Video = video, Imagen = imagen });
+                Logica.ModificarEjercicio(new Ejercicio() { Codigo = codigo, Nombre = nombre, Descripcion = descripcion, CodigoTipo = codigoTipoEjercicio, Multimedia = multimedia });
                 Refrescar();
 
             }
@@ -345,8 +305,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 txtNombre.Text = ejercicio.Nombre;
                 txtDescripcion.Text = ejercicio.Descripcion;
                 cmdTipoEjercicio.SelectedValue = ejercicio.CodigoTipo;
-                pbVideo.Image = new Bitmap(new MemoryStream(ejercicio.Video));
-                pbImagen.Image = new Bitmap(new MemoryStream(ejercicio.Imagen));
+                pbMultimedia.Image = new Bitmap(new MemoryStream(ejercicio.Multimedia));
 
             }
             catch (SqlException sqlError)

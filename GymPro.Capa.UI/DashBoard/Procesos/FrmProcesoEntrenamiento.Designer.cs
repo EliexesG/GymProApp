@@ -36,9 +36,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cmbTipoBusqueda = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pbFotografia = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Errores = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -49,10 +47,6 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.cmbInstructor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnEliminarDia = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnAgregarDia = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.txtCodigo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -60,13 +54,19 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cmbDiasAgregados = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgvEntrenamientos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnEnviarCorreo = new Guna.UI2.WinForms.Guna2Button();
             this.btnEjercicios = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
+            this.pbFotografia = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenamientos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -116,26 +116,6 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.cmbTipoBusqueda.TabIndex = 88;
             this.cmbTipoBusqueda.SelectedIndexChanged += new System.EventHandler(this.cmbTipoBusqueda_SelectedIndexChanged);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BorderRadius = 10;
-            this.btnBuscar.CheckedState.Parent = this.btnBuscar;
-            this.btnBuscar.CustomImages.Parent = this.btnBuscar;
-            this.btnBuscar.FillColor = System.Drawing.Color.Lime;
-            this.btnBuscar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnBuscar.ForeColor = System.Drawing.Color.Teal;
-            this.btnBuscar.HoverState.Parent = this.btnBuscar;
-            this.btnBuscar.Image = global::GymPro.Capa.UI.Properties.Resources.Consultar;
-            this.btnBuscar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnBuscar.Location = new System.Drawing.Point(507, 74);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
-            this.btnBuscar.Size = new System.Drawing.Size(138, 45);
-            this.btnBuscar.TabIndex = 87;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // txtBusqueda
             // 
             this.txtBusqueda.BackColor = System.Drawing.Color.Transparent;
@@ -160,23 +140,6 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.txtBusqueda.ShadowDecoration.Parent = this.txtBusqueda;
             this.txtBusqueda.Size = new System.Drawing.Size(202, 42);
             this.txtBusqueda.TabIndex = 85;
-            // 
-            // pbFotografia
-            // 
-            this.pbFotografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbFotografia.BackColor = System.Drawing.Color.Transparent;
-            this.pbFotografia.BackgroundImage = global::GymPro.Capa.UI.Properties.Resources._1;
-            this.pbFotografia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbFotografia.Location = new System.Drawing.Point(40, 43);
-            this.pbFotografia.Name = "pbFotografia";
-            this.pbFotografia.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbFotografia.ShadowDecoration.Parent = this.pbFotografia;
-            this.pbFotografia.Size = new System.Drawing.Size(85, 73);
-            this.pbFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFotografia.TabIndex = 84;
-            this.pbFotografia.TabStop = false;
             // 
             // lblNombre
             // 
@@ -326,90 +289,6 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnAgregarDia.TabIndex = 116;
             this.btnAgregarDia.Text = ">";
             this.btnAgregarDia.Click += new System.EventHandler(this.btnAgregarDia_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.BorderRadius = 10;
-            this.btnCancelar.CheckedState.Parent = this.btnCancelar;
-            this.btnCancelar.CustomImages.Parent = this.btnCancelar;
-            this.btnCancelar.FillColor = System.Drawing.Color.Lime;
-            this.btnCancelar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnCancelar.ForeColor = System.Drawing.Color.Teal;
-            this.btnCancelar.HoverState.Parent = this.btnCancelar;
-            this.btnCancelar.Image = global::GymPro.Capa.UI.Properties.Resources.Cancelar;
-            this.btnCancelar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnCancelar.Location = new System.Drawing.Point(662, 174);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.ShadowDecoration.Parent = this.btnCancelar;
-            this.btnCancelar.Size = new System.Drawing.Size(180, 46);
-            this.btnCancelar.TabIndex = 121;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.Transparent;
-            this.btnModificar.BorderRadius = 10;
-            this.btnModificar.CheckedState.Parent = this.btnModificar;
-            this.btnModificar.CustomImages.Parent = this.btnModificar;
-            this.btnModificar.FillColor = System.Drawing.Color.Lime;
-            this.btnModificar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnModificar.ForeColor = System.Drawing.Color.Teal;
-            this.btnModificar.HoverState.Parent = this.btnModificar;
-            this.btnModificar.Image = global::GymPro.Capa.UI.Properties.Resources.Editar;
-            this.btnModificar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnModificar.Location = new System.Drawing.Point(230, 174);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.ShadowDecoration.Parent = this.btnModificar;
-            this.btnModificar.Size = new System.Drawing.Size(180, 46);
-            this.btnModificar.TabIndex = 120;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.BorderRadius = 10;
-            this.btnEliminar.CheckedState.Parent = this.btnEliminar;
-            this.btnEliminar.CustomImages.Parent = this.btnEliminar;
-            this.btnEliminar.FillColor = System.Drawing.Color.Lime;
-            this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnEliminar.ForeColor = System.Drawing.Color.Teal;
-            this.btnEliminar.HoverState.Parent = this.btnEliminar;
-            this.btnEliminar.Image = global::GymPro.Capa.UI.Properties.Resources.Eliminar;
-            this.btnEliminar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnEliminar.Location = new System.Drawing.Point(446, 174);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
-            this.btnEliminar.Size = new System.Drawing.Size(180, 46);
-            this.btnEliminar.TabIndex = 119;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.BorderRadius = 10;
-            this.btnGuardar.CheckedState.Parent = this.btnGuardar;
-            this.btnGuardar.CustomImages.Parent = this.btnGuardar;
-            this.btnGuardar.FillColor = System.Drawing.Color.Lime;
-            this.btnGuardar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnGuardar.ForeColor = System.Drawing.Color.Teal;
-            this.btnGuardar.HoverState.Parent = this.btnGuardar;
-            this.btnGuardar.Image = global::GymPro.Capa.UI.Properties.Resources.Guardar;
-            this.btnGuardar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnGuardar.Location = new System.Drawing.Point(14, 174);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.ShadowDecoration.Parent = this.btnGuardar;
-            this.btnGuardar.Size = new System.Drawing.Size(180, 46);
-            this.btnGuardar.TabIndex = 118;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtCodigo
             // 
@@ -586,6 +465,26 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.dgvEntrenamientos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvEntrenamientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntrenamientos_CellContentClick);
             // 
+            // btnEnviarCorreo
+            // 
+            this.btnEnviarCorreo.BackColor = System.Drawing.Color.Transparent;
+            this.btnEnviarCorreo.BorderRadius = 10;
+            this.btnEnviarCorreo.CheckedState.Parent = this.btnEnviarCorreo;
+            this.btnEnviarCorreo.CustomImages.Parent = this.btnEnviarCorreo;
+            this.btnEnviarCorreo.FillColor = System.Drawing.Color.Lime;
+            this.btnEnviarCorreo.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnEnviarCorreo.ForeColor = System.Drawing.Color.Teal;
+            this.btnEnviarCorreo.HoverState.Parent = this.btnEnviarCorreo;
+            this.btnEnviarCorreo.Image = global::GymPro.Capa.UI.Properties.Resources.Email;
+            this.btnEnviarCorreo.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(665, 449);
+            this.btnEnviarCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
+            this.btnEnviarCorreo.ShadowDecoration.Parent = this.btnEnviarCorreo;
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(180, 46);
+            this.btnEnviarCorreo.TabIndex = 130;
+            this.btnEnviarCorreo.Text = "Enviar Correo";
+            // 
             // btnEjercicios
             // 
             this.btnEjercicios.BackColor = System.Drawing.Color.Transparent;
@@ -605,33 +504,135 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnEjercicios.Size = new System.Drawing.Size(180, 46);
             this.btnEjercicios.TabIndex = 129;
             this.btnEjercicios.Text = "Ejercicios";
+            this.btnEjercicios.Click += new System.EventHandler(this.btnEjercicios_Click);
             // 
-            // guna2Button2
+            // btnCancelar
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.Lime;
-            this.guna2Button2.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Teal;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = global::GymPro.Capa.UI.Properties.Resources.Email;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(24, 24);
-            this.guna2Button2.Location = new System.Drawing.Point(665, 449);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(180, 46);
-            this.guna2Button2.TabIndex = 130;
-            this.guna2Button2.Text = "Enviar Correo";
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BorderRadius = 10;
+            this.btnCancelar.CheckedState.Parent = this.btnCancelar;
+            this.btnCancelar.CustomImages.Parent = this.btnCancelar;
+            this.btnCancelar.FillColor = System.Drawing.Color.Lime;
+            this.btnCancelar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnCancelar.ForeColor = System.Drawing.Color.Teal;
+            this.btnCancelar.HoverState.Parent = this.btnCancelar;
+            this.btnCancelar.Image = global::GymPro.Capa.UI.Properties.Resources.Cancelar;
+            this.btnCancelar.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnCancelar.Location = new System.Drawing.Point(662, 174);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.ShadowDecoration.Parent = this.btnCancelar;
+            this.btnCancelar.Size = new System.Drawing.Size(180, 46);
+            this.btnCancelar.TabIndex = 121;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.Transparent;
+            this.btnModificar.BorderRadius = 10;
+            this.btnModificar.CheckedState.Parent = this.btnModificar;
+            this.btnModificar.CustomImages.Parent = this.btnModificar;
+            this.btnModificar.FillColor = System.Drawing.Color.Lime;
+            this.btnModificar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnModificar.ForeColor = System.Drawing.Color.Teal;
+            this.btnModificar.HoverState.Parent = this.btnModificar;
+            this.btnModificar.Image = global::GymPro.Capa.UI.Properties.Resources.Editar;
+            this.btnModificar.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnModificar.Location = new System.Drawing.Point(230, 174);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.ShadowDecoration.Parent = this.btnModificar;
+            this.btnModificar.Size = new System.Drawing.Size(180, 46);
+            this.btnModificar.TabIndex = 120;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.BorderRadius = 10;
+            this.btnEliminar.CheckedState.Parent = this.btnEliminar;
+            this.btnEliminar.CustomImages.Parent = this.btnEliminar;
+            this.btnEliminar.FillColor = System.Drawing.Color.Lime;
+            this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.Teal;
+            this.btnEliminar.HoverState.Parent = this.btnEliminar;
+            this.btnEliminar.Image = global::GymPro.Capa.UI.Properties.Resources.Eliminar;
+            this.btnEliminar.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnEliminar.Location = new System.Drawing.Point(446, 174);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
+            this.btnEliminar.Size = new System.Drawing.Size(180, 46);
+            this.btnEliminar.TabIndex = 119;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.BorderRadius = 10;
+            this.btnGuardar.CheckedState.Parent = this.btnGuardar;
+            this.btnGuardar.CustomImages.Parent = this.btnGuardar;
+            this.btnGuardar.FillColor = System.Drawing.Color.Lime;
+            this.btnGuardar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnGuardar.ForeColor = System.Drawing.Color.Teal;
+            this.btnGuardar.HoverState.Parent = this.btnGuardar;
+            this.btnGuardar.Image = global::GymPro.Capa.UI.Properties.Resources.Guardar;
+            this.btnGuardar.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnGuardar.Location = new System.Drawing.Point(14, 174);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ShadowDecoration.Parent = this.btnGuardar;
+            this.btnGuardar.Size = new System.Drawing.Size(180, 46);
+            this.btnGuardar.TabIndex = 118;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // pbFotografia
+            // 
+            this.pbFotografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbFotografia.BackColor = System.Drawing.Color.Transparent;
+            this.pbFotografia.BackgroundImage = global::GymPro.Capa.UI.Properties.Resources._1;
+            this.pbFotografia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbFotografia.Location = new System.Drawing.Point(40, 43);
+            this.pbFotografia.Name = "pbFotografia";
+            this.pbFotografia.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbFotografia.ShadowDecoration.Parent = this.pbFotografia;
+            this.pbFotografia.Size = new System.Drawing.Size(85, 73);
+            this.pbFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFotografia.TabIndex = 84;
+            this.pbFotografia.TabStop = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BorderRadius = 10;
+            this.btnBuscar.CheckedState.Parent = this.btnBuscar;
+            this.btnBuscar.CustomImages.Parent = this.btnBuscar;
+            this.btnBuscar.FillColor = System.Drawing.Color.Lime;
+            this.btnBuscar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.Teal;
+            this.btnBuscar.HoverState.Parent = this.btnBuscar;
+            this.btnBuscar.Image = global::GymPro.Capa.UI.Properties.Resources.Consultar;
+            this.btnBuscar.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnBuscar.Location = new System.Drawing.Point(507, 74);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
+            this.btnBuscar.Size = new System.Drawing.Size(138, 45);
+            this.btnBuscar.TabIndex = 87;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FrmProcesoEntrenamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 563);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.btnEnviarCorreo);
             this.Controls.Add(this.btnEjercicios);
             this.Controls.Add(this.dgvEntrenamientos);
             this.Controls.Add(this.guna2HtmlLabel5);
@@ -658,10 +659,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.Text = "FrmProcesoEntrenamiento";
             this.Load += new System.EventHandler(this.FrmProcesoEntrenamiento_Load);
             this.guna2GroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenamientos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -694,7 +695,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2ComboBox cmbDiasAgregados;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEntrenamientos;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnEnviarCorreo;
         private Guna.UI2.WinForms.Guna2Button btnEjercicios;
     }
 }

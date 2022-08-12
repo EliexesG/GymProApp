@@ -31,14 +31,12 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         {
             this.components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Guna2ShadowPanel btnAsignarImagen;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnAsignarVideo = new Guna.UI2.WinForms.Guna2Button();
-            this.pbImagen = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnAsignarFotografia = new Guna.UI2.WinForms.Guna2Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnAsignarImagenVideo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pbVideo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbMultimedia = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
@@ -53,12 +51,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvEjercicios = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Errores = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ofdBuscadorImagenes = new System.Windows.Forms.OpenFileDialog();
-            this.ofdBuscadorVideos = new System.Windows.Forms.OpenFileDialog();
+            this.ofdBuscadorMultimedia = new System.Windows.Forms.OpenFileDialog();
             btnAsignarImagen = new Guna.UI2.WinForms.Guna2ShadowPanel();
             btnAsignarImagen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVideo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMultimedia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEjercicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).BeginInit();
             this.SuspendLayout();
@@ -66,11 +62,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             // btnAsignarImagen
             // 
             btnAsignarImagen.BackColor = System.Drawing.Color.Transparent;
-            btnAsignarImagen.Controls.Add(this.btnAsignarVideo);
-            btnAsignarImagen.Controls.Add(this.pbImagen);
-            btnAsignarImagen.Controls.Add(this.btnAsignarFotografia);
+            btnAsignarImagen.Controls.Add(this.btnAsignarImagenVideo);
             btnAsignarImagen.Controls.Add(this.guna2HtmlLabel5);
-            btnAsignarImagen.Controls.Add(this.pbVideo);
+            btnAsignarImagen.Controls.Add(this.pbMultimedia);
             btnAsignarImagen.FillColor = System.Drawing.Color.White;
             btnAsignarImagen.Location = new System.Drawing.Point(12, 210);
             btnAsignarImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -81,53 +75,23 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             btnAsignarImagen.Size = new System.Drawing.Size(235, 340);
             btnAsignarImagen.TabIndex = 42;
             // 
-            // btnAsignarVideo
+            // btnAsignarImagenVideo
             // 
-            this.btnAsignarVideo.BorderRadius = 10;
-            this.btnAsignarVideo.CheckedState.Parent = this.btnAsignarVideo;
-            this.btnAsignarVideo.CustomImages.Parent = this.btnAsignarVideo;
-            this.btnAsignarVideo.FillColor = System.Drawing.Color.Lime;
-            this.btnAsignarVideo.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnAsignarVideo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAsignarVideo.HoverState.Parent = this.btnAsignarVideo;
-            this.btnAsignarVideo.Location = new System.Drawing.Point(35, 134);
-            this.btnAsignarVideo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAsignarVideo.Name = "btnAsignarVideo";
-            this.btnAsignarVideo.ShadowDecoration.Parent = this.btnAsignarVideo;
-            this.btnAsignarVideo.Size = new System.Drawing.Size(165, 31);
-            this.btnAsignarVideo.TabIndex = 17;
-            this.btnAsignarVideo.Text = "Asignar Video";
-            this.btnAsignarVideo.Click += new System.EventHandler(this.btnAsignarVideo_Click);
-            // 
-            // pbImagen
-            // 
-            this.pbImagen.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbImagen.Location = new System.Drawing.Point(35, 186);
-            this.pbImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbImagen.Name = "pbImagen";
-            this.pbImagen.ShadowDecoration.Parent = this.pbImagen;
-            this.pbImagen.Size = new System.Drawing.Size(165, 98);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagen.TabIndex = 16;
-            this.pbImagen.TabStop = false;
-            // 
-            // btnAsignarFotografia
-            // 
-            this.btnAsignarFotografia.BorderRadius = 10;
-            this.btnAsignarFotografia.CheckedState.Parent = this.btnAsignarFotografia;
-            this.btnAsignarFotografia.CustomImages.Parent = this.btnAsignarFotografia;
-            this.btnAsignarFotografia.FillColor = System.Drawing.Color.Lime;
-            this.btnAsignarFotografia.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnAsignarFotografia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAsignarFotografia.HoverState.Parent = this.btnAsignarFotografia;
-            this.btnAsignarFotografia.Location = new System.Drawing.Point(35, 290);
-            this.btnAsignarFotografia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAsignarFotografia.Name = "btnAsignarFotografia";
-            this.btnAsignarFotografia.ShadowDecoration.Parent = this.btnAsignarFotografia;
-            this.btnAsignarFotografia.Size = new System.Drawing.Size(165, 31);
-            this.btnAsignarFotografia.TabIndex = 14;
-            this.btnAsignarFotografia.Text = "Asignar Imagen";
-            this.btnAsignarFotografia.Click += new System.EventHandler(this.btnAsignarFotografia_Click);
+            this.btnAsignarImagenVideo.BorderRadius = 10;
+            this.btnAsignarImagenVideo.CheckedState.Parent = this.btnAsignarImagenVideo;
+            this.btnAsignarImagenVideo.CustomImages.Parent = this.btnAsignarImagenVideo;
+            this.btnAsignarImagenVideo.FillColor = System.Drawing.Color.Lime;
+            this.btnAsignarImagenVideo.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnAsignarImagenVideo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAsignarImagenVideo.HoverState.Parent = this.btnAsignarImagenVideo;
+            this.btnAsignarImagenVideo.Location = new System.Drawing.Point(34, 203);
+            this.btnAsignarImagenVideo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAsignarImagenVideo.Name = "btnAsignarImagenVideo";
+            this.btnAsignarImagenVideo.ShadowDecoration.Parent = this.btnAsignarImagenVideo;
+            this.btnAsignarImagenVideo.Size = new System.Drawing.Size(165, 53);
+            this.btnAsignarImagenVideo.TabIndex = 17;
+            this.btnAsignarImagenVideo.Text = "Asignar Imagen/Video";
+            this.btnAsignarImagenVideo.Click += new System.EventHandler(this.btnAsignarImagenVideo_Click);
             // 
             // guna2HtmlLabel5
             // 
@@ -144,17 +108,17 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.guna2HtmlLabel5.TabIndex = 15;
             this.guna2HtmlLabel5.Text = "Fotografía";
             // 
-            // pbVideo
+            // pbMultimedia
             // 
-            this.pbVideo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbVideo.Location = new System.Drawing.Point(35, 30);
-            this.pbVideo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbVideo.Name = "pbVideo";
-            this.pbVideo.ShadowDecoration.Parent = this.pbVideo;
-            this.pbVideo.Size = new System.Drawing.Size(165, 98);
-            this.pbVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbVideo.TabIndex = 14;
-            this.pbVideo.TabStop = false;
+            this.pbMultimedia.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbMultimedia.Location = new System.Drawing.Point(34, 99);
+            this.pbMultimedia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMultimedia.Name = "pbMultimedia";
+            this.pbMultimedia.ShadowDecoration.Parent = this.pbMultimedia;
+            this.pbMultimedia.Size = new System.Drawing.Size(165, 98);
+            this.pbMultimedia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMultimedia.TabIndex = 14;
+            this.pbMultimedia.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -271,7 +235,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtCodigo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCodigo.HoverState.Parent = this.txtCodigo;
             this.txtCodigo.Location = new System.Drawing.Point(12, 137);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(5);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
             this.txtCodigo.PlaceholderText = "";
@@ -295,7 +259,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
             this.txtNombre.Location = new System.Drawing.Point(141, 137);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderText = "";
@@ -334,7 +298,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcion.HoverState.Parent = this.txtDescripcion;
             this.txtDescripcion.Location = new System.Drawing.Point(356, 135);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(5);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.PasswordChar = '\0';
             this.txtDescripcion.PlaceholderText = "";
@@ -398,30 +362,30 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             // 
             this.dgvEjercicios.AllowUserToAddRows = false;
             this.dgvEjercicios.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            this.dgvEjercicios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.dgvEjercicios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEjercicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEjercicios.BackgroundColor = System.Drawing.Color.White;
             this.dgvEjercicios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEjercicios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvEjercicios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEjercicios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEjercicios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEjercicios.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEjercicios.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEjercicios.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEjercicios.EnableHeadersVisualStyles = false;
             this.dgvEjercicios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
             this.dgvEjercicios.Location = new System.Drawing.Point(267, 210);
@@ -464,16 +428,11 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.Errores.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.Errores.ContainerControl = this;
             // 
-            // ofdBuscadorImagenes
+            // ofdBuscadorMultimedia
             // 
-            this.ofdBuscadorImagenes.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
-            this.ofdBuscadorImagenes.InitialDirectory = "C:\\";
-            // 
-            // ofdBuscadorVideos
-            // 
-            this.ofdBuscadorVideos.FileName = "openFileDialog1";
-            this.ofdBuscadorVideos.Filter = "Video Files(*.mp4; *.gif;)|*.mp4; *.gif;";
-            this.ofdBuscadorVideos.InitialDirectory = "C:\\";
+            this.ofdBuscadorMultimedia.Filter = "Multimedia Files(*.jpg; *.jpeg; *.png; *.bmp; *.gif; *.mp4)|*.jpg; *.jpeg; *.png;" +
+    " *.bmp; *.gif; *.mp4";
+            this.ofdBuscadorMultimedia.InitialDirectory = "C:\\";
             // 
             // FrmMantenimientoEjercicios
             // 
@@ -500,8 +459,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.Text = "FrmMantenimientoEjercicios";
             this.Load += new System.EventHandler(this.FrmMantenimientoEjercicios_Load);
             btnAsignarImagen.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVideo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMultimedia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEjercicios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).EndInit();
             this.ResumeLayout(false);
@@ -522,14 +480,11 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2ComboBox cmdTipoEjercicio;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2Button btnAsignarFotografia;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2PictureBox pbVideo;
+        private Guna.UI2.WinForms.Guna2PictureBox pbMultimedia;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEjercicios;
-        private Guna.UI2.WinForms.Guna2Button btnAsignarVideo;
-        private Guna.UI2.WinForms.Guna2PictureBox pbImagen;
+        private Guna.UI2.WinForms.Guna2Button btnAsignarImagenVideo;
         private System.Windows.Forms.ErrorProvider Errores;
-        private System.Windows.Forms.OpenFileDialog ofdBuscadorImagenes;
-        private System.Windows.Forms.OpenFileDialog ofdBuscadorVideos;
+        private System.Windows.Forms.OpenFileDialog ofdBuscadorMultimedia;
     }
 }

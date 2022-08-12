@@ -10,6 +10,7 @@ namespace GymPro.Capa.Logica.BLL.Interfaces
         void ModificarEjercicio(Ejercicio pEjercicio);
         List<Ejercicio> ObtenerEjercicioCodigoTipo(int pCodigoTipo);
         List<Ejercicio> ObtenerEjercicioDisponibleCodigoEntrenamiento(int pCodigo);
+        List<Ejercicio> ObtenerEjercicioDisponibleCodigoEntrenamientoYTipoEjercicio(int pCodigo, int pTipoEjercicio);
         Ejercicio ObtenerEjercicioId(int pCodigo);
         List<Ejercicio> ObtenerEjercicioTodos();
     }

@@ -260,7 +260,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 if (!(string.IsNullOrEmpty(txtCodigo.Text)) && dgvEntrenamientos.SelectedRows.Count >= 1)
                 {
-                    MessageBox.Show("Previamente se ha seleccionado un Tipo de Ejercicio, presione Modificar o Eliminar");
+                    MessageBox.Show("Previamente se ha seleccionado un Entrenamiento, presione Modificar o Eliminar");
                     return;
                 }
 
@@ -601,6 +601,39 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             catch (SqlException sqlError)
             {
                 MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+        }
+
+        private void btnEjercicios_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int codigo = 0;
+
+                if (_Cliente == null)
+                {
+                    MessageBox.Show("No se puede ver los ejercicios de un Entrenamiento si no ha buscado primero al Cliente");
+                    return;
+                }
+
+                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEntrenamientos.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("Debe seleccionar el Entrenamiento para ver sus ejercicios");
+                    return;
+                }
+                
+                codigo = int.Parse(dgvEntrenamientos.SelectedCells[0].Value.ToString());
+
+                FrmProcesoEjercicioEnEntrenamiento ventana = new FrmProcesoEjercicioEnEntrenamiento(LogicaEntrenamiento.ObtenerEntrenamientoId(codigo));
+                ventana.ShowDialog();
+
+                Refrescar();
+                
             }
             catch (Exception er)
             {

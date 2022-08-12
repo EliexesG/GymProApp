@@ -190,6 +190,28 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
                 throw er;
             }
         }
+
+        /// <summary>
+        /// Obtener una lista de Ejercicios que NO estan en el entrenamiento referenciado por codigo y el tipo de ejercicio de la base de datos
+        /// </summary>
+        /// <param name="pCodigo">Codigo del entrenamiento</param>
+        /// <param name="pTipoEjercicio">Codigo del tipo de ejercicio</param>
+        /// <returns>Lista de entidades de tipo Ejercicio</returns>
+        public List<Ejercicio> ObtenerEjercicioDisponibleCodigoEntrenamientoYTipoEjercicio(int pCodigo, int pTipoEjercicio)
+        {
+            try
+            {
+                return this.ObtenerEjercicioDisponibleCodigoEntrenamiento(pCodigo).FindAll(ejercicio => ejercicio.CodigoTipo == pTipoEjercicio).ToList();
+            }
+            catch (SqlException sqlError)
+            {
+                throw sqlError;
+            }
+            catch (Exception er)
+            {
+                throw er;
+            }
+        }
         #endregion
     }
 }
