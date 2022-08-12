@@ -36,10 +36,12 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cmbTipoBusqueda = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Errores = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.pbFotografia = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -60,13 +62,11 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
-            this.pbFotografia = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenamientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenamientos)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -115,6 +115,26 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.cmbTipoBusqueda.Size = new System.Drawing.Size(191, 36);
             this.cmbTipoBusqueda.TabIndex = 88;
             this.cmbTipoBusqueda.SelectedIndexChanged += new System.EventHandler(this.cmbTipoBusqueda_SelectedIndexChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BorderRadius = 10;
+            this.btnBuscar.CheckedState.Parent = this.btnBuscar;
+            this.btnBuscar.CustomImages.Parent = this.btnBuscar;
+            this.btnBuscar.FillColor = System.Drawing.Color.Lime;
+            this.btnBuscar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.Teal;
+            this.btnBuscar.HoverState.Parent = this.btnBuscar;
+            this.btnBuscar.Image = global::GymPro.Capa.UI.Properties.Resources.Consultar;
+            this.btnBuscar.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnBuscar.Location = new System.Drawing.Point(507, 74);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
+            this.btnBuscar.Size = new System.Drawing.Size(138, 45);
+            this.btnBuscar.TabIndex = 87;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBusqueda
             // 
@@ -172,6 +192,23 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(162, 135);
             this.guna2ShadowPanel1.TabIndex = 89;
+            // 
+            // pbFotografia
+            // 
+            this.pbFotografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbFotografia.BackColor = System.Drawing.Color.Transparent;
+            this.pbFotografia.BackgroundImage = global::GymPro.Capa.UI.Properties.Resources._1;
+            this.pbFotografia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbFotografia.Location = new System.Drawing.Point(40, 43);
+            this.pbFotografia.Name = "pbFotografia";
+            this.pbFotografia.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbFotografia.ShadowDecoration.Parent = this.pbFotografia;
+            this.pbFotografia.Size = new System.Drawing.Size(85, 73);
+            this.pbFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFotografia.TabIndex = 84;
+            this.pbFotografia.TabStop = false;
             // 
             // guna2Separator1
             // 
@@ -484,6 +521,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnEnviarCorreo.Size = new System.Drawing.Size(180, 46);
             this.btnEnviarCorreo.TabIndex = 130;
             this.btnEnviarCorreo.Text = "Enviar Correo";
+            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
             // 
             // btnEjercicios
             // 
@@ -590,43 +628,6 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // pbFotografia
-            // 
-            this.pbFotografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbFotografia.BackColor = System.Drawing.Color.Transparent;
-            this.pbFotografia.BackgroundImage = global::GymPro.Capa.UI.Properties.Resources._1;
-            this.pbFotografia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbFotografia.Location = new System.Drawing.Point(40, 43);
-            this.pbFotografia.Name = "pbFotografia";
-            this.pbFotografia.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbFotografia.ShadowDecoration.Parent = this.pbFotografia;
-            this.pbFotografia.Size = new System.Drawing.Size(85, 73);
-            this.pbFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFotografia.TabIndex = 84;
-            this.pbFotografia.TabStop = false;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BorderRadius = 10;
-            this.btnBuscar.CheckedState.Parent = this.btnBuscar;
-            this.btnBuscar.CustomImages.Parent = this.btnBuscar;
-            this.btnBuscar.FillColor = System.Drawing.Color.Lime;
-            this.btnBuscar.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnBuscar.ForeColor = System.Drawing.Color.Teal;
-            this.btnBuscar.HoverState.Parent = this.btnBuscar;
-            this.btnBuscar.Image = global::GymPro.Capa.UI.Properties.Resources.Consultar;
-            this.btnBuscar.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnBuscar.Location = new System.Drawing.Point(507, 74);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
-            this.btnBuscar.Size = new System.Drawing.Size(138, 45);
-            this.btnBuscar.TabIndex = 87;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // FrmProcesoEntrenamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -661,8 +662,8 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             this.guna2GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Errores)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenamientos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotografia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntrenamientos)).EndInit();
             this.ResumeLayout(false);
 
         }

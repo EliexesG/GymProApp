@@ -79,6 +79,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                             AbrirFormEnPanel(new FrmProcesoFacturacion((Cliente)_Usuario, this));
                         }
                     }
+                    else
+                    {
+                        AbrirFormEnPanel(new FrmProcesoFacturacion((Cliente)_Usuario, this));
+                    }
                 }
                 else
                 {
@@ -108,7 +112,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
         {
             try
             {
-                AbrirFormEnPanel(new FrmProcesoEntrenamiento());
+                AbrirFormEnPanel(new FrmProcesoEntrenamiento(this));
             }
             catch (Exception er)
             {

@@ -114,6 +114,14 @@
     <Compile Include="DashBoard\Mantenimientos\FrmMenuMantenimientos.Designer.cs">
       <DependentUpon>FrmMenuMantenimientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Procesos\DSEntrenamiento.cs">
+      <DependentUpon>DSEntrenamiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\DSEntrenamiento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEntrenamiento.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Procesos\DSUltimaFactura.cs">
       <DependentUpon>DSUltimaFactura.xsd</DependentUpon>
     </Compile>
@@ -127,6 +135,12 @@
     </Compile>
     <Compile Include="DashBoard\Procesos\FrmMenuProcesos.Designer.cs">
       <DependentUpon>FrmMenuProcesos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmPDFEntrenamientoEnviar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Procesos\FrmPDFEntrenamientoEnviar.Designer.cs">
+      <DependentUpon>FrmPDFEntrenamientoEnviar.cs</DependentUpon>
     </Compile>
     <Compile Include="DashBoard\Procesos\FrmPDFFactura.cs">
       <SubType>Form</SubType>
@@ -203,6 +217,9 @@
     <EmbeddedResource Include="DashBoard\Procesos\FrmMenuProcesos.resx">
       <DependentUpon>FrmMenuProcesos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Procesos\FrmPDFEntrenamientoEnviar.resx">
+      <DependentUpon>FrmPDFEntrenamientoEnviar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Procesos\FrmPDFFactura.resx">
       <DependentUpon>FrmPDFFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +235,7 @@
     <EmbeddedResource Include="DashBoard\Procesos\FrmProcesoFacturacion.resx">
       <DependentUpon>FrmProcesoFacturacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Procesos\ReporteEntrenamiento.rdlc" />
     <EmbeddedResource Include="DashBoard\Procesos\ReporteFacturacion.rdlc" />
     <EmbeddedResource Include="InicioSesion\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
@@ -233,6 +251,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DashBoard\Procesos\DSEntrenamiento.xsc">
+      <DependentUpon>DSEntrenamiento.xsd</DependentUpon>
+    </None>
+    <None Include="DashBoard\Procesos\DSEntrenamiento.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEntrenamiento.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DashBoard\Procesos\DSEntrenamiento.xss">
+      <DependentUpon>DSEntrenamiento.xsd</DependentUpon>
+    </None>
     <None Include="DashBoard\Procesos\DSUltimaFactura.xsc">
       <DependentUpon>DSUltimaFactura.xsd</DependentUpon>
     </None>
