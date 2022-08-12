@@ -30,6 +30,8 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         private void InitializeComponent()
         {
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2VSeparator3 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.btnExpediente = new Guna.UI2.WinForms.Guna2Button();
             this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.btnTiposEntrenamientos = new Guna.UI2.WinForms.Guna2Button();
@@ -45,6 +47,8 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BorderRadius = 10;
+            this.guna2GradientPanel1.Controls.Add(this.guna2VSeparator3);
+            this.guna2GradientPanel1.Controls.Add(this.btnExpediente);
             this.guna2GradientPanel1.Controls.Add(this.guna2VSeparator2);
             this.guna2GradientPanel1.Controls.Add(this.guna2VSeparator1);
             this.guna2GradientPanel1.Controls.Add(this.btnTiposEntrenamientos);
@@ -59,10 +63,38 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.guna2GradientPanel1.Size = new System.Drawing.Size(854, 64);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
+            // guna2VSeparator3
+            // 
+            this.guna2VSeparator3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2VSeparator3.Location = new System.Drawing.Point(417, 6);
+            this.guna2VSeparator3.Name = "guna2VSeparator3";
+            this.guna2VSeparator3.Size = new System.Drawing.Size(14, 52);
+            this.guna2VSeparator3.TabIndex = 22;
+            // 
+            // btnExpediente
+            // 
+            this.btnExpediente.BackColor = System.Drawing.Color.Transparent;
+            this.btnExpediente.BorderRadius = 10;
+            this.btnExpediente.CheckedState.Parent = this.btnExpediente;
+            this.btnExpediente.CustomImages.Parent = this.btnExpediente;
+            this.btnExpediente.FillColor = System.Drawing.Color.Lime;
+            this.btnExpediente.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnExpediente.ForeColor = System.Drawing.Color.Teal;
+            this.btnExpediente.HoverState.Parent = this.btnExpediente;
+            this.btnExpediente.Image = global::GymPro.Capa.UI.Properties.Resources.Expediente;
+            this.btnExpediente.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnExpediente.Location = new System.Drawing.Point(452, 10);
+            this.btnExpediente.Name = "btnExpediente";
+            this.btnExpediente.ShadowDecoration.Parent = this.btnExpediente;
+            this.btnExpediente.Size = new System.Drawing.Size(164, 45);
+            this.btnExpediente.TabIndex = 21;
+            this.btnExpediente.Text = "Expedientes";
+            this.btnExpediente.Click += new System.EventHandler(this.btnExpediente_Click);
+            // 
             // guna2VSeparator2
             // 
             this.guna2VSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2VSeparator2.Location = new System.Drawing.Point(573, 6);
+            this.guna2VSeparator2.Location = new System.Drawing.Point(637, 6);
             this.guna2VSeparator2.Name = "guna2VSeparator2";
             this.guna2VSeparator2.Size = new System.Drawing.Size(14, 52);
             this.guna2VSeparator2.TabIndex = 20;
@@ -70,7 +102,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             // guna2VSeparator1
             // 
             this.guna2VSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(265, 6);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(197, 6);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
             this.guna2VSeparator1.Size = new System.Drawing.Size(14, 52);
             this.guna2VSeparator1.TabIndex = 19;
@@ -87,10 +119,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnTiposEntrenamientos.HoverState.Parent = this.btnTiposEntrenamientos;
             this.btnTiposEntrenamientos.Image = global::GymPro.Capa.UI.Properties.Resources.TipoEjercicio;
             this.btnTiposEntrenamientos.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnTiposEntrenamientos.Location = new System.Drawing.Point(628, 10);
+            this.btnTiposEntrenamientos.Location = new System.Drawing.Point(672, 10);
             this.btnTiposEntrenamientos.Name = "btnTiposEntrenamientos";
             this.btnTiposEntrenamientos.ShadowDecoration.Parent = this.btnTiposEntrenamientos;
-            this.btnTiposEntrenamientos.Size = new System.Drawing.Size(212, 45);
+            this.btnTiposEntrenamientos.Size = new System.Drawing.Size(164, 45);
             this.btnTiposEntrenamientos.TabIndex = 18;
             this.btnTiposEntrenamientos.Text = "Tipos de Ejercicio";
             this.btnTiposEntrenamientos.Click += new System.EventHandler(this.btnTiposEntrenamientos_Click);
@@ -107,10 +139,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnEjercicios.HoverState.Parent = this.btnEjercicios;
             this.btnEjercicios.Image = global::GymPro.Capa.UI.Properties.Resources.Ejercicio;
             this.btnEjercicios.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnEjercicios.Location = new System.Drawing.Point(320, 10);
+            this.btnEjercicios.Location = new System.Drawing.Point(232, 10);
             this.btnEjercicios.Name = "btnEjercicios";
             this.btnEjercicios.ShadowDecoration.Parent = this.btnEjercicios;
-            this.btnEjercicios.Size = new System.Drawing.Size(212, 45);
+            this.btnEjercicios.Size = new System.Drawing.Size(164, 45);
             this.btnEjercicios.TabIndex = 16;
             this.btnEjercicios.Text = "Ejercicios";
             this.btnEjercicios.Click += new System.EventHandler(this.btnEjercicios_Click);
@@ -130,7 +162,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnUsuarios.Location = new System.Drawing.Point(12, 10);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.ShadowDecoration.Parent = this.btnUsuarios;
-            this.btnUsuarios.Size = new System.Drawing.Size(212, 45);
+            this.btnUsuarios.Size = new System.Drawing.Size(164, 45);
             this.btnUsuarios.TabIndex = 15;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
@@ -147,6 +179,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             // 
             // pbLogo
             // 
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbLogo.BorderRadius = 15;
             this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbLogo.Image = global::GymPro.Capa.UI.Properties.Resources._1;
@@ -170,6 +203,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMenuMantenimientos";
             this.Text = "FrmMenuMantenimientos";
+            this.Load += new System.EventHandler(this.FrmMenuMantenimientos_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.pnlDisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
@@ -187,5 +221,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator3;
+        private Guna.UI2.WinForms.Guna2Button btnExpediente;
     }
 }

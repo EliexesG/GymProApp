@@ -13,7 +13,7 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Entrenamiento.Codigo, Entrenamiento.IdentificacionCliente, Entrenamiento.IdentificacionEntrenador, Entrenamiento.Nombre, EjercicioEnEntrenamiento.CodigoEjercicio, EjercicioEnEntrenamiento.Repeticiones, 
-                  EjercicioEnEntrenamiento.Series, EjercicioEnEntrenamiento.Peso, EjercicioEnEntrenamiento.Tiempo, Ejercicio.Nombre AS NombreEjercicio, Ejercicio.Descripcion, DiaEntrenamiento.Dia
+                  EjercicioEnEntrenamiento.Series, EjercicioEnEntrenamiento.Peso, EjercicioEnEntrenamiento.Tiempo, Ejercicio.Nombre AS NombreEjercicio, Ejercicio.Descripcion, DiaEntrenamiento.Dia, Ejercicio.Multimedia
 FROM     EjercicioEnEntrenamiento INNER JOIN
                   Ejercicio ON EjercicioEnEntrenamiento.CodigoEjercicio = Ejercicio.Codigo INNER JOIN
                   Entrenamiento ON EjercicioEnEntrenamiento.CodigoEntrenamiento = Entrenamiento.Codigo INNER JOIN
@@ -39,6 +39,7 @@ WHERE  (Entrenamiento.Codigo = @Codigo) AND (DiaEntrenamiento.Activo = 1) AND (E
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
               <Mapping SourceColumn="Dia" DataSetColumn="Dia" />
               <Mapping SourceColumn="NombreEjercicio" DataSetColumn="NombreEjercicio" />
+              <Mapping SourceColumn="Multimedia" DataSetColumn="Multimedia" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -50,7 +51,7 @@ WHERE  (Entrenamiento.Codigo = @Codigo) AND (DiaEntrenamiento.Activo = 1) AND (E
   <xs:element name="DSEntrenamiento" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEntrenamiento" msprop:Generator_UserDSName="DSEntrenamiento">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Entrenamiento" msprop:Generator_TableClassName="EntrenamientoDataTable" msprop:Generator_TableVarName="tableEntrenamiento" msprop:Generator_RowChangedName="EntrenamientoRowChanged" msprop:Generator_TablePropName="Entrenamiento" msprop:Generator_RowDeletingName="EntrenamientoRowDeleting" msprop:Generator_RowChangingName="EntrenamientoRowChanging" msprop:Generator_RowEvHandlerName="EntrenamientoRowChangeEventHandler" msprop:Generator_RowDeletedName="EntrenamientoRowDeleted" msprop:Generator_RowClassName="EntrenamientoRow" msprop:Generator_UserTableName="Entrenamiento" msprop:Generator_RowEvArgName="EntrenamientoRowChangeEvent">
+        <xs:element name="Entrenamiento" msprop:Generator_TableClassName="EntrenamientoDataTable" msprop:Generator_TableVarName="tableEntrenamiento" msprop:Generator_TablePropName="Entrenamiento" msprop:Generator_RowDeletingName="EntrenamientoRowDeleting" msprop:Generator_RowChangingName="EntrenamientoRowChanging" msprop:Generator_RowEvHandlerName="EntrenamientoRowChangeEventHandler" msprop:Generator_RowDeletedName="EntrenamientoRowDeleted" msprop:Generator_UserTableName="Entrenamiento" msprop:Generator_RowChangedName="EntrenamientoRowChanged" msprop:Generator_RowEvArgName="EntrenamientoRowChangeEvent" msprop:Generator_RowClassName="EntrenamientoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
@@ -101,6 +102,7 @@ WHERE  (Entrenamiento.Codigo = @Codigo) AND (DiaEntrenamiento.Activo = 1) AND (E
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Multimedia" msprop:Generator_ColumnVarNameInTable="columnMultimedia" msprop:Generator_ColumnPropNameInRow="Multimedia" msprop:Generator_ColumnPropNameInTable="MultimediaColumn" msprop:Generator_UserColumnName="Multimedia" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
