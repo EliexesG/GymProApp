@@ -12,8 +12,7 @@ namespace GymPro.Capa.Entidades.Implementaciones
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public int CodigoTipo { get; set; }
-        public byte[] Imagen { get; set; }
-        public byte[] Video { get; set; }
+        public byte[] Multimedia { get; set; }
 
         public TipoEjercicio _TipoEjercicio { get; set; }
     }
