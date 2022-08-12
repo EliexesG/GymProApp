@@ -52,9 +52,13 @@ namespace GymPro.Capa.UI.DashBoard
             lblNombreUsuario.Text = $"{_Usuario.Nombre} {_Usuario.Apellido1}";
             pbFotoUsuario.Image = new Bitmap(new MemoryStream(_Usuario.Fotografia));
 
-            if(_Usuario is Cliente || _Usuario is Instructor)
+            if(_Usuario is Cliente)
             {
                 btnMantenimientos.Enabled = false;
+                btnReportes.Enabled = false;
+            }
+            else if(_Usuario is Instructor)
+            {
                 btnReportes.Enabled = false;
             }
         }
@@ -77,7 +81,7 @@ namespace GymPro.Capa.UI.DashBoard
         {
             try
             {
-                this.AbrirFormEnPanel(new FrmMenuMantenimientos());
+                this.AbrirFormEnPanel(new FrmMenuMantenimientos(_Usuario));
             }
             catch(Exception er)
             {

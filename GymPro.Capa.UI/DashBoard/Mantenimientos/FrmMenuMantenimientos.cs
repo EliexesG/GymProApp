@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Entidades.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,12 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 {
     public partial class FrmMenuMantenimientos : Form
     {
-        public FrmMenuMantenimientos()
+        IUsuario _Usuario;
+
+        public FrmMenuMantenimientos(IUsuario pUsuario)
         {
             InitializeComponent();
+            _Usuario = pUsuario;
         }
 
         public void AbrirFormEnPanel(object formhija)
@@ -64,6 +69,35 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             catch (Exception er)
             {
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void btnExpediente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.AbrirFormEnPanel(new FrmMantenimientoExpediente());
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void FrmMenuMantenimientos_Load(object sender, EventArgs e)
+        {
+            if (_Usuario is Cliente)
+            {
+                btnEjercicios.Enabled = false;
+                btnExpediente.Enabled = false;
+                btnTiposEntrenamientos.Enabled = false;
+                btnUsuarios.Enabled = false;
+            }
+            else if(_Usuario is Instructor)
+            {
+                btnEjercicios.Enabled = false;
+                btnTiposEntrenamientos.Enabled = false;
+                btnUsuarios.Enabled = false;
             }
         }
     }

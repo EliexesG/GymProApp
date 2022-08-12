@@ -303,6 +303,8 @@ namespace GymPro.Capa.UI.DashBoard.Procesos {
             
             private global::System.Data.DataColumn columnNombreEjercicio;
             
+            private global::System.Data.DataColumn columnMultimedia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public EntrenamientoDataTable() {
@@ -434,6 +436,14 @@ namespace GymPro.Capa.UI.DashBoard.Procesos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MultimediaColumn {
+                get {
+                    return this.columnMultimedia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -469,7 +479,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EntrenamientoRow AddEntrenamientoRow(string IdentificacionCliente, string IdentificacionEntrenador, string Nombre, int CodigoEjercicio, int Repeticiones, string Series, double Peso, int Tiempo, string Descripcion, int Dia, string NombreEjercicio) {
+            public EntrenamientoRow AddEntrenamientoRow(string IdentificacionCliente, string IdentificacionEntrenador, string Nombre, int CodigoEjercicio, int Repeticiones, string Series, double Peso, int Tiempo, string Descripcion, int Dia, string NombreEjercicio, byte[] Multimedia) {
                 EntrenamientoRow rowEntrenamientoRow = ((EntrenamientoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -483,7 +493,8 @@ namespace GymPro.Capa.UI.DashBoard.Procesos {
                         Tiempo,
                         Descripcion,
                         Dia,
-                        NombreEjercicio};
+                        NombreEjercicio,
+                        Multimedia};
                 rowEntrenamientoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEntrenamientoRow);
                 return rowEntrenamientoRow;
@@ -518,6 +529,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnDia = base.Columns["Dia"];
                 this.columnNombreEjercicio = base.Columns["NombreEjercicio"];
+                this.columnMultimedia = base.Columns["Multimedia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -547,6 +559,8 @@ namespace GymPro.Capa.UI.DashBoard.Procesos {
                 base.Columns.Add(this.columnDia);
                 this.columnNombreEjercicio = new global::System.Data.DataColumn("NombreEjercicio", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreEjercicio);
+                this.columnMultimedia = new global::System.Data.DataColumn("Multimedia", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMultimedia);
                 this.columnCodigo.AutoIncrement = true;
                 this.columnCodigo.AutoIncrementSeed = -1;
                 this.columnCodigo.AutoIncrementStep = -1;
@@ -871,6 +885,22 @@ namespace GymPro.Capa.UI.DashBoard.Procesos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public byte[] Multimedia {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableEntrenamiento.MultimediaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Multimedia\' in table \'Entrenamiento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEntrenamiento.MultimediaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNombreNull() {
                 return this.IsNull(this.tableEntrenamiento.NombreColumn);
             }
@@ -951,6 +981,18 @@ namespace GymPro.Capa.UI.DashBoard.Procesos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNombreEjercicioNull() {
                 this[this.tableEntrenamiento.NombreEjercicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMultimediaNull() {
+                return this.IsNull(this.tableEntrenamiento.MultimediaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMultimediaNull() {
+                this[this.tableEntrenamiento.MultimediaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1125,6 +1167,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos.DSEntrenamientoTableAdapters {
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Dia", "Dia");
             tableMapping.ColumnMappings.Add("NombreEjercicio", "NombreEjercicio");
+            tableMapping.ColumnMappings.Add("Multimedia", "Multimedia");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1142,7 +1185,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos.DSEntrenamientoTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT Entrenamiento.Codigo, Entrenamiento.IdentificacionCliente, Entrenamiento.IdentificacionEntrenador, Entrenamiento.Nombre, EjercicioEnEntrenamiento.CodigoEjercicio, EjercicioEnEntrenamiento.Repeticiones, 
-                  EjercicioEnEntrenamiento.Series, EjercicioEnEntrenamiento.Peso, EjercicioEnEntrenamiento.Tiempo, Ejercicio.Nombre AS NombreEjercicio, Ejercicio.Descripcion, DiaEntrenamiento.Dia
+                  EjercicioEnEntrenamiento.Series, EjercicioEnEntrenamiento.Peso, EjercicioEnEntrenamiento.Tiempo, Ejercicio.Nombre AS NombreEjercicio, Ejercicio.Descripcion, DiaEntrenamiento.Dia, Ejercicio.Multimedia
 FROM     EjercicioEnEntrenamiento INNER JOIN
                   Ejercicio ON EjercicioEnEntrenamiento.CodigoEjercicio = Ejercicio.Codigo INNER JOIN
                   Entrenamiento ON EjercicioEnEntrenamiento.CodigoEntrenamiento = Entrenamiento.Codigo INNER JOIN

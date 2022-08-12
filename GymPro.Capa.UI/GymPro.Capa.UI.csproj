@@ -324,6 +324,7 @@
     <Content Include="Resources\MantenimientoIcons\Eliminar.png" />
     <Content Include="Resources\MantenimientoIcons\Email.png" />
     <Content Include="Resources\MantenimientoIcons\Entrenamiento.png" />
+    <Content Include="Resources\MantenimientoIcons\Expediente.png" />
     <Content Include="Resources\MantenimientoIcons\Facturacion.png" />
     <Content Include="Resources\MantenimientoIcons\Guardar.png" />
     <Content Include="Resources\MantenimientoIcons\TipoEjercicio.png" />

@@ -62,7 +62,6 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.ofdBuscadorImagenes = new System.Windows.Forms.OpenFileDialog();
             this.Errores = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnInactivos = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExpediente = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnDesactivar = new Guna.UI2.WinForms.Guna2Button();
@@ -599,7 +598,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnInactivos.HoverState.Parent = this.btnInactivos;
             this.btnInactivos.Image = global::GymPro.Capa.UI.Properties.Resources.Consultar;
             this.btnInactivos.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnInactivos.Location = new System.Drawing.Point(648, 399);
+            this.btnInactivos.Location = new System.Drawing.Point(648, 425);
             this.btnInactivos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInactivos.Name = "btnInactivos";
             this.btnInactivos.Padding = new System.Windows.Forms.Padding(5);
@@ -608,27 +607,6 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.btnInactivos.TabIndex = 75;
             this.btnInactivos.Text = "Usuarios Inactivos";
             this.btnInactivos.Click += new System.EventHandler(this.btnInactivos_Click);
-            // 
-            // btnExpediente
-            // 
-            this.btnExpediente.BackColor = System.Drawing.Color.Transparent;
-            this.btnExpediente.BorderRadius = 10;
-            this.btnExpediente.CheckedState.Parent = this.btnExpediente;
-            this.btnExpediente.CustomImages.Parent = this.btnExpediente;
-            this.btnExpediente.FillColor = System.Drawing.Color.Lime;
-            this.btnExpediente.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnExpediente.ForeColor = System.Drawing.Color.Teal;
-            this.btnExpediente.HoverState.Parent = this.btnExpediente;
-            this.btnExpediente.Image = global::GymPro.Capa.UI.Properties.Resources.Consultar;
-            this.btnExpediente.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnExpediente.Location = new System.Drawing.Point(649, 463);
-            this.btnExpediente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExpediente.Name = "btnExpediente";
-            this.btnExpediente.ShadowDecoration.Parent = this.btnExpediente;
-            this.btnExpediente.Size = new System.Drawing.Size(192, 46);
-            this.btnExpediente.TabIndex = 74;
-            this.btnExpediente.Text = "Ver Expediente";
-            this.btnExpediente.Click += new System.EventHandler(this.btnExpediente_Click);
             // 
             // btnCancelar
             // 
@@ -722,7 +700,6 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             this.Controls.Add(this.txtContrasenna);
             this.Controls.Add(this.guna2HtmlLabel7);
             this.Controls.Add(this.btnInactivos);
-            this.Controls.Add(this.btnExpediente);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.guna2VSeparator2);
             this.Controls.Add(this.guna2VSeparator1);
@@ -791,7 +768,6 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
         private Guna.UI2.WinForms.Guna2DataGridView dgvUsuarios;
-        private Guna.UI2.WinForms.Guna2Button btnExpediente;
         private Guna.UI2.WinForms.Guna2Button btnInactivos;
         private Guna.UI2.WinForms.Guna2TextBox txtContrasenna;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;

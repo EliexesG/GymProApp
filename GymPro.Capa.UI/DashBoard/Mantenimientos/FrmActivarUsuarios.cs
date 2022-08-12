@@ -1,4 +1,5 @@
-﻿using GymPro.Capa.Entidades.Interfaces;
+﻿using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
 using System;
@@ -105,6 +106,18 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 string cedula = dgvUsuarios.SelectedCells[0].Value.ToString();
 
                 Logica.ActivarUsuario(cedula);
+
+                IUsuario usuario = Logica.ObtenerUsuarioIdentificacion(cedula);
+
+                if(usuario is Cliente)
+                {
+                    string receptor = (usuario as Cliente).Correo;
+                    string tema = "Activación de la cueta";
+                    string mensaje = $"Hola! {usuario.Nombre}, tu cuenta de cliente ha sido activada, ya puede logearse";
+                    Util.Utilitarios.EnviarCorreo(receptor, tema, mensaje);
+                }
+
+                MessageBox.Show("Activado!");
 
                 Refrescar();
 

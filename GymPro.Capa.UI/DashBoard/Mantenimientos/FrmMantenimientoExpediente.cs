@@ -1,12 +1,15 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +24,18 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         IUsuarioBLL LogicaUsuario;
         Cliente _Cliente;
 
-        public FrmMantenimientoExpediente(Cliente pCliente)
+        IFacturaEncabezadoBLLDatos DatosFactura;
+        IFacturaEncabezadoBLLGestor GestorFactura;
+
+        public FrmMantenimientoExpediente()
         {
             InitializeComponent();
-            _Cliente = pCliente;
             LogicaExpediente = new ExpedienteUsuarioBLL();
             LogicaUsuario = new UsuarioBLL();
+
+            FacturaEncabezadoBLL instancia = new FacturaEncabezadoBLL();
+            DatosFactura = instancia;
+            GestorFactura = instancia;
         }
 
         private void FrmMantenimientoExpediente_Load(object sender, EventArgs e)
@@ -50,11 +59,16 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
         {
             try
             {
-                txtIdentificacion.Text = _Cliente.Identificacion;
-                Errores.Clear();
+                if(_Cliente != null)
+                {
+                    txtIdentificacion.Text = _Cliente.Identificacion;
+                    Errores.Clear();
 
-                dgvExpediente.DataSource = LogicaExpediente.ObtenerExpedienteUsuarioIdentificacionUsuario(_Cliente.Identificacion);
-                dgvExpediente.ClearSelection();
+                    dgvExpediente.DataSource = LogicaExpediente.ObtenerExpedienteUsuarioIdentificacionUsuario(_Cliente.Identificacion);
+                    dgvExpediente.ClearSelection();
+
+                    pbFotografia.Image = new Bitmap(new MemoryStream(_Cliente.Fotografia));
+                }
 
                 txtPeso.Text = "";
                 txtAltura.Text = "";
@@ -113,6 +127,12 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 int altura = 0;
                 DateTime fecha = dtpFechaExpediente.Value;
 
+                if(_Cliente == null)
+                {
+                    MessageBox.Show("Debe buscar el cliente al que se le asignará el Expediente");
+                    return;
+                }
+
                 if (!double.TryParse(txtPeso.Text, out peso))
                 {
                     Errores.SetError(txtPeso, "El peso debe ser un dato numérico en KG");
@@ -150,7 +170,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                MessageBox.Show($"Ya se ha insertado un expediente el día de hoy, no se pueden insertar más");
             }
             catch (Exception er)
             {
@@ -190,6 +210,118 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }
+        }
+
+        private void btnBuscarUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Errores.Clear();
+                bool hayErrores = false;
+
+                string cedula = "";
+
+                if (!long.TryParse(txtIdentificacion.Text, out long resultado))
+                {
+                    Errores.SetError(txtIdentificacion, "La identificación del usuario debe contener solamente digitos");
+                    hayErrores = true;
+                }
+                else if (resultado.ToString().Length < 9 || resultado.ToString().Length > 15)
+                {
+                    Errores.SetError(txtIdentificacion, "La identificación del usuario debe contener de entre 9 a 15 dígitos");
+                    hayErrores = true;
+                }
+                else if (int.Parse(txtIdentificacion.Text[0].ToString()) == 0)
+                {
+                    Errores.SetError(txtIdentificacion, "La identificación del usuario no puede iniciar en 0");
+                    hayErrores = true;
+                }
+                else
+                {
+                    cedula = txtIdentificacion.Text;
+                }
+
+                if (hayErrores)
+                {
+                    return;
+                }
+
+                if (!BuscarUsuario(cedula, out _Cliente))
+                {
+                    MessageBox.Show("No se encontró cliente para asignar entrenamiento");
+                    return;
+                }
+
+                try
+                {
+                    FacturaEncabezado prueba = DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion);
+                }
+                catch
+                {
+                    MessageBox.Show("El cliente No ha pagado");
+                    return;
+                }
+
+                if (GestorFactura.EstaMoroso(DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion).FechaProximoPago))
+                {
+                    MessageBox.Show("El cliente está moroso, no se puede asignar un entrenamiento");
+                }
+                else
+                {
+                    Refrescar();
+                }
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+
+
+        }
+
+        private bool BuscarUsuario(string pIdentificacion, out Cliente pCliente)
+        {
+
+            bool hayCliente = true;
+            pCliente = null;
+
+            try
+            {
+
+                IUsuario cliente = LogicaUsuario.ObtenerUsuarioIdentificacion(pIdentificacion);
+
+
+
+                if (cliente == null)
+                {
+                    hayCliente = false;
+                }
+                else if (!(cliente is Cliente))
+                {
+                    hayCliente = false;
+                }
+                else
+                {
+                    pCliente = cliente as Cliente;
+                }
+
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+
+            return hayCliente;
         }
     }
 }

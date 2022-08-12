@@ -96,11 +96,18 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                 {
                     MessageBox.Show("No se encontró cliente para asignar entrenamiento");
                 }
-                else if (DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion) == null)
+
+                try
+                {
+                    FacturaEncabezado prueba = DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion);
+                }
+                catch
                 {
                     MessageBox.Show("El cliente No ha pagado");
+                    return;
                 }
-                else if (GestorFactura.EstaMoroso(DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion).FechaProximoPago))
+
+                if (GestorFactura.EstaMoroso(DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion).FechaProximoPago))
                 {
                     MessageBox.Show("El cliente está moroso, no se puede asignar un entrenamiento");
                 }
@@ -660,7 +667,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 int codigo = int.Parse(dgvEntrenamientos.SelectedCells[0].Value.ToString());
 
-                FrmPDFEntrenamientoEnviar ventana = new FrmPDFEntrenamientoEnviar(codigo);
+                FrmPDFEntrenamientoEnviar ventana = new FrmPDFEntrenamientoEnviar(codigo, _Cliente);
 
                 MenuProcesos.AbrirFormEnPanel(ventana);
             }
