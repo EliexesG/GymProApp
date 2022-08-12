@@ -21,7 +21,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
     public partial class FrmProcesoEntrenamiento : Form
     {
 
-
+        private FrmMenuProcesos MenuProcesos;
         private Cliente _Cliente = null;
 
         IUsuarioBLL LogicaUsuario = new UsuarioBLL();
@@ -30,13 +30,14 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
         IEntrenamientoBLL LogicaEntrenamiento = new EntrenamientoBLL();
         IDiaEntrenamientoBLL LogicaDias = new DiaEntrenamientoBLL();
 
-        public FrmProcesoEntrenamiento()
+        public FrmProcesoEntrenamiento(FrmMenuProcesos pMenuProcesos)
         {
             InitializeComponent();
 
             FacturaEncabezadoBLL instancia = new FacturaEncabezadoBLL();
             DatosFactura = instancia;
             GestorFactura = instancia;
+            MenuProcesos = pMenuProcesos;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -94,6 +95,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                 if(!BuscarUsuario(tipoBusqueda, datoParaBusqueda, out _Cliente))
                 {
                     MessageBox.Show("No se encontró cliente para asignar entrenamiento");
+                }
+                else if (DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion) == null)
+                {
+                    MessageBox.Show("El cliente No ha pagado");
                 }
                 else if (GestorFactura.EstaMoroso(DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion).FechaProximoPago))
                 {
@@ -634,6 +639,30 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 Refrescar();
                 
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
+        }
+
+        private void btnEnviarCorreo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if ((string.IsNullOrEmpty(txtCodigo.Text)) && dgvEntrenamientos.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("Debe seleccionar el Entrenamiento a enviar por correo");
+                    return;
+                }
+
+                int codigo = int.Parse(dgvEntrenamientos.SelectedCells[0].Value.ToString());
+
+                FrmPDFEntrenamientoEnviar ventana = new FrmPDFEntrenamientoEnviar(codigo);
+
+                MenuProcesos.AbrirFormEnPanel(ventana);
             }
             catch (Exception er)
             {
