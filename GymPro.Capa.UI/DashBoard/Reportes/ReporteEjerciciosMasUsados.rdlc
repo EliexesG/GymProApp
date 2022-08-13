@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>ec7861c2-73fb-45f7-abd2-107fb3e8d26b</rd:DataSourceID>
+      <rd:DataSourceID>9b1b2ee0-6033-44ee-bec6-c0611317669b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -55,7 +55,7 @@
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Nombre.Value</Value>
+                      <Value>=Fields!Cantidad.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <Label>=Fields!Nombre.Value</Label>
@@ -75,20 +75,24 @@
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Cantidad.Value)</Y>
+                        <X>=Fields!Nombre.Value</X>
+                        <Y>=Fields!Cantidad.Value</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
+                        <Size>4pt</Size>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
                   <Type>Bar</Type>
-                  <Style />
+                  <Style>
+                    <ShadowOffset>0.5pt</ShadowOffset>
+                  </Style>
                   <ChartEmptyPoints>
                     <Style />
                     <ChartMarker>
@@ -126,6 +130,8 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Interval>1</Interval>
+                    <IntervalType>Number</IntervalType>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -161,6 +167,7 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -360,7 +367,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Diagrama de Barras (Ejercicios más Usados)</Caption>
+                <Caption>Ejercicios (Mas Usados en Entrenamientos)</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -372,7 +379,7 @@
                 <Position>TopLeft</Position>
               </ChartTitle>
             </ChartTitles>
-            <Palette>Pacific</Palette>
+            <Palette>SeaGreen</Palette>
             <ChartBorderSkin>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
@@ -390,10 +397,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>EjerciciosMasUsadosVer</DataSetName>
-            <Top>0.47837cm</Top>
+            <Top>0.4572cm</Top>
             <Left>0.25335cm</Left>
-            <Height>7.9845cm</Height>
-            <Width>16.1995cm</Width>
+            <Height>9.80483cm</Height>
+            <Width>15.52217cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -404,16 +411,30 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.43333in</Height>
+        <Height>4.15833in</Height>
         <Style />
       </Body>
-      <Width>6.575in</Width>
+      <Width>6.33276in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
+            <Image Name="Logo">
+              <Source>Embedded</Source>
+              <Value>ID1</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.52cm</Top>
+              <Left>0.25335cm</Left>
+              <Height>1.5cm</Height>
+              <Width>1.5cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
             <Textbox Name="Textbox22">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -434,9 +455,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
               <Top>1.07033cm</Top>
-              <Left>4.65499cm</Left>
+              <Left>3.36382cm</Left>
               <Height>0.6cm</Height>
               <Width>7.7705cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -447,21 +469,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Image Name="Logo">
-              <Source>Embedded</Source>
-              <Value>ID1</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.52cm</Top>
-              <Left>0.25335cm</Left>
-              <Height>1.5cm</Height>
-              <Width>1.5cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
           </ReportItems>
           <Style>
             <Border>
@@ -518,5 +525,5 @@ mNCJiIgUgAmdiIhIAZjQiYiIFIAJnYiISAGY0ImIiBSACZ2IiEgBmNCJiIgUgAmdiIhIAZjQiYiIFIAJ
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>6cc44865-101f-44e0-81cf-a07b6001a4a9</rd:ReportID>
+  <rd:ReportID>e36a5f3f-84f2-4610-a6a7-180be6026a7b</rd:ReportID>
 </Report>
