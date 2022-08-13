@@ -42,6 +42,23 @@ namespace GymPro.Capa.UI.DashBoard
             }
         }
 
+        public void Refrescar()
+        {
+            lblTipoUsuario.Text = $"{_Usuario.GetType().Name}";
+            lblNombreUsuario.Text = $"{_Usuario.Nombre} {_Usuario.Apellido1}";
+            pbFotoUsuario.Image = new Bitmap(new MemoryStream(_Usuario.Fotografia));
+
+            if (_Usuario is Cliente)
+            {
+                btnMantenimientos.Enabled = false;
+                btnReportes.Enabled = false;
+            }
+            else if (_Usuario is Instructor)
+            {
+                btnReportes.Enabled = false;
+            }
+        }
+
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -49,19 +66,7 @@ namespace GymPro.Capa.UI.DashBoard
 
         private void FrmDashBoard_Load(object sender, EventArgs e)
         {
-            lblTipoUsuario.Text = $"{_Usuario.GetType().Name}";
-            lblNombreUsuario.Text = $"{_Usuario.Nombre} {_Usuario.Apellido1}";
-            pbFotoUsuario.Image = new Bitmap(new MemoryStream(_Usuario.Fotografia));
-
-            if(_Usuario is Cliente)
-            {
-                btnMantenimientos.Enabled = false;
-                btnReportes.Enabled = false;
-            }
-            else if(_Usuario is Instructor)
-            {
-                btnReportes.Enabled = false;
-            }
+            Refrescar();
         }
 
         public void AbrirFormEnPanel(object formhija)
@@ -107,6 +112,18 @@ namespace GymPro.Capa.UI.DashBoard
             try
             {
                 this.AbrirFormEnPanel(new FrmMenuReportes());
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void btnVerPerfil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.AbrirFormEnPanel(new FrmVerPerfil(_Usuario, this));
             }
             catch (Exception er)
             {

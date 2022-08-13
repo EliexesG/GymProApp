@@ -40,11 +40,11 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnReportes = new Guna.UI2.WinForms.Guna2Button();
             this.btnProcesos = new Guna.UI2.WinForms.Guna2Button();
             this.btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEditarPerfil = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblTipoUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlDisplay = new Guna.UI2.WinForms.Guna2Panel();
             this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnVerPerfil = new Guna.UI2.WinForms.Guna2Button();
             this.pbFotoUsuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -127,7 +127,7 @@ namespace GymPro.Capa.UI.DashBoard
             this.guna2ShadowPanel1.Controls.Add(this.btnReportes);
             this.guna2ShadowPanel1.Controls.Add(this.btnProcesos);
             this.guna2ShadowPanel1.Controls.Add(this.btnMantenimientos);
-            this.guna2ShadowPanel1.Controls.Add(this.btnEditarPerfil);
+            this.guna2ShadowPanel1.Controls.Add(this.btnVerPerfil);
             this.guna2ShadowPanel1.Controls.Add(this.guna2Separator1);
             this.guna2ShadowPanel1.Controls.Add(this.lblTipoUsuario);
             this.guna2ShadowPanel1.Controls.Add(this.pbFotoUsuario);
@@ -192,22 +192,6 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnMantenimientos.Text = "Mantenimientos";
             this.btnMantenimientos.Click += new System.EventHandler(this.btnMantenimientos_Click);
             // 
-            // btnEditarPerfil
-            // 
-            this.btnEditarPerfil.BorderRadius = 10;
-            this.btnEditarPerfil.CheckedState.Parent = this.btnEditarPerfil;
-            this.btnEditarPerfil.CustomImages.Parent = this.btnEditarPerfil;
-            this.btnEditarPerfil.FillColor = System.Drawing.Color.Lime;
-            this.btnEditarPerfil.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnEditarPerfil.ForeColor = System.Drawing.Color.Teal;
-            this.btnEditarPerfil.HoverState.Parent = this.btnEditarPerfil;
-            this.btnEditarPerfil.Location = new System.Drawing.Point(45, 145);
-            this.btnEditarPerfil.Name = "btnEditarPerfil";
-            this.btnEditarPerfil.ShadowDecoration.Parent = this.btnEditarPerfil;
-            this.btnEditarPerfil.Size = new System.Drawing.Size(180, 45);
-            this.btnEditarPerfil.TabIndex = 0;
-            this.btnEditarPerfil.Text = "Editar Perfil";
-            // 
             // guna2Separator1
             // 
             this.guna2Separator1.Location = new System.Drawing.Point(14, 205);
@@ -254,6 +238,25 @@ namespace GymPro.Capa.UI.DashBoard
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
+            // 
+            // btnVerPerfil
+            // 
+            this.btnVerPerfil.BorderRadius = 10;
+            this.btnVerPerfil.CheckedState.Parent = this.btnVerPerfil;
+            this.btnVerPerfil.CustomImages.Parent = this.btnVerPerfil;
+            this.btnVerPerfil.FillColor = System.Drawing.Color.Lime;
+            this.btnVerPerfil.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnVerPerfil.ForeColor = System.Drawing.Color.Teal;
+            this.btnVerPerfil.HoverState.Parent = this.btnVerPerfil;
+            this.btnVerPerfil.Image = global::GymPro.Capa.UI.Properties.Resources.Usuario;
+            this.btnVerPerfil.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnVerPerfil.Location = new System.Drawing.Point(45, 145);
+            this.btnVerPerfil.Name = "btnVerPerfil";
+            this.btnVerPerfil.ShadowDecoration.Parent = this.btnVerPerfil;
+            this.btnVerPerfil.Size = new System.Drawing.Size(180, 45);
+            this.btnVerPerfil.TabIndex = 0;
+            this.btnVerPerfil.Text = "Ver Perfil";
+            this.btnVerPerfil.Click += new System.EventHandler(this.btnVerPerfil_Click);
             // 
             // pbFotoUsuario
             // 
@@ -303,7 +306,7 @@ namespace GymPro.Capa.UI.DashBoard
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2Panel pnlDisplay;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbFotoUsuario;
-        private Guna.UI2.WinForms.Guna2Button btnEditarPerfil;
+        private Guna.UI2.WinForms.Guna2Button btnVerPerfil;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTipoUsuario;
         private Guna.UI2.WinForms.Guna2Button btnReportes;

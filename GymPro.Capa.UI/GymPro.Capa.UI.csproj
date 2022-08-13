@@ -93,6 +93,12 @@
     <Compile Include="DashBoard\FrmDashBoard.Designer.cs">
       <DependentUpon>FrmDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\FrmVerPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\FrmVerPerfil.Designer.cs">
+      <DependentUpon>FrmVerPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Mantenimientos\FrmActivarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="DashBoard\FrmDashBoard.resx">
       <DependentUpon>FrmDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\FrmVerPerfil.resx">
+      <DependentUpon>FrmVerPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Mantenimientos\FrmActivarUsuarios.resx">
       <DependentUpon>FrmActivarUsuarios.cs</DependentUpon>
