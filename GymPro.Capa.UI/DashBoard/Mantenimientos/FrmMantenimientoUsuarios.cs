@@ -22,7 +22,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
     public partial class FrmMantenimientoUsuarios : Form
     {
 
-        IUsuarioBLL Logica;
+        private IUsuarioBLL Logica;
 
         public FrmMantenimientoUsuarios()
         {
