@@ -21,13 +21,14 @@ namespace GymPro.Capa.UI.DashBoard.Reportes
         {
             try
             {
-                
+                EjerciciosMasUsadosTableAdapter.Fill(DSEjerciciosMasUsados.EjerciciosMasUsados);
+                this.reportViewer1.RefreshReport();
             }
             catch (Exception er)
             {
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
             }
-            this.reportViewer1.RefreshReport();
+            
         }
     }
 }
