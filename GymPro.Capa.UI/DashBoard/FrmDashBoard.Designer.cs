@@ -43,14 +43,14 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnEditarPerfil = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblTipoUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pbFotoUsuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnlDisplay = new Guna.UI2.WinForms.Guna2Panel();
             this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbFotoUsuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).BeginInit();
             this.pnlDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -156,6 +156,7 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnReportes.Size = new System.Drawing.Size(180, 45);
             this.btnReportes.TabIndex = 16;
             this.btnReportes.Text = "Reportes";
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnProcesos
             // 
@@ -228,21 +229,6 @@ namespace GymPro.Capa.UI.DashBoard
             this.lblTipoUsuario.Text = "Admin";
             this.lblTipoUsuario.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pbFotoUsuario
-            // 
-            this.pbFotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbFotoUsuario.Location = new System.Drawing.Point(89, 42);
-            this.pbFotoUsuario.Name = "pbFotoUsuario";
-            this.pbFotoUsuario.ShadowDecoration.Enabled = true;
-            this.pbFotoUsuario.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbFotoUsuario.ShadowDecoration.Parent = this.pbFotoUsuario;
-            this.pbFotoUsuario.Size = new System.Drawing.Size(88, 88);
-            this.pbFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFotoUsuario.TabIndex = 0;
-            this.pbFotoUsuario.TabStop = false;
-            // 
             // pnlDisplay
             // 
             this.pnlDisplay.BackColor = System.Drawing.Color.Transparent;
@@ -269,6 +255,21 @@ namespace GymPro.Capa.UI.DashBoard
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
             // 
+            // pbFotoUsuario
+            // 
+            this.pbFotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbFotoUsuario.Location = new System.Drawing.Point(89, 42);
+            this.pbFotoUsuario.Name = "pbFotoUsuario";
+            this.pbFotoUsuario.ShadowDecoration.Enabled = true;
+            this.pbFotoUsuario.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbFotoUsuario.ShadowDecoration.Parent = this.pbFotoUsuario;
+            this.pbFotoUsuario.Size = new System.Drawing.Size(88, 88);
+            this.pbFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFotoUsuario.TabIndex = 0;
+            this.pbFotoUsuario.TabStop = false;
+            // 
             // FrmDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -285,9 +286,9 @@ namespace GymPro.Capa.UI.DashBoard
             this.Load += new System.EventHandler(this.FrmDashBoard_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).EndInit();
             this.pnlDisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }

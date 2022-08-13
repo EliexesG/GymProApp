@@ -170,7 +170,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ya se ha insertado un expediente el día de hoy, no se pueden insertar más");
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
             }
             catch (Exception er)
             {

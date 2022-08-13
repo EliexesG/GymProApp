@@ -2,6 +2,7 @@
 using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.UI.DashBoard.Mantenimientos;
 using GymPro.Capa.UI.DashBoard.Procesos;
+using GymPro.Capa.UI.DashBoard.Reportes;
 using GymPro.Capa.UI.InicioSesion;
 using System;
 using System.Collections.Generic;
@@ -94,6 +95,18 @@ namespace GymPro.Capa.UI.DashBoard
             try
             {
                 this.AbrirFormEnPanel(new FrmMenuProcesos(_Usuario));
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.AbrirFormEnPanel(new FrmMenuReportes());
             }
             catch (Exception er)
             {
