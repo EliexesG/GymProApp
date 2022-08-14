@@ -198,6 +198,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEjerciciosMasUsados.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Reportes\DSEjerciciosPorTipo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEjerciciosPorTipo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Reportes\DSEntrenamientoCliente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,6 +212,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSFacturacionPorFechas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Reportes\DSUsuariosMorosos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSUsuariosMorosos.xsd</DependentUpon>
     </Compile>
     <Compile Include="DashBoard\Reportes\FrmMenuReportes.cs">
       <SubType>Form</SubType>
@@ -220,6 +230,12 @@
     <Compile Include="DashBoard\Reportes\FrmReporteEjerciciosMasUsados.Designer.cs">
       <DependentUpon>FrmReporteEjerciciosMasUsados.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Reportes\FrmReporteEjerciciosPorTIpo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Reportes\FrmReporteEjerciciosPorTIpo.Designer.cs">
+      <DependentUpon>FrmReporteEjerciciosPorTIpo.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Reportes\FrmReporteEntrenamientosCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +247,12 @@
     </Compile>
     <Compile Include="DashBoard\Reportes\FrmReporteFacturacionPorFechas.Designer.cs">
       <DependentUpon>FrmReporteFacturacionPorFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Reportes\FrmReporteUsuariosMorosos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Reportes\FrmReporteUsuariosMorosos.Designer.cs">
+      <DependentUpon>FrmReporteUsuariosMorosos.cs</DependentUpon>
     </Compile>
     <Compile Include="InicioSesion\FrmInicioSesion.cs">
       <SubType>Form</SubType>
@@ -306,15 +328,23 @@
     <EmbeddedResource Include="DashBoard\Reportes\FrmReporteEjerciciosMasUsados.resx">
       <DependentUpon>FrmReporteEjerciciosMasUsados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Reportes\FrmReporteEjerciciosPorTIpo.resx">
+      <DependentUpon>FrmReporteEjerciciosPorTIpo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Reportes\FrmReporteEntrenamientosCliente.resx">
       <DependentUpon>FrmReporteEntrenamientosCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Reportes\FrmReporteFacturacionPorFechas.resx">
       <DependentUpon>FrmReporteFacturacionPorFechas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Reportes\FrmReporteUsuariosMorosos.resx">
+      <DependentUpon>FrmReporteUsuariosMorosos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Reportes\ReporteEjerciciosMasUsados.rdlc" />
+    <EmbeddedResource Include="DashBoard\Reportes\ReporteEjerciciosPorTipo.rdlc" />
     <EmbeddedResource Include="DashBoard\Reportes\ReporteFacturacionPorFechas.rdlc" />
     <EmbeddedResource Include="DashBoard\Reportes\ReportesEntrenamientoCliente.rdlc" />
+    <EmbeddedResource Include="DashBoard\Reportes\ReporteUsuariosMorosos.rdlc" />
     <EmbeddedResource Include="InicioSesion\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +392,17 @@
     <None Include="DashBoard\Reportes\DSEjerciciosMasUsados.xss">
       <DependentUpon>DSEjerciciosMasUsados.xsd</DependentUpon>
     </None>
+    <None Include="DashBoard\Reportes\DSEjerciciosPorTipo.xsc">
+      <DependentUpon>DSEjerciciosPorTipo.xsd</DependentUpon>
+    </None>
+    <None Include="DashBoard\Reportes\DSEjerciciosPorTipo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEjerciciosPorTipo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DashBoard\Reportes\DSEjerciciosPorTipo.xss">
+      <DependentUpon>DSEjerciciosPorTipo.xsd</DependentUpon>
+    </None>
     <None Include="DashBoard\Reportes\DSEntrenamientoCliente.xsc">
       <DependentUpon>DSEntrenamientoCliente.xsd</DependentUpon>
     </None>
@@ -383,6 +424,17 @@
     </None>
     <None Include="DashBoard\Reportes\DSFacturacionPorFechas.xss">
       <DependentUpon>DSFacturacionPorFechas.xsd</DependentUpon>
+    </None>
+    <None Include="DashBoard\Reportes\DSUsuariosMorosos.xsc">
+      <DependentUpon>DSUsuariosMorosos.xsd</DependentUpon>
+    </None>
+    <None Include="DashBoard\Reportes\DSUsuariosMorosos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSUsuariosMorosos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DashBoard\Reportes\DSUsuariosMorosos.xss">
+      <DependentUpon>DSUsuariosMorosos.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -447,6 +499,7 @@
     <Content Include="Resources\MantenimientoIcons\Expediente.png" />
     <Content Include="Resources\MantenimientoIcons\Facturacion.png" />
     <Content Include="Resources\MantenimientoIcons\Guardar.png" />
+    <Content Include="Resources\MantenimientoIcons\Morosos.png" />
     <Content Include="Resources\MantenimientoIcons\TipoEjercicio.png" />
     <Content Include="Resources\MantenimientoIcons\Usuario.png" />
     <Content Include="SqlServerTypes\readme.htm" />
