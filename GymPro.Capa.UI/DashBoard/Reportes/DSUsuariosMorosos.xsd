@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSUsuariosMorosos" targetNamespace="http://tempuri.org/DSUsuariosMorosos.xsd" xmlns:mstns="http://tempuri.org/DSUsuariosMorosos.xsd" xmlns="http://tempuri.org/DSUsuariosMorosos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GymProConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GymProConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GymPro.Capa.UI.Properties.Settings.GlobalReference.Default.GymProConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsuariosMorososTableAdapter" GeneratorDataComponentClassName="UsuariosMorososTableAdapter" Name="UsuariosMorosos" UserDataComponentName="UsuariosMorososTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GymProConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Usuario.Identificacion, Usuario.Nombre, Usuario.Fotografia, Usuario.Correo, Usuario.Telefono, FacturaEncabezado.FechaProximoPago, DATEDIFF(day, FacturaEncabezado.FechaProximoPago, GETDATE()) AS DiasMorosidad
+FROM     FacturaEncabezado INNER JOIN
+                  Usuario ON FacturaEncabezado.IdentificacionUsuario = Usuario.Identificacion
+WHERE  (Usuario.CodigoTipoUsuario = 1) AND (Usuario.Activo = 1) AND (FacturaEncabezado.FechaProximoPago =
+                      (SELECT MAX(FechaProximoPago) AS Expr1
+                       FROM      FacturaEncabezado AS FacturaEncabezado_1
+                       WHERE   (Activo = 1) AND (IdentificacionUsuario = Usuario.Identificacion))) AND (FechaProximoPago &lt;= GETDATE())</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Identificacion" DataSetColumn="Identificacion" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="Fotografia" DataSetColumn="Fotografia" />
+              <Mapping SourceColumn="Correo" DataSetColumn="Correo" />
+              <Mapping SourceColumn="Telefono" DataSetColumn="Telefono" />
+              <Mapping SourceColumn="FechaProximoPago" DataSetColumn="FechaProximoPago" />
+              <Mapping SourceColumn="DiasMorosidad" DataSetColumn="DiasMorosidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSUsuariosMorosos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSUsuariosMorosos" msprop:Generator_UserDSName="DSUsuariosMorosos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UsuariosMorosos" msprop:Generator_TableClassName="UsuariosMorososDataTable" msprop:Generator_TableVarName="tableUsuariosMorosos" msprop:Generator_TablePropName="UsuariosMorosos" msprop:Generator_RowDeletingName="UsuariosMorososRowDeleting" msprop:Generator_RowChangingName="UsuariosMorososRowChanging" msprop:Generator_RowEvHandlerName="UsuariosMorososRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuariosMorososRowDeleted" msprop:Generator_UserTableName="UsuariosMorosos" msprop:Generator_RowChangedName="UsuariosMorososRowChanged" msprop:Generator_RowEvArgName="UsuariosMorososRowChangeEvent" msprop:Generator_RowClassName="UsuariosMorososRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Identificacion" msprop:Generator_ColumnVarNameInTable="columnIdentificacion" msprop:Generator_ColumnPropNameInRow="Identificacion" msprop:Generator_ColumnPropNameInTable="IdentificacionColumn" msprop:Generator_UserColumnName="Identificacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="18" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fotografia" msprop:Generator_ColumnVarNameInTable="columnFotografia" msprop:Generator_ColumnPropNameInRow="Fotografia" msprop:Generator_ColumnPropNameInTable="FotografiaColumn" msprop:Generator_UserColumnName="Fotografia" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Correo" msprop:Generator_ColumnVarNameInTable="columnCorreo" msprop:Generator_ColumnPropNameInRow="Correo" msprop:Generator_ColumnPropNameInTable="CorreoColumn" msprop:Generator_UserColumnName="Correo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefono" msprop:Generator_ColumnVarNameInTable="columnTelefono" msprop:Generator_ColumnPropNameInRow="Telefono" msprop:Generator_ColumnPropNameInTable="TelefonoColumn" msprop:Generator_UserColumnName="Telefono" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaProximoPago" msprop:Generator_ColumnVarNameInTable="columnFechaProximoPago" msprop:Generator_ColumnPropNameInRow="FechaProximoPago" msprop:Generator_ColumnPropNameInTable="FechaProximoPagoColumn" msprop:Generator_UserColumnName="FechaProximoPago" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DiasMorosidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDiasMorosidad" msprop:Generator_ColumnPropNameInRow="DiasMorosidad" msprop:Generator_ColumnPropNameInTable="DiasMorosidadColumn" msprop:Generator_UserColumnName="DiasMorosidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UsuariosMorosos" />
+      <xs:field xpath="mstns:Identificacion" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
