@@ -203,6 +203,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEntrenamientoCliente.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\Reportes\DSFacturacionPorFechas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSFacturacionPorFechas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard\Reportes\FrmMenuReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +225,12 @@
     </Compile>
     <Compile Include="DashBoard\Reportes\FrmReporteEntrenamientosCliente.Designer.cs">
       <DependentUpon>FrmReporteEntrenamientosCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Reportes\FrmReporteFacturacionPorFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard\Reportes\FrmReporteFacturacionPorFechas.Designer.cs">
+      <DependentUpon>FrmReporteFacturacionPorFechas.cs</DependentUpon>
     </Compile>
     <Compile Include="InicioSesion\FrmInicioSesion.cs">
       <SubType>Form</SubType>
@@ -298,7 +309,11 @@
     <EmbeddedResource Include="DashBoard\Reportes\FrmReporteEntrenamientosCliente.resx">
       <DependentUpon>FrmReporteEntrenamientosCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard\Reportes\FrmReporteFacturacionPorFechas.resx">
+      <DependentUpon>FrmReporteFacturacionPorFechas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard\Reportes\ReporteEjerciciosMasUsados.rdlc" />
+    <EmbeddedResource Include="DashBoard\Reportes\ReporteFacturacionPorFechas.rdlc" />
     <EmbeddedResource Include="DashBoard\Reportes\ReportesEntrenamientoCliente.rdlc" />
     <EmbeddedResource Include="InicioSesion\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
@@ -357,6 +372,17 @@
     </None>
     <None Include="DashBoard\Reportes\DSEntrenamientoCliente.xss">
       <DependentUpon>DSEntrenamientoCliente.xsd</DependentUpon>
+    </None>
+    <None Include="DashBoard\Reportes\DSFacturacionPorFechas.xsc">
+      <DependentUpon>DSFacturacionPorFechas.xsd</DependentUpon>
+    </None>
+    <None Include="DashBoard\Reportes\DSFacturacionPorFechas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSFacturacionPorFechas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DashBoard\Reportes\DSFacturacionPorFechas.xss">
+      <DependentUpon>DSFacturacionPorFechas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

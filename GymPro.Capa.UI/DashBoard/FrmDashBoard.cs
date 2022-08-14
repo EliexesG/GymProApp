@@ -1,5 +1,7 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
+using GymPro.Capa.Logica.Implementaciones;
+using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.UI.DashBoard.Mantenimientos;
 using GymPro.Capa.UI.DashBoard.Procesos;
 using GymPro.Capa.UI.DashBoard.Reportes;
@@ -21,6 +23,7 @@ namespace GymPro.Capa.UI.DashBoard
     {
 
         public IUsuario _Usuario { get; set; }
+        private IMultaBLL oMultaBLL = new MultaBLL();
 
         public FrmDashBoard(IUsuario usuario)
         {
@@ -52,10 +55,22 @@ namespace GymPro.Capa.UI.DashBoard
             {
                 btnMantenimientos.Enabled = false;
                 btnReportes.Enabled = false;
+
+                lblMulta.Visible = false;
+                txtMulta.Visible = false;
+                btnModificarMulta.Visible = false;
             }
             else if (_Usuario is Instructor)
             {
                 btnReportes.Enabled = false;
+
+                lblMulta.Visible = false;
+                txtMulta.Visible = false;
+                btnModificarMulta.Visible = false;
+            }
+            else if(_Usuario is Administrador)
+            {
+                txtMulta.Text = (oMultaBLL.ObtenerMulta().PorcentajeMulta * 100).ToString();
             }
         }
 
@@ -124,6 +139,39 @@ namespace GymPro.Capa.UI.DashBoard
             try
             {
                 this.AbrirFormEnPanel(new FrmVerPerfil(_Usuario, this));
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
+
+        private void btnModificarMulta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(!int.TryParse(txtMulta.Text, out int porcentajeMulta))
+                {
+                    MessageBox.Show("El porcetaje de la multa debe ser un dato numérico entero");
+                    return;
+                }
+
+                if(porcentajeMulta < 0 || porcentajeMulta > 100)
+                {
+                    MessageBox.Show("El porcetaje de la multa debe comprender entre el rango de 0 a 100");
+                    return;
+                }
+
+                Multa multaNueva = new Multa()
+                {
+                    PorcentajeMulta = porcentajeMulta / 100D
+                };
+
+                oMultaBLL.ModificarMulta(multaNueva);
+
+                MessageBox.Show("Multa modificada!!");
+
+                Refrescar();
             }
             catch (Exception er)
             {

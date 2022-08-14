@@ -53,6 +53,7 @@
     <Compile Include="Implementaciones\FacturaDetalle.cs" />
     <Compile Include="Implementaciones\FacturaEncabezado.cs" />
     <Compile Include="Implementaciones\Instructor.cs" />
+    <Compile Include="Implementaciones\Multa.cs" />
     <Compile Include="Implementaciones\Servicio.cs" />
     <Compile Include="Implementaciones\Tarjeta.cs" />
     <Compile Include="Implementaciones\TipoEjercicio.cs" />

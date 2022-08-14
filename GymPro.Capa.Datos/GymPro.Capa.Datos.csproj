@@ -50,6 +50,8 @@
     <Compile Include="Implementaciones\ExpedienteUsuarioDAL.cs" />
     <Compile Include="Implementaciones\FacturaDetalleDAL.cs" />
     <Compile Include="Implementaciones\FacturaEncabezadoDAL.cs" />
+    <Compile Include="Interfaces\IMultaDAL.cs" />
+    <Compile Include="Implementaciones\MultaDAL.cs" />
     <Compile Include="Implementaciones\ServicioDAL.cs" />
     <Compile Include="Implementaciones\TipoEjercicioDAL.cs" />
     <Compile Include="Implementaciones\TipoUsuarioDAL.cs" />

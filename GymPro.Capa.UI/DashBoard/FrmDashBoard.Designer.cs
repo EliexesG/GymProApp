@@ -40,17 +40,20 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnReportes = new Guna.UI2.WinForms.Guna2Button();
             this.btnProcesos = new Guna.UI2.WinForms.Guna2Button();
             this.btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVerPerfil = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblTipoUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pbFotoUsuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnlDisplay = new Guna.UI2.WinForms.Guna2Panel();
             this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnVerPerfil = new Guna.UI2.WinForms.Guna2Button();
-            this.pbFotoUsuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.txtMulta = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblMulta = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnModificarMulta = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).BeginInit();
             this.pnlDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -124,7 +127,10 @@ namespace GymPro.Capa.UI.DashBoard
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.btnModificarMulta);
+            this.guna2ShadowPanel1.Controls.Add(this.txtMulta);
             this.guna2ShadowPanel1.Controls.Add(this.btnReportes);
+            this.guna2ShadowPanel1.Controls.Add(this.lblMulta);
             this.guna2ShadowPanel1.Controls.Add(this.btnProcesos);
             this.guna2ShadowPanel1.Controls.Add(this.btnMantenimientos);
             this.guna2ShadowPanel1.Controls.Add(this.btnVerPerfil);
@@ -150,7 +156,7 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnReportes.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.btnReportes.ForeColor = System.Drawing.Color.Teal;
             this.btnReportes.HoverState.Parent = this.btnReportes;
-            this.btnReportes.Location = new System.Drawing.Point(45, 432);
+            this.btnReportes.Location = new System.Drawing.Point(45, 368);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.ShadowDecoration.Parent = this.btnReportes;
             this.btnReportes.Size = new System.Drawing.Size(180, 45);
@@ -167,7 +173,7 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnProcesos.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.btnProcesos.ForeColor = System.Drawing.Color.Teal;
             this.btnProcesos.HoverState.Parent = this.btnProcesos;
-            this.btnProcesos.Location = new System.Drawing.Point(45, 371);
+            this.btnProcesos.Location = new System.Drawing.Point(45, 307);
             this.btnProcesos.Name = "btnProcesos";
             this.btnProcesos.ShadowDecoration.Parent = this.btnProcesos;
             this.btnProcesos.Size = new System.Drawing.Size(180, 45);
@@ -184,13 +190,32 @@ namespace GymPro.Capa.UI.DashBoard
             this.btnMantenimientos.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.btnMantenimientos.ForeColor = System.Drawing.Color.Teal;
             this.btnMantenimientos.HoverState.Parent = this.btnMantenimientos;
-            this.btnMantenimientos.Location = new System.Drawing.Point(45, 310);
+            this.btnMantenimientos.Location = new System.Drawing.Point(45, 246);
             this.btnMantenimientos.Name = "btnMantenimientos";
             this.btnMantenimientos.ShadowDecoration.Parent = this.btnMantenimientos;
             this.btnMantenimientos.Size = new System.Drawing.Size(180, 45);
             this.btnMantenimientos.TabIndex = 14;
             this.btnMantenimientos.Text = "Mantenimientos";
             this.btnMantenimientos.Click += new System.EventHandler(this.btnMantenimientos_Click);
+            // 
+            // btnVerPerfil
+            // 
+            this.btnVerPerfil.BorderRadius = 10;
+            this.btnVerPerfil.CheckedState.Parent = this.btnVerPerfil;
+            this.btnVerPerfil.CustomImages.Parent = this.btnVerPerfil;
+            this.btnVerPerfil.FillColor = System.Drawing.Color.Lime;
+            this.btnVerPerfil.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnVerPerfil.ForeColor = System.Drawing.Color.Teal;
+            this.btnVerPerfil.HoverState.Parent = this.btnVerPerfil;
+            this.btnVerPerfil.Image = global::GymPro.Capa.UI.Properties.Resources.Usuario;
+            this.btnVerPerfil.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnVerPerfil.Location = new System.Drawing.Point(45, 145);
+            this.btnVerPerfil.Name = "btnVerPerfil";
+            this.btnVerPerfil.ShadowDecoration.Parent = this.btnVerPerfil;
+            this.btnVerPerfil.Size = new System.Drawing.Size(180, 45);
+            this.btnVerPerfil.TabIndex = 0;
+            this.btnVerPerfil.Text = "Ver Perfil";
+            this.btnVerPerfil.Click += new System.EventHandler(this.btnVerPerfil_Click);
             // 
             // guna2Separator1
             // 
@@ -212,6 +237,21 @@ namespace GymPro.Capa.UI.DashBoard
             this.lblTipoUsuario.TabIndex = 13;
             this.lblTipoUsuario.Text = "Admin";
             this.lblTipoUsuario.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbFotoUsuario
+            // 
+            this.pbFotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbFotoUsuario.Location = new System.Drawing.Point(89, 42);
+            this.pbFotoUsuario.Name = "pbFotoUsuario";
+            this.pbFotoUsuario.ShadowDecoration.Enabled = true;
+            this.pbFotoUsuario.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbFotoUsuario.ShadowDecoration.Parent = this.pbFotoUsuario;
+            this.pbFotoUsuario.Size = new System.Drawing.Size(88, 88);
+            this.pbFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFotoUsuario.TabIndex = 0;
+            this.pbFotoUsuario.TabStop = false;
             // 
             // pnlDisplay
             // 
@@ -239,39 +279,63 @@ namespace GymPro.Capa.UI.DashBoard
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
             // 
-            // btnVerPerfil
+            // txtMulta
             // 
-            this.btnVerPerfil.BorderRadius = 10;
-            this.btnVerPerfil.CheckedState.Parent = this.btnVerPerfil;
-            this.btnVerPerfil.CustomImages.Parent = this.btnVerPerfil;
-            this.btnVerPerfil.FillColor = System.Drawing.Color.Lime;
-            this.btnVerPerfil.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnVerPerfil.ForeColor = System.Drawing.Color.Teal;
-            this.btnVerPerfil.HoverState.Parent = this.btnVerPerfil;
-            this.btnVerPerfil.Image = global::GymPro.Capa.UI.Properties.Resources.Usuario;
-            this.btnVerPerfil.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnVerPerfil.Location = new System.Drawing.Point(45, 145);
-            this.btnVerPerfil.Name = "btnVerPerfil";
-            this.btnVerPerfil.ShadowDecoration.Parent = this.btnVerPerfil;
-            this.btnVerPerfil.Size = new System.Drawing.Size(180, 45);
-            this.btnVerPerfil.TabIndex = 0;
-            this.btnVerPerfil.Text = "Ver Perfil";
-            this.btnVerPerfil.Click += new System.EventHandler(this.btnVerPerfil_Click);
+            this.txtMulta.BorderRadius = 10;
+            this.txtMulta.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMulta.DefaultText = "";
+            this.txtMulta.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMulta.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMulta.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMulta.DisabledState.Parent = this.txtMulta;
+            this.txtMulta.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMulta.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMulta.FocusedState.Parent = this.txtMulta;
+            this.txtMulta.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMulta.HoverState.Parent = this.txtMulta;
+            this.txtMulta.Location = new System.Drawing.Point(45, 465);
+            this.txtMulta.Margin = new System.Windows.Forms.Padding(5);
+            this.txtMulta.Name = "txtMulta";
+            this.txtMulta.PasswordChar = '\0';
+            this.txtMulta.PlaceholderText = "";
+            this.txtMulta.SelectedText = "";
+            this.txtMulta.ShadowDecoration.Parent = this.txtMulta;
+            this.txtMulta.Size = new System.Drawing.Size(180, 34);
+            this.txtMulta.TabIndex = 74;
             // 
-            // pbFotoUsuario
+            // lblMulta
             // 
-            this.pbFotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbFotoUsuario.Location = new System.Drawing.Point(89, 42);
-            this.pbFotoUsuario.Name = "pbFotoUsuario";
-            this.pbFotoUsuario.ShadowDecoration.Enabled = true;
-            this.pbFotoUsuario.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbFotoUsuario.ShadowDecoration.Parent = this.pbFotoUsuario;
-            this.pbFotoUsuario.Size = new System.Drawing.Size(88, 88);
-            this.pbFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFotoUsuario.TabIndex = 0;
-            this.pbFotoUsuario.TabStop = false;
+            this.lblMulta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMulta.AutoSize = false;
+            this.lblMulta.BackColor = System.Drawing.Color.Transparent;
+            this.lblMulta.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMulta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblMulta.Location = new System.Drawing.Point(45, 436);
+            this.lblMulta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblMulta.Name = "lblMulta";
+            this.lblMulta.Size = new System.Drawing.Size(180, 38);
+            this.lblMulta.TabIndex = 73;
+            this.lblMulta.Text = "Multa";
+            this.lblMulta.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnModificarMulta
+            // 
+            this.btnModificarMulta.BorderRadius = 10;
+            this.btnModificarMulta.CheckedState.Parent = this.btnModificarMulta;
+            this.btnModificarMulta.CustomImages.Parent = this.btnModificarMulta;
+            this.btnModificarMulta.FillColor = System.Drawing.Color.Lime;
+            this.btnModificarMulta.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnModificarMulta.ForeColor = System.Drawing.Color.Teal;
+            this.btnModificarMulta.HoverState.Parent = this.btnModificarMulta;
+            this.btnModificarMulta.Image = global::GymPro.Capa.UI.Properties.Resources.Editar;
+            this.btnModificarMulta.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnModificarMulta.Location = new System.Drawing.Point(45, 507);
+            this.btnModificarMulta.Name = "btnModificarMulta";
+            this.btnModificarMulta.ShadowDecoration.Parent = this.btnModificarMulta;
+            this.btnModificarMulta.Size = new System.Drawing.Size(180, 45);
+            this.btnModificarMulta.TabIndex = 75;
+            this.btnModificarMulta.Text = "Modificar Multa";
+            this.btnModificarMulta.Click += new System.EventHandler(this.btnModificarMulta_Click);
             // 
             // FrmDashBoard
             // 
@@ -289,9 +353,9 @@ namespace GymPro.Capa.UI.DashBoard
             this.Load += new System.EventHandler(this.FrmDashBoard_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).EndInit();
             this.pnlDisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +377,8 @@ namespace GymPro.Capa.UI.DashBoard
         private Guna.UI2.WinForms.Guna2Button btnProcesos;
         private Guna.UI2.WinForms.Guna2Button btnMantenimientos;
         private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
+        private Guna.UI2.WinForms.Guna2TextBox txtMulta;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblMulta;
+        private Guna.UI2.WinForms.Guna2Button btnModificarMulta;
     }
 }
