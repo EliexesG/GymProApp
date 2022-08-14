@@ -49,6 +49,8 @@
     <Compile Include="Implementaciones\ExpedienteUsuarioBLL.cs" />
     <Compile Include="Implementaciones\FacturaDetalleBLL.cs" />
     <Compile Include="Implementaciones\FacturaEncabezadoBLL.cs" />
+    <Compile Include="Interfaces\IMultaBLL.cs" />
+    <Compile Include="Implementaciones\MultaBLL.cs" />
     <Compile Include="Interfaces\IControlIngresoEgresoBLL.cs" />
     <Compile Include="Interfaces\ITipoUsuarioBLL.cs" />
     <Compile Include="Implementaciones\TipoUsuarioBLL.cs" />

@@ -16,8 +16,8 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
     public class FacturaEncabezadoBLL : IFacturaEncabezadoBLLDatos, IFacturaEncabezadoBLLGestor
     {
 
-        private const double PorcentajeMulta = 0.17D;
 
+        private MultaDAL oMultaDAL = new MultaDAL();
         private IFacturaEncabezadoDAL oFacturaEncabezadoDAL;
 
         public FacturaEncabezadoBLL()
@@ -43,7 +43,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
 
         public double CalcularMulta(double pMontoServicios)
         {
-            return pMontoServicios * PorcentajeMulta;
+            return pMontoServicios * oMultaDAL.ObtenerMulta().PorcentajeMulta;
         }
 
         public double CalcularMontoTotal(double pMontoServicios, double pMontoMulta)

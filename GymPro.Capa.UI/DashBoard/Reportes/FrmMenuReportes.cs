@@ -54,5 +54,17 @@ namespace GymPro.Capa.UI.DashBoard.Reportes
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
             }
         }
+
+        private void btnRangoFacturacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.AbrirFormEnPanel(new FrmReporteFacturacionPorFechas());
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+            }
+        }
     }
 }

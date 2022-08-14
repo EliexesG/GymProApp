@@ -30,12 +30,14 @@ namespace GymPro.Capa.UI.DashBoard.Reportes
         private void InitializeComponent()
         {
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btnEjerciciosMasUsados = new Guna.UI2.WinForms.Guna2Button();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.btnEntrenamientosCliente = new Guna.UI2.WinForms.Guna2Button();
             this.pnlDisplay = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnEjerciciosMasUsados = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRangoFacturacion = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2GradientPanel1.SuspendLayout();
             this.pnlDisplay.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -45,6 +47,8 @@ namespace GymPro.Capa.UI.DashBoard.Reportes
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BorderRadius = 10;
+            this.guna2GradientPanel1.Controls.Add(this.btnRangoFacturacion);
+            this.guna2GradientPanel1.Controls.Add(this.guna2VSeparator2);
             this.guna2GradientPanel1.Controls.Add(this.btnEjerciciosMasUsados);
             this.guna2GradientPanel1.Controls.Add(this.guna2VSeparator1);
             this.guna2GradientPanel1.Controls.Add(this.btnEntrenamientosCliente);
@@ -56,6 +60,26 @@ namespace GymPro.Capa.UI.DashBoard.Reportes
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(854, 64);
             this.guna2GradientPanel1.TabIndex = 3;
+            // 
+            // btnEjerciciosMasUsados
+            // 
+            this.btnEjerciciosMasUsados.BackColor = System.Drawing.Color.Transparent;
+            this.btnEjerciciosMasUsados.BorderRadius = 10;
+            this.btnEjerciciosMasUsados.CheckedState.Parent = this.btnEjerciciosMasUsados;
+            this.btnEjerciciosMasUsados.CustomImages.Parent = this.btnEjerciciosMasUsados;
+            this.btnEjerciciosMasUsados.FillColor = System.Drawing.Color.Lime;
+            this.btnEjerciciosMasUsados.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnEjerciciosMasUsados.ForeColor = System.Drawing.Color.Teal;
+            this.btnEjerciciosMasUsados.HoverState.Parent = this.btnEjerciciosMasUsados;
+            this.btnEjerciciosMasUsados.Image = global::GymPro.Capa.UI.Properties.Resources.Ejercicio;
+            this.btnEjerciciosMasUsados.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnEjerciciosMasUsados.Location = new System.Drawing.Point(246, 10);
+            this.btnEjerciciosMasUsados.Name = "btnEjerciciosMasUsados";
+            this.btnEjerciciosMasUsados.ShadowDecoration.Parent = this.btnEjerciciosMasUsados;
+            this.btnEjerciciosMasUsados.Size = new System.Drawing.Size(188, 45);
+            this.btnEjerciciosMasUsados.TabIndex = 20;
+            this.btnEjerciciosMasUsados.Text = "Mas Usados";
+            this.btnEjerciciosMasUsados.Click += new System.EventHandler(this.btnEjerciciosMasUsados_Click);
             // 
             // guna2VSeparator1
             // 
@@ -121,25 +145,33 @@ namespace GymPro.Capa.UI.DashBoard.Reportes
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
             // 
-            // btnEjerciciosMasUsados
+            // btnRangoFacturacion
             // 
-            this.btnEjerciciosMasUsados.BackColor = System.Drawing.Color.Transparent;
-            this.btnEjerciciosMasUsados.BorderRadius = 10;
-            this.btnEjerciciosMasUsados.CheckedState.Parent = this.btnEjerciciosMasUsados;
-            this.btnEjerciciosMasUsados.CustomImages.Parent = this.btnEjerciciosMasUsados;
-            this.btnEjerciciosMasUsados.FillColor = System.Drawing.Color.Lime;
-            this.btnEjerciciosMasUsados.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.btnEjerciciosMasUsados.ForeColor = System.Drawing.Color.Teal;
-            this.btnEjerciciosMasUsados.HoverState.Parent = this.btnEjerciciosMasUsados;
-            this.btnEjerciciosMasUsados.Image = global::GymPro.Capa.UI.Properties.Resources.Ejercicio;
-            this.btnEjerciciosMasUsados.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnEjerciciosMasUsados.Location = new System.Drawing.Point(246, 10);
-            this.btnEjerciciosMasUsados.Name = "btnEjerciciosMasUsados";
-            this.btnEjerciciosMasUsados.ShadowDecoration.Parent = this.btnEjerciciosMasUsados;
-            this.btnEjerciciosMasUsados.Size = new System.Drawing.Size(188, 45);
-            this.btnEjerciciosMasUsados.TabIndex = 20;
-            this.btnEjerciciosMasUsados.Text = "Mas Usados";
-            this.btnEjerciciosMasUsados.Click += new System.EventHandler(this.btnEjerciciosMasUsados_Click);
+            this.btnRangoFacturacion.BackColor = System.Drawing.Color.Transparent;
+            this.btnRangoFacturacion.BorderRadius = 10;
+            this.btnRangoFacturacion.CheckedState.Parent = this.btnRangoFacturacion;
+            this.btnRangoFacturacion.CustomImages.Parent = this.btnRangoFacturacion;
+            this.btnRangoFacturacion.FillColor = System.Drawing.Color.Lime;
+            this.btnRangoFacturacion.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.btnRangoFacturacion.ForeColor = System.Drawing.Color.Teal;
+            this.btnRangoFacturacion.HoverState.Parent = this.btnRangoFacturacion;
+            this.btnRangoFacturacion.Image = global::GymPro.Capa.UI.Properties.Resources.Expediente;
+            this.btnRangoFacturacion.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnRangoFacturacion.Location = new System.Drawing.Point(480, 10);
+            this.btnRangoFacturacion.Name = "btnRangoFacturacion";
+            this.btnRangoFacturacion.ShadowDecoration.Parent = this.btnRangoFacturacion;
+            this.btnRangoFacturacion.Size = new System.Drawing.Size(188, 45);
+            this.btnRangoFacturacion.TabIndex = 22;
+            this.btnRangoFacturacion.Text = "Rango Facturas";
+            this.btnRangoFacturacion.Click += new System.EventHandler(this.btnRangoFacturacion_Click);
+            // 
+            // guna2VSeparator2
+            // 
+            this.guna2VSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2VSeparator2.Location = new System.Drawing.Point(449, 6);
+            this.guna2VSeparator2.Name = "guna2VSeparator2";
+            this.guna2VSeparator2.Size = new System.Drawing.Size(14, 52);
+            this.guna2VSeparator2.TabIndex = 21;
             // 
             // FrmMenuReportes
             // 
@@ -168,5 +200,7 @@ namespace GymPro.Capa.UI.DashBoard.Reportes
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
         private Guna.UI2.WinForms.Guna2Button btnEjerciciosMasUsados;
+        private Guna.UI2.WinForms.Guna2Button btnRangoFacturacion;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
     }
 }

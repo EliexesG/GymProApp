@@ -13,5 +13,10 @@ namespace GymPro.Capa.Util
         {
             return JsonConvert.DeserializeObject<T>(pJson);
         }
+
+        public static string ObjetoAJSON(T pObjeto)
+        {
+            return JsonConvert.SerializeObject(pObjeto);
+        }
     }
 }
