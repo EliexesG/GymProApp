@@ -1,18 +1,27 @@
 ﻿using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Datos.Persistencia;
 using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Implementaciones
 {
+    /// <summary>
+    /// Clase de acceso a datos para los Detalles de Facturas de la base de datos
+    /// </summary>
     public class FacturaDetalleDAL : IFacturaDetalleDAL
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private static FacturaDetalleDAL Instancia;
 
         /// <summary>
@@ -29,10 +38,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             return Instancia;
         }
 
-        /// <summary>
-        /// Inserta un Detalle de Factura en la base de datos
-        /// </summary>
-        /// <param name="pFacturaDetalle"> Detalle de Factura a insertar </param>
+        /// <inheritdoc />
         public void InsertarFacturaDetalle(FacturaDetalle pFacturaDetalle)
         {
 
@@ -53,27 +59,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de los Detalles de Factura en relacion con el Codigo del Encabezado de Factura de la base de datos
-        /// </summary>
-        /// <param name="pCodigoFactura"> Codigo del Encabezado de Factura relacionado </param>
-        /// <returns>Lista de entidades de tipo FacturaDetalle</returns>
+        /// <inheritdoc />
         public List<FacturaDetalle> ObtenerFacturaDetalleCodigoFactura(int pCodigoFactura)
         {
 
@@ -109,26 +111,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Detalles de Factura de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo FacturaDetalle</returns>
+        /// <inheritdoc />
         public List<FacturaDetalle> ObtenerFacturaDetalleTodas()
         {
             List<FacturaDetalle> lista = new List<FacturaDetalle>();
@@ -162,17 +161,17 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }

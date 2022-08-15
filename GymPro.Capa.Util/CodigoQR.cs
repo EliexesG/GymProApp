@@ -8,9 +8,16 @@ using MessagingToolkit.QRCode.Codec;
 
 namespace GymPro.Capa.Util
 {
+    /// <summary>
+    /// Clase encargada de generar codigos QR
+    /// </summary>
     public class CodigoQR
     {
-
+        /// <summary>
+        /// Crea un codigo QR en base al codigo dado por parametro
+        /// </summary>
+        /// <param name="codigo">Codigo a convertir</param>
+        /// <returns>Array de bytes con los bytes del codigo QR</returns>
         public static byte[] ObtenerCodigoQR(int codigo)
         {
             string toenc = codigo.ToString();

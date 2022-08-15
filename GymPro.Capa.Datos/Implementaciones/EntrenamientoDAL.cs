@@ -1,18 +1,27 @@
 ﻿using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Datos.Persistencia;
 using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Implementaciones
 {
+    /// <summary>
+    /// Clase de acceso a datos para los Entrenamientos de la base de datos
+    /// </summary>
     public class EntrenamientoDAL : IEntrenamientoDAL
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private static EntrenamientoDAL Instancia;
 
         /// <summary>
@@ -29,10 +38,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             return Instancia;
         }
 
-        /// <summary>
-        /// Elimina un Entrenamiento de la base de datos
-        /// </summary>
-        /// <param name="pCodigo"> Codigo del entrenamiento a eliminar </param>
+        /// <inheritdoc />
         public void EliminarEntrenamiento(int pCodigo)
         {
 
@@ -54,26 +60,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Inserta un Entrenamiento en la base de datos
-        /// </summary>
-        /// <param name="pEntrenamiento">Entrenamiento a insertar</param>
+        /// <inheritdoc />
         public void InsertarEntrenamiento(Entrenamiento pEntrenamiento)
         {
             SqlCommand comando = new SqlCommand();
@@ -96,26 +99,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Modifica un entrenamiento en la base de datos
-        /// </summary>
-        /// <param name="pEntrenamiento">Entrenamiento a modificar</param>
+        /// <inheritdoc />
         public void ModificarEntrenamiento(Entrenamiento pEntrenamiento)
         {
             SqlCommand comando = new SqlCommand();
@@ -139,27 +139,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene un Entrenamiento por su Id de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del entrenamiento a buscar</param>
-        /// <returns>Entidad de tipo Entrenamiento</returns>
+        /// <inheritdoc />
         public Entrenamiento ObtenerEntrenamientoId(int pCodigo)
         {
             Entrenamiento entrenamiento = null;
@@ -199,27 +195,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de Entrenamientos basado en la Identificacion del Usuario Cliente de la base de datos
-        /// </summary>
-        /// <param name="pIdentificacionUsuario"> Identificacion del Usuario Cliente </param>
-        /// <returns>Lista de entidades de tipo Entrenamiento</returns>
+        /// <inheritdoc />
         public List<Entrenamiento> ObtenerEntrenamientoIdentificacionUsuarioCliente(string pIdentificacionUsuario)
         {
 
@@ -263,27 +255,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de Entrenamientos basado en la Identificacion del Usuario Entrenador de la base de datos
-        /// </summary>
-        /// <param name="pIdentificacionUsuario"> Identificacion del Usuario Entrenador </param>
-        /// <returns>Lista de entidades de tipo Entrenamiento</returns>
+        /// <inheritdoc />
         public List<Entrenamiento> ObtenerEntrenamientoIdentificacionUsuarioEntrenador(string pIdentificacionUsuario)
         {
             List<Entrenamiento> lista = new List<Entrenamiento>();
@@ -326,26 +314,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Entrenamientos de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo Entrenamiento</returns>
+        /// <inheritdoc />
         public List<Entrenamiento> ObtenerEntrenamientoTodos()
         {
             List<Entrenamiento> lista = new List<Entrenamiento>();
@@ -387,17 +372,17 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }

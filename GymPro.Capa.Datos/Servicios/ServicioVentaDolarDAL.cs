@@ -6,13 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Servicios
 {
+    /// <summary>
+    /// Clase de llamadas hacia la API del Banco BCCR
+    /// </summary>
     public class ServicioVentaDolarDAL : IServicioVentaDolarDAL
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         private static ServicioVentaDolarDAL Instancia;
 
@@ -30,10 +37,7 @@ namespace GymPro.Capa.Datos.Servicios
             return Instancia;
         }
 
-        /// <summary>
-        /// Obtiene el precio de venta del dolar a la fecha actual
-        /// </summary>
-        /// <returns>Double que representa el precio del dolar en colones</returns>
+        /// <inheritdoc />
         public double ObtenerPrecioVentaDolar()
         {
             try
@@ -53,9 +57,9 @@ namespace GymPro.Capa.Datos.Servicios
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }

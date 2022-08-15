@@ -1,16 +1,25 @@
 ﻿using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Implementaciones
 {
+    /// <summary>
+    /// Clase de acceso a datos para el Porcentaje de Multa de un JSON local
+    /// </summary>
     public class MultaDAL : IMultaDAL
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private static MultaDAL Instancia;
 
         private const string RutaDirectorio = @"C:\Windows\Temp";
@@ -31,11 +40,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             return Instancia;
         }
 
-        /// <summary>
-        /// Obtiene la Multa a utilizar por la Facturacion, en caso de no existir la crea con un porcentaje base, 
-        /// esto desde un JSON local
-        /// </summary>
-        /// <returns>Entidad de tipo Multa</returns>
+        /// <inheritdoc />
         public Multa ObtenerMulta()
         {
             try
@@ -58,16 +63,17 @@ namespace GymPro.Capa.Datos.Implementaciones
                 string dataTraer = File.ReadAllText(RutaJSON);
                 return Util.JsonGenerics<Multa>.JsonAObjeto(dataTraer);
             }
-            catch (Exception err)
+            catch (Exception er)
             {
-                throw err;
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
             }
         }
-        
-        /// <summary>
-        /// Modifica el porcentaje de la multa en el JSON local
-        /// </summary>
-        /// <param name="pMulta">Multa a modificar</param>
+
+        /// <inheritdoc />
         public void ModificarMulta(Multa pMulta)
         {
             try
@@ -81,9 +87,13 @@ namespace GymPro.Capa.Datos.Implementaciones
 
                 File.WriteAllText(RutaJSON, json);
             }
-            catch (Exception err)
+            catch (Exception er)
             {
-                throw err;
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
             }
         }
     }
