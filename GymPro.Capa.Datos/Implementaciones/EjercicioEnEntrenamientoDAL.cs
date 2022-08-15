@@ -41,9 +41,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// <inheritdoc />
         public void EliminarEjercicioEnEntrenamiento(int pCodigoEntrenamiento, int pCodigoEjercicio)
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Eliminar_EjercicioEnEntrenamiento";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Eliminar_EjercicioEnEntrenamiento"
+            };
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pCodigoEntrenamiento);
             comando.Parameters.AddWithValue("@CodigoEjercicio", pCodigoEjercicio);
 
@@ -80,9 +82,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void InsertarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicioEnEntrenamiento)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Insertar_EjercicioEnEntrenamiento";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Insertar_EjercicioEnEntrenamiento"
+            };
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pEjercicioEnEntrenamiento.CodigoEntrenamiento);
             comando.Parameters.AddWithValue("@CodigoEjercicio", pEjercicioEnEntrenamiento.CodigoEjercicio);
             comando.Parameters.AddWithValue("@Repeticiones", pEjercicioEnEntrenamiento.Repeticiones);
@@ -123,9 +127,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void ModificarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicioEnEntrenamiento)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Modificar_EjercicioEnEntrenamiento";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Modificar_EjercicioEnEntrenamiento"
+            };
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pEjercicioEnEntrenamiento.CodigoEntrenamiento);
             comando.Parameters.AddWithValue("@CodigoEjercicio", pEjercicioEnEntrenamiento.CodigoEjercicio);
             comando.Parameters.AddWithValue("@Repeticiones", pEjercicioEnEntrenamiento.Repeticiones);
@@ -168,9 +174,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             List<EjercicioEnEntrenamiento> lista = new List<EjercicioEnEntrenamiento>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_EjercicioEnEntrenamiento_CodigoEntrenamientoo";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_EjercicioEnEntrenamiento_CodigoEntrenamientoo"
+            };
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pCodigoEntrenamiento);
 
             try
@@ -228,9 +236,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             EjercicioEnEntrenamiento ejercicioEnEntrenamiento = null;
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_EjercicioEnEntrenamiento_Id";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_EjercicioEnEntrenamiento_Id"
+            };
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pCodigoEntrenamiento);
             comando.Parameters.AddWithValue("@CodigoEjercicio", pCodigoEjercicio);
 
@@ -286,9 +296,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             List<EjercicioEnEntrenamiento> lista = new List<EjercicioEnEntrenamiento>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_EjercicioEnEntrenamiento_Todos";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_EjercicioEnEntrenamiento_Todos"
+            };
 
             try
             {

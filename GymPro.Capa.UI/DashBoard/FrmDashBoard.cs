@@ -55,6 +55,9 @@ namespace GymPro.Capa.UI.DashBoard
             }
         }
 
+        /// <summary>
+        /// Metodo que refresca lo controles en la ventana
+        /// </summary>
         public void Refrescar()
         {
             try
@@ -106,6 +109,10 @@ namespace GymPro.Capa.UI.DashBoard
             Refrescar();
         }
 
+        /// <summary>
+        /// Metodo que muestra en el panel el Frame dado por parametro
+        /// </summary>
+        /// <param name="formhija">Frame a mostrar</param>
         public void AbrirFormEnPanel(object formhija)
         {
             try

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
+    /// <summary>
+    /// Entidad que representa un Encabezado de Factura
+    /// </summary>
     public class FacturaEncabezado
     {
         public int Codigo { get; set; }

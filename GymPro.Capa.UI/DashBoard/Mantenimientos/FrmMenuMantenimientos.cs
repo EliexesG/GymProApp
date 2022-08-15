@@ -28,6 +28,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             _Usuario = pUsuario;
         }
 
+        /// <summary>
+        /// Metodo que muestra en el panel el Frame dado por parametro
+        /// </summary>
+        /// <param name="formhija">Frame a mostrar</param>
         public void AbrirFormEnPanel(object formhija)
         {
             try

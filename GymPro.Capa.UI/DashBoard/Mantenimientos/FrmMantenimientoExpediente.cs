@@ -1,7 +1,6 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
-using GymPro.Capa.Logica.BLL.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Implementaciones;
 using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
@@ -60,6 +59,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
         }
 
+        /// <summary>
+        /// Metodo que refresca lo controles en la ventana
+        /// </summary>
         private void Refrescar()
         {
             try
@@ -298,6 +300,12 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
         }
 
+        /// <summary>
+        /// Metodo que busca a un Usuario Cliente en base a su identificacion
+        /// </summary>
+        /// <param name="pIdentificacion">Identificacion del Cliente a buscar</param>
+        /// <param name="pCliente">Cliente encontrado si se encuentra</param>
+        /// <returns>Bool que representa si se encontro o no</returns>
         private bool BuscarUsuario(string pIdentificacion, out Cliente pCliente)
         {
 

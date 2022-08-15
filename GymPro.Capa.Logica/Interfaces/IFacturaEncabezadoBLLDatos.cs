@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GymPro.Capa.Logica.BLL.Interfaces
+namespace GymPro.Capa.Logica.Interfaces
 {
     /// <summary>
     /// Clase unicamente de acceso a datos para los Encabezados de Factura de la base de datos

@@ -101,6 +101,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
         }
 
+        /// <summary>
+        /// Metodo que Exporta el Reporte en ventana a formato PDF y luego lo guarda en un Ruta en el ordenador
+        /// </summary>
         private void ExportarYGuardarReporteAPDF()
         {
             try

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
+    /// <summary>
+    /// Entidad que representa un Tipo de Ejercicio
+    /// </summary>
     public class TipoEjercicio
     {
         public int Codigo { get; set; }

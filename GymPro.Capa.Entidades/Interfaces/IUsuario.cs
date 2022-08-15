@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Interfaces
 {
-   public interface IUsuario
+    /// <summary>
+    /// Entidad que representa un Usuario en general
+    /// </summary>
+    public interface IUsuario
     {
         string Identificacion { get; set; }
         string Nombre { get; set; }

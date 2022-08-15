@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
+    /// <summary>
+    /// Entidad que representa un Instructor
+    /// </summary>
     public class Instructor : IUsuario
     {
         #region Propiedades de Usuario

@@ -1,4 +1,4 @@
-﻿namespace GymPro.Capa.Logica.BLL.Interfaces
+﻿namespace GymPro.Capa.Logica.Interfaces
 {
     /// <summary>
     /// Clase de llamadas hacia la API del Banco BCCR

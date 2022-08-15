@@ -29,13 +29,14 @@ namespace GymPro.Capa.Util
             {
                 string toenc = codigo.ToString();
 
-                MessagingToolkit.QRCode.Codec.QRCodeEncoder qe = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
+                QRCodeEncoder qe = new QRCodeEncoder
+                {
+                    QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE,
 
-                qe.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
+                    QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.L, // - Using LOW for more storage
 
-                qe.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.L; // - Using LOW for more storage
-
-                qe.QRCodeVersion = 1;
+                    QRCodeVersion = 1
+                };
 
                 System.Drawing.Bitmap bm = qe.Encode(toenc);
 

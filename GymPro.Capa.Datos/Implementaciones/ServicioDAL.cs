@@ -44,9 +44,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             Servicio servicio = null;
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_Servicio_Id";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_Servicio_Id"
+            };
             comando.Parameters.AddWithValue("@Codigo", pCodigo);
 
             try
@@ -95,9 +97,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             List<Servicio> lista = new List<Servicio>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_Servicio_Todos";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_Servicio_Todos"
+            };
 
             try
             {

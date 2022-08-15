@@ -42,9 +42,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void InsertarFacturaDetalle(FacturaDetalle pFacturaDetalle)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Insertar_FacturaDetalle";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Insertar_FacturaDetalle"
+            };
             comando.Parameters.AddWithValue("@CodigoFactura", pFacturaDetalle.CodigoFactura);
             comando.Parameters.AddWithValue("@CodigoServicio", pFacturaDetalle.CodigoServicio);
 
@@ -81,9 +83,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             List<FacturaDetalle> lista = new List<FacturaDetalle>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_FacturaDetalle_CodigoFactura";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_FacturaDetalle_CodigoFactura"
+            };
             comando.Parameters.AddWithValue("@CodigoFactura", pCodigoFactura);
 
             try
@@ -132,9 +136,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<FacturaDetalle> lista = new List<FacturaDetalle>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_FacturaDetalle_Todas";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_FacturaDetalle_Todas"
+            };
 
             try
             {

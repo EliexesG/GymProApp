@@ -43,9 +43,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             TipoUsuario tipoUsuario = null;
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_TipoUsuario_Id";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_TipoUsuario_Id"
+            };
             comando.Parameters.AddWithValue("@Codigo", pCodigo);
 
             try
@@ -92,9 +94,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<TipoUsuario> lista = new List<TipoUsuario>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_TipoUsuario_Todos";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_TipoUsuario_Todos"
+            };
 
             try
             {

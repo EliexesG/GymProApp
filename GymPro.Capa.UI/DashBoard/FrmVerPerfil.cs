@@ -1,7 +1,7 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
-using GymPro.Capa.Logica.BLL.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Implementaciones;
+using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
@@ -37,6 +37,9 @@ namespace GymPro.Capa.UI.DashBoard
             dgvData.AutoGenerateColumns = false;
         }
 
+        /// <summary>
+        /// Metodo que refresca lo controles en la ventana
+        /// </summary>
         private void Refrescar()
         {
             try
@@ -241,6 +244,11 @@ namespace GymPro.Capa.UI.DashBoard
             }
         }
 
+        /// <summary>
+        /// Metodo que verifica si un correo es valido
+        /// </summary>
+        /// <param name="email">Email a verificar</param>
+        /// <returns>Bool que representa si un correo es valido o no</returns>
         private bool CorreoValido(string email)
         {
             var valido = true;
@@ -257,6 +265,11 @@ namespace GymPro.Capa.UI.DashBoard
             return valido;
         }
 
+        /// <summary>
+        /// Metodo que verifica si un numero de telefono es valido
+        /// </summary>
+        /// <param name="telefono">Numero de telefono a verificar</param>
+        /// <returns>Bool que representa si un numero de telefono es valido o no</returns>
         private bool TelefonoValido(string telefono)
         {
             var regex = new Regex(@"^[\d]{4}[-][\d]{4}$");

@@ -1,7 +1,6 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
-using GymPro.Capa.Logica.BLL.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Implementaciones;
 using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
@@ -136,6 +135,11 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
         }
 
+        /// <summary>
+        /// Metodo que verifica si un correo es valido
+        /// </summary>
+        /// <param name="email">Email a verificar</param>
+        /// <returns>Bool que representa si un correo es valido o no</returns>
         private bool CorreoValido(string email)
         {
             var valido = true;
@@ -151,7 +155,14 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
             return valido;
         }
-
+        
+        /// <summary>
+        /// Metodo que busca a un Usuario Cliente en base a su identificacion o correo dependiendo del tipo de busqueda
+        /// </summary>
+        /// <param name="pTipoBusqueda">Ya sea correo o identificacion</param>
+        /// <param name="pDatoParaBuscar">El correo o la identificacion del Cliente a buscar</param>
+        /// <param name="pCliente">El resultado de la busqueda del cliente si se encuentra</param>
+        /// <returns>Bool que representa si se encontro o no</returns>
         public bool BuscarUsuario(int pTipoBusqueda, string pDatoParaBuscar, out Cliente pCliente)
         {
 
@@ -207,6 +218,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
         }
 
+        /// <summary>
+        /// Metodo que refresca lo controles en la ventana
+        /// </summary>
         private void Refrescar()
         {
             try
@@ -613,6 +627,14 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
         }
 
+        /// <summary>
+        /// Metodo que en caso de modificar un entrenamiento, modifica los dias, en base a la nueva configuracion de dias, la vieja en la base de datos
+        /// y el codigo de entrenamiento, para asi
+        /// borrar, o agregar
+        /// </summary>
+        /// <param name="pDiasNuevaConfiguracion">Nueva configuracion de dias del entrenamiento</param>
+        /// <param name="pDiasEnBase">Los dias que ya existian en el entrenamiento</param>
+        /// <param name="pCodigoEntrenamiento">Codigo del entrenamiento cuyos dias se modificaran</param>
         private void ModificarDias(List<Dia> pDiasNuevaConfiguracion, List<DiaEntrenamiento> pDiasEnBase, int pCodigoEntrenamiento)
         {
             try

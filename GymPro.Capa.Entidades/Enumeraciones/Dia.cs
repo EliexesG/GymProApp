@@ -1,4 +1,7 @@
-﻿public enum Dia { 
+﻿/// <summary>
+/// Dias de la semana
+/// </summary>
+public enum Dia { 
     Lunes = 1,
     Martes = 2,
     Miercoles = 3,

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
+    /// <summary>
+    /// Entidad que representa una Tarjeta de Pago
+    /// </summary>
     public class Tarjeta
     {
         public String Numero { get; set; }

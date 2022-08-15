@@ -1,7 +1,7 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using System.Collections.Generic;
 
-namespace GymPro.Capa.Logica.BLL.Interfaces
+namespace GymPro.Capa.Logica.Interfaces
 {
     /// <summary>
     /// Clase de logica y acceso a datos para los Tipos de Ejercicios de la base de datos

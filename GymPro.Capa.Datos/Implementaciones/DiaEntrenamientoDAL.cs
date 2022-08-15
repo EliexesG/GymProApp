@@ -41,9 +41,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// <inheritdoc />
         public void EliminarDiaEntrenamiento(DiaEntrenamiento pDiaEntrenamiento)
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Eliminar_DiaEntrenamiento";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Eliminar_DiaEntrenamiento"
+            };
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pDiaEntrenamiento.CodigoEntrenamiento);
             comando.Parameters.AddWithValue("@Dia", pDiaEntrenamiento.Dia);
 
@@ -79,9 +81,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// <inheritdoc />
         public void InsertarDiaEntrenamiento(DiaEntrenamiento pDiaEntrenamiento)
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Insertar_DiaEntrenamiento";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Insertar_DiaEntrenamiento"
+            };
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pDiaEntrenamiento.CodigoEntrenamiento);
             comando.Parameters.AddWithValue("@Dia", pDiaEntrenamiento.Dia);
 
@@ -119,9 +123,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<DiaEntrenamiento> lista = new List<DiaEntrenamiento>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_DiaEntrenamiento_CodigoEntrenamiento";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_DiaEntrenamiento_CodigoEntrenamiento"
+            };
             comando.Parameters.AddWithValue("@CodigoEntrenamiento", pCodigoEntrenamiento);
 
             try
@@ -173,9 +179,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             List<DiaEntrenamiento> lista = new List<DiaEntrenamiento>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_DiaEntrenamiento_Todos";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_DiaEntrenamiento_Todos"
+            };
 
             try
             {

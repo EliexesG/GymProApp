@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Logica.BLL.Interfaces
+namespace GymPro.Capa.Logica.Interfaces
 {
     /// <summary>
     /// Clase de logica y acceso a datos para los Expedientes de Usuarios de la base de datos

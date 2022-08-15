@@ -2,7 +2,7 @@
 using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Logica.BLL.Implementaciones
+namespace GymPro.Capa.Logica.Implementaciones
 {
     /// <summary>
     /// Clase de logica y acceso a datos para los Usuarios de la base de datos
