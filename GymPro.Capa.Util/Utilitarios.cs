@@ -199,17 +199,21 @@ namespace GymPro.Capa.Util
                 string cuenta = "gympro001mensajes@gmail.com";
                 string contrasenaGenerada = "bxvuqmknplxzhgvm";
 
-                MailMessage emailEnviar = new MailMessage();
-                emailEnviar.IsBodyHtml = true;
-                emailEnviar.Subject = pTema;
-                emailEnviar.Body = pMensaje;
-                emailEnviar.From = new MailAddress(cuenta);
+                MailMessage emailEnviar = new MailMessage
+                {
+                    IsBodyHtml = true,
+                    Subject = pTema,
+                    Body = pMensaje,
+                    From = new MailAddress(cuenta)
+                };
                 emailEnviar.To.Add(pReceptor);
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                smtp.Port = 587;
-                smtp.Credentials = new NetworkCredential(cuenta, contrasenaGenerada);
-                smtp.EnableSsl = true;
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential(cuenta, contrasenaGenerada),
+                    EnableSsl = true
+                };
 
                 Attachment attachment = new Attachment(pAttachRuta);
                 emailEnviar.Attachments.Add(attachment);
@@ -240,17 +244,21 @@ namespace GymPro.Capa.Util
                 string cuenta = "gympro001mensajes@gmail.com";
                 string contrasenaGenerada = "bxvuqmknplxzhgvm";
 
-                MailMessage emailEnviar = new MailMessage();
-                emailEnviar.IsBodyHtml = true;
-                emailEnviar.Subject = pTema;
-                emailEnviar.Body = pMensaje;
-                emailEnviar.From = new MailAddress(cuenta);
+                MailMessage emailEnviar = new MailMessage
+                {
+                    IsBodyHtml = true,
+                    Subject = pTema,
+                    Body = pMensaje,
+                    From = new MailAddress(cuenta)
+                };
                 emailEnviar.To.Add(pReceptor);
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                smtp.Port = 587;
-                smtp.Credentials = new NetworkCredential(cuenta, contrasenaGenerada);
-                smtp.EnableSsl = true;
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential(cuenta, contrasenaGenerada),
+                    EnableSsl = true
+                };
 
                 smtp.Send(emailEnviar);
             }

@@ -1,6 +1,6 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
-using GymPro.Capa.Logica.BLL.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Implementaciones;
+using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
@@ -87,6 +87,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             
         }
 
+        /// <summary>
+        /// Metodo que refresca lo controles en la ventana
+        /// </summary>
         private void Refrescar()
         {
             try

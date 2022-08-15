@@ -1,7 +1,6 @@
 ﻿using GymPro.Capa.Datos.Implementaciones;
 using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
 using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
@@ -12,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Logica.BLL.Implementaciones
+namespace GymPro.Capa.Logica.Implementaciones
 {
     /// <summary>
     /// Clase de logica y acceso a datos para los Encabezados de Factura de la base de datos (Esta incluye los metodos logicos del Gestor y metodos de acceso a datos)
@@ -140,7 +139,6 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
                 throw new Exception("El campo del número de tarjeta debe ser llenado solamente con números");
             }
 
-            int sumaDigitos = 0;
             int pesoActual = 2;
 
             List<int> multiplicacionProductos = new List<int>();
@@ -164,9 +162,9 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
                 pesoActual = pesoActual == 2 ? 1 : 2;
             }
 
-            sumaDigitos = multiplicacionProductos.Sum();
+            int sumaDigitos = multiplicacionProductos.Sum();
 
-            if(sumaDigitos % 10 != 0)
+            if (sumaDigitos % 10 != 0)
             {
                 _MyLogControlEventos.InfoFormat("Info {0}", "Se trato de insertar un numero de tarjeta no valido");
 

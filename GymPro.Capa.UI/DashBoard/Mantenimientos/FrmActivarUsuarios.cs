@@ -1,7 +1,7 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
-using GymPro.Capa.Logica.BLL.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Implementaciones;
+using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
@@ -67,6 +67,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
         }
 
+        /// <summary>
+        /// Metodo que repobla de con data el DataGridView de los Usuarios
+        /// </summary>
         private void Refrescar()
         {
             try

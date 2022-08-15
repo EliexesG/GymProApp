@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
+    /// <summary>
+    /// Entidad que representa un Control de Ingreso y Egreso
+    /// </summary>
     public class ControlIngresoEgreso
     {
         public string IdentificacionUsuario { get; set; }

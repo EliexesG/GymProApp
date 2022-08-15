@@ -1,6 +1,6 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
-using GymPro.Capa.Logica.BLL.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Implementaciones;
+using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
@@ -36,6 +36,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             dgvEjercicioEnEntrenamiento.AutoGenerateColumns = false;
         }
 
+        /// <summary>
+        /// Metodo que refresca lo controles en la ventana
+        /// </summary>
         private void Refrescar()
         {
             try
@@ -72,6 +75,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
         }
 
+        /// <summary>
+        /// Metodo que repobla de con data el ComboBox de Ejercicios con todos aquellos disponibles no presentes en el entrenamiento
+        /// </summary>
         private void LlenarEjercicioTodos()
         {
 
@@ -173,6 +179,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
         }
 
+        /// <summary>
+        /// Metodo que repobla de con data el DataGridView de los Ejercicios del Entrenamiento
+        /// </summary>
         public void LlenarDgvEjericiciosEnEntrenamiento()
         {
             try
@@ -213,6 +222,11 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
         }
 
+        /// <summary>
+        /// Metodo que verifica que el formato de series sea correcto (0x00)
+        /// </summary>
+        /// <param name="pDatoSeries">Series del ejercicio a verificar</param>
+        /// <returns>Bool representando si es correcto o no</returns>
         private bool FormatoSeriesValido(string pDatoSeries)
         {
             var regex = new Regex(@"^[\d]{1}[x][\d]+$");

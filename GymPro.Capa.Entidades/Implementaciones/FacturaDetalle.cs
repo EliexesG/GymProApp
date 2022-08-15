@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
+    /// <summary>
+    /// Entidad que representa un Detalle de Factura
+    /// </summary>
     public class FacturaDetalle
     {
         public int CodigoFactura { get; set; }

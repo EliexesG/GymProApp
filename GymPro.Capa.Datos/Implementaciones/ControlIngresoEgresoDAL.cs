@@ -41,9 +41,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void InsertarIngreso(ControlIngresoEgreso pControlIngresoEgreso)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Insertar_Ingreso";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Insertar_Ingreso"
+            };
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pControlIngresoEgreso.IdentificacionUsuario);
             comando.Parameters.AddWithValue("@Fecha", pControlIngresoEgreso.Fecha.Date);
             comando.Parameters.AddWithValue("@HoraEntrada", pControlIngresoEgreso.HoraEntrada);
@@ -81,9 +83,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void ModificarEgreso(ControlIngresoEgreso pControlIngresoEgreso)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Modificar_Egreso";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Modificar_Egreso"
+            };
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pControlIngresoEgreso.IdentificacionUsuario);
             comando.Parameters.AddWithValue("@Fecha", pControlIngresoEgreso.Fecha.Date);
             comando.Parameters.AddWithValue("@HoraSalida", pControlIngresoEgreso.HoraSalida);
@@ -123,9 +127,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             List<ControlIngresoEgreso> lista = new List<ControlIngresoEgreso>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_ControlIngresoEgreso_IdentificacionUsuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_ControlIngresoEgreso_IdentificacionUsuario"
+            };
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario);
 
             try
@@ -186,9 +192,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             List<ControlIngresoEgreso> lista = new List<ControlIngresoEgreso>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_ControlIngresoEgreso_Todos";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_ControlIngresoEgreso_Todos"
+            };
 
             try
             {
@@ -248,9 +256,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
 
             ControlIngresoEgreso controlIngresoEgreso = null;
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_ControlIngresoEgreso_Ultimo_IdentificacionUsuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_ControlIngresoEgreso_Ultimo_IdentificacionUsuario"
+            };
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario);
 
             try

@@ -41,9 +41,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// <inheritdoc />
         public void EliminarFacturaEncabezado(int pCodigo)
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Eliminar_FacturaEncabezado";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Eliminar_FacturaEncabezado"
+            };
             comando.Parameters.AddWithValue("@Codigo", pCodigo);
 
             try
@@ -76,9 +78,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// <inheritdoc />
         public void InsertarFacturaEncabezado(FacturaEncabezado pFacturaEncabezado)
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Insertar_FacturaEncabezado";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Insertar_FacturaEncabezado"
+            };
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pFacturaEncabezado.IdentificacionUsuario);
             comando.Parameters.AddWithValue("@CodigoQR", pFacturaEncabezado.CodigoQR);
             comando.Parameters.AddWithValue("@FechaPago", pFacturaEncabezado.FechaPago.Date);
@@ -116,9 +120,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// <inheritdoc />
         public void ModificarFacturaEncabezado(FacturaEncabezado pFacturaEncabezado)
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Modificar_FacturaEncabezado";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Modificar_FacturaEncabezado"
+            };
             comando.Parameters.AddWithValue("@Codigo", pFacturaEncabezado.Codigo);
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pFacturaEncabezado.IdentificacionUsuario);
             comando.Parameters.AddWithValue("@CodigoQR", pFacturaEncabezado.CodigoQR);
@@ -159,9 +165,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             FacturaEncabezado facturaEncabezado = null;
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_FacturaEncabezado_Id";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_FacturaEncabezado_Id"
+            };
             comando.Parameters.AddWithValue("@Codigo", pCodigo);
 
             try
@@ -216,9 +224,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<FacturaEncabezado> lista = new List<FacturaEncabezado>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_FacturaEncabezado_IdentificacionUsuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_FacturaEncabezado_IdentificacionUsuario"
+            };
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario);
 
             try
@@ -275,9 +285,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<FacturaEncabezado> lista = new List<FacturaEncabezado>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_FacturaEncabezado_Todas";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_FacturaEncabezado_Todas"
+            };
 
             try
             {

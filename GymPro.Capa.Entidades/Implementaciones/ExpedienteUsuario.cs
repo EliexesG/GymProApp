@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
+    /// <summary>
+    /// Entidad que representa un Expediente de un Usuario
+    /// </summary>
     public class ExpedienteUsuario
     {
         #region Propiedades de Expediente de Cliente

@@ -1,7 +1,6 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
-using GymPro.Capa.Logica.BLL.Implementaciones;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Implementaciones;
 using GymPro.Capa.Logica.Interfaces;
 using GymPro.Capa.Util;
 using System;
@@ -32,6 +31,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             _Usuario = pUsuario;
         }
 
+        /// <summary>
+        /// Metodo que muestra en el panel el Frame dado por parametro
+        /// </summary>
+        /// <param name="formhija">Frame a mostrar</param>
         public void AbrirFormEnPanel(object formhija)
         {
             try

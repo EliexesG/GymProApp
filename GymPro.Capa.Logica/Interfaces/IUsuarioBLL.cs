@@ -3,7 +3,7 @@ using GymPro.Capa.Entidades.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace GymPro.Capa.Logica.BLL.Interfaces
+namespace GymPro.Capa.Logica.Interfaces
 {
     /// <summary>
     /// Clase de logica y acceso a datos para los Usuarios de la base de datos

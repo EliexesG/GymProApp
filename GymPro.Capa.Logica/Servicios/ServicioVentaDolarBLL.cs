@@ -1,13 +1,13 @@
 ﻿using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Datos.Servicios;
-using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Logica.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymPro.Capa.Logica.BLL.Servicios
+namespace GymPro.Capa.Logica.Servicios
 {
     /// <summary>
     /// Clase de llamadas hacia la API del Banco BCCR

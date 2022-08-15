@@ -43,9 +43,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void EliminarUsuario(string pIdentificacionUsuario)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Eliminar_Usuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Eliminar_Usuario"
+            };
             comando.Parameters.AddWithValue("@Identificacion", pIdentificacionUsuario);
 
             try
@@ -79,9 +81,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void InsertarUsuario(IUsuario pUsuario)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Insertar_Usuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Insertar_Usuario"
+            };
 
             comando.Parameters.AddWithValue("@Identificacion", pUsuario.Identificacion);
             comando.Parameters.AddWithValue("@Nombre", pUsuario.Nombre);
@@ -140,9 +144,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void ModificarUsuario(IUsuario pUsuario)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Modificar_Usuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Modificar_Usuario"
+            };
 
             comando.Parameters.AddWithValue("@Identificacion", pUsuario.Identificacion);
             comando.Parameters.AddWithValue("@Nombre", pUsuario.Nombre);
@@ -203,9 +209,11 @@ namespace GymPro.Capa.Datos.Implementaciones
 
             IUsuario usuario = null;
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_Usuario_Identificacion";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_Usuario_Identificacion"
+            };
             comando.Parameters.AddWithValue("@Identificacion", pIdentificacionUsuario);
 
 
@@ -276,9 +284,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<IUsuario> lista = new List<IUsuario>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_Usuario_Activo_Todos";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_Usuario_Activo_Todos"
+            };
 
 
             try
@@ -350,9 +360,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<IUsuario> lista = new List<IUsuario>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_Usuario_Inactivo_Todos";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_Usuario_Inactivo_Todos"
+            };
 
 
             try
@@ -422,9 +434,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         /// <inheritdoc />
         public void ActivarUsuario(string pIdentificacionUsuario)
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Activar_Usuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Activar_Usuario"
+            };
             comando.Parameters.AddWithValue("@Identificacion", pIdentificacionUsuario);
 
             try

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Entidades.Implementaciones
 {
+    /// <summary>
+    /// Entidad que representa el Porcentaje de la Multacion
+    /// </summary>
     public class Multa
     {
         public double PorcentajeMulta { get; set; }

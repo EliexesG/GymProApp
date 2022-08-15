@@ -41,9 +41,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void EliminarExpedienteUsuario(DateTime pFecha, string pIdentificacionUsuario)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Eliminar_ExpedienteUsuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Eliminar_ExpedienteUsuario"
+            };
             comando.Parameters.AddWithValue("@Fecha", pFecha);
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario);
 
@@ -78,9 +80,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void InsertarExpedienteUsuario(ExpedienteUsuario pExpediente)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Insertar_ExpedienteUsuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Insertar_ExpedienteUsuario"
+            };
             comando.Parameters.AddWithValue("@Fecha", pExpediente.Fecha.Date);
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pExpediente.IdentificacionUsuario);
             comando.Parameters.AddWithValue("@Peso", pExpediente.Peso);
@@ -120,9 +124,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         public void ModificarExpedienteUsuario(ExpedienteUsuario pExpediente)
         {
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Modificar_ExpedienteUsuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Modificar_ExpedienteUsuario"
+            };
             comando.Parameters.AddWithValue("@Fecha", pExpediente.Fecha.Date);
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pExpediente.IdentificacionUsuario);
             comando.Parameters.AddWithValue("@Peso", pExpediente.Peso);
@@ -162,9 +168,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             ExpedienteUsuario expediente = null;
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_ExpedienteUsuario_Id";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_ExpedienteUsuario_Id"
+            };
             comando.Parameters.AddWithValue("@Fecha", pFecha.Date);
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario);
 
@@ -216,9 +224,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<ExpedienteUsuario> lista = new List<ExpedienteUsuario>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_ExpedienteUsuario_IdentificacionUsuario";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_ExpedienteUsuario_IdentificacionUsuario"
+            };
             comando.Parameters.AddWithValue("@IdentificacionUsuario", pIdentificacionUsuario);
 
             try
@@ -271,9 +281,11 @@ namespace GymPro.Capa.Datos.Implementaciones
         {
             List<ExpedienteUsuario> lista = new List<ExpedienteUsuario>();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SP_Obtener_ExpedienteUsuario_Todos";
+            SqlCommand comando = new SqlCommand
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "SP_Obtener_ExpedienteUsuario_Todos"
+            };
 
             try
             {
