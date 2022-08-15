@@ -172,6 +172,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 btnRegistrarIngreso.Enabled = false;
                 btnRegistrarEgreso.Enabled = true;
+                txtHoraIngreso.Text = HoraUltima.ToString();
             }
             catch (SqlException)
             {

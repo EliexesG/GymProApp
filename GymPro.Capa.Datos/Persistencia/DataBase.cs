@@ -1,21 +1,32 @@
-﻿using System;
+﻿using GymPro.Capa.Util;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Persistencia
 {
+    /// <summary>
+    /// Clase que representa la conexion y utilizacion de una base de datos
+    /// </summary>
     public class DataBase : IDataBase, IDisposable
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
+        /// <inheritdoc />
         public IDbConnection Conexion
         {
             get;
             set;
         }
 
+        /// <inheritdoc />
         public IDataReader ExecuteReader(IDbCommand pCommand)
         {
 
@@ -27,15 +38,19 @@ namespace GymPro.Capa.Datos.Persistencia
                 lector = pCommand.ExecuteReader(CommandBehavior.CloseConnection);
                 return lector;
             }
-            catch (Exception)
+            catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-                throw;
+                throw er;
             }
 
 
         }
 
+        /// <inheritdoc />
         public DataSet ExecuteDataSet(IDbCommand pCommand)
         {
 
@@ -51,11 +66,13 @@ namespace GymPro.Capa.Datos.Persistencia
                 }
                 return dsTabla;
             }
-            catch (Exception)
+            catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-                // lanzar excepción                     
-                throw;
+                throw er;
             }
             finally
             {
@@ -65,6 +82,7 @@ namespace GymPro.Capa.Datos.Persistencia
             }
         }
 
+        /// <inheritdoc />
         public DataSet ExecuteDataSet(IDbCommand pCommand, String pTabla)
         {
 
@@ -80,11 +98,13 @@ namespace GymPro.Capa.Datos.Persistencia
                 }
                 return dsTabla;
             }
-            catch (Exception)
+            catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-                // lanzar excepción                     
-                throw;
+                throw er;
             }
             finally
             {
@@ -94,6 +114,7 @@ namespace GymPro.Capa.Datos.Persistencia
             }
         }
 
+        /// <inheritdoc />
         public double ExecuteNonQuery(IDbCommand pCommand, IsolationLevel pIsolationLevel)
         {
             using (IDbTransaction transaccion = Conexion.BeginTransaction(pIsolationLevel))
@@ -112,16 +133,20 @@ namespace GymPro.Capa.Datos.Persistencia
                     return registrosafectados;
                 }
 
-                catch (Exception)
+                catch (Exception er)
                 {
+                    StringBuilder msg = new StringBuilder();
+                    msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                    _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-                    throw;
+                    throw er;
                 }
 
             }
 
         }
 
+        /// <inheritdoc />
         public int ExecuteNonQuery(IDbCommand pCommand)
         {
 
@@ -136,13 +161,17 @@ namespace GymPro.Capa.Datos.Persistencia
                 return registrosafectados;
 
             }
-            catch (Exception)
+            catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-                throw;
+                throw er;
             }
         }
 
+        /// <inheritdoc />
         public object ExecuteScalar(IDbCommand pCommand)
         {
             object respuesta = null;
@@ -155,15 +184,19 @@ namespace GymPro.Capa.Datos.Persistencia
 
                 return respuesta;
             }
-            catch (Exception)
+            catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-                throw;
+                throw er;
             }
 
 
         }
 
+        /// <inheritdoc />
         public void ExecuteNonQuery(ref IDbCommand pCommand, IsolationLevel pIsolationLevel)
         {
             using (IDbTransaction transaccion = Conexion.BeginTransaction(pIsolationLevel))
@@ -182,17 +215,20 @@ namespace GymPro.Capa.Datos.Persistencia
 
                 }
 
-                catch (Exception error)
+                catch (Exception er)
                 {
+                    StringBuilder msg = new StringBuilder();
+                    msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                    _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-                    throw error;
+                    throw er;
                 }
 
             }
 
         }
 
-
+        /// <inheritdoc />
         public void ExecuteNonQuery(List<IDbCommand> pCommands, IsolationLevel pIsolationLevel)
         {
 
@@ -211,10 +247,13 @@ namespace GymPro.Capa.Datos.Persistencia
                     transaccion.Commit();
                 }
             }
-            catch (Exception)
+            catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-                throw;
+                throw er;
             }
             finally
             {

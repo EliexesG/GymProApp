@@ -95,6 +95,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                 if(!BuscarUsuario(tipoBusqueda, datoParaBusqueda, out _Cliente))
                 {
                     MessageBox.Show("No se encontró cliente para asignar entrenamiento");
+                    return;
                 }
 
                 try

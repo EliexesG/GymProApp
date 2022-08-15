@@ -248,7 +248,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
                 if (!BuscarUsuario(cedula, out _Cliente))
                 {
-                    MessageBox.Show("No se encontró cliente para asignar entrenamiento");
+                    MessageBox.Show("No se encontró cliente para asignar Expediente");
                     return;
                 }
 
@@ -264,7 +264,7 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
                 if (GestorFactura.EstaMoroso(DatosFactura.ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(_Cliente.Identificacion).FechaProximoPago))
                 {
-                    MessageBox.Show("El cliente está moroso, no se puede asignar un entrenamiento");
+                    MessageBox.Show("El cliente está moroso, no se puede asignar un Expediente");
                 }
                 else
                 {

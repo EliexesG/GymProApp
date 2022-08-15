@@ -1,18 +1,26 @@
 ﻿using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Datos.Persistencia;
 using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Implementaciones
 {
+    /// <summary>
+    /// Clase de acceso a datos para el Control de Ingreso y Egresos de la base de datos
+    /// </summary>
     public class ControlIngresoEgresoDAL : IControlIngresoEgresoDAL
     {
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private static ControlIngresoEgresoDAL Instancia;
 
         /// <summary>
@@ -29,10 +37,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             return Instancia;
         }
 
-        /// <summary>
-        /// Inserta la Hora de Inicio de un Control de Ingreso y Egreso en la base de datos
-        /// </summary>
-        /// <param name="pControlIngresoEgreso">Control de Ingreso y Egreso a insertar</param>
+        /// <inheritdoc />
         public void InsertarIngreso(ControlIngresoEgreso pControlIngresoEgreso)
         {
 
@@ -56,26 +61,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Modifica un Control de Ingreso y Egreso con la Hora de Salida en la base de datos
-        /// </summary>
-        /// <param name="pControlIngresoEgreso">Control de Ingreso y Egreso a insertar</param>
+        /// <inheritdoc />
         public void ModificarEgreso(ControlIngresoEgreso pControlIngresoEgreso)
         {
 
@@ -99,27 +101,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de los Controles de Ingreso y Egreso de un Usuario de la base de datos
-        /// </summary>
-        /// <param name="pIdentificacionUsuario">Identificacion del Usuario relacionado a los Controles de Ingreso y Egreso a buscar</param>
-        /// <returns>Lista de entidades de tipo ControlIngresoEgreso</returns>
+        /// <inheritdoc />
         public List<ControlIngresoEgreso> ObtenerControlIngresoEgresoIdentificacionUsuario(string pIdentificacionUsuario)
         {
 
@@ -166,26 +164,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Controles de Ingreso y Egreso de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo ControlIngresoEgreso</returns>
+        /// <inheritdoc />
         public List<ControlIngresoEgreso> ObtenerControlIngresoEgresoTodos()
         {
 
@@ -232,27 +227,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene el ultimo Control de Ingreso y Egreso de un Usuario de la base de daots
-        /// </summary>
-        /// <param name="pIdentificacionUsuario">Identificacion del Usuario relacionado al Control de Ingreso y Egreso a buscar</param>
-        /// <returns>Entidad de tipo ControlIngresoEgreso</returns>
+        /// <inheritdoc />
         public ControlIngresoEgreso ObtenerControlIngresoEgresoUltimoIdentificacionUsuario(string pIdentificacionUsuario)
         {
 
@@ -297,17 +288,17 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }

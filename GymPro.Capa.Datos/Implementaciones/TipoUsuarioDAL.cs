@@ -1,18 +1,27 @@
 ﻿using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Datos.Persistencia;
 using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Datos.Implementaciones
 {
+    /// <summary>
+    /// Clase de acceso a datos para los Tipos de Usuarios de la base de datos
+    /// </summary>
     public class TipoUsuarioDAL : ITipoUsuarioDAL
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private static TipoUsuarioDAL Instancia;
 
         /// <summary>
@@ -29,11 +38,7 @@ namespace GymPro.Capa.Datos.Implementaciones
             return Instancia;
         }
 
-        /// <summary>
-        /// Obtiene un Tipo de Usuario por su Id de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del Tipo de Usuario a buscar</param>
-        /// <returns>Entidad de tipo TipoUsuario</returns>
+        /// <inheritdoc />
         public TipoUsuario ObtenerTipoUsuarioId(int pCodigo)
         {
             TipoUsuario tipoUsuario = null;
@@ -66,26 +71,23 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos Tipos de Usuario de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo TipoUsuario</returns>
+        /// <inheritdoc />
         public List<TipoUsuario> ObtenerTipoUsuarioTodos()
         {
             List<TipoUsuario> lista = new List<TipoUsuario>();
@@ -120,17 +122,17 @@ namespace GymPro.Capa.Datos.Implementaciones
             }
             catch (SqlException sqlError)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("{0}\n", Utilitarios.CreateSQLExceptionsErrorDetails(MethodBase.GetCurrentMethod(), comando, sqlError));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw sqlError;
             }
             catch (Exception er)
             {
-                //StringBuilder msg = new StringBuilder();
-                //msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
-                //_MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
                 throw er;
             }

@@ -13,8 +13,14 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Util
 {
+    /// <summary>
+    /// Clase con metodos utiles varios
+    /// </summary>
     public class Utilitarios
     {
+        /// <summary>
+        /// Activa el Culture Info en base a la moneda del pais CR
+        /// </summary>
         public static void CultureInfo()
         {
             // Colocar Cultura Estandar para Costa Rica
@@ -34,6 +40,11 @@ namespace GymPro.Capa.Util
             Thread.CurrentThread.CurrentCulture = Micultura;
         }
 
+        /// <summary>
+        /// Crea un mensaje de error detallado en base a una excepcion SQL
+        /// </summary>
+        /// <param name="pExcepcion">Excepcion a utilizar</param>
+        /// <returns>String con el mensaje detallado de error</returns>
         public static string CreateSQLExceptionsErrorDetails(SqlException pExcepcion)
         {
             StringBuilder msg = new StringBuilder();
@@ -54,6 +65,13 @@ namespace GymPro.Capa.Util
             return msg.ToString();
         }
 
+        /// <summary>
+        /// Crea un mensaje de error detallado en base a una excepcion SQL, un comando SQL y un metodo base
+        /// </summary>
+        /// <param name="pMethodBase">Metodo base a utilizar</param>
+        /// <param name="pCommand">Comando SQL a utilizar</param>
+        /// <param name="pExcepcion">Excepcion a utilizar</param>
+        /// <returns>String con el mensaje detallado de error</returns>
         public static string CreateSQLExceptionsErrorDetails(MethodBase pMethodBase, IDbCommand pCommand, SqlException pExcepcion)
         {
             StringBuilder msg = new StringBuilder();
@@ -77,6 +95,12 @@ namespace GymPro.Capa.Util
             return msg.ToString();
         }
 
+        /// <summary>
+        /// Crea un mensaje de error detallado en base a una excepcion generica y un metodo base
+        /// </summary>
+        /// <param name="pMethodBase">Metodo base a utilizar</param>
+        /// <param name="pExcepcion">Excepcion a utilizar</param>
+        /// <returns>String con el mensaje detalledo de error</returns>
         public static string CreateGenericErrorExceptionDetail(MethodBase pMethodBase, Exception pExcepcion)
         {
             StringBuilder msg = new StringBuilder();
@@ -89,6 +113,11 @@ namespace GymPro.Capa.Util
             return msg.ToString();
         }
 
+        /// <summary>
+        /// Crea un mensaje de error en espannol en base a la Excepcion SQL
+        /// </summary>
+        /// <param name="pSqlExcepcion">Excepcion SQL a traducir</param>
+        /// <returns>String con el error en espanno</returns>
         public static string GetCustomErrorByNumber(SqlException pSqlExcepcion)
         {
             string msg = "\n";
@@ -151,6 +180,13 @@ namespace GymPro.Capa.Util
 
         }
 
+        /// <summary>
+        /// Envia un correo en base a su receptor, el tema, mensaje y la ruta donde se encuentra el archivo a utilizar como Attachment
+        /// </summary>
+        /// <param name="pReceptor">Receptor a utilizar</param>
+        /// <param name="pTema">Tema a utilizar</param>
+        /// <param name="pMensaje">Mensaje a utilizar</param>
+        /// <param name="pAttachRuta">Ruta del Attachment a utilizar</param>
         public static void EnviarCorreo(string pReceptor, string pTema, string pMensaje, string pAttachRuta)
         {
             try
@@ -183,6 +219,12 @@ namespace GymPro.Capa.Util
             }
         }
 
+        /// <summary>
+        /// Envia un correo en base a su receptor, el tema y su mensaje 
+        /// </summary>
+        /// <param name="pReceptor">Receptor a utilizar</param>
+        /// <param name="pTema">Tema a utilizar</param>
+        /// <param name="pMensaje">Mensaje a utilizar</param>
         public static void EnviarCorreo(string pReceptor, string pTema, string pMensaje)
         {
             try
