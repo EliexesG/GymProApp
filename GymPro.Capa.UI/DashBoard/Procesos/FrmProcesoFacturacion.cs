@@ -2,6 +2,7 @@
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
 using GymPro.Capa.Logica.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +19,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 {
     public partial class FrmProcesoFacturacion : Form
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private IFacturaEncabezadoBLLDatos LogicaDatos;
         private IFacturaEncabezadoBLLGestor LogicaGestor;
         private IFacturaDetalleBLL LogicaDetalle;
@@ -112,6 +118,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }
@@ -144,9 +154,16 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 DetallesFactura.ForEach(detalle => LogicaDetalle.InsertarFacturaDetalle(detalle));
 
+                MessageBox.Show("El Pago ha sido registrado exitosamente!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un pago ha sido registrado");
+
                 MenuProcesos.AbrirFormEnPanel(new FrmPDFFactura(NuevaFacturaEncabezado.Codigo));
             }
-            catch(Exception er)
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
             {
                 MessageBox.Show(er.Message);
             }

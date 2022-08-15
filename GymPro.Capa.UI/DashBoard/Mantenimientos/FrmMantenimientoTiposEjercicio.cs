@@ -1,6 +1,7 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +19,8 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
     public partial class FrmMantenimientoTiposEjercicio : Form
     {
 
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         ITipoEjercicioBLL Logica;
 
@@ -64,6 +68,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
                 Logica.InsertarTipoEjercicio(new TipoEjercicio() { Nombre = nombre, Descripcion = descripcion });
 
+                MessageBox.Show("Tipo de Ejercicio insertado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un tipo de ejercicio ha sido insertado");
+
                 Refrescar();
 
             }
@@ -97,6 +104,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 throw er;
             }
         }
@@ -131,6 +142,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }
@@ -158,6 +173,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     TipoEjercicio tipoEjercicio = (TipoEjercicio)dgvTiposEjercicio.CurrentRow.DataBoundItem;
 
                     Logica.EliminarTipoEjercicio(tipoEjercicio.Codigo);
+
+                    MessageBox.Show("Tipo de Ejercicio eliminado!!");
+                    _MyLogControlEventos.InfoFormat("Info {0}", "Un tipo de ejercicio ha sido eliminado");
 
                     Refrescar();
                 }
@@ -216,6 +234,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 }
 
                 Logica.ModificarTipoEjercicio(new TipoEjercicio() { Codigo = codigo, Nombre = nombre, Descripcion = descripcion });
+
+                MessageBox.Show("Tipo de Ejercicio modificado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un tipo de ejercicio ha sido modificado");
+
                 Refrescar();
 
             }

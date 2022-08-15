@@ -2,6 +2,7 @@
 using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -19,6 +21,9 @@ namespace GymPro.Capa.UI.InicioSesion
 {
     public partial class FrmRegistrarse : Form
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         FrmInicioSesion _FrmInicioSesion;
         FrmLogIn _FrmLogIn;
@@ -54,6 +59,10 @@ namespace GymPro.Capa.UI.InicioSesion
                 }
                 catch (Exception er)
                 {
+                    StringBuilder msg = new StringBuilder();
+                    msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                    _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                     MessageBox.Show("Error: " + er.Message, "Error");
                 }
             }
@@ -208,6 +217,8 @@ namespace GymPro.Capa.UI.InicioSesion
 
                 logica.InsertarUsuario(usuario);
 
+                _MyLogControlEventos.InfoFormat("Info {0}", "Nuevo Usuario Cliente se ha registrado");
+
                 //Si llegó hasta aquí funcionó
                 MessageBox.Show("Usuario Registrado!! Espere a ser confirmado por el administrador");
                 btnIrAtras_Click(sender, e);
@@ -220,7 +231,6 @@ namespace GymPro.Capa.UI.InicioSesion
             catch (Exception er)
             {
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
-
             }
         }
 

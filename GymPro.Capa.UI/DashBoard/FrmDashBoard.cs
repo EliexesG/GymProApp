@@ -6,6 +6,7 @@ using GymPro.Capa.UI.DashBoard.Mantenimientos;
 using GymPro.Capa.UI.DashBoard.Procesos;
 using GymPro.Capa.UI.DashBoard.Reportes;
 using GymPro.Capa.UI.InicioSesion;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +23,8 @@ namespace GymPro.Capa.UI.DashBoard
 {
     public partial class FrmDashBoard : Form
     {
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         public IUsuario _Usuario { get; set; }
         private IMultaBLL oMultaBLL = new MultaBLL();
@@ -33,45 +37,63 @@ namespace GymPro.Capa.UI.DashBoard
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Desea abrir nueva sesión?", "Cerrar sesión", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+            DialogResult resultado = MessageBox.Show("¿Desea abrir nueva sesión?", "Cerrar sesión", MessageBoxButtons.YesNoCancel);
+
+            if (resultado == DialogResult.Yes)
             {
                 FrmInicioSesion inicioSesion = new FrmInicioSesion();
                 inicioSesion.Show();
                 this.Close();
+
+                _MyLogControlEventos.InfoFormat("Info {0}", "Se ha cerrado la sesion");
             }
-            else
+            else if(resultado == DialogResult.No)
             {
+                _MyLogControlEventos.InfoFormat("Info {0}", "Se ha cerrado la sesion");
                 Application.Exit();
             }
         }
 
         public void Refrescar()
         {
-            lblTipoUsuario.Text = $"{_Usuario.GetType().Name}";
-            lblNombreUsuario.Text = $"{_Usuario.Nombre} {_Usuario.Apellido1}";
-            pbFotoUsuario.Image = new Bitmap(new MemoryStream(_Usuario.Fotografia));
-
-            if (_Usuario is Cliente)
+            try
             {
-                btnMantenimientos.Enabled = false;
-                btnReportes.Enabled = false;
+                lblTipoUsuario.Text = $"{_Usuario.GetType().Name}";
+                lblNombreUsuario.Text = $"{_Usuario.Nombre} {_Usuario.Apellido1}";
+                pbFotoUsuario.Image = new Bitmap(new MemoryStream(_Usuario.Fotografia));
 
-                lblMulta.Visible = false;
-                txtMulta.Visible = false;
-                btnModificarMulta.Visible = false;
-            }
-            else if (_Usuario is Instructor)
-            {
-                btnReportes.Enabled = false;
+                if (_Usuario is Cliente)
+                {
+                    btnMantenimientos.Enabled = false;
+                    btnReportes.Enabled = false;
 
-                lblMulta.Visible = false;
-                txtMulta.Visible = false;
-                btnModificarMulta.Visible = false;
+                    lblMulta.Visible = false;
+                    txtMulta.Visible = false;
+                    btnModificarMulta.Visible = false;
+                }
+                else if (_Usuario is Instructor)
+                {
+                    btnReportes.Enabled = false;
+
+                    lblMulta.Visible = false;
+                    txtMulta.Visible = false;
+                    btnModificarMulta.Visible = false;
+                }
+                else if (_Usuario is Administrador)
+                {
+                    txtMulta.Text = (oMultaBLL.ObtenerMulta().PorcentajeMulta * 100).ToString();
+                }
             }
-            else if(_Usuario is Administrador)
+            catch(Exception er)
             {
-                txtMulta.Text = (oMultaBLL.ObtenerMulta().PorcentajeMulta * 100).ToString();
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
             }
+           
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -86,16 +108,26 @@ namespace GymPro.Capa.UI.DashBoard
 
         public void AbrirFormEnPanel(object formhija)
         {
+            try
+            {
+                if (this.pnlDisplay.Controls.Count > 0)
+                    this.pnlDisplay.Controls.RemoveAt(0);
+                Form fh = formhija as Form;
+                fh.TopLevel = false;
+                fh.Dock = DockStyle.Fill;
+                this.pnlDisplay.Controls.Add(fh);
+                this.pnlDisplay.Tag = fh;
+                fh.Show();
+            }
+            catch (Exception er)
+            {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
-            if (this.pnlDisplay.Controls.Count > 0)
-                this.pnlDisplay.Controls.RemoveAt(0);
-            Form fh = formhija as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.pnlDisplay.Controls.Add(fh);
-            this.pnlDisplay.Tag = fh;
-            fh.Show();
-
+                throw er;
+            }
+            
         }
 
         private void btnMantenimientos_Click(object sender, EventArgs e)

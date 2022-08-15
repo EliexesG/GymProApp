@@ -1,6 +1,7 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +19,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 {
     public partial class FrmMantenimientoEjercicios : Form
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         IEjercicioBLL Logica;
 
@@ -29,7 +34,19 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
         private void FrmMantenimientoEjercicios_Load(object sender, EventArgs e)
         {
-            Refrescar();
+            try
+            {
+                Refrescar();
+            }
+            catch (SqlException sqlError)
+            {
+                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+
+            }
         }
 
         private void LlenarDgvEjercicios()
@@ -55,12 +72,15 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                throw sqlError;
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
+                throw er;
             }
         }
 
@@ -85,11 +105,11 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                throw sqlError;
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+                throw er;
 
             }
         }
@@ -161,6 +181,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 }
 
                 Logica.InsertarEjercicio(new Ejercicio() { Nombre = nombre, Descripcion = descripcion, CodigoTipo = codigoTipoEjercicio, Multimedia = multimedia});
+
+                MessageBox.Show("Ejercicio insertado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un ejercicio ha sido insertado");
+
                 Refrescar();
 
             }
@@ -171,7 +195,6 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             catch (Exception er)
             {
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
-
             }
 
         }
@@ -186,6 +209,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 }
                 catch (Exception er)
                 {
+                    StringBuilder msg = new StringBuilder();
+                    msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                    _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                     MessageBox.Show("Error: " + er.Message, "Error");
                 }
             }
@@ -261,6 +288,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 }
 
                 Logica.ModificarEjercicio(new Ejercicio() { Codigo = codigo, Nombre = nombre, Descripcion = descripcion, CodigoTipo = codigoTipoEjercicio, Multimedia = multimedia });
+
+                MessageBox.Show("Ejercicio modificado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un ejercicio ha sido modificado");
+
                 Refrescar();
 
             }
@@ -314,6 +345,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }
@@ -341,6 +376,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     int codigo = int.Parse(dgvEjercicios.SelectedCells[0].Value.ToString());
 
                     Logica.EliminarEjercicio(codigo);
+
+                    MessageBox.Show("Ejercicio eliminado!!");
+                    _MyLogControlEventos.InfoFormat("Info {0}", "Un ejercicio ha sido eliminado");
 
                     Refrescar();
                 }

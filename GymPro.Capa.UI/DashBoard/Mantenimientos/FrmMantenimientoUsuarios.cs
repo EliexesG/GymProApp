@@ -3,6 +3,7 @@ using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.Factories;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -21,6 +23,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 {
     public partial class FrmMantenimientoUsuarios : Form
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         private IUsuarioBLL Logica;
 
@@ -73,12 +78,11 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                throw sqlError;
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
-
+                throw er;
             }
         }
 
@@ -115,11 +119,15 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                throw sqlError;
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
 
             }
         }
@@ -180,8 +188,11 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
+                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
             }
         }
 
@@ -235,6 +246,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }
@@ -250,6 +265,10 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                 }
                 catch (Exception er)
                 {
+                    StringBuilder msg = new StringBuilder();
+                    msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                    _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                     MessageBox.Show("Error: " + er.Message, "Error");
                 }
             }
@@ -425,6 +444,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
                 Logica.InsertarUsuario(usuario);
                 Logica.ActivarUsuario(usuario.Identificacion);
+
+                MessageBox.Show("Usuario insertado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un usuario ha sido insertado");
 
                 Refrescar();
             }
@@ -608,6 +630,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
                 Logica.ModificarUsuario(usuario);
 
+                MessageBox.Show("Usuario modificado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un usuario ha sido modificado");
+
                 Refrescar();
             }
             catch (SqlException sqlError)
@@ -637,6 +662,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     string identificacion = dgvUsuarios.SelectedCells[0].Value.ToString();
 
                     Logica.EliminarUsuario(identificacion);
+
+                    MessageBox.Show("Usuario desactivado!!");
+                    _MyLogControlEventos.InfoFormat("Info {0}", "Un usuario ha sido desactivado");
 
                     Refrescar();
                 }

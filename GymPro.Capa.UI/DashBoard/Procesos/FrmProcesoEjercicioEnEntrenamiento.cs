@@ -1,6 +1,7 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -17,6 +19,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 {
     public partial class FrmProcesoEjercicioEnEntrenamiento : Form
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         private Entrenamiento _Entrenamiento;
 
@@ -86,12 +91,15 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                throw sqlError;
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
+                throw er;
             }
             
         }
@@ -156,6 +164,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }
@@ -188,11 +200,15 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                throw sqlError;
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
 
             }
         }
@@ -286,6 +302,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 LogicaEjercicioEnEntrenamiento.InsertarEjercicioEnEntrenamiento(nuevoEjercicioEnEntrenamiento);
 
+                MessageBox.Show("Ejercicio en Entrenamiento insertado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un ejercicio en entranamiento ha sido insertado");
+
                 Refrescar();
             }
             catch (SqlException sqlError)
@@ -366,6 +385,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 LogicaEjercicioEnEntrenamiento.ModificarEjercicioEnEntrenamiento(ejercicioModificar);
 
+                MessageBox.Show("Ejercicio en Entrenamiento modificado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un ejercicio en entranamiento ha sido modificado");
+
                 Refrescar();
 
             }
@@ -411,6 +433,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }
@@ -449,6 +475,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                     int codigoEjercicio = int.Parse(dgvEjercicioEnEntrenamiento.SelectedCells[0].Value.ToString());
 
                     LogicaEjercicioEnEntrenamiento.EliminarEjercicioEnEntrenamiento(_Entrenamiento.Codigo, codigoEjercicio);
+
+                    MessageBox.Show("Ejercicio en Entrenamiento eliminado!!");
+                    _MyLogControlEventos.InfoFormat("Info {0}", "Un ejercicio en entranamiento ha sido eliminado");
 
                     Refrescar();
                 }
