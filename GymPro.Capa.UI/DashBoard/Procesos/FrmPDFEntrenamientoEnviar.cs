@@ -1,4 +1,5 @@
 ﻿using GymPro.Capa.Entidades.Implementaciones;
+using GymPro.Capa.Util;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +18,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 {
     public partial class FrmPDFEntrenamientoEnviar : Form
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private int CodigoEntrenamiento;
         private Cliente _Cliente;
 
@@ -41,6 +47,11 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (Exception er)
             {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }
@@ -81,6 +92,7 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                 Util.Utilitarios.EnviarCorreo(receptor, tema, mensaje, Ruta);
 
                 MessageBox.Show("Entrenamiento Enviado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un entrenamiento ha sido enviado por correo");
             }
             catch (Exception er)
             {
@@ -113,6 +125,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
 
             }

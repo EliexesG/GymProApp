@@ -3,6 +3,7 @@ using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
 using GymPro.Capa.Logica.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +21,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 {
     public partial class FrmMantenimientoExpediente : Form
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         IExpedienteUsuarioBLL LogicaExpediente;
         IUsuarioBLL LogicaUsuario;
@@ -76,12 +81,15 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                throw sqlError;
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
+                throw er;
             }
         }
 
@@ -165,6 +173,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
 
                 LogicaExpediente.InsertarExpedienteUsuario(nuevoExpediente);
 
+                MessageBox.Show("Expediente Insertado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un expediente de usuario ha sido insertado");
+
                 Refrescar();
 
             }
@@ -197,6 +208,9 @@ namespace GymPro.Capa.UI.DashBoard.Mantenimientos
                     string identificacionUsuario = dgvExpediente.SelectedCells[1].Value.ToString();
 
                     LogicaExpediente.EliminarExpedienteUsuario(fecha, identificacionUsuario);
+
+                    MessageBox.Show("Expediente Eliminado!!");
+                    _MyLogControlEventos.InfoFormat("Info {0}", "Un expediente de usuario ha sido eliminado");
 
                     Refrescar();
                 }

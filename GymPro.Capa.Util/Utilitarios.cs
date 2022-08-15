@@ -18,6 +18,10 @@ namespace GymPro.Capa.Util
     /// </summary>
     public class Utilitarios
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         /// <summary>
         /// Activa el Culture Info en base a la moneda del pais CR
         /// </summary>
@@ -215,6 +219,10 @@ namespace GymPro.Capa.Util
             }
             catch(Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 throw er;
             }
         }
@@ -248,6 +256,10 @@ namespace GymPro.Capa.Util
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 throw er;
             }
         }

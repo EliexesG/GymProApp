@@ -18,6 +18,9 @@ namespace GymPro.Capa.UI.InicioSesion
     public partial class FrmLogIn : Form
     {
 
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private FrmInicioSesion _FrmInicioSesion;
 
         public FrmLogIn(FrmInicioSesion frmInicioSesion)
@@ -92,20 +95,31 @@ namespace GymPro.Capa.UI.InicioSesion
                     return;
                 }
 
+                bool inicioSesion = false;
+
                 logica.ObtenerUsuarioActivoTodos().ForEach(usuario =>
                 {
 
                     if (usuario.Identificacion.Equals(identificacion) && usuario.Contrasenna.Equals(contrasenna))
                     {
+                        inicioSesion = true;
+
                         FrmDashBoard frmDashBoard = new FrmDashBoard(usuario);
+
+                        _MyLogControlEventos.InfoFormat("Info {0}", $"El usuario {usuario.Nombre} {usuario.Apellido1} de tipo {usuario.GetType().Name} ha iniciado sesion");
+
                         frmDashBoard.Show();
                         _FrmInicioSesion.Hide();
                     }
 
                 });
 
-                lblMensajeError.Visible = true;
-
+                if (!inicioSesion)
+                {
+                    lblMensajeError.Visible = true;
+                    _MyLogControlEventos.InfoFormat("Info {0}", "Intento de inicio de sesion fallido");
+                }
+                
             }
             catch (SqlException sqlError)
             {

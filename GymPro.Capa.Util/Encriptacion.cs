@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Reflection;
 
 namespace GymPro.Capa.Util
 {
@@ -12,6 +13,10 @@ namespace GymPro.Capa.Util
     /// </summary>
     public class Encriptacion
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         /// <summary>
         /// Hash para encriptacion y desencriptacion
         /// </summary>
@@ -24,19 +29,31 @@ namespace GymPro.Capa.Util
         /// <returns>encriptacion en Array de bytes</returns>
         public static byte[] EncriptarContrasenna(string pContrasenna)
         {
-            byte[] data = UTF8Encoding.UTF8.GetBytes(pContrasenna);
+            try
+            {
+                byte[] data = UTF8Encoding.UTF8.GetBytes(pContrasenna);
 
-            MD5 md5 = MD5.Create();
-            TripleDES tripleDes = TripleDES.Create();
+                MD5 md5 = MD5.Create();
+                TripleDES tripleDes = TripleDES.Create();
 
-            tripleDes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(Hash));
-            tripleDes.Mode = CipherMode.ECB;
+                tripleDes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(Hash));
+                tripleDes.Mode = CipherMode.ECB;
 
-            ICryptoTransform transform = tripleDes.CreateEncryptor();
+                ICryptoTransform transform = tripleDes.CreateEncryptor();
 
-            byte[] resultado = transform.TransformFinalBlock(data, 0, data.Length);
+                byte[] resultado = transform.TransformFinalBlock(data, 0, data.Length);
 
-            return resultado;
+                return resultado;
+            }
+            catch(Exception er)
+            {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
+            }
+            
         }
 
         /// <summary>
@@ -46,17 +63,29 @@ namespace GymPro.Capa.Util
         /// <returns>String desencriptado</returns>
         public static string DesencriptarContrasenna(byte[] pContrasennaEncriptada)
         {
-            MD5 md5 = MD5.Create();
-            TripleDES tripleDes = TripleDES.Create();
+            try
+            {
+                MD5 md5 = MD5.Create();
+                TripleDES tripleDes = TripleDES.Create();
 
-            tripleDes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(Hash));
-            tripleDes.Mode = CipherMode.ECB;
+                tripleDes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(Hash));
+                tripleDes.Mode = CipherMode.ECB;
 
-            var transform = tripleDes.CreateDecryptor();
+                var transform = tripleDes.CreateDecryptor();
 
-            byte[] resultado = transform.TransformFinalBlock(pContrasennaEncriptada, 0, pContrasennaEncriptada.Length);
+                byte[] resultado = transform.TransformFinalBlock(pContrasennaEncriptada, 0, pContrasennaEncriptada.Length);
 
-            return UTF8Encoding.UTF8.GetString(resultado);
+                return UTF8Encoding.UTF8.GetString(resultado);
+            }
+            catch (Exception er)
+            {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+                throw er;
+            }
+            
         }
     }
 }

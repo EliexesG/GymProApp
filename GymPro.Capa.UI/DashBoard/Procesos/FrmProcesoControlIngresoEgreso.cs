@@ -2,6 +2,7 @@
 using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.Logica.BLL.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +19,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 {
     public partial class FrmProcesoControlIngresoEgreso : Form
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private IUsuario _Usuario;
         private IControlIngresoEgresoBLL LogicaControl;
         private TimeSpan HoraUltima;
@@ -63,6 +69,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch(Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
             }
         }
@@ -81,6 +91,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch(Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
             }
         }
@@ -95,6 +109,10 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 MessageBox.Show($"Ha ocurrido un error: {er.Message}");
             }
         }
@@ -145,12 +163,15 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
             }
             catch (SqlException sqlError)
             {
-                MessageBox.Show($"Ha ocurrido un error en la base de datos: {Util.Utilitarios.GetCustomErrorByNumber(sqlError)}");
+                throw sqlError;
             }
             catch (Exception er)
             {
-                MessageBox.Show($"Ha ocurrido un error: {er.Message}");
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
 
+                throw er;
             }
         }
 
@@ -169,6 +190,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                 LogicaControl.InsertarIngreso(controlNuevo);
 
                 ActivarContador();
+
+                MessageBox.Show("Ingreso registrado, contador iniciado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un ingreso ha sido registrado, se activo el contador");
 
                 btnRegistrarIngreso.Enabled = false;
                 btnRegistrarEgreso.Enabled = true;
@@ -201,6 +225,9 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
                 Refrescar();
 
                 DesactivarContador();
+
+                MessageBox.Show("Egreso registrado, contador desactivado!!");
+                _MyLogControlEventos.InfoFormat("Info {0}", "Un egreso ha sido registrado, se desactivo el contador");
 
                 btnRegistrarIngreso.Enabled = true;
                 btnRegistrarEgreso.Enabled = false;
