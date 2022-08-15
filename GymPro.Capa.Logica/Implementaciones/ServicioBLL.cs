@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Servicios de la base de datos
+    /// </summary>
     public class ServicioBLL : IServicioBLL
     {
         private IServicioDAL oServicioDAL;
@@ -22,6 +25,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Logica
+        /// <inheritdoc />
         public double CalcularCostoServicio(Servicio pServicio)
         {
             try
@@ -34,13 +38,9 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
         #endregion
-
+        /// <inheritdoc />
         #region Acceso a datos
-        /// <summary>
-        /// Obtiene un Servicio de la base de datos por su Id
-        /// </summary>
-        /// <param name="pCodigo"> Codigo del servicio a buscar </param>
-        /// <returns>Entidad de tipo Servicio</returns>
+
         public Servicio ObtenerServicioId(int pCodigo)
         {
             try
@@ -59,10 +59,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los servicios de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo Servicio</returns>
+        /// <inheritdoc />
         public List<Servicio> ObtenerServicioTodos()
         {
             try

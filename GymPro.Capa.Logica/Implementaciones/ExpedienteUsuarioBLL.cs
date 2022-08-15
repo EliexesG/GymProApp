@@ -2,17 +2,25 @@
 using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Expedientes de Usuarios de la base de datos
+    /// </summary>
     public class ExpedienteUsuarioBLL : IExpedienteUsuarioBLL
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         private IExpedienteUsuarioDAL oExpedienteUsuarioDAL;
 
@@ -22,6 +30,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Logica
+        /// <inheritdoc />
         public double CalcularIMC(ExpedienteUsuario pExpedienteUsuario)
         {
             try
@@ -30,13 +39,18 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
                 return Math.Round(pExpedienteUsuario.Peso / (Math.Pow(pExpedienteUsuario.Altura / 100f, 2)));
 
             }
-            catch(DivideByZeroException)
+            catch(DivideByZeroException er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 throw new DivideByZeroException("No se puede sacar el IMC, división entre 0");
             }
             
         }
 
+        /// <inheritdoc />
         public double CalcularMetabolismoBasal(ExpedienteUsuario pExpedienteUsuario, int pEdad, Genero pGenero)
         {
             return (10 * pExpedienteUsuario.Peso) + (6.25 * pExpedienteUsuario.Altura) 
@@ -45,11 +59,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         #endregion
 
         #region Acceso a datos
-        /// <summary>
-        /// Elimina un Expediente de Usuario de la base de datos por sus Ids
-        /// </summary>
-        /// <param name="pFecha"> Fecha del Expediente Usuario a eliminar </param>
-        /// <param name="pIdentificacionUsuario"> Identificacion del Usuario relacionado al Expediente Usuario a Eliminar</param>
+        /// <inheritdoc />
         public void EliminarExpedienteUsuario(DateTime pFecha, string pIdentificacionUsuario)
         {
             try
@@ -70,10 +80,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Inserta un Expediente de Usuario en la base de datos
-        /// </summary>
-        /// <param name="pExpediente"> Expediente de Usuario a insertar </param>
+        /// <inheritdoc />
         public void InsertarExpedienteUsuario(ExpedienteUsuario pExpediente)
         {
             try
@@ -94,10 +101,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Modifica un Expediente de Usuario en la base de datos
-        /// </summary>
-        /// <param name="pExpediente"> El Expediente de Usuario a Modificar </param>
+        /// <inheritdoc />
         public void ModificarExpedienteUsuario(ExpedienteUsuario pExpediente)
         {
             try
@@ -118,12 +122,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene un Expediente de Usuario especifico de la base de datos por medio de sus Ids
-        /// </summary>
-        /// <param name="pFecha"> Fecha del Expediente Usuario a buscar </param>
-        /// <param name="pIdentificacionUsuario"> Identificacion del Usuario relacionado al Expediente Usuario a buscar </param>
-        /// <returns>Entidad de tipo ExpedienteUsuario</returns>
+        /// <inheritdoc />
         public ExpedienteUsuario ObtenerExpedienteUsuarioId(DateTime pFecha, string pIdentificacionUsuario)
         {
             try
@@ -144,11 +143,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista historial con todos los Expedientes de Usuario relacionados a la Identificacion de Usuario de la base de datos
-        /// </summary>
-        /// <param name="pIdentificacionUsuario"> Identificacion  del Usuario relacionado a los Expedientes de Usuario a buscar </param>
-        /// <returns>Lista de Entidades de tipo ExpedienteUsuario</returns>
+        /// <inheritdoc />
         public List<ExpedienteUsuario> ObtenerExpedienteUsuarioIdentificacionUsuario(string pIdentificacionUsuario)
         {
             try
@@ -170,10 +165,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Expedientes de Usuario almacenados en la base de datos
-        /// </summary>
-        /// <returns>Lista de Entidades de tipo ExpedienteUsuario</returns>
+        /// <inheritdoc />
         public List<ExpedienteUsuario> ObtenerExpedienteUsuarioTodos()
         {
             try

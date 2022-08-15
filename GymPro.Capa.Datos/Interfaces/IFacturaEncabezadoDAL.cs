@@ -40,7 +40,7 @@ namespace GymPro.Capa.Datos.Interfaces
         /// Obtiene un Encabezado de Factura por su Id
         /// </summary>
         /// <param name="pCodigo"> Codigo de Encabezado de Factura a buscar </param>
-        /// <returns></returns>
+        /// <returns>Entidad de tipo FacturaEncabezado</returns>
         FacturaEncabezado ObtenerFacturaEncabezadoId(int pCodigo);
 
         /// <summary>
