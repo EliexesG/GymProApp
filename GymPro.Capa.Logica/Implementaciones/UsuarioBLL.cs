@@ -3,17 +3,25 @@ using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Entidades.Interfaces;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Usuarios de la base de datos
+    /// </summary>
     public class UsuarioBLL : IUsuarioBLL
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         private IUsuarioDAL oUsuarioDAL;
 
@@ -23,6 +31,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Logica
+        /// <inheritdoc />
         public int CalcularEdadUsuario(DateTime pFechaNacimiento)
         {
             try
@@ -35,16 +44,17 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
             catch(Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 throw er;
             }
         }
         #endregion
 
         #region Acceso a datos
-        /// <summary>
-        /// Elimina un usuario de la base de datos por su Identificacion
-        /// </summary>
-        /// <param name="pIdentificacionUsuario"> Identificacion del Usuario a eliminar </param>
+        /// <inheritdoc />
         public void EliminarUsuario(string pIdentificacionUsuario)
         {
 
@@ -64,10 +74,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Inserta un Usuario en la base de datos
-        /// </summary>
-        /// <param name="pUsuario"> Usuario a insertar </param>
+        /// <inheritdoc />
         public void InsertarUsuario(IUsuario pUsuario)
         {
 
@@ -87,10 +94,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Modifica un Usuario en la base de datos
-        /// </summary>
-        /// <param name="pUsuario"> Usuario a modificar </param>
+        /// <inheritdoc />
         public void ModificarUsuario(IUsuario pUsuario)
         {
 
@@ -110,11 +114,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene el Usuario relacionado a la Identificacion de la base de datos
-        /// </summary>
-        /// <param name="pIdentificacionUsuario"> Identificacion del Usuario a buscar </param>
-        /// <returns>Entidad de tipo Usuario</returns>
+        /// <inheritdoc />
         public IUsuario ObtenerUsuarioIdentificacion(string pIdentificacionUsuario)
         {
 
@@ -134,10 +134,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Usuarios activos de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo Usuario</returns>
+        /// <inheritdoc />
         public List<IUsuario> ObtenerUsuarioActivoTodos()
         {
             try
@@ -156,10 +153,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Usuarios inactivos de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo Usuario</returns>
+        /// <inheritdoc />
         public List<IUsuario> ObtenerUsuarioInactivoTodos()
         {
             try
@@ -178,10 +172,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Activa un Usuario por su Identificacion en la base de datos
-        /// </summary>
-        /// <param name="pIdentificacionUsuario">Identificacion del Usuario a activar</param>
+        /// <inheritdoc />
         public void ActivarUsuario(string pIdentificacionUsuario)
         {
             try
@@ -200,10 +191,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtener la lista de los Clientes en la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo Cliente</returns>
+        /// <inheritdoc />
         public List<Cliente> ObtenerUsuariosCliente()
         {
             try
@@ -220,14 +208,15 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtener la lista de los Entrenadores en la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo Cliente</returns>
+        /// <inheritdoc />
         public List<Instructor> ObtenerUsuariosInstructor()
         {
             try
@@ -244,6 +233,10 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
                 throw er;
             }
         }

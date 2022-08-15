@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Ejercicios en Entrenamiento de la base de datos
+    /// </summary>
     public class EjercicioEnEntrenamientoBLL : IEjercicioEnEntrenamientoBLL
     {
         private IEjercicioEnEntrenamientoDAL oEjercicioEnEntrenamientoDAL;
@@ -21,11 +24,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Acceso a datos
-        /// <summary>
-        /// Elimina un Ejercicio de Entrenamiento de la base de datos
-        /// </summary>
-        /// <param name="pCodigoEntrenamiento">Codigo del entrenamiento relacionado al ejercicio a eliminar</param>
-        /// <param name="pCodigoEjercicio">Codigo del ejercicio de Entrenamiento a eliminar</param>
+        /// <inheritdoc />
         public void EliminarEjercicioEnEntrenamiento(int pCodigoEntrenamiento, int pCodigoEjercicio)
         {
             try
@@ -44,10 +43,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Insertar un Ejercicio en Entrenamiento en la base de datos
-        /// </summary>
-        /// <param name="pEjercicioEnEntrenamiento">Ejercicio en Entrenamiento a eliminar</param>
+        /// <inheritdoc />
         public void InsertarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicioEnEntrenamiento)
         {
 
@@ -67,10 +63,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Modificar un Ejercicio en Entrenamiento en la base de datos
-        /// </summary>
-        /// <param name="pEjercicioEnEntrenamiento">Ejercicio en Entrenamiento a modificar</param>
+        /// <inheritdoc />
         public void ModificarEjercicioEnEntrenamiento(EjercicioEnEntrenamiento pEjercicioEnEntrenamiento)
         {
 
@@ -90,11 +83,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de Ejercicios en Entrenamiento relacionados al Codigo de Entrenamiento de la base de datos
-        /// </summary>
-        /// <param name="pCodigoEntrenamiento">Codigo de Entrenamiento relacionado a los Ejercicios en Entrenamiento a buscar</param>
-        /// <returns>Lista de entidades de tipo EjericicioEnEntrenamiento</returns>
+        /// <inheritdoc />
         public List<EjercicioEnEntrenamiento> ObtenerEjercicioEnEntrenamientoCodigoEntrenamiento(int pCodigoEntrenamiento)
         {
 
@@ -114,12 +103,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene un Ejercicio en Entrenamiento relacionado a sus Ids de la base de datos
-        /// </summary>
-        /// <param name="pCodigoEntrenamiento"> Codigo del entrenamiento relacionado al ejercicio a buscar</param>
-        /// <param name="pCodigoEjercicio">Codigo del ejercicio de Entrenamiento a buscar</param>
-        /// <returns>Entidad de tipo EjercicioEnEntrenamiento</returns>
+        /// <inheritdoc />
         public EjercicioEnEntrenamiento ObtenerEjercicioEnEntrenamientoId(int pCodigoEntrenamiento, int pCodigoEjercicio)
         {
 
@@ -139,10 +123,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Retorna una lista de todos los Ejercicios en Entrenamiento en la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo EjercicioEnEntrenamiento</returns>
+        /// <inheritdoc />
         public List<EjercicioEnEntrenamiento> ObtenerEjercicioEnEntrenamientoTodos()
         {
 
@@ -162,11 +143,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Retorna una lista de todos los Ejercicios en Entrenamiento de la base de datos pertenecientes a ese codigo de Ejercicio
-        /// </summary>
-        /// <param name="pCodigoEjercicio">Codigo de Ejercicio de los Ejercicios en Entrenamientos a buscar</param>
-        /// <returns>Lista de entidades de tipo EjercicioEnEntrenamiento</returns>
+        /// <inheritdoc />
         public List<EjercicioEnEntrenamiento> ObtenerEjercicioEnEntrenamientoCodigoEjercicio(int pCodigoEjercicio)
         {
             try

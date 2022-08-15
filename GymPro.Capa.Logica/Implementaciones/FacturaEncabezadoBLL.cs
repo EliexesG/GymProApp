@@ -8,14 +8,20 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Encabezados de Factura de la base de datos (Esta incluye los metodos logicos del Gestor y metodos de acceso a datos)
+    /// </summary>
     public class FacturaEncabezadoBLL : IFacturaEncabezadoBLLDatos, IFacturaEncabezadoBLLGestor
     {
 
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
 
         private MultaDAL oMultaDAL = new MultaDAL();
         private IFacturaEncabezadoDAL oFacturaEncabezadoDAL;
@@ -26,31 +32,37 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Logica
+        /// <inheritdoc />
         public bool YaPagado(DateTime pFechaSiguientePago)
         {
             return pFechaSiguientePago >= DateTime.Now;
         }
 
+        /// <inheritdoc />
         public bool EstaMoroso(DateTime pFechaSiguientePago)
         {
             return pFechaSiguientePago < DateTime.Now;
         }
 
+        /// <inheritdoc />
         public DateTime SiguientePago(DateTime pFechaPagoActual)
         {
             return pFechaPagoActual.AddMonths(1);
         }
 
+        /// <inheritdoc />
         public double CalcularMulta(double pMontoServicios)
         {
             return pMontoServicios * oMultaDAL.ObtenerMulta().PorcentajeMulta;
         }
 
+        /// <inheritdoc />
         public double CalcularMontoTotal(double pMontoServicios, double pMontoMulta)
         {
             return pMontoServicios + pMontoMulta;
         }
 
+        /// <inheritdoc />
         public int SiguienteCodigo()
         {
             try
@@ -67,6 +79,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
+        /// <inheritdoc />
         public double CalcularMontoServicios(List<Servicio> pServicios)
         {
             try
@@ -79,6 +92,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
+        /// <inheritdoc />
         public byte[] ObtenerCodigoQR(int codigo)
         {
             try
@@ -91,6 +105,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
+        /// <inheritdoc />
         public void ValidarTarjeta(Tarjeta pTarjeta)
         {
             try
@@ -107,6 +122,10 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
+        /// <summary>
+        /// Valida el numero de tarjeta utilizando el Algoritmo de Luhn (Modulo 10) si es incorrecta lanzara la excepcion
+        /// </summary>
+        /// <param name="pNumero">Numero de la tarjeta a validar</param>
         private void ValidarNumeroTarjeta(string pNumero)
         {
 
@@ -116,6 +135,8 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
             catch (Exception)
             {
+                _MyLogControlEventos.InfoFormat("Info {0}", "Se trato de insertar un numero de factura con caracteres no numericos");
+
                 throw new Exception("El campo del número de tarjeta debe ser llenado solamente con números");
             }
 
@@ -147,10 +168,17 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
 
             if(sumaDigitos % 10 != 0)
             {
+                _MyLogControlEventos.InfoFormat("Info {0}", "Se trato de insertar un numero de tarjeta no valido");
+
                 throw new Exception("El número de la tarjeta no es válido, digite un número válido");
             }
         }
 
+        /// <summary>
+        /// Valida que la fecha de expiracion de la tarjeta no se haya vencido aun, si esta expirada lanzara la excepcion
+        /// </summary>
+        /// <param name="pMes">Mes de expiracion a validar</param>
+        /// <param name="pAnno">Anno de expiracion a validar</param>
         private void ValidarFechaExpiracion(int pMes, int pAnno)
         {
 
@@ -169,10 +197,16 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
 
             if (expiro)
             {
+                _MyLogControlEventos.InfoFormat("Info {0}", "Se trato de insertar una fecha de expiracion ya expirada");
+
                 throw new Exception("La tarjeta con la que se desea pagar ha expirado");
             }
         }
 
+        /// <summary>
+        /// Se valida que el codigo de seguridad sea numerico y compuesto de 3 digitos, si no entonces se lanzara la excepcion
+        /// </summary>
+        /// <param name="pCodigo">Codigo a validar</param>
         private void ValidarCodigoSeguridad(string pCodigo)
         {
 
@@ -182,17 +216,22 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
             catch (Exception)
             {
+                _MyLogControlEventos.InfoFormat("Info {0}", "Se trato de insertar un numero de codigo de tarjeta con caracteres no numericos");
+
                 throw new Exception("El campo del código debe ser llenado solamente con números");
             }
 
             if (pCodigo.Length != 3)
             {
+                _MyLogControlEventos.InfoFormat("Info {0}", "Se trato de insertar un numero de codigo de tarjeta mayor a 3 digitos");
+
                 throw new Exception("Código de seguridad incorrecto, debe ser un número de 3 dígitos");
             }
         }
         #endregion
 
         #region Acceso a datos
+        /// <inheritdoc />
         public FacturaEncabezado ObtenerUltimaFacturaEncabezadoIdentificacionUsuario(string pIdentificacion)
         {
             try
@@ -211,10 +250,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Elimina un Encabezado de Factura de la base de datos por Id
-        /// </summary>
-        /// <param name="pCodigo"> Codigo del Encabezado de Factura a eliminar</param>
+        /// <inheritdoc />
         public void EliminarFacturaEncabezado(int pCodigo)
         {
             try
@@ -233,10 +269,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Inserta un Encabezado de Factura en la base de datos
-        /// </summary>
-        /// <param name="pFacturaEncabezado"> Encabezado de Factura a insertar </param>
+        /// <inheritdoc />
         public void InsertarFacturaEncabezado(FacturaEncabezado pFacturaEncabezado)
         {
             try
@@ -255,10 +288,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Modifica un Encabezado de Factura en la base de datos
-        /// </summary>
-        /// <param name="pFacturaEncabezado"> Encabezado de Factura a modificar </param>
+        /// <inheritdoc />
         public void ModificarFacturaEncabezado(FacturaEncabezado pFacturaEncabezado)
         {
             try
@@ -277,11 +307,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene un Encabezado de Factura por su Id
-        /// </summary>
-        /// <param name="pCodigo"> Codigo de Encabezado de Factura a buscar </param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public FacturaEncabezado ObtenerFacturaEncabezadoId(int pCodigo)
         {
             try
@@ -300,11 +326,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de Encabezados de Facturas relacionados a la Identificacion de un Usuario de la base de datos
-        /// </summary>
-        /// <param name="pIdentificacionUsuario"> Identificacion del Usuario relacionado a los Encabezados de Factura a buscar </param>
-        /// <returns>Lista de entidades de tipo FacturaEncabezado</returns>
+        /// <inheritdoc />
         public List<FacturaEncabezado> ObtenerFacturaEncabezadoIdentificacionUsuario(string pIdentificacionUsuario)
         {
             try
@@ -324,10 +346,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Encabezados de Factura en la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo FacturaEncabezado</returns>
+        /// <inheritdoc />
         public List<FacturaEncabezado> ObtenerFacturaEncabezadoTodas()
         {
             try

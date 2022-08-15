@@ -2,17 +2,26 @@
 using GymPro.Capa.Datos.Interfaces;
 using GymPro.Capa.Entidades.Implementaciones;
 using GymPro.Capa.Logica.BLL.Interfaces;
+using GymPro.Capa.Util;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Ejercicios de la base de datos
+    /// </summary>
     public class EjercicioBLL : IEjercicioBLL
     {
+
+        //Log4net
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+
         private IEjercicioDAL oEjercicioDAL;
 
         public EjercicioBLL()
@@ -21,10 +30,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Acceso a datos
-        /// <summary>
-        /// Elimina un Ejercicio por su Id de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del Ejercicio a eliminar</param>
+        /// <inheritdoc />
         public void EliminarEjercicio(int pCodigo)
         {
             try
@@ -43,10 +49,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Inserta un Ejercicio en la base de datos
-        /// </summary>
-        /// <param name="pEjercicio">Ejercicio a insertar</param>
+        /// <inheritdoc />
         public void InsertarEjercicio(Ejercicio pEjercicio)
         {
             try
@@ -65,10 +68,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Modifica un Ejercicio en la base de datos
-        /// </summary>
-        /// <param name="pEjercicio">Ejercicio a modificar</param>
+        /// <inheritdoc />
         public void ModificarEjercicio(Ejercicio pEjercicio)
         {
             try
@@ -87,11 +87,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de Ejercicios por Codigo del Tipo de Ejercicio de la base de datos
-        /// </summary>
-        /// <param name="pCodigoTipo">Codigo del Tipo de Ejercicio de los Ejercicios a buscar</param>
-        /// <returns>Lista de Entidades de tipo Ejercicio</returns>
+        /// <inheritdoc />
         public List<Ejercicio> ObtenerEjercicioCodigoTipo(int pCodigoTipo)
         {
             try
@@ -110,11 +106,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene un Ejercicio por su Id de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del Ejercicio a buscar</param>
-        /// <returns>Entidad de tipo Ejercicio</returns>
+        /// <inheritdoc />
         public Ejercicio ObtenerEjercicioId(int pCodigo)
         {
             try
@@ -133,10 +125,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Ejercicios en la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo Ejercicio</returns>
+        /// <inheritdoc />
         public List<Ejercicio> ObtenerEjercicioTodos()
         {
             try
@@ -155,11 +144,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtener una lista de Ejercicios que NO estan en el entrenamiento referenciado por codigo de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del entrenamiento</param>
-        /// <returns>Lista de entidades de tipo Ejercicio</returns>
+        /// <inheritdoc />
         public List<Ejercicio> ObtenerEjercicioDisponibleCodigoEntrenamiento(int pCodigo)
         {
 
@@ -187,21 +172,21 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+
                 throw er;
             }
         }
 
-        /// <summary>
-        /// Obtener una lista de Ejercicios que NO estan en el entrenamiento referenciado por codigo y el tipo de ejercicio de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del entrenamiento</param>
-        /// <param name="pTipoEjercicio">Codigo del tipo de ejercicio</param>
-        /// <returns>Lista de entidades de tipo Ejercicio</returns>
-        public List<Ejercicio> ObtenerEjercicioDisponibleCodigoEntrenamientoYTipoEjercicio(int pCodigo, int pTipoEjercicio)
+        /// <inheritdoc />
+        public List<Ejercicio> ObtenerEjercicioDisponibleCodigoEntrenamientoYTipoEjercicio(int pCodigoEntrenamiento, int pTipoEjercicio)
         {
             try
             {
-                return this.ObtenerEjercicioDisponibleCodigoEntrenamiento(pCodigo).FindAll(ejercicio => ejercicio.CodigoTipo == pTipoEjercicio).ToList();
+                return this.ObtenerEjercicioDisponibleCodigoEntrenamiento(pCodigoEntrenamiento).FindAll(ejercicio => ejercicio.CodigoTipo == pTipoEjercicio).ToList();
             }
             catch (SqlException sqlError)
             {
@@ -209,6 +194,11 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
             catch (Exception er)
             {
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat(Utilitarios.CreateGenericErrorExceptionDetail(MethodBase.GetCurrentMethod(), er));
+                _MyLogControlEventos.ErrorFormat("Error {0}", msg.ToString());
+
+
                 throw er;
             }
         }

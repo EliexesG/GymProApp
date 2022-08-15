@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Tipos de Usuarios de la base de datos
+    /// </summary>
     public class TipoUsuarioBLL : ITipoUsuarioBLL
     {
         private ITipoUsuarioDAL oTipoUsuarioDAL;
@@ -21,11 +24,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Acceso a datos
-        /// <summary>
-        /// Obtiene un Tipo de Usuario por su Id de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del Tipo de Usuario a buscar</param>
-        /// <returns>Entidad de tipo TipoUsuario</returns>
+        /// <inheritdoc />
         public TipoUsuario ObtenerTipoUsuarioId(int pCodigo)
         {
             try
@@ -43,10 +42,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos Tipos de Usuario de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo TipoUsuario</returns>
+        /// <inheritdoc />
         public List<TipoUsuario> ObtenerTipoUsuarioTodos()
         {
             try

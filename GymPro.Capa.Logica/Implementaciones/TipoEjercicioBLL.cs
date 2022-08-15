@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Tipos de Ejercicios de la base de datos
+    /// </summary>
     public class TipoEjercicioBLL : ITipoEjercicioBLL
     {
         private ITipoEjercicioDAL oTipoEjercicioDAL;
@@ -21,10 +24,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Acceso a datos
-        /// <summary>
-        /// Elimina un Tipo de Ejercicio de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del Tipo de Ejercicio a eliminar</param>
+        /// <inheritdoc />
         public void EliminarTipoEjercicio(int pCodigo)
         {
             try
@@ -43,10 +43,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Inserta un Tipo de Ejercicio en la base de datos
-        /// </summary>
-        /// <param name="pTipoEjercicio">Tipo de Ejercicio a insertar</param>
+        /// <inheritdoc />
         public void InsertarTipoEjercicio(TipoEjercicio pTipoEjercicio)
         {
             try
@@ -65,10 +62,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Modifica un Tipo de Ejercicio en la base de datos
-        /// </summary>
-        /// <param name="pTipoEjercicio">Tipo de Ejercicio a modificar</param>
+        /// <inheritdoc />
         public void ModificarTipoEjercicio(TipoEjercicio pTipoEjercicio)
         {
             try
@@ -87,11 +81,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene un Tipo de Ejercicio por su Id de la base de datos
-        /// </summary>
-        /// <param name="pCodigo">Codigo del Tipo de Ejercicio a buscar</param>
-        /// <returns>Entidad de TipoEjercicio</returns>
+        /// <inheritdoc />
         public TipoEjercicio ObtenerTipoEjercicioId(int pCodigo)
         {
 
@@ -111,10 +101,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Tipos de Ejercicio de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de TipoEjercicio</returns>
+        /// <inheritdoc />
         public List<TipoEjercicio> ObtenerTipoEjercicioTodos()
         {
             try

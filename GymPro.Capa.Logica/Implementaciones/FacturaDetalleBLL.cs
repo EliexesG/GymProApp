@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Implementaciones
 {
+    /// <summary>
+    /// Clase de logica y acceso a datos para los Detalles de Factura de la base de datos
+    /// </summary>
     public class FacturaDetalleBLL : IFacturaDetalleBLL
     {
         private IFacturaDetalleDAL oFacturaDetalleDAL;
@@ -21,6 +24,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         }
 
         #region Logica
+        /// <inheritdoc />
         public double CalcularMontoServicios(List<Servicio> pServicios)
         {
             try
@@ -44,10 +48,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
         #endregion
 
         #region Acceso a datos
-        /// <summary>
-        /// Inserta un Detalle de Factura en la base de datos
-        /// </summary>
-        /// <param name="pFacturaDetalle"> Detalle de Factura a insertar </param>
+        /// <inheritdoc />
         public void InsertarFacturaDetalle(FacturaDetalle pFacturaDetalle)
         {
 
@@ -65,11 +66,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de los Detalles de Factura en relacion con el Codigo del Encabezado de Factura de la base de datos
-        /// </summary>
-        /// <param name="pCodigoFactura"> Codigo del Encabezado de Factura relacionado </param>
-        /// <returns>Lista de entidades de tipo FacturaDetalle</returns>
+        /// <inheritdoc />
         public List<FacturaDetalle> ObtenerFacturaDetalleCodigoFactura(int pCodigoFactura)
         {
 
@@ -87,10 +84,7 @@ namespace GymPro.Capa.Logica.BLL.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Obtiene una lista de todos los Detalles de Factura de la base de datos
-        /// </summary>
-        /// <returns>Lista de entidades de tipo FacturaDetalle</returns>
+        /// <inheritdoc />
         public List<FacturaDetalle> ObtenerFacturaDetalleTodas()
         {
             try

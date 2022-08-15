@@ -10,7 +10,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.Implementaciones
 {
-
+    /// <summary>
+    /// Clase de acceso a datos para el Porcentaje de Multa de un JSON local
+    /// </summary>
     public class MultaBLL : IMultaBLL
     {
         private IMultaDAL oMultaDAL;
@@ -21,11 +23,7 @@ namespace GymPro.Capa.Logica.Implementaciones
         }
 
         #region Acceso datos
-        /// <summary>
-        /// Obtiene la Multa a utilizar por la Facturacion, en caso de no existir la crea con un porcentaje base, 
-        /// esto desde un JSON local
-        /// </summary>
-        /// <returns>Entidad de tipo Multa</returns>
+        /// <inheritdoc />
         public Multa ObtenerMulta()
         {
             try
@@ -38,10 +36,7 @@ namespace GymPro.Capa.Logica.Implementaciones
             }
         }
 
-        /// <summary>
-        /// Modifica el porcentaje de la multa en el JSON local
-        /// </summary>
-        /// <param name="pMulta">Multa a modificar</param>
+        /// <inheritdoc />
         public void ModificarMulta(Multa pMulta)
         {
             try

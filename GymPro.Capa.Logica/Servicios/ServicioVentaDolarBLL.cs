@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace GymPro.Capa.Logica.BLL.Servicios
 {
+    /// <summary>
+    /// Clase de llamadas hacia la API del Banco BCCR
+    /// </summary>
     public class ServicioVentaDolarBLL : IServicioVentaDolarBLL
     {
 
@@ -19,10 +22,7 @@ namespace GymPro.Capa.Logica.BLL.Servicios
             oServicioVentaDolarDAL = ServicioVentaDolarDAL.GetInstance();
         }
 
-        /// <summary>
-        /// Obtiene el precio de venta del dolar a la fecha actual
-        /// </summary>
-        /// <returns>Double que representa el precio del dolar en colones</returns>
+        /// <inheritdoc />
         public double ObtenerPrecioVentaDolar()
         {
             try
