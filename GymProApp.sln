@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.Capa.Factories", "Gy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymPro.UnitTesting", "GymPro.UnitTesting\GymPro.UnitTesting.csproj", "{E47CCD5B-020E-4215-9C42-0FE41A4AD7AC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GymPro", "GymPro\GymPro.vdproj", "{4234FEEF-40E9-4770-B429-357A96B301CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,8 @@ Global
 		{E47CCD5B-020E-4215-9C42-0FE41A4AD7AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E47CCD5B-020E-4215-9C42-0FE41A4AD7AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E47CCD5B-020E-4215-9C42-0FE41A4AD7AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4234FEEF-40E9-4770-B429-357A96B301CA}.Debug|Any CPU.ActiveCfg = Debug
+		{4234FEEF-40E9-4770-B429-357A96B301CA}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

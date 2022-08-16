@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Reflection;
@@ -362,11 +363,11 @@ namespace GymPro.Capa.UI.DashBoard
                         dgvData.Columns[2].Name = "Peso";
                         dgvData.Columns[3].Name = "Series";
                         dgvData.Columns[4].Name = "Tiempo";
-                        dgvData.Columns[5].Name = "Multimedia";
 
                         foreach (EjercicioEnEntrenamiento ejercicio in entrenamiento.EjerciciosEnEntrenamiento)
                         {
-                            object[] data = { ejercicio._Ejercicio.Nombre, ejercicio.Repeticiones, ejercicio.Peso, ejercicio.Series, ejercicio.Tiempo, ejercicio._Ejercicio.Multimedia };
+
+                            object[] data = { ejercicio._Ejercicio.Nombre, ejercicio.Repeticiones, ejercicio.Peso, ejercicio.Series, ejercicio.Tiempo };
                             dgvData.Rows.Add(data);
                         }
                     }
