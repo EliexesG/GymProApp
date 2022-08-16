@@ -93,6 +93,8 @@ namespace GymPro.Capa.UI.DashBoard.Procesos
 
                 MessageBox.Show("Entrenamiento Enviado!!");
                 _MyLogControlEventos.InfoFormat("Info {0}", "Un entrenamiento ha sido enviado por correo");
+
+                btnEnviarCorreo.Enabled = false;
             }
             catch (Exception er)
             {
